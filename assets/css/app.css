@@ -3646,7 +3646,8 @@ section.dark:before {
 
 
 .green-action-button,
-.red-action-button:hover {
+.red-action-button:hover ,
+.haze-action-button:hover {
     background: #0B7A7D;
     color: #fff;
 }
@@ -3656,6 +3657,7 @@ section.dark:before {
 }
 
 .blue-action-button,
+.haze-action-button,
 .green-action-button:hover {
     background: #2f4757;
     color: #fff;

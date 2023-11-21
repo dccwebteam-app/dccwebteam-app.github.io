@@ -65,6 +65,7 @@
             theme: {
                 colors: {
                     teal: "#0B7A7D",
+                    haze: "#425A70",
                     black: "#000000",
                     white: "#FFFFFF",
                     darkNavy: "#2f4757",
@@ -107,7 +108,7 @@
         <!-- Fixed Left Column -->
         <nav class="nav">
             <a class="skip-link" href="#main-content">Skip to content</a>
-            <a href="https://www.dunedin.govt.nz/" title="Dunedin City Council" class="logo" id="dcc-logo"
+            <a href="index.html" title="Dunedin City Council" class="logo" id="dcc-logo"
                 aria-label=" Dunedin City Council – Kaunihera-a-rohe o Otepoti"></a>
 
             <!-- Main menu open -->
@@ -216,6 +217,7 @@
                     <div class="dcc-flex dcc-items-center dcc-justify-between">
                         <h2>Instalments</h2>
                     </div>
+                    <!-- instalments cards -->
                     <section class="dcc-py-5">
                         <!-- Card layout -->
                         <div
@@ -339,12 +341,12 @@
                         </div>
                     </section>
                     <article>
-                        <p class="dcc-py-6">A 10% penalty will be added to any unpaid portion of the current instalment
+                        <p class="dcc-py-5">A 10% penalty will be added to any unpaid portion of the current instalment
                             if not paid by the Tuesday following the due date. Exceptions - a penalty will not be added
                             it there is a direct debit in place or one has been recently cancelled as part of the
                             settlement process.</p>
 
-                        <div class="dcc-py-5 sp-grid-layout">
+                        <div class="sp-grid-layout">
                             <div
                                 class="dcc-grid dcc-grid-cols-1 md:dcc-grid-cols-3 sp-grid-bottom-border dcc-py-4 dcc-items-center">
                                 <p class="dcc-font-bold dcc-text-base">Current Balance:</p>
@@ -356,37 +358,61 @@
                                 <p class="dcc-font-normal dcc-text-base md:dcc-col-span-2">($252.54 CR)</p>
                             </div>
                         </div>
-
-                        <div class="dcc-relative dcc-py-6">
-                            <h2>Direct Debit</h2>
-                            <div class="dcc-py-3 sp-grid-layout">
-                                <div
-                                    class="dcc-grid dcc-grid-cols-1 md:dcc-grid-cols-3 sp-grid-bottom-border dcc-py-4 dcc-items-center">
-                                    <p class="dcc-font-bold dcc-text-base">Frequency:</p>
-                                    <p class="dcc-font-normal dcc-text-base md:dcc-col-span-2">Fortnightly</p>
-                                </div>
-                                <div
-                                    class="dcc-grid dcc-grid-cols-1 md:dcc-grid-cols-3 sp-grid-bottom-border dcc-py-4 dcc-items-center">
-                                    <p class="dcc-font-bold dcc-text-base">Amount:</p>
-                                    <p class="dcc-font-normal dcc-text-base md:dcc-col-span-2">$126.27</p>
-                                </div>
-                                <div
-                                    class="dcc-grid dcc-grid-cols-1 md:dcc-grid-cols-3 sp-grid-bottom-border dcc-py-4 dcc-items-center">
-                                    <p class="dcc-font-bold dcc-text-base">Last payment Received:</p>
-                                    <p class="dcc-font-normal dcc-text-base md:dcc-col-span-2">20/07/2023</p>
-                                </div>
-                                <div
-                                    class="dcc-grid dcc-grid-cols-1 md:dcc-grid-cols-3 sp-grid-bottom-border dcc-py-4 dcc-items-center">
-                                    <p class="dcc-font-bold dcc-text-base">Cancel Direct Debit?</p>
-                                    <p class="dcc-font-normal dcc-text-base md:dcc-col-span-2">Please note that this
-                                        will be cancelled when processed.</p>
-                                </div>
-                            </div>
-                        </div>
-
-
                     </article>
                 </div>
+
+                <!-- Direct Debit -->
+                <div class="dcc-relative dcc-pt-6">
+                    <article>
+                        <h2>Direct Debit</h2>
+                        <div class="dcc-py-3 sp-grid-layout">
+                            <div
+                                class="dcc-grid dcc-grid-cols-1 md:dcc-grid-cols-3 sp-grid-bottom-border dcc-py-4 dcc-items-center">
+                                <p class="dcc-font-bold dcc-text-base">Frequency:</p>
+                                <p class="dcc-font-normal dcc-text-base md:dcc-col-span-2">Fortnightly</p>
+                            </div>
+                            <div
+                                class="dcc-grid dcc-grid-cols-1 md:dcc-grid-cols-3 sp-grid-bottom-border dcc-py-4 dcc-items-center">
+                                <p class="dcc-font-bold dcc-text-base">Amount:</p>
+                                <p class="dcc-font-normal dcc-text-base md:dcc-col-span-2">$126.27</p>
+                            </div>
+                            <div
+                                class="dcc-grid dcc-grid-cols-1 md:dcc-grid-cols-3 sp-grid-bottom-border dcc-py-4 dcc-items-center">
+                                <p class="dcc-font-bold dcc-text-base">Last payment Received:</p>
+                                <p class="dcc-font-normal dcc-text-base md:dcc-col-span-2">20/07/2023</p>
+                            </div>
+                            <div
+                                class="dcc-grid dcc-grid-cols-1 md:dcc-grid-cols-3 sp-grid-bottom-border dcc-py-4 dcc-items-center">
+                                <p class="dcc-font-bold dcc-text-base">Cancel Direct Debit?</p>
+                                <p class="dcc-font-normal dcc-text-base md:dcc-col-span-2">Please note that this
+                                    will be cancelled when processed.</p>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+
+                <!-- Water Rates -->
+                <div class="dcc-relative dcc-pt-6">
+                    <article>
+                        <h2>Water Rates</h2>
+                        <div class="dcc-py-3 sp-grid-layout">
+                            <div class="dcc-grid dcc-grid-cols-1 md:dcc-grid-cols-3 dcc-py-4 dcc-items-center">
+                                <p class="dcc-font-normal dcc-text-base">Final read date</p>
+                                <p class="dcc-font-bold dcc-text-base md:dcc-col-span-2">DD/MM/YYYY</p>
+                            </div>
+                            <div class="dcc-grid dcc-grid-cols-1 md:dcc-grid-cols-3 dcc-py-4 dcc-items-center">
+                                <p class="dcc-font-nrmal dcc-text-base">Settlement date</p>
+                                <p class="dcc-font-bold dcc-text-base md:dcc-col-span-2">DD/MM/YYYY</p>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+
+                <!-- Action Buttons -->
+               <div class="dcc-relative dcc-flex dcc-items-start dcc-gap-3">
+                <a class="action-button haze-action-button dcc-mb-0" href="#">Re-Search</a>
+                <a class="action-button green-action-button dcc-mb-0" href="#">Generate & Downlad PDF</a>
+               </div>
 
             </div>
             <footer id="footer">
