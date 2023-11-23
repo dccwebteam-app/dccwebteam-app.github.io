@@ -882,18 +882,18 @@ i {
     font-style: italic;
 }
 
-article a {
+article a, section a {
     text-decoration: none;
     font-weight: bold;
     color: #1b4b88;
     font-style: normal;
 }
 
-article a:hover {
+article a:hover, section a:hover {
     color: #0068ec;
 }
 
-article p {
+article p, section p {
     margin-bottom: 0.9375em;
     line-height: 1.625em;
 }
@@ -3245,7 +3245,7 @@ label.search-bar input[type="submit"] {
     }
 }
 
-article {
+article, section {
     max-width: 900px;
     padding: 10px 0 10px 0;
     clear: both;
@@ -3253,6 +3253,10 @@ article {
     box-sizing: border-box;
 }
 
+section.full-width
+{
+    max-width: 100% !important;
+}
 .article-date {
     float: right;
     font-size: 12px;
@@ -3539,7 +3543,6 @@ p+.downloads-container {
 }
 
 section {
-    padding-top: 30px;
     padding-bottom: 30px;
     position: relative;
 }
@@ -3646,7 +3649,7 @@ section.dark:before {
 
 
 .green-action-button,
-.red-action-button:hover ,
+.red-action-button:hover,
 .haze-action-button:hover {
     background: #0B7A7D;
     color: #fff;
@@ -3716,4 +3719,41 @@ section.dark:before {
     border-bottom: 1px solid #DDDDDD;
     border-collapse: collapse;
     box-sizing: border-box;
+}
+
+.dcc-checkbox-container {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.dcc-checkbox {
+    display: none;
+}
+
+.dcc-checkbox-label {
+    position: relative;
+    cursor: pointer;
+    padding-left: 30px;
+    font-size: inherit;
+    display: flex;
+    align-items: center;
+}
+
+.dcc-checkbox-custom {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 24px;
+    width: 24px;
+}
+
+.dcc-checkbox-custom:after {
+    content: url("data:image/svg+xml,%3Csvg width='24' height='24' viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M15.9999 0C7.17762 0 0 7.17745 0 15.9999C0 24.8224 7.17762 32 15.9999 32C24.8222 32 31.9998 24.8224 31.9998 15.9999C31.9998 7.17745 24.8224 0 15.9999 0ZM25.1874 13.2974L15.1354 23.3493C14.708 23.7767 14.1399 24.012 13.5355 24.012C12.9311 24.012 12.3629 23.7767 11.9355 23.3493L6.81248 18.2263C6.38507 17.7989 6.14967 17.2307 6.14967 16.6263C6.14967 16.0218 6.38507 15.4536 6.81248 15.0262C7.23972 14.5988 7.80788 14.3634 8.41242 14.3634C9.01681 14.3634 9.58512 14.5988 10.0124 15.0264L13.5353 18.5492L21.9871 10.0973C22.4145 9.66994 22.9827 9.4347 23.5871 9.4347C24.1915 9.4347 24.7596 9.66994 25.187 10.0973C26.0695 10.9799 26.0695 12.4152 25.1874 13.2974Z' fill='%23DCDCDC'/%3E%3C/svg%3E%0A");
+    font-size: inherit;
+    color: var(--primary);
+    transition: all .3s linear;
+}
+
+.dcc-checkbox:checked+.dcc-checkbox-label .dcc-checkbox-custom:after {
+    content: url("data:image/svg+xml,%3Csvg width='24' height='24' viewBox='0 0 32 32' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M15.9999 0C7.17762 0 0 7.17745 0 15.9999C0 24.8224 7.17762 32 15.9999 32C24.8222 32 31.9998 24.8224 31.9998 15.9999C31.9998 7.17745 24.8224 0 15.9999 0ZM25.1874 13.2974L15.1354 23.3493C14.708 23.7767 14.1399 24.012 13.5355 24.012C12.9311 24.012 12.3629 23.7767 11.9355 23.3493L6.81248 18.2263C6.38507 17.7989 6.14967 17.2307 6.14967 16.6263C6.14967 16.0218 6.38507 15.4536 6.81248 15.0262C7.23972 14.5988 7.80788 14.3634 8.41242 14.3634C9.01681 14.3634 9.58512 14.5988 10.0124 15.0264L13.5353 18.5492L21.9871 10.0973C22.4145 9.66994 22.9827 9.4347 23.5871 9.4347C24.1915 9.4347 24.7596 9.66994 25.187 10.0973C26.0695 10.9799 26.0695 12.4152 25.1874 13.2974Z' fill='%23425A70'/%3E%3C/svg%3E%0A");
 }
