@@ -1,0 +1,114 @@
+<html>
+
+<head>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://use.typekit.net/fuv1ydc.css">
+  <style>
+    main {
+      background: white;
+      padding: 40px;
+      max-width: 600px;
+      border-radius: 24px;
+    }
+
+    .eye {
+      position: absolute;
+      right: 0;
+      top: 15px;
+    }
+
+    .password-label {
+      margin-top: 20px;
+      margin-bottom: 20px;
+    }
+  </style>
+</head>
+
+<body class="d-flex align-items-center py-4 bg-body-tertiary">
+  <main class="form-signin w-100 m-auto">
+    <img class="mb-4" src="https://www.dunedin.govt.nz/__data/assets/file/0011/673364/logo-dunedin-city-council.svg"
+      alt="DCC Logo" style="
+    max-width: 300px;
+    margin: 0 auto 0px;
+    display: block;
+">
+    <div id="api" data-name="Unified" class="">
+      <form id="localAccountForm" action="JavaScript:void(0);" class="localAccount"
+        aria-label="Sign in with your email address">
+        <div class="intro">
+          <h2 aria-level="1" class="">
+            Sign in with your email address
+          </h2>
+        </div>
+        <div class="error pageLevel" aria-hidden="true" role="alert" style="display: none;">
+          <p></p>
+        </div>
+        <div class="entry" style="
+    margin-top: 20px;
+">
+          <div class="entry-item form-floating">
+
+            <div class="error itemLevel" aria-hidden="true" role="alert" style="display: none;">
+              <p></p>
+            </div>
+            <input type="text" id="signInName" name="Email Address" title="Please enter a valid Email Address"
+              autofocus="" placeholder="Email Address" aria-label="Email Address" class="form-control" style="
+    margin: 10px 0;
+" __h2d_shadowroot="66"><label for="signInName" class="">
+              Email Address
+            </label>
+          </div>
+          <div class="entry-item form-floating">
+
+            <div class="error itemLevel" aria-hidden="true" style="display: none;">
+              <p role="alert"></p>
+            </div>
+            <input type="password" id="password" name="Password" placeholder="Password" aria-label="Password"
+              autocomplete="current-password" aria-required="true" class="form-control" __h2d_shadowroot="76"><label
+              for="password" class="">Password</label>
+            <div class="password-label" style="
+    margin-top: 20px;
+    margin-bottom: 20px;
+">
+
+              <a id="forgotPassword"
+                href="/dunedincitycouncildev.onmicrosoft.com/B2C_1A_SUSI_TOU/api/CombinedSigninAndSignup/unified?claimsexchange=ForgotPasswordExchange&amp;csrf_token=L1YwNEk4eVVwN2VGZGcrVzhsMlkvdDZYTzY3cFNld1Rma1NBK2Nzdk4wazR6Vms0WjR1R21WWVhCTmVnNTdYcm1FYU9Kc3U1RlJnVXhGdjBPeERpVGc9PTsyMDIzLTExLTI4VDIwOjI3OjQ3Ljk2NTc3MTdaO2hEV2E0SGJGb0ZHSS9Zb1Q1VkozY3c9PTt7Ik9yY2hlc3RyYXRpb25TdGVwIjoyfQ==&amp;tx=StateProperties=eyJUSUQiOiI3NTZjOWQ3MS01NWI3LTRiMGMtYmZiZS02YTdjNTcxNjg1ZmIifQ&amp;p=B2C_1A_SUSI_TOU"
+                class="">Forgot your password?</a>
+            </div><i id="togglePasswordEye" class="eye bi bi-eye-slash col-1"></i>
+          </div>
+          <div class="working"></div>
+          <div class="rememberMe">
+            <input id="rememberMe" type="checkbox" name="rememberMe" class="form-check-input">
+            <label for="rememberMe" class="">Keep me signed in</label>
+          </div>
+
+
+          <div class="buttons">
+            <button id="next" type="submit" form="localAccountForm" class="btn btn-primary w-100" style="
+    color: white;
+    background: #0B7A7D;
+    border: #0B7A7D;
+    padding: 14px;
+    font-size: 20px;
+    margin: 20px 0;
+">Sign in</button>
+          </div>
+        </div>
+
+        <div class="create">
+          <p class="">
+            Don't have an account?<a id="createAccount"
+              href="/dunedincitycouncildev.onmicrosoft.com/B2C_1A_SUSI_TOU/api/CombinedSigninAndSignup/unified?local=signup&amp;csrf_token=L1YwNEk4eVVwN2VGZGcrVzhsMlkvdDZYTzY3cFNld1Rma1NBK2Nzdk4wazR6Vms0WjR1R21WWVhCTmVnNTdYcm1FYU9Kc3U1RlJnVXhGdjBPeERpVGc9PTsyMDIzLTExLTI4VDIwOjI3OjQ3Ljk2NTc3MTdaO2hEV2E0SGJGb0ZHSS9Zb1Q1VkozY3c9PTt7Ik9yY2hlc3RyYXRpb25TdGVwIjoyfQ==&amp;tx=StateProperties=eyJUSUQiOiI3NTZjOWQ3MS01NWI3LTRiMGMtYmZiZS02YTdjNTcxNjg1ZmIifQ&amp;p=B2C_1A_SUSI_TOU"
+              style="
+    padding-left: 10px;
+" class="">Sign up now</a>
+          </p>
+        </div>
+      </form>
+    </div>
+  </main>
+</body>
+
+</html>

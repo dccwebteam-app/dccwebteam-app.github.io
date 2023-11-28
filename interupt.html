@@ -164,32 +164,32 @@
             <!-- Body container -->
             <div class="relative dcc-p-6 md:dcc-p-12 xl:dcc-p-24">
                 <!-- Rates Information -->
-                <section class="dcc-relative dcc-pt-6">
+                <section class="dcc-relative">
                     <div class="dcc-flex dcc-items-center dcc-justify-between dcc-pb-3">
                         <h2>Rates lookup - Interupt</h2>
                         <a href="/logout.html">Logout</a>
                     </div>
                     <div class="sp-grid-layout">
                         <div
-                            class="dcc-grid dcc-grid-cols-1 md:dcc-grid-cols-3 sp-grid-bottom-border dcc-py-4 dcc-items-center">
+                            class="dcc-grid dcc-grid-cols-1 md:dcc-grid-cols-3 sp-grid-bottom-border dcc-py-4 dcc-items-center dcc-gap-4 lg:dcc-gap-0">
                             <p class="dcc-font-bold dcc-text-base">Validation Number:</p>
                             <p class="dcc-font-normal dcc-text-base md:dcc-col-span-2">12345-67890</p>
                         </div>
 
                         <div
-                            class="dcc-grid dcc-grid-cols-1 md:dcc-grid-cols-3 sp-grid-bottom-border dcc-py-4 dcc-items-center">
+                            class="dcc-grid dcc-grid-cols-1 md:dcc-grid-cols-3 sp-grid-bottom-border dcc-py-4 dcc-items-center dcc-gap-4 lg:dcc-gap-0">
                             <p class="dcc-font-bold dcc-text-base">Legal Description:</p>
                             <p class="dcc-font-normal dcc-text-base md:dcc-col-span-2">LOT 1, DP 123</p>
                         </div>
 
                         <div
-                            class="dcc-grid dcc-grid-cols-1 md:dcc-grid-cols-3 sp-grid-bottom-border dcc-py-4 dcc-items-center">
+                            class="dcc-grid dcc-grid-cols-1 md:dcc-grid-cols-3 sp-grid-bottom-border dcc-py-4 dcc-items-center dcc-gap-4 lg:dcc-gap-0">
                             <p class="dcc-font-bold dcc-text-base">Property Owner:</p>
                             <p class="dcc-font-normal dcc-text-base md:dcc-col-span-2">Paula Cotter</p>
                         </div>
 
                         <div
-                            class="dcc-grid dcc-grid-cols-1 md:dcc-grid-cols-3 sp-grid-bottom-border dcc-py-4 dcc-items-center">
+                            class="dcc-grid dcc-grid-cols-1 md:dcc-grid-cols-3 sp-grid-bottom-border dcc-py-4 dcc-items-center dcc-gap-4 lg:dcc-gap-0">
                             <p class="dcc-font-bold dcc-text-base">Property Address:</p>
                             <p class="dcc-font-normal dcc-text-base md:dcc-col-span-2">12 george St, Dunedin</p>
                         </div>
@@ -217,29 +217,36 @@
                     </div>
                     <div class="sp-grid-layout">
                         <div
-                            class="dcc-grid dcc-grid-cols-1 md:dcc-grid-cols-3 sp-grid-bottom-border dcc-py-4 dcc-items-center">
-                            <p class="dcc-font-bold dcc-text-base">Frequency:</p>
+                            class="dcc-grid dcc-grid-cols-1 md:dcc-grid-cols-3 sp-grid-bottom-border dcc-py-4 dcc-items-center dcc-gap-4 lg:dcc-gap-0">
+                            <p class="dcc-font-bold dcc-text-base">Frequency</p>
                             <p class="dcc-font-normal dcc-text-base md:dcc-col-span-2">Fortnightly</p>
                         </div>
                         <div
-                            class="dcc-grid dcc-grid-cols-1 md:dcc-grid-cols-3 sp-grid-bottom-border dcc-py-4 dcc-items-center">
-                            <p class="dcc-font-bold dcc-text-base">Amount:</p>
+                            class="dcc-grid dcc-grid-cols-1 md:dcc-grid-cols-3 sp-grid-bottom-border dcc-py-4 dcc-items-center dcc-gap-4 lg:dcc-gap-0">
+                            <p class="dcc-font-bold dcc-text-base">Amount</p>
                             <p class="dcc-font-normal dcc-text-base md:dcc-col-span-2">$126.27</p>
                         </div>
                         <div
-                            class="dcc-grid dcc-grid-cols-1 md:dcc-grid-cols-3 sp-grid-bottom-border dcc-py-4 dcc-items-center">
-                            <p class="dcc-font-bold dcc-text-base">Last payment Received:</p>
+                            class="dcc-grid dcc-grid-cols-1 md:dcc-grid-cols-3 sp-grid-bottom-border dcc-py-4 dcc-items-center dcc-gap-4 lg:dcc-gap-0">
+                            <p class="dcc-font-bold dcc-text-base">Last payment Received</p>
                             <p class="dcc-font-normal dcc-text-base md:dcc-col-span-2">20/07/2023</p>
                         </div>
                         <div
-                            class="dcc-grid dcc-grid-cols-1 md:dcc-grid-cols-3 sp-grid-bottom-border dcc-py-4 dcc-items-center">
-                            <p class="dcc-font-bold dcc-text-base">Cancel Direct Debit?</p>
-                            <div class="dcc-checkbox-container dcc-font-normal dcc-text-base md:dcc-col-span-2">
-                                <input type="checkbox" class="dcc-checkbox" id="cancel-debit-card">
-                                <label for="cancel-debit-card" class="dcc-checkbox-label">
+                            class="dcc-grid dcc-grid-cols-1 md:dcc-grid-cols-3 sp-grid-bottom-border dcc-py-4 dcc-items-center dcc-gap-4 lg:dcc-gap-0">
+                            <p class="dcc-font-bold dcc-text-base has-hint">Cancel Direct Debit<span
+                                    class="hint-tooltip hint--right"
+                                    aria-label="Please note that this will be cancelled when processed.">
+                                    <svg width='16' height='16' viewBox='0 0 32 32' fill='none'
+                                        xmlns='http://www.w3.org/2000/svg'>
+                                        <path
+                                            d='M15.9999 0C7.17762 0 0 7.17745 0 15.9999C0 24.8224 7.17762 32 15.9999 32C24.8222 32 31.9998 24.8224 31.9998 15.9999C31.9998 7.17745 24.8224 0 15.9999 0ZM25.1874 13.2974L15.1354 23.3493C14.708 23.7767 14.1399 24.012 13.5355 24.012C12.9311 24.012 12.3629 23.7767 11.9355 23.3493L6.81248 18.2263C6.38507 17.7989 6.14967 17.2307 6.14967 16.6263C6.14967 16.0218 6.38507 15.4536 6.81248 15.0262C7.23972 14.5988 7.80788 14.3634 8.41242 14.3634C9.01681 14.3634 9.58512 14.5988 10.0124 15.0264L13.5353 18.5492L21.9871 10.0973C22.4145 9.66994 22.9827 9.4347 23.5871 9.4347C24.1915 9.4347 24.7596 9.66994 25.187 10.0973C26.0695 10.9799 26.0695 12.4152 25.1874 13.2974Z'
+                                            fill='#425A70' />
+                                    </svg>
+                                </span></p>
+                            <div class="dcc-checkbox-container dcc-font-normal dcc-text-base md:dcc-col-span-2 dcc-h-4">
+                                <input type="checkbox" class="dcc-checkbox" id="myCheckbox">
+                                <label for="myCheckbox" class="dcc-checkbox-label">
                                     <div class="dcc-checkbox-custom"></div>
-                                    <span class="dcc-italic">Please note that this will be cancelled when
-                                        processed.</span>
                                 </label>
                             </div>
                         </div>
@@ -267,13 +274,13 @@
                         <input type="checkbox" class="dcc-checkbox" id="request-settlement-report">
                         <label class="dcc-checkbox-label" for="request-settlement-report">
                             <div class="dcc-checkbox-custom"></div>
-                            <span>Request settlement report</span>
+                            <span class="dcc-pl-3">Request settlement report</span>
                         </label>
                     </div>
 
 
                     <!-- Action Buttons -->
-                    <div class="dcc-relative dcc-flex dcc-items-start dcc-gap-3 dcc-py-8">
+                    <div class="dcc-relative dcc-flex dcc-items-start dcc-gap-3 dcc-py-3">
                         <a class="action-button green-action-button dcc-mb-0" href="#">Submit</a>
                     </div>
                 </section>
