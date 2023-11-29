@@ -100,14 +100,14 @@
 <body>
 
   <!-- UNIICONS -->
-  <svg xmlns="http://www.w3.org/2000/svg">
-
+  <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
     <!-- EDIT ALT -->
     <symbol viewBox="0 0 24 24" id="edit-alt">
       <path fill="#2F4757"
         d="M5,18H9.24a1,1,0,0,0,.71-.29l6.92-6.93h0L19.71,8a1,1,0,0,0,0-1.42L15.47,2.29a1,1,0,0,0-1.42,0L11.23,5.12h0L4.29,12.05a1,1,0,0,0-.29.71V17A1,1,0,0,0,5,18ZM14.76,4.41l2.83,2.83L16.17,8.66,13.34,5.83ZM6,13.17l5.93-5.93,2.83,2.83L8.83,16H6ZM21,20H3a1,1,0,0,0,0,2H21a1,1,0,0,0,0-2Z">
       </path>
     </symbol>
+    <!-- EDIT -->
     <symbol viewBox="0 0 24 24" id="edit">
       <path fill="#2F4757"
         d="M21,12a1,1,0,0,0-1,1v6a1,1,0,0,1-1,1H5a1,1,0,0,1-1-1V5A1,1,0,0,1,5,4h6a1,1,0,0,0,0-2H5A3,3,0,0,0,2,5V19a3,3,0,0,0,3,3H19a3,3,0,0,0,3-3V13A1,1,0,0,0,21,12ZM6,12.76V17a1,1,0,0,0,1,1h4.24a1,1,0,0,0,.71-.29l6.92-6.93h0L21.71,8a1,1,0,0,0,0-1.42L17.47,2.29a1,1,0,0,0-1.42,0L13.23,5.12h0L6.29,12.05A1,1,0,0,0,6,12.76ZM16.76,4.41l2.83,2.83L18.17,8.66,15.34,5.83ZM8,13.17l5.93-5.93,2.83,2.83L10.83,16H8Z">
@@ -160,7 +160,7 @@
       <div class="hero small">
 
         <img src="./assets/images/2600-x-600-green-pattern.jpg" title="DCC default banner pattern" alt="Banner image"
-          class="dcc-h-full" role="banner">
+          class="dcc-h-full dcc-object-cover" role="banner">
         <div class="row hero-content dcc-p-6 md:dcc-p-12 xl:dcc-p-24">
           <div class="column dcc-ml-0">
             <div id="hamburger-plate">
@@ -180,7 +180,7 @@
           <div
             class="dcc-grid dcc-grid-cols-1 md:dcc-grid-cols-2 sp-grid-bottom-border dcc-py-4 dcc-items-center dcc-gap-4 lg:dcc-gap-0">
             <p class="dcc-font-bold dcc-text-base has-hint">Work Email Address
-              <span class="hint-tooltip hint--right" aria-label="(please contact us to modify)">
+              <span class="hint-tooltip hint--right" aria-label="please contact us to modify">
                 <svg width='16' height='16' viewBox='0 0 32 32' fill='none' xmlns='http://www.w3.org/2000/svg'>
                   <path
                     d='M15.9999 0C7.17762 0 0 7.17745 0 15.9999C0 24.8224 7.17762 32 15.9999 32C24.8222 32 31.9998 24.8224 31.9998 15.9999C31.9998 7.17745 24.8224 0 15.9999 0ZM25.1874 13.2974L15.1354 23.3493C14.708 23.7767 14.1399 24.012 13.5355 24.012C12.9311 24.012 12.3629 23.7767 11.9355 23.3493L6.81248 18.2263C6.38507 17.7989 6.14967 17.2307 6.14967 16.6263C6.14967 16.0218 6.38507 15.4536 6.81248 15.0262C7.23972 14.5988 7.80788 14.3634 8.41242 14.3634C9.01681 14.3634 9.58512 14.5988 10.0124 15.0264L13.5353 18.5492L21.9871 10.0973C22.4145 9.66994 22.9827 9.4347 23.5871 9.4347C24.1915 9.4347 24.7596 9.66994 25.187 10.0973C26.0695 10.9799 26.0695 12.4152 25.1874 13.2974Z'
@@ -194,7 +194,7 @@
           <div
             class="dcc-grid dcc-grid-cols-1 md:dcc-grid-cols-2 sp-grid-bottom-border dcc-py-4 dcc-items-center dcc-gap-4 lg:dcc-gap-0">
             <p class="dcc-font-bold dcc-text-base has-hint">Company Name<span class="hint-tooltip hint--right"
-                aria-label="(please contact us to modify)"><svg width='16' height='16' viewBox='0 0 32 32' fill='none'
+                aria-label="please contact us to modify"><svg width='16' height='16' viewBox='0 0 32 32' fill='none'
                   xmlns='http://www.w3.org/2000/svg'>
                   <path
                     d='M15.9999 0C7.17762 0 0 7.17745 0 15.9999C0 24.8224 7.17762 32 15.9999 32C24.8222 32 31.9998 24.8224 31.9998 15.9999C31.9998 7.17745 24.8224 0 15.9999 0ZM25.1874 13.2974L15.1354 23.3493C14.708 23.7767 14.1399 24.012 13.5355 24.012C12.9311 24.012 12.3629 23.7767 11.9355 23.3493L6.81248 18.2263C6.38507 17.7989 6.14967 17.2307 6.14967 16.6263C6.14967 16.0218 6.38507 15.4536 6.81248 15.0262C7.23972 14.5988 7.80788 14.3634 8.41242 14.3634C9.01681 14.3634 9.58512 14.5988 10.0124 15.0264L13.5353 18.5492L21.9871 10.0973C22.4145 9.66994 22.9827 9.4347 23.5871 9.4347C24.1915 9.4347 24.7596 9.66994 25.187 10.0973C26.0695 10.9799 26.0695 12.4152 25.1874 13.2974Z'

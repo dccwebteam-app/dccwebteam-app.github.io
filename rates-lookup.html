@@ -149,7 +149,7 @@
             <!-- Hero container  -->
             <div class="hero small">
                 <img src="./assets/images/2600-x-600-green-pattern.jpg" title="DCC default banner pattern"
-                    alt="Banner image" class="dcc-h-full" role="banner">
+                    alt="Banner image" class="dcc-h-full dcc-object-cover" role="banner">
                 <div class="row hero-content dcc-p-6 md:dcc-p-12 xl:dcc-p-24">
                     <div class="column dcc-ml-0">
                         <div id="hamburger-plate">
@@ -163,8 +163,25 @@
 
             <!-- Body container -->
             <div class="relative dcc-p-6 md:dcc-p-12 xl:dcc-p-24">
+
+                <!-- Field section -->
+                <section class="dcc-relative dcc-pt-6 dcc-grid xl:dcc-grid-cols-2">
+                  <div class="dcc-relative">
+                      <!-- Input field -->
+                      <div class="dcc-flex dcc-flex-col dcc-basis-2/4">
+                        <input type="text">
+                    </div>
+                    <!-- Action Buttons -->
+                    <div class="dcc-relative dcc-flex dcc-items-start dcc-gap-3 dcc-py-8">
+                        <input type="reset" value="Reset">
+                        <input type="submit" value="Submit">
+                    </div>
+                  </div>
+                </section>
+
                 <!-- Map Container  -->
                 <section class="dcc-relative dcc-pt-6 full-width">
+                    <!-- IMAGE TAG IS ONLY USED FOR DEMONSTRATION -->
                     <img src="./assets/images/iframe-example.png" alt="" title="" loading="lazy">
                 </section>
 

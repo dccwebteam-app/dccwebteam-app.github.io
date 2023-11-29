@@ -41,7 +41,7 @@
         href="https://www.dunedin.govt.nz/__data/assets/image/0006/675285/favicon-32x32.png">
     <link rel="shortcut icon" sizes="32x32"
         href="https://www.dunedin.govt.nz/__data/assets/image/0007/675286/favicon-96x96.png">
-        <!-- CSS Files -->
+    <!-- CSS Files -->
     <link rel="stylesheet" href="./assets/css/app.css" media="screen" type="text/css">
     <link rel="stylesheet" href="./assets/css/hint.min.css" media="screen" type="text/css">
     <link rel="stylesheet" href="./assets/css/print.css" media="print" type="text/css">
@@ -143,7 +143,7 @@
             <!-- Hero container  -->
             <div class="hero small">
                 <img src="./assets/images/2600-x-600-green-pattern.jpg" title="DCC default banner pattern"
-                    alt="Banner image" class="dcc-h-full" role="banner">
+                    alt="Banner image" class="dcc-h-full dcc-object-cover" role="banner">
                 <div class="row hero-content dcc-p-6 md:dcc-p-12 xl:dcc-p-24">
                     <div class="column dcc-ml-0">
                         <div id="hamburger-plate">
@@ -157,12 +157,13 @@
 
             <!-- Body container -->
             <div class="relative dcc-p-6 md:dcc-p-12 xl:dcc-p-24">
+                <!-- Heading -->
+                <div class="dcc-relative dcc-flex dcc-items-center dcc-justify-between dcc-pb-3">
+                    <h2>Rates lookup - Information</h2>
+                    <a href="/logout.html">Logout</a>
+                </div>
                 <!-- Rates Information -->
                 <section class="dcc-relative">
-                    <div class="dcc-flex dcc-items-center dcc-justify-between dcc-pb-3">
-                        <h2>Rates lookup - Information</h2>
-                        <a href="/logout.html">Logout</a>
-                    </div>
                     <div class="sp-grid-layout">
                         <div
                             class="dcc-grid dcc-grid-cols-1 md:dcc-grid-cols-3 sp-grid-bottom-border dcc-py-4 dcc-items-center dcc-gap-4 lg:dcc-gap-0">
@@ -403,11 +404,13 @@
                 <section class="dcc-relative dcc-pt-6">
                     <h2>Water Rates</h2>
                     <div class="sp-grid-layout">
-                        <div class="dcc-grid dcc-grid-cols-1 md:dcc-grid-cols-3 dcc-py-4 dcc-items-center dcc-gap-4 lg:dcc-gap-0">
+                        <div
+                            class="dcc-grid dcc-grid-cols-1 md:dcc-grid-cols-3 dcc-py-4 dcc-items-center dcc-gap-4 lg:dcc-gap-0">
                             <p class="dcc-font-normal dcc-text-base">Final read date</p>
                             <p class="dcc-font-bold dcc-text-base md:dcc-col-span-2">DD/MM/YYYY</p>
                         </div>
-                        <div class="dcc-grid dcc-grid-cols-1 md:dcc-grid-cols-3 dcc-py-2 dcc-items-center dcc-gap-4 lg:dcc-gap-0">
+                        <div
+                            class="dcc-grid dcc-grid-cols-1 md:dcc-grid-cols-3 dcc-py-2 dcc-items-center dcc-gap-4 lg:dcc-gap-0">
                             <p class="dcc-font-normal dcc-text-base">Settlement date</p>
                             <p class="dcc-font-bold dcc-text-base md:dcc-col-span-2">DD/MM/YYYY</p>
                         </div>
@@ -440,9 +443,11 @@
                             </div>
 
                             <div class="small-4 medium-4 large-5 mb">
-                                <p><span class="fixed-space">Phone</span> <a href="tel:006434774000">+64 3 477 4000</a>
+                                <p><span class="fixed-space">Phone</span> <a href="tel:006434774000"
+                                        title="Contact Dunedin City Council">+64 3 477 4000</a>
                                 </p>
-                                <p><span class="fixed-space">Fax</span>+64 3 474 3366</p>
+                                <p><span class="fixed-space">Fax</span><a href="tel:fax:+6434743366">+64 3 474 3366</a>
+                                </p>
                                 <p><span class="fixed-space">Email</span> <a href="mailto:dcc@dcc.govt.nz"
                                         title="Email Dunedin City Council.">dcc@dcc.govt.nz</a></p>
                             </div>
@@ -513,12 +518,10 @@
                 <div class="row dcc-pb-4">
                     <nav
                         class="column dcc-flex dcc-flex-wrap dcc-justify-start dcc-items-center dcc-gap-4 md:dcc-gap-6">
-                        <a href="https://www.dunedin.govt.nz/about-this-site" class="mr-2">About this site</a>
-                        <a href="https://www.dunedin.govt.nz/about-this-site/accessibility">Accessibility</a>
-                        <a href="https://www.dunedin.govt.nz/about-this-site/how-to-use-this-site">How to use this
-                            site</a>
-                        <a href="https://www.dunedin.govt.nz/about-this-site/site-map">Site map</a>
-                        <a href="https://www.dunedin.govt.nz/about-this-site/privacy-policy">Privacy Policy</a>
+                        <a href="/my-account.html" class="mr-2">My Account</a>
+                        <a href="/information.html">Rating Enquiry</a>
+                        <a href="/contact.html">Contact Us</a>
+                        <a href="https://www.dunedin.govt.nz/">DCC Home</a>
                     </nav>
                 </div>
             </footer>
