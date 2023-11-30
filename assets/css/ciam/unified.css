@@ -6,6 +6,7 @@
     --primary: #0B7A7D;
     --dark-navy: #2f4757;
     --white: #FFFFFF;
+    --light-gray: #F0F0F0;
 }
 
 input:-webkit-autofill,
@@ -16,14 +17,112 @@ input:-webkit-autofill:active {
 }
 
 html,
-body {
-    scroll-behavior: smooth;
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video,
+button {
     margin: 0;
     padding: 0;
     border: 0;
     font-size: 100%;
     font: inherit;
     vertical-align: baseline;
+}
+
+html {
+    line-height: 1.5;
+    -webkit-text-size-adjust: 100%;
+    -moz-tab-size: 4;
+    tab-size: 4;
+    font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    font-feature-settings: normal;
+    font-variation-settings: normal;
+}
+
+body {
+
+    font-size: 16px;
+    font-family: "din-2014", sans-serif !important;
+    font-weight: 400;
+    font-style: normal;
+    color: var(--dark-navy);
 }
 
 *,
@@ -33,6 +132,28 @@ body {
     border-width: 0;
     border-style: solid;
     border-color: #e2e8f0;
+    scroll-behavior: smooth;
+}
+
+.logo {
+    margin: 0px auto 20px auto !important;
+    display: block;
+    width: 240px;
+    height: 60px;
+    min-height: 60px;
+    background: url("//dccwebteam-app.github.io/assets/images/svg/logo-dunedin-city-council.svg") no-repeat center;
+}
+
+input::-webkit-input-placeholder {
+    opacity: 0;
+}
+
+input::-moz-placeholder {
+    opacity: 0;
+}
+
+input:-ms-input-placeholder {
+    opacity: 0;
 }
 
 section {
@@ -44,6 +165,8 @@ section {
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
 }
 
 section.dcc-background {
@@ -53,9 +176,158 @@ section.dcc-background {
     object-fit: cover;
 }
 
-.dcc-form-wrapper
-{
-    background-color: var(--white);
-    padding: 1rem;
+.dcc-form-wrapper {
+    background-color: var(--light-gray);
+    padding: 1.5rem;
     border-radius: 10px;
+    width: 100%;
+}
+
+#api form h2 {
+    text-align: center;
+    font-family: din-2014, sans-serif;
+    font-weight: 600 !important;
+    font-style: normal;
+    line-height: 1.2em !important;
+    margin-bottom: .5em !important;
+    font-size: 1.375em;
+}
+
+@media (min-width: 768px) {
+    h3 {
+        font-size: 1.625em;
+    }
+}
+
+.entry-item {
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    width: 100%;
+    margin-bottom: 1rem;
+}
+
+.entry-item label,
+.rememberMe {
+    margin-bottom: 0.5rem;
+    width: inherit;
+    display: flex;
+    align-items: center;
+    gap: 0.2rem;
+}
+
+.password-label {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: inherit;
+}
+
+#forgotPassword {
+    margin-bottom: 0.5rem;
+    white-space: nowrap;
+}
+
+input[type="text"],
+input[type="password"] {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    font-family: inherit;
+    border: 1px solid transparent;
+    padding: 0.75rem 0.875rem;
+    font-size: 0.9375em;
+    font-weight: normal;
+    box-sizing: border-box;
+    transition: all ease-in-out 150ms;
+    border-radius: 10px;
+    width: inherit;
+}
+
+article a,
+section a,
+a.bold-blue {
+    text-decoration: none;
+    font-weight: bold;
+    color: #1b4b88;
+    font-style: normal;
+}
+
+article a:hover,
+section a:hover,
+a.bold-blue:hover {
+    color: #0068ec;
+}
+
+
+.action-button,
+input[type="submit"],
+input[type="reset"],
+button[type="submit"] {
+    border: none;
+    padding: 0.75rem 1rem;
+    vertical-align: middle;
+    overflow: hidden;
+    text-decoration: none;
+    text-align: center;
+    cursor: pointer;
+    white-space: nowrap;
+    line-height: 1.4rem;
+    color: #fff;
+    font-style: normal;
+    outline: none;
+    border-radius: 15px;
+    transition: all .3s linear;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
+.green-action-button,
+.haze-action-button:hover,
+input[type="submit"],
+button[type="submit"],
+input[type="reset"]:hover {
+    background: var(--primary);
+    color: #fff;
+}
+
+.haze-action-button,
+input[type="reset"],
+input[type="submit"]:hover,
+button[type="submit"]:hover,
+.green-action-button:hover {
+    background: var(--dark-navy);
+    color: #fff;
+}
+
+@media screen and (min-width: 640px) {
+    section {
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    .dcc-form-wrapper {
+        max-width: 28rem;
+    }
+}
+
+form .divider {
+    margin-top: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+form .divider hr {
+    height: 1px;
+    background-color: var(--dark-navy);
+    margin: 0;
+}
+
+button[type="submit"]
+{
+    width: 100%;
+}
+
+#localAccountForm button[type="submit"]::before{
+    content:"here";
+    display: inherit;
 }
