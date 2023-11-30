@@ -2,6 +2,19 @@
     @import url("https://use.typekit.net/czt1xke.css");
 }
 
+:root {
+    --primary: #0B7A7D;
+    --dark-navy: #2f4757;
+    --white: #FFFFFF;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+    -webkit-transition-delay: 99999s;
+}
+
 html,
 body {
     scroll-behavior: smooth;
@@ -38,4 +51,11 @@ section.dcc-background {
     background-repeat: no-repeat;
     background-size: cover;
     object-fit: cover;
+}
+
+.dcc-form-wrapper
+{
+    background-color: var(--white);
+    padding: 1rem;
+    border-radius: 10px;
 }
