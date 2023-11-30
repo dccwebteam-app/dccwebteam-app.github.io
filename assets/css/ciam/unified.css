@@ -2,7 +2,27 @@
     @import url("https://use.typekit.net/czt1xke.css");
 }
 
-section{
+html,
+body {
+    scroll-behavior: smooth;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+
+*,
+::after,
+::before {
+    box-sizing: border-box;
+    border-width: 0;
+    border-style: solid;
+    border-color: #e2e8f0;
+}
+
+section {
     position: relative;
     width: 100%;
     height: 100%;
@@ -13,8 +33,7 @@ section{
     justify-content: center;
 }
 
-section.dcc-background
-{
+section.dcc-background {
     background-image: url("//dccwebteam-app.github.io/assets/images/dcc-home-background-pattern.jpg");
     background-repeat: no-repeat;
     background-size: cover;
