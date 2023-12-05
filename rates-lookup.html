@@ -164,19 +164,29 @@
             <!-- Body container -->
             <div class="relative dcc-p-6 md:dcc-p-12 xl:dcc-p-24">
 
+                <div class="dcc-flex dcc-items-center dcc-justify-between dcc-pb-6">
+                    <h2>Rates lookup</h2>
+                    <a href="/logout.html" class="bold-blue">Logout</a>
+                </div>
+
                 <!-- Field section -->
                 <section class="dcc-relative dcc-pt-6 dcc-grid xl:dcc-grid-cols-2">
-                  <div class="dcc-relative">
-                      <!-- Input field -->
-                      <div class="dcc-flex dcc-flex-col dcc-basis-2/4">
-                        <input type="text">
+                    <div class="dcc-relative">
+                        <!-- Input field -->
+                        <div class="dcc-flex dcc-flex-col dcc-basis-2/4">
+                            <label class="dcc-font-bold dcc-text-lg">
+                                <div class="dcc-rates-lookup-dropdown">
+                                    Lookup rates by address
+                                </div>
+                            </label>
+                            <input type="text">
+                        </div>
+                        <!-- Action Buttons -->
+                        <div class="dcc-relative dcc-flex dcc-items-start dcc-gap-3 dcc-py-8">
+                            <input type="reset" value="Reset">
+                            <input type="submit" value="Submit">
+                        </div>
                     </div>
-                    <!-- Action Buttons -->
-                    <div class="dcc-relative dcc-flex dcc-items-start dcc-gap-3 dcc-py-8">
-                        <input type="reset" value="Reset">
-                        <input type="submit" value="Submit">
-                    </div>
-                  </div>
                 </section>
 
                 <!-- Map Container  -->
