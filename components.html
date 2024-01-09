@@ -347,30 +347,445 @@
                     </div>
 
                     <h2 class="dcc-pb-3 dcc-mt-12">Input types </h2>
+                    <div class="dcc-relative">
+                        <pre style="max-height: 400px;overflow: auto;">
+                     <code class="language-html">
+                        <div class="dcc-grid dcc-grid-cols-2 dcc-gap-3 dcc-mt-2">
+                           <!-- Username/Name field --> 
+                            &nbsp;<div class="dcc-relative">
+                                &nbsp;&nbsp; <div class="dcc-relative dcc-form-field">
+                                    &nbsp;&nbsp;&nbsp;<label id="id" for="for">Username</label>
+                                        &nbsp;&nbsp;&nbsp;&nbsp;<div class="dcc-w-full dcc-relative dcc-usericon dcc-pt-1">
+                                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" aria-label="Enter your text" aria-required="true" name="name" placeholder="e.g., Joe Smith">
+                                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<div aria-hidden="true" aria-live="polite" class="dcc-sr-only">
+                                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<p>This input field is used for entering text.</p>
+                                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<p>It is labeled as "Enter your text" and is required.</p>
+                                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</div>
+                                        &nbsp;&nbsp;&nbsp;&nbsp;</div>
+                                &nbsp;&nbsp;</div>
+                            &nbsp;</div>
+                            <!-- Password field -->
+                            &nbsp;<div class="dcc-relative">
+                                &nbsp;&nbsp; <div class="dcc-relative dcc-form-field">
+                                    &nbsp;&nbsp;&nbsp;<label id="id" for="for">Password</label>
+                                        &nbsp;&nbsp;&nbsp;&nbsp;<div class="dcc-w-full dcc-relative dcc-lockicon dcc-pt-1">
+                                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="password" aria-label="Enter your text" aria-required="true" name="name" placeholder="e.g., ******">
+                                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<div aria-hidden="true" aria-live="polite" class="dcc-sr-only">
+                                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<p>This input field is used for entering text.</p>
+                                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<p>It is labeled as "Enter your text" and is required.</p>
+                                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</div>
+                                        &nbsp;&nbsp;&nbsp;&nbsp;</div>
+                                &nbsp;&nbsp;</div>
+                            &nbsp;</div>
+                        </div>
+                     </code>
+                    </pre>
 
-                    <code>
-
-                    </code>
-
-                    <!-- Grid Layout for input -->
-                    <div class="dcc-grid dcc-grid-cols-2 dcc-gap-3 dcc-mt-2">
-                        <div class="dcc-relative">
-                            <div class="dcc-w-full dcc-usericon">
-                                <input type="text" aria-label="Enter your text" aria-required="true">
-                                <div aria-hidden="true" aria-live="polite" class="dcc-sr-only">
-                                    <p>This input field is used for entering text.</p>
-                                    <p>It is labeled as "Enter your text" and is required.</p>
+                        <!-- Grid Layout for input -->
+                        <div class="dcc-grid dcc-grid-cols-2 dcc-gap-3 dcc-mt-2">
+                            <!-- Username/Name field -->
+                            <div class="dcc-relative dcc-form-field">
+                                <label id="id" for="for">Username</label>
+                                <div class="dcc-w-full dcc-relative dcc-usericon dcc-pt-1">
+                                    <input type="text" aria-label="Enter your text" aria-required="true" name="name"
+                                        id="for" placeholder="e.g., Joe Smith">
+                                    <div aria-hidden="true" aria-live="polite" class="dcc-sr-only">
+                                        <p>This input field is used for entering text.</p>
+                                        <p>It is labeled as "Enter your text" and is required.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Password field -->
+                            <div class="dcc-relative dcc-form-field">
+                                <label id="id" for="for">Password</label>
+                                <div class="dcc-w-full dcc-relative dcc-lockicon dcc-pt-1">
+                                    <input type="password" aria-label="Enter your text" aria-required="true" name="name"
+                                        placeholder="e.g., ******">
+                                    <div aria-hidden="true" aria-live="polite" class="dcc-sr-only">
+                                        <p>This input field is used for entering text.</p>
+                                        <p>It is labeled as "Enter your text" and is required.</p>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                        <div class="dcc-relative">
-                            <div class="dcc-w-full dcc-lockicon">
-                                <input type="password" aria-label="Enter your text" aria-required="true">
-                                <div aria-hidden="true" aria-live="polite" class="dcc-sr-only">
-                                    <p>This input field is used for entering text.</p>
-                                    <p>It is labeled as "Enter your text" and is required.</p>
+
+                        <pre style="max-height: 400px;overflow: auto;margin-top: 2rem !important;" class="dcc-mt-5">
+                                <code class="language-html">
+                                   <div class="dcc-grid dcc-grid-cols-2 dcc-gap-3 dcc-mt-2">
+                                       <!-- Email field -->
+                                       &nbsp;<div class="dcc-relative">
+                                           &nbsp;&nbsp; <div class="dcc-relative dcc-form-field">
+                                               &nbsp;&nbsp;&nbsp;<label id="id" for="for">Email Address</label>
+                                                   &nbsp;&nbsp;&nbsp;&nbsp;<div class="dcc-w-full dcc-relative dcc-emailicon dcc-pt-1">
+                                                       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="email" aria-label="Enter your text" aria-required="true" name="name" placeholder="e.g., joe@gmail.com">
+                                                           &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<div aria-hidden="true" aria-live="polite" class="dcc-sr-only">
+                                                               &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<p>This input field is used for entering text.</p>
+                                                               &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<p>It is labeled as "Enter your text" and is required.</p>
+                                                           &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</div>
+                                                   &nbsp;&nbsp;&nbsp;&nbsp;</div>
+                                           &nbsp;&nbsp;</div>
+                                       &nbsp;</div>
+                                        <!-- Contact field -->
+                                        &nbsp;<div class="dcc-relative">
+                                            &nbsp;&nbsp; <div class="dcc-relative dcc-form-field">
+                                                &nbsp;&nbsp;&nbsp;<label id="id" for="for">Contact Number</label>
+                                                    &nbsp;&nbsp;&nbsp;&nbsp;<div class="dcc-w-full dcc-relative dcc-dialpadicon dcc-pt-1">
+                                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="tel" aria-label="Enter your text" aria-required="true" name="name" placeholder="e.g., 123456789">
+                                                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<div aria-hidden="true" aria-live="polite" class="dcc-sr-only">
+                                                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<p>This input field is used for entering text.</p>
+                                                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<p>It is labeled as "Enter your text" and is required.</p>
+                                                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</div>
+                                                    &nbsp;&nbsp;&nbsp;&nbsp;</div>
+                                            &nbsp;&nbsp;</div>
+                                        &nbsp;</div>
+                                   </div>
+                                </code>
+                               </pre>
+                        <div class="dcc-grid dcc-grid-cols-2 dcc-gap-3 dcc-mt-2">
+                            <!-- Email field -->
+                            <div class="dcc-relative dcc-form-field">
+                                <label id="id" for="for">Email Address</label>
+                                <div class="dcc-w-full dcc-relative dcc-emailicon dcc-pt-1">
+                                    <input type="email" aria-label="Enter your text" aria-required="true" name="name"
+                                        placeholder="e.g., joe@example.com">
+                                    <div aria-hidden="true" aria-live="polite" class="dcc-sr-only">
+                                        <p>This input field is used for entering text.</p>
+                                        <p>It is labeled as "Enter your text" and is required.</p>
+                                    </div>
                                 </div>
                             </div>
+                            <!-- Phone Number field -->
+                            <div class="dcc-relative dcc-form-field">
+                                <label id="id" for="for">Contact Number</label>
+                                <div class="dcc-w-full dcc-relative dcc-dialpadicon dcc-pt-1">
+                                    <input type="text" aria-label="Enter your text" aria-required="true" name="name"
+                                        placeholder="e.g., 123456789">
+                                    <div aria-hidden="true" aria-live="polite" class="dcc-sr-only">
+                                        <p>This input field is used for entering text.</p>
+                                        <p>It is labeled as "Enter your text" and is required.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <pre style="max-height: 400px;overflow: auto;margin-top: 2rem !important;" class="dcc-mt-5">
+                                <code class="language-html">
+                                   <div class="dcc-grid dcc-grid-cols-2 dcc-gap-3 dcc-mt-2">
+                                        <!-- Quantity/Number field -->
+                                       &nbsp;<div class="dcc-relative">
+                                           &nbsp;&nbsp; <div class="dcc-relative dcc-form-field">
+                                               &nbsp;&nbsp;&nbsp;<label id="id" for="for">Quantity/Number field</label>
+                                                   &nbsp;&nbsp;&nbsp;&nbsp;<div class="dcc-w-full dcc-relative dcc-editicon dcc-pt-1">
+                                                       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="number" aria-label="Enter your text" aria-required="true" name="name" placeholder="e.g., 1">
+                                                           &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<div aria-hidden="true" aria-live="polite" class="dcc-sr-only">
+                                                               &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<p>This input field is used for entering text.</p>
+                                                               &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<p>It is labeled as "Enter your text" and is required.</p>
+                                                           &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</div>
+                                                   &nbsp;&nbsp;&nbsp;&nbsp;</div>
+                                           &nbsp;&nbsp;</div>
+                                       &nbsp;</div>
+                                         <!--Normal text field -->
+                                        &nbsp;<div class="dcc-relative">
+                                            &nbsp;&nbsp; <div class="dcc-relative dcc-form-field">
+                                                &nbsp;&nbsp;&nbsp;<label id="id" for="for">Normal text field</label>
+                                                    &nbsp;&nbsp;&nbsp;&nbsp;<div class="dcc-w-full dcc-relative dcc-editicon dcc-pt-1">
+                                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" aria-label="Enter your text" aria-required="true" name="name" placeholder="e.g., Hi there!">
+                                                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<div aria-hidden="true" aria-live="polite" class="dcc-sr-only">
+                                                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<p>This input field is used for entering text.</p>
+                                                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<p>It is labeled as "Enter your text" and is required.</p>
+                                                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</div>
+                                                    &nbsp;&nbsp;&nbsp;&nbsp;</div>
+                                            &nbsp;&nbsp;</div>
+                                        &nbsp;</div>
+                                   </div>
+                                </code>
+                        </pre>
+                        <div class="dcc-grid dcc-grid-cols-2 dcc-gap-3 dcc-mt-2">
+                            <!-- Quantity/Number field -->
+                            <div class="dcc-relative dcc-form-field">
+                                <label id="id" for="for">Quantity/Number field</label>
+                                <div class="dcc-w-full dcc-relative dcc-editicon dcc-pt-1">
+                                    <input type="number" aria-label="Enter your text" aria-required="true" name="name"
+                                        min="0" placeholder="e.g., 1">
+                                    <div aria-hidden="true" aria-live="polite" class="dcc-sr-only">
+                                        <p>This input field is used for entering text.</p>
+                                        <p>It is labeled as "Enter your text" and is required.</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!--Normal text field -->
+                            <div class="dcc-relative dcc-form-field">
+                                <label id="id" for="for">Normal text field</label>
+                                <div class="dcc-w-full dcc-relative dcc-editicon dcc-pt-1">
+                                    <input type="text" aria-label="Enter your text" aria-required="true" name="name"
+                                        placeholder="e.g., Hi there!">
+                                    <div aria-hidden="true" aria-live="polite" class="dcc-sr-only">
+                                        <p>This input field is used for entering text.</p>
+                                        <p>It is labeled as "Enter your text" and is required.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <pre style="max-height: 400px;overflow: auto;margin-top: 2rem !important;" class="dcc-mt-5">
+    <code class="language-html">
+       <div class="dcc-grid dcc-grid-cols-2 dcc-gap-3 dcc-mt-2">
+             <!--Large text field -->
+           &nbsp;<div class="dcc-relative">
+               &nbsp;&nbsp; <div class="dcc-relative dcc-form-field">
+                   &nbsp;&nbsp;&nbsp;<label id="id" for="for">Textarea field</label>
+                       &nbsp;&nbsp;&nbsp;&nbsp;<div class="dcc-w-full dcc-relative dcc-texticon dcc-pt-1">
+                           &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <textarea aria-label="Enter your text" aria-required="true" name="textarea" rows="3" placeholder="Hi there, how are you?"></textarea>
+                               &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<div aria-hidden="true" aria-live="polite" class="dcc-sr-only">
+                                   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<p>This input field is used for entering text.</p>
+                                   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<p>It is labeled as "Enter your text" and is required.</p>
+                               &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</div>
+                       &nbsp;&nbsp;&nbsp;&nbsp;</div>
+               &nbsp;&nbsp;</div>
+           &nbsp;</div>
+            
+       </div>
+    </code>
+</pre>
+
+                        <div class="dcc-grid dcc-grid-cols-2 dcc-gap-3 dcc-mt-2">
+                            <!--Large text field -->
+                            <div class="dcc-relative dcc-form-field dcc-col-span-2">
+                                <label id="id" for="for">Textarea field</label>
+                                <div class="dcc-w-full dcc-relative dcc-texticon dcc-pt-1">
+                                    <textarea aria-label="Enter your text" aria-required="true" name="textarea" rows="3"
+                                        placeholder="Hi there, how are you?"></textarea>
+                                    <div aria-hidden="true" aria-live="polite" class="dcc-sr-only">
+                                        <p>This input field is used for entering text.</p>
+                                        <p>It is labeled as "Enter your text" and is required.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <pre style="max-height: 400px;overflow: auto;margin-top: 2rem !important;" class="dcc-mt-5">
+                                <code class="language-html">
+                                   <div class="dcc-grid dcc-grid-cols-2 dcc-gap-3 dcc-mt-2">
+                                        <!--Date field -->
+                                       &nbsp;<div class="dcc-relative">
+                                           &nbsp;&nbsp; <div class="dcc-relative dcc-form-field">
+                                               &nbsp;&nbsp;&nbsp;<label id="id" for="for">Date field</label>
+                                                   &nbsp;&nbsp;&nbsp;&nbsp;<div class="dcc-w-full dcc-relative dcc-dateicon dcc-pt-1">
+                                                       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="date" aria-label="Enter your text" aria-required="true" name="name" placeholder="e.g., 1">
+                                                           &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<div aria-hidden="true" aria-live="polite" class="dcc-sr-only">
+                                                               &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<p>This input field is used for entering text.</p>
+                                                               &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<p>It is labeled as "Enter your text" and is required.</p>
+                                                           &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</div>
+                                                   &nbsp;&nbsp;&nbsp;&nbsp;</div>
+                                           &nbsp;&nbsp;</div>
+                                       &nbsp;</div>
+                                          <!--Time field -->
+                                        &nbsp;<div class="dcc-relative">
+                                            &nbsp;&nbsp; <div class="dcc-relative dcc-form-field">
+                                                &nbsp;&nbsp;&nbsp;<label id="id" for="for">Time field</label>
+                                                    &nbsp;&nbsp;&nbsp;&nbsp;<div class="dcc-w-full dcc-relative dcc-timeicon dcc-pt-1">
+                                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="time" aria-label="Enter your text" aria-required="true" name="name" placeholder="e.g., Hi there!">
+                                                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<div aria-hidden="true" aria-live="polite" class="dcc-sr-only">
+                                                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<p>This input field is used for entering text.</p>
+                                                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<p>It is labeled as "Enter your text" and is required.</p>
+                                                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</div>
+                                                    &nbsp;&nbsp;&nbsp;&nbsp;</div>
+                                            &nbsp;&nbsp;</div>
+                                        &nbsp;</div>
+                                   </div>
+                                </code>
+                        </pre>
+
+                        <div class="dcc-grid dcc-grid-cols-2 dcc-gap-3 dcc-mt-2">
+                            <!--Date field -->
+                            <div class="dcc-relative dcc-form-field">
+                                <label id="id" for="for">Date field</label>
+                                <div class="dcc-w-full dcc-relative dcc-dateicon dcc-pt-1">
+                                    <input type="date" aria-label="Enter your text" aria-required="true" name="name">
+                                    <div aria-hidden="true" aria-live="polite" class="dcc-sr-only">
+                                        <p>This input field is used for entering text.</p>
+                                        <p>It is labeled as "Enter your text" and is required.</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!--Time field -->
+                            <div class="dcc-relative dcc-form-field">
+                                <label id="id" for="for">Time field</label>
+                                <div class="dcc-w-full dcc-relative dcc-timeicon dcc-pt-1">
+                                    <input type="time" aria-label="Enter your text" aria-required="true" name="name">
+                                    <div aria-hidden="true" aria-live="polite" class="dcc-sr-only">
+                                        <p>This input field is used for entering text.</p>
+                                        <p>It is labeled as "Enter your text" and is required.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <pre style="max-height: 400px;overflow: auto;margin-top: 2rem !important;" class="dcc-mt-5">
+    <code class="language-html">
+       <div class="dcc-grid dcc-grid-cols-2 dcc-gap-3 dcc-mt-2">
+             <!--Datetime field -->
+           &nbsp;<div class="dcc-relative">
+               &nbsp;&nbsp; <div class="dcc-relative dcc-form-field">
+                   &nbsp;&nbsp;&nbsp;<label id="id" for="for">Date/Time field</label>
+                       &nbsp;&nbsp;&nbsp;&nbsp;<div class="dcc-w-full dcc-relative dcc-dateicon dcc-pt-1">
+                           &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="datetime-local" aria-label="Enter your text" aria-required="true" name="name" placeholder="e.g., 1">
+                               &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<div aria-hidden="true" aria-live="polite" class="dcc-sr-only">
+                                   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<p>This input field is used for entering text.</p>
+                                   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<p>It is labeled as "Enter your text" and is required.</p>
+                               &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</div>
+                       &nbsp;&nbsp;&nbsp;&nbsp;</div>
+               &nbsp;&nbsp;</div>
+           &nbsp;</div>
+              <!--URL field -->
+            &nbsp;<div class="dcc-relative">
+                &nbsp;&nbsp; <div class="dcc-relative dcc-form-field">
+                    &nbsp;&nbsp;&nbsp;<label id="id" for="for">URL field</label>
+                        &nbsp;&nbsp;&nbsp;&nbsp;<div class="dcc-w-full dcc-relative dcc-urlicon dcc-pt-1">
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="url" aria-label="Enter your text" aria-required="true" name="name" placeholder="e.g., dcc.govt.nz">
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<div aria-hidden="true" aria-live="polite" class="dcc-sr-only">
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<p>This input field is used for entering text.</p>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<p>It is labeled as "Enter your text" and is required.</p>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</div>
+                        &nbsp;&nbsp;&nbsp;&nbsp;</div>
+                &nbsp;&nbsp;</div>
+            &nbsp;</div>
+       </div>
+    </code>
+</pre>
+
+                        <div class="dcc-grid dcc-grid-cols-2 dcc-gap-3 dcc-mt-2">
+                            <!--Datetime field -->
+                            <div class="dcc-relative dcc-form-field">
+                                <label id="id" for="for">Date/Time field</label>
+                                <div class="dcc-w-full dcc-relative dcc-dateicon dcc-pt-1">
+                                    <input type="datetime-local" aria-label="Enter your text" aria-required="true"
+                                        name="name">
+                                    <div aria-hidden="true" aria-live="polite" class="dcc-sr-only">
+                                        <p>This input field is used for entering text.</p>
+                                        <p>It is labeled as "Enter your text" and is required.</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!--URL field -->
+                            <div class="dcc-relative dcc-form-field">
+                                <label id="id" for="for">URL field</label>
+                                <div class="dcc-w-full dcc-relative dcc-urlicon dcc-pt-1">
+                                    <input type="url" aria-label="Enter your text" name="name" placeholder="e.g., dcc.govt.nz">
+                                    <div aria-hidden="true" aria-live="polite" class="dcc-sr-only">
+                                        <p>This input field is used for entering text.</p>
+                                        <p>It is labeled as "Enter your text" and is required.</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            </div>
+                            <pre style="max-height: 400px;overflow: auto;margin-top: 2rem !important;" class="dcc-mt-5">
+                                <code class="language-html">
+                                   <div class="dcc-grid dcc-grid-cols-2 dcc-gap-3 dcc-mt-2">
+                                         <!-- Checkbox field -->
+                                        &nbsp;<div class="dcc-relative dcc-form-field dcc-col-span-2 dcc-form-field">
+                                            &nbsp;&nbsp;<label id="id" for="for">Checkbox field</label>
+                                            &nbsp;&nbsp;&nbsp;<div class="dcc-w-full dcc-relative dcc-pt-1">
+                                                &nbsp;&nbsp;&nbsp;&nbsp;<div class="dcc-grid dcc-grid-cols-3 dcc-font-normal dcc-text-base dcc-h-4">
+                                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<div class="dcc-relative dcc-flex">
+                                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="checkbox" aria-label="Enter your text" name="name[]">
+                                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<label id="id" for="for" class="dcc-pl-8">Checkbox 1</label>
+                                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</div>
+                                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<div class="dcc-relative dcc-flex">
+                                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="checkbox" aria-label="Enter your text" name="name[]">
+                                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<label id="id" for="for" class="dcc-pl-8">Checkbox 2</label>
+                                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</div>
+                                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<div class="dcc-relative dcc-flex">
+                                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="checkbox" aria-label="Enter your text" name="name[]">
+                                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<label id="id" for="for" class="dcc-pl-8">Checkbox 3</label>
+                                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</div>
+                                                        &nbsp;&nbsp;&nbsp;&nbsp;</div>
+                                                    &nbsp;&nbsp;&nbsp;</div>
+                                        &nbsp;</div>
+                                   </div>
+                                </code>
+                            </pre>
+
+                            <div class="dcc-grid dcc-grid-cols-2 dcc-gap-3 dcc-mt-2">
+                            <!--Checkbox field -->
+                            <div class="dcc-relative dcc-form-field dcc-col-span-2 dcc-form-field">
+                                <label id="id" for="for">Checkbox field</label>
+                                <div class="dcc-w-full dcc-relative dcc-pt-1">
+                                    <div class="dcc-grid dcc-grid-cols-3 dcc-font-normal dcc-text-base dcc-h-4">
+                                        <div class="dcc-relative dcc-flex">
+                                            <input type="checkbox" aria-label="Enter your text" name="name[]">
+                                            <label id="id" for="for" class="dcc-pl-8">Checkbox 1</label>
+                                        </div>
+                                        <div class="dcc-relative dcc-flex">
+                                            <input type="checkbox" aria-label="Enter your text" name="name[]">
+                                            <label id="id" for="for" class="dcc-pl-8">Checkbox 2</label>
+                                        </div>
+                                        <div class="dcc-relative dcc-flex">
+                                            <input type="checkbox" aria-label="Enter your text" name="name[]">
+                                            <label id="id" for="for" class="dcc-pl-8">Checkbox 3</label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+</div>
+
+                            <pre style="max-height: 400px;overflow: auto;margin-top: 2rem !important;" class="dcc-mt-5">
+                                <code class="language-html">
+                                   <div class="dcc-grid dcc-grid-cols-2 dcc-gap-3 dcc-mt-2">
+                                         <!-- Radio field -->
+                                        &nbsp;<div class="dcc-relative dcc-form-field dcc-col-span-2 dcc-form-field">
+                                            &nbsp;&nbsp;<label id="id" for="for">Radio field</label>
+                                            &nbsp;&nbsp;&nbsp;<div class="dcc-w-full dcc-relative dcc-pt-1">
+                                                &nbsp;&nbsp;&nbsp;&nbsp;<div class="dcc-grid dcc-grid-cols-3 dcc-font-normal dcc-text-base dcc-h-4">
+                                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<div class="dcc-relative dcc-flex">
+                                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" aria-label="Enter your text" name="name[]">
+                                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<label id="id" for="for" class="dcc-pl-8">Radio 1</label>
+                                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</div>
+                                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<div class="dcc-relative dcc-flex">
+                                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" aria-label="Enter your text" name="name[]">
+                                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<label id="id" for="for" class="dcc-pl-8">Radio 2</label>
+                                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</div>
+                                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<div class="dcc-relative dcc-flex">
+                                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" aria-label="Enter your text" name="name[]">
+                                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<label id="id" for="for" class="dcc-pl-8">Radio 3</label>
+                                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</div>
+                                                        &nbsp;&nbsp;&nbsp;&nbsp;</div>
+                                                    &nbsp;&nbsp;&nbsp;</div>
+                                        &nbsp;</div>
+                                   </div>
+                                </code>
+                            </pre>
+
+                            <div class="dcc-grid dcc-grid-cols-2 dcc-gap-3 dcc-mt-2">
+                            <!--Radio field -->
+                            <div class="dcc-relative dcc-form-field dcc-col-span-2 dcc-form-field dcc-pt-2">
+                                <label id="id" for="for">Radio field</label>
+                                <div class="dcc-w-full dcc-relative dcc-pt-1">
+                                    <div class="dcc-grid dcc-grid-cols-3 dcc-font-normal dcc-text-base dcc-h-4">
+                                        <div class="dcc-relative dcc-flex">
+                                            <input type="radio" aria-label="Enter your text" name="name">
+                                            <label id="id" for="for" class="dcc-pl-8">Radio 1</label>
+                                        </div>
+                                        <div class="dcc-relative dcc-flex">
+                                            <input type="radio" aria-label="Enter your text" name="name">
+                                            <label id="id" for="for" class="dcc-pl-8">Radio 2</label>
+                                        </div>
+
+                                        <div class="dcc-relative dcc-flex">
+                                            <input type="radio" aria-label="Enter your text" name="name">
+                                            <label id="id" for="for" class="dcc-pl-8">Radio 3</label>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+
+
+
                         </div>
                     </div>
                 </section>
@@ -481,6 +896,7 @@
         <div id="darkbox_description"></div>
         <div id="darkbox_stats"></div>
     </div>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@10.7.2/styles/default.min.css">
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
     <script
