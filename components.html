@@ -102,6 +102,7 @@
             }
         }
     </script>
+
 </head>
 
 <body>
@@ -284,25 +285,33 @@
                     <!-- DANGER ALERT -->
 
                     <div class="dcc-relative dcc-mt-10">
+                        <!-- Code Preview -->
+                        <pre>
+    <code class="language-html">
+        <div className="dcc-alert dcc-border-alertDangerBorder dcc-bg-alertDangerBackground dcc-text-alertDanger">
+            &nbsp; &nbsp; This is an error message alert
+        </div>
+    </code>
+</pre>
 
-                        <code> &lt;div
-                            className="dcc-alert dcc-border-alertDangerBorder dcc-bg-alertDangerBackground dcc-text-alertDanger"&gt;
-                            <br>This is an error message alert<br>
-                        &lt;/div&gt;</code>
+
                         <div
-                            class="dcc-alert dcc-border-alertDangerBorder dcc-bg-alertDangerBackground dcc-text-alertDanger dcc-mt-2">
+                            class="dcc-alert dcc-border-alertDangerBorder dcc-bg-alertDangerBackground dcc-text-alertDanger">
                             This is an error message alert
                         </div>
                     </div>
 
                     <!-- SUCCESS ALERT -->
-                    <div class="dcc-relative dcc-mt-10">
-                        <code>
-                            <div
-                            className="dcc-alert dcc-border-alertSuccessBorder dcc-bg-alertSuccessBackground dcc-text-alertSuccess">;
-                            <br>This is an success message alert<br>
-                        </div>
+                    <div class="dcc-relative">
+                        <!-- Code Preview -->
+                        <pre>
+                            <code class="language-html">
+                                <div className="dcc-alert dcc-border-alertSuccessBorder dcc-bg-alertSuccessBackground dcc-text-alertSuccess">
+                                    &nbsp; &nbsp;This is an success message alert
+                                </div>
                             </code>
+                        </pre>
+
                         <div
                             class="dcc-alert dcc-border-alertSuccessBorder dcc-bg-alertSuccessBackground dcc-text-alertSuccess dcc-mt-2">
                             This is an success message alert
@@ -310,18 +319,26 @@
                     </div>
 
                     <!-- ALERT WITHOUT BORDER -->
-                    <div class="dcc-relative dcc-mt-10">
-                        <code><div
-                            className="dcc-alert-without-border dcc-text-errorRed">
-                            <br>This is an error message alert<br>
-                        </div></code>
+                    <div class="dcc-relative">
+                        <pre>
+                            <code class="language-html">
+                                <div className="dcc-alert-without-border dcc-text-errorRed">
+                                    &nbsp; &nbsp; This is an error message alert
+                                </div>
+                            </code>
+                        </pre>
                         <div class="dcc-alert-without-border dcc-text-errorRed dcc-mb-2">
                             This is an error message alert
                         </div>
-                        <code><div
-                            className="dcc-alert-without-border dcc-text-alertSuccess">
-                            <br>This is an success message alert<br>
-                        </code></code>
+                        <pre>
+                            <code><div
+                                className="dcc-alert-without-border dcc-text-alertSuccess">
+                                &nbsp;&nbsp;This is an success message alert
+                            </div>
+                            </code>
+
+                        </pre>
+
                         <div class="dcc-alert-without-border dcc-text-alertSuccess">
                             This is an success message alert
                         </div>
@@ -459,6 +476,24 @@
         <div id="darkbox_description"></div>
         <div id="darkbox_stats"></div>
     </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+    <script
+        src="https://cdnjs.cloudflare.com/ajax/libs/highlightjs-line-numbers.js/2.8.0/highlightjs-line-numbers.min.js"></script>
+    <script>
+        var codes = document.getElementsByTagName("code");
+        for (var i = 0; i < codes.length; i++) {
+            var preview = codes[i].innerHTML;
+            preview = preview.replace(/</g, "&lt;");
+            preview = preview.replace(/>/g, "&gt;");
+            preview = preview.replace(/^\s+/mg, ' ');
+            codes[i].innerHTML = preview
+
+        }
+        hljs.highlightAll();
+        hljs.initLineNumbersOnLoad();
+    </script>
+
 </body>
 
 </html>
