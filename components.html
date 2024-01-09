@@ -284,9 +284,9 @@
                     <h2 class="">Alert Messages</h2>
                     <!-- DANGER ALERT -->
 
-                    <div class="dcc-relative dcc-mt-10">
+                    <div class="dcc-relative dcc-mt-5">
                         <!-- Code Preview -->
-                        <pre>
+                        <pre style="max-height: 160px;">
     <code class="language-html">
         <div className="dcc-alert dcc-border-alertDangerBorder dcc-bg-alertDangerBackground dcc-text-alertDanger">
             &nbsp; &nbsp; This is an error message alert
@@ -302,9 +302,9 @@
                     </div>
 
                     <!-- SUCCESS ALERT -->
-                    <div class="dcc-relative">
+                    <div class="dcc-relative dcc-mt-5">
                         <!-- Code Preview -->
-                        <pre>
+                        <pre style="max-height: 155px;">
                             <code class="language-html">
                                 <div className="dcc-alert dcc-border-alertSuccessBorder dcc-bg-alertSuccessBackground dcc-text-alertSuccess">
                                     &nbsp; &nbsp;This is an success message alert
@@ -319,24 +319,26 @@
                     </div>
 
                     <!-- ALERT WITHOUT BORDER -->
-                    <div class="dcc-relative">
-                        <pre>
+                    <div class="dcc-relative dcc-mt-3">
+                        <pre style="max-height: 120px;">
                             <code class="language-html">
                                 <div className="dcc-alert-without-border dcc-text-errorRed">
                                     &nbsp; &nbsp; This is an error message alert
                                 </div>
                             </code>
                         </pre>
-                        <div class="dcc-alert-without-border dcc-text-errorRed dcc-mb-2">
+                        <div class="dcc-alert-without-border dcc-text-errorRed">
                             This is an error message alert
                         </div>
-                        <pre>
-                            <code><div
+                    </div>
+                    <div class="dcc-relative">
+                        <pre style="max-height: 120px;">
+                            <code class="language-html">
+                                <div
                                 className="dcc-alert-without-border dcc-text-alertSuccess">
                                 &nbsp;&nbsp;This is an success message alert
                             </div>
                             </code>
-
                         </pre>
 
                         <div class="dcc-alert-without-border dcc-text-alertSuccess">
@@ -353,21 +355,24 @@
                     <!-- Grid Layout for input -->
                     <div class="dcc-grid dcc-grid-cols-2 dcc-gap-3 dcc-mt-2">
                         <div class="dcc-relative">
-                            <input type="text" aria-label="Enter your text" aria-required="true">
-                            <div aria-hidden="true" aria-live="polite" class="dcc-sr-only">
-                                <p>This input field is used for entering text.</p>
-                                <p>It is labeled as "Enter your text" and is required.</p>
+                            <div class="dcc-w-full dcc-usericon">
+                                <input type="text" aria-label="Enter your text" aria-required="true">
+                                <div aria-hidden="true" aria-live="polite" class="dcc-sr-only">
+                                    <p>This input field is used for entering text.</p>
+                                    <p>It is labeled as "Enter your text" and is required.</p>
+                                </div>
                             </div>
                         </div>
                         <div class="dcc-relative">
-                            <input type="password" aria-label="Enter your text" aria-required="true">
-                            <div aria-hidden="true" aria-live="polite" class="dcc-sr-only">
-                                <p>This input field is used for entering text.</p>
-                                <p>It is labeled as "Enter your text" and is required.</p>
+                            <div class="dcc-w-full dcc-lockicon">
+                                <input type="password" aria-label="Enter your text" aria-required="true">
+                                <div aria-hidden="true" aria-live="polite" class="dcc-sr-only">
+                                    <p>This input field is used for entering text.</p>
+                                    <p>It is labeled as "Enter your text" and is required.</p>
+                                </div>
                             </div>
                         </div>
                     </div>
-
                 </section>
             </div>
             <footer id="footer">
