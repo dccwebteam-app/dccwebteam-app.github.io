@@ -367,76 +367,75 @@ var passwordMatched = false;
         }
 
         if (emailVerificationError) {
-                if (!($("#emailVerificationControl_error_message").css("display") == "none")) {
-                    emailVerificationError.parentElement.classList.add("dcc-alert", "dcc-alert-danger")
-                    emailVerificationError.innerHTML = "<span>" + emailVerificationError.innerHTML + "</span>"
-                }
-                else{
-                    emailVerificationError.parentElement.classList.remove("dcc-alert", "dcc-alert-danger")
-                    emailVerificationError.innerHTML = ""
-                }
+            if (!($("#emailVerificationControl_error_message").css("display") == "none")) {
+                emailVerificationError.parentElement.classList.add("dcc-alert", "dcc-alert-danger")
+                emailVerificationError.innerHTML = "<span>" + emailVerificationError.innerHTML + "</span>"
+            }
+            else {
+                emailVerificationError.parentElement.classList.remove("dcc-alert", "dcc-alert-danger")
+                emailVerificationError.innerHTML = ""
+            }
         }
 
         // email verification from forgot password 
         if (emailVerificationSuccess) {
-                if (!($("#emailVerificationControl_success_message").css("display") == "none")) {
-                    emailVerificationSuccess.classList.add("dcc-alert", "dcc-alert-success")
-                    emailVerificationSuccess.innerHTML = "<span>" + emailVerificationSuccess.innerHTML + "</span>"
-                }
-                else 
-                {
-                    emailVerificationSuccess.classList.remove("dcc-alert", "dcc-alert-success")
-                    emailVerificationSuccess.innerHTML = ""
-                }
+            if (!($("#emailVerificationControl_success_message").css("display") == "none")) {
+                emailVerificationSuccess.classList.add("dcc-alert", "dcc-alert-success")
+                emailVerificationSuccess.innerHTML = "<span>" + emailVerificationSuccess.innerHTML + "</span>"
+            }
+            else {
+                emailVerificationSuccess.classList.remove("dcc-alert", "dcc-alert-success")
+                emailVerificationSuccess.innerHTML = ""
+            }
         }
 
     }, 100);
 
 
-    var createAccount = document.getElementById("continue");
-    if (createAccount) {
-        createAccount.disabled = "true";
-    }
-    setInterval(function () {
-        // button styles 
-        var changeClaims = document.getElementById("SignupEmailVerificationControl_but_change_claims")
-        var emailVerificationChangeClaims = document.getElementById("emailVerificationControl_but_change_claims")
-        var newPassword = document.getElementById("newPassword")
-
-        if (changeClaims) {
-            if ($("#SignupEmailVerificationControl_but_change_claims").css("display") == "block") {
-                if (createAccount && ($("#newPassword").val() !== "") && ($("#newPassword").val() == $("#reenterPassword").val()) && ($("meter:eq(0)").val() == 100 && $("meter:eq(1)").val() == 100)) {
-                    $("#continue").attr("disabled", false);
-                }
-                else {
-                    $("#continue").attr("disabled", true);
-                }
-            }
-        }
-
-        else if (emailVerificationChangeClaims || newPassword) {
-            console.log("1")
-            if (($("#emailVerificationControl_but_change_claims").length > 0 && $("#emailVerificationControl_but_change_claims").css("display") == "block") || newPassword) {
-                console.log("2")
-                if (createAccount && !newPassword) {
-                    $("#continue").attr("disabled", false);
-                    console.log("3")
-                }
-                else if (createAccount && newPassword && ($("#newPassword").val() !== "") && ($("#newPassword").val() == $("#reenterPassword").val()) && ($("meter:eq(0)").val() == 100 && $("meter:eq(1)").val() == 100)) {
-                    $("#continue").attr("disabled", false);
-                    console.log("4")
-                    console.log($("#newPassword").val())
-                    console.log($("#reenterPassword").val())
-                }
-                else {
-                    $("#continue").attr("disabled", true);
-                    console.log("5")
-                }
-            }
-        }
-
-    }, 1000);
-
+    /*   var createAccount = document.getElementById("continue");
+       if (createAccount) {
+           createAccount.disabled = "true";
+       }
+       setInterval(function () {
+           // button styles 
+           var changeClaims = document.getElementById("SignupEmailVerificationControl_but_change_claims")
+           var emailVerificationChangeClaims = document.getElementById("emailVerificationControl_but_change_claims")
+           var newPassword = document.getElementById("newPassword")
+   
+           if (changeClaims) {
+               if ($("#SignupEmailVerificationControl_but_change_claims").css("display") == "block") {
+                   if (createAccount && ($("#newPassword").val() !== "") && ($("#newPassword").val() == $("#reenterPassword").val()) && ($("meter:eq(0)").val() == 100 && $("meter:eq(1)").val() == 100)) {
+                       $("#continue").attr("disabled", false);
+                   }
+                   else {
+                       $("#continue").attr("disabled", true);
+                   }
+               }
+           }
+   
+           else if (emailVerificationChangeClaims || newPassword) {
+               console.log("1")
+               if (($("#emailVerificationControl_but_change_claims").length > 0 && $("#emailVerificationControl_but_change_claims").css("display") == "block") || newPassword) {
+                   console.log("2")
+                   if (createAccount && !newPassword) {
+                       $("#continue").attr("disabled", false);
+                       console.log("3")
+                   }
+                   else if (createAccount && newPassword && ($("#newPassword").val() !== "") && ($("#newPassword").val() == $("#reenterPassword").val()) && ($("meter:eq(0)").val() == 100 && $("meter:eq(1)").val() == 100)) {
+                       $("#continue").attr("disabled", false);
+                       console.log("4")
+                       console.log($("#newPassword").val())
+                       console.log($("#reenterPassword").val())
+                   }
+                   else {
+                       $("#continue").attr("disabled", true);
+                       console.log("5")
+                   }
+               }
+           }
+   
+       }, 1000);
+   */
 
     // update T&c's text t oanchor and link it
     var termsOfUseConsentChoice = document.getElementById('extension_termsOfUseConsentChoice_label');
@@ -511,7 +510,32 @@ var passwordMatched = false;
         }
     })
 
+    // client side validation
+    function setCustomPasswordValidation(target, define = null) {
+        var element = document.getElementById(target);
+        if (element && define !== null) {
+            element.setAttribute("minlength", 8)
+            element.setCustomValidity("Password must be 8 characters long")
+        }
+        else if (element && $("#" + target).val().length >= 8) {
+            element.setCustomValidity("")
+        }
+        else if (element && $("#" + target).val().length < 8) {
+            element.setCustomValidity("Password must be 8 characters long")
+        }
 
+    }
+
+
+    $("input[type='password']").each(function () {
+        var elem = $(this).attr("id")
+        setCustomPasswordValidation(elem, "yes")
+    })
+
+    $("input[type='password']").keyup(function () {
+        var elem = $(this).attr("id")
+        setCustomPasswordValidation(elem)
+    })
 
 
 })();

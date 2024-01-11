@@ -1005,8 +1005,13 @@ a.dcc-signout:hover {
 
 a.dcc-signout:before {
     content: url("../images/svg/icon-logout.svg");
-    margin-top: 0.25rem;
+    margin-top: 0.3rem;
     margin-right: 0.25rem;
+}
+
+.dcc-signout span
+{
+    white-space: nowrap;
 }
 
 article p,
@@ -3704,7 +3709,10 @@ pre {
     min-height: auto !important;
     max-height: 600px;
 }
-
+ code input, code textarea
+ {
+white-space: nowrap !important;
+ }
 
 .hljs-string
 {
