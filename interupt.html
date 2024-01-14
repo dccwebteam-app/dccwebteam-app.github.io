@@ -345,9 +345,11 @@
                                         <use xlink:href="#dcc-usertip" />
                                     </svg>
                                 </span></p>
-                                <input type="checkbox" class="dcc-flex dcc-items-center dcc-cursor-pointer">
-                                <label  class="dcc-checkbox-label">
-                                </label>
+                                <div class="dcc-flex dcc-items-center">
+                                    <input type="checkbox" class="dcc-flex dcc-items-center dcc-cursor-pointer">
+                                    <label class="dcc-checkbox-label dcc-pl-8"> 
+                                    </label>
+                                </div>
                         </div>
                     </div>
 
@@ -369,11 +371,9 @@
                         </div>
                     </div>
 
-                    <div class="dcc-checkbox-container dcc-font-normal dcc-text-base dcc-py-5">
-                        <input type="checkbox" class="dcc-checkbox" id="request-settlement-report">
-                        <label class="dcc-checkbox-label" for="request-settlement-report">
-                            <div class="dcc-checkbox-custom"></div>
-                            <span class="dcc-pl-3">Request settlement report</span>
+                    <div class="dcc-flex dcc-items-center dcc-py-4">
+                        <input type="checkbox" class="dcc-flex dcc-items-center dcc-cursor-pointer">
+                        <label class="dcc-checkbox-label dcc-pl-8"> Request settlement report
                         </label>
                     </div>
 
@@ -474,12 +474,13 @@
                 </div>
                 <!-- footer-columns end -->
                 <div class="row dcc-pb-4">
-                    <nav class="column dcc-flex dcc-flex-wrap dcc-justify-start dcc-items-center dcc-gap-4 md:dcc-gap-6">
+                    <nav
+                        class="column dcc-flex dcc-flex-wrap dcc-justify-start dcc-items-center dcc-gap-4 md:dcc-gap-6">
                         <a href="./my-account.html">My Account</a>
                         <a href="./information.html">Rates Enquiry</a>
                         <a href="https://www.dunedin.govt.nz/home/contact-us" target="_blank">Contact Us</a>
                         <a href="https://www.dunedin.govt.nz" target="_blank" rel="index, follow" title="">DCC Home</a>
-                      </nav>
+                    </nav>
                 </div>
             </footer>
             <!--endnoindex-->
