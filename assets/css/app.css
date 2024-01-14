@@ -3524,6 +3524,20 @@ input[type="submit"]:hover,
     border-collapse: collapse;
     box-sizing: border-box;
 }
+
+.dcc-instalment-overdue {
+    color: #721c24;
+    background-color: #f8d7da;
+    border-color: #f5c6cb;
+}
+
+.dcc-instalment-overdue .sp-grid-bottom-border {
+    border-bottom: 1px solid #721c24;
+}
+.dcc-instalment-overdue .dcc-instalment-number {
+    background: #721c24;
+}
+
 /*
 .dcc-checkbox-container {
     display: flex;
@@ -3668,7 +3682,6 @@ input[type="submit"]:hover,
     margin-top: 5px;
     z-index: 2;
 }
-
 
 /* Components */
 code {
