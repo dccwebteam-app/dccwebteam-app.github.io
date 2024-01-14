@@ -59,11 +59,17 @@
             theme: {
                 colors: {
                     teal: "#0B7A7D",
-                    haze: "#425A70",
                     black: "#000000",
                     white: "#FFFFFF",
                     darkNavy: "#2f4757",
                     transparent: "transparent",
+                    alertDanger: "#842029",
+                    alertDangerBackground: "#F8D7DA",
+                    alertDangerBorder: "#F5C2C7",
+                    alertSuccess: "#155724",
+                    alertSuccessBackground: "#D4EDDA",
+                    alertSuccessBorder: "#C3E6EB",
+                    errorRed: "#DC3545"
                 },
                 fontSize: {
                     'xs': '12px', // extra small
@@ -225,8 +231,9 @@
             <ul class="menu">
                 <li><a href="my-account.html">My Account</a></li>
                 <li><a href="information.html">Rating Enquiry</a></li>
-                <li><a href="https://dunedin.govt.nz/home/contact-us/?utm_source=solicitors_portal" target="_blank">Contact Us</a></li>
-                <li><a href="https://dunedin.govt.nz/?utm_source=solicitors_portal"  target="_blank">DCC Home</a></li>
+                <li><a href="https://dunedin.govt.nz/home/contact-us/?utm_source=solicitors_portal"
+                        target="_blank">Contact Us</a></li>
+                <li><a href="https://dunedin.govt.nz/?utm_source=solicitors_portal" target="_blank">DCC Home</a></li>
             </ul>
             <!-- Main menu close -->
             <footer>
@@ -278,6 +285,11 @@
                     <h2>Rates lookup - Information</h2>
                     <a href="/logout.html" class="dcc-signout"><span>Sign out</span></a>
                 </div>
+
+              <article>
+              
+              </article>
+
                 <!-- Rates Information -->
                 <section class="dcc-relative">
                     <div class="sp-grid-layout">
@@ -326,7 +338,13 @@
                 <!-- Instalments -->
                 <section class="dcc-relative dcc-pt-6 full-width">
                     <div class="dcc-flex dcc-items-center dcc-justify-between dcc-pb-3">
-                        <h2>Instalments</h2>
+                        <h2 >Instalments <span
+                            class="hint-tooltip hint--right"
+                            aria-label="Quaterly Instalments.">
+                            <svg width='20' height='20' xmlns:xlink="http://www.w3.org/1999/xlink">
+                                <use xlink:href="#dcc-usertip" />
+                            </svg>
+                        </span></h2>
                     </div>
                     <!-- instalments cards -->
                     <div class="dcc-relative dcc-py-5">
@@ -334,10 +352,10 @@
                         <div
                             class="dcc-grid dcc-grid-cols-1 lg:dcc-grid-cols-2 4xl:dcc-grid-cols-4 dcc-items-center dcc-gap-4 md:dcc-gap-6">
                             <!-- instalment Card -->
-                            <div class="dcc-min-h-24 dcc-min-w-24 dcc-border-b dcc-instalment-overdue dcc-p-6 dcc-rounded-xl">
+                            <div class="dcc-min-h-24 dcc-min-w-24 dcc-border-b dcc-bg-white dcc-p-6 dcc-rounded-xl">
                                 <div class="dcc-flex dcc-items-center dcc-justify-between dcc-py-4">
                                     <p
-                                        class="dcc-instalment-number dcc-font-bold dcc-text-xl dcc-rounded-full dcc-bg-teal dcc-p-2 dcc-h-10 dcc-w-10 dcc-text-white dcc-text-center dcc-flex dcc-items-center dcc-justify-center dcc-mb-0">
+                                        class="dcc-font-bold dcc-text-xl dcc-rounded-full dcc-bg-teal dcc-p-2 dcc-h-10 dcc-w-10 dcc-text-white dcc-text-center dcc-flex dcc-items-center dcc-justify-center dcc-mb-0">
                                         <span>1</span>
                                     </p>
                                     <p class="dcc-font-bold dcc-text-xl dcc-mb-0">4 August 2023</p>
@@ -358,7 +376,7 @@
                                     <p class="dcc-font-normal dcc-text-xl dcc-mb-0">Due Date:</p>
                                     <p class="dcc-font-bold dcc-text-xl dcc-mb-0">1-Sep-2023</p>
                                 </div>
-
+                              
                             </div>
                             <!-- instalment Card -->
                             <div class="dcc-min-h-24 dcc-min-w-24 dcc-border-b dcc-bg-white dcc-p-6 dcc-rounded-xl">
@@ -445,7 +463,7 @@
                     </div>
                     <article class="dcc-relative">
                         <p class="dcc-py-5">A 10% penalty will be added to any unpaid portion of the current instalment
-                            if not paid by the Tuesday following the due date. Exceptions - a penalty will not be added
+                            if not paid by the Tuesday following the due date.<br><b>Exceptions</b> - a penalty will not be added
                             it there is a direct debit in place or one has been recently cancelled as part of the
                             settlement process.</p>
 
@@ -494,11 +512,11 @@
                                         <use xlink:href="#dcc-usertip" />
                                     </svg>
                                 </span></p>
-                                <div class="dcc-flex dcc-items-center dcc-py-4">
-                                    <input type="checkbox" class="dcc-flex dcc-items-center dcc-cursor-pointer">
-                                    <label class="dcc-checkbox-label dcc-pl-8"> 
-                                    </label>
-                                </div>
+                            <div class="dcc-flex dcc-items-center dcc-py-4">
+                                <input type="checkbox" class="dcc-flex dcc-items-center dcc-cursor-pointer">
+                                <label class="dcc-checkbox-label dcc-pl-8">
+                                </label>
+                            </div>
                         </div>
                     </div>
 
@@ -530,84 +548,85 @@
                 </section>
 
             </div>
-            <footer id="footer">
+            <footer id="footer" class="relative dcc-px-6 dcc-py-12 md:dcc-px-12 xl:dcc-px-24">
                 <a href="#top" title="Back to top of page." id="scroll-top" aria-label="Back to top"></a>
-                <div class="row footer-columns">
-                    <div class="medium-8 large-3">
-                        <div class="row collapse">
-                            <div class="column">
-                                <h3>Contact us</h3>
-                            </div>
-                        </div>
-
-                        <div class="row collapse">
-                            <div class="small-4 medium-4 large-3 mb">
+                <div class="dcc-grid dcc-grid-cols-1 xl:dcc-grid-cols-6 dcc-gap-12">
+                    <!-- Contact us -->
+                    <div class="dcc-relative xl:dcc-col-span-2">
+                        <h3>Contact us</h3>
+                        <div class="dcc-relative dcc-grid dcc-grid-cols-2">
+                            <div class="dcc-relative">
                                 <p>PO Box 5045</p>
                                 <p>Dunedin 9054</p>
                                 <p>New Zealand</p>
                             </div>
-
-                            <div class="small-4 medium-4 large-5 mb">
-                                <p><span class="fixed-space">Phone</span> <a href="tel:006434774000"
-                                        title="Contact Dunedin City Council">+64 3 477 4000</a>
+                            <div class="dcc-relative">
+                                <p class="dcc-whitespace-nowrap"><span class="fixed-space">Phone</span> <a
+                                        href="tel:006434774000" title="Contact Dunedin City Council">+64 3 477 4000</a>
                                 </p>
-                                <p><span class="fixed-space">Fax</span><a href="tel:fax:+6434743366">+64 3 474 3366</a>
+                                <p class="dcc-whitespace-nowrap"><span class="fixed-space">Fax</span><a
+                                        href="tel:fax:+6434743366">+64 3 474
+                                        3366</a>
                                 </p>
-                                <p><span class="fixed-space">Email</span> <a href="mailto:dcc@dcc.govt.nz"
+                                <p class="dcc-whitespace-nowrap"><span class="fixed-space">Email</span> <a
+                                        href="mailto:dcc@dcc.govt.nz"
                                         title="Email Dunedin City Council.">dcc@dcc.govt.nz</a></p>
                             </div>
-
                         </div>
-
                     </div>
-                    <div class="medium-8 large-4">
-                        <div class="row collapse">
-                            <div class="column">
-                                <h3>Other DCC websites</h3>
-                            </div>
-                        </div>
-                        <div class="row collapse">
-                            <div class="small-4 medium-4 large-4 mb">
+                    <!-- External Links -->
+                    <div class="dcc-relative xl:dcc-col-span-3 xl:dcc-ml-6">
+                        <h3>Other DCC websites</h3>
+                        <div class="dcc-relative dcc-grid dcc-grid-cols-2">
+                            <div class="dcc-relative">
 
-                                <p><a href="http://www.dcc.jobs/" target="_blank" rel="external"
-                                        title="Careers website - Opens in a new window.">Careers</a></p>
+                                <p class="dcc-whitespace-nowrap"><a href="http://www.dcc.jobs/" target="_blank"
+                                        rel="external" title="Careers website - Opens in a new window.">Careers</a></p>
 
-                                <p><a href="http://justswim.nz/" target="_blank" rel="external"
-                                        title="Just Swim website - Opens in a new window.">Just Swim</a></p>
+                                <p class="dcc-whitespace-nowrap"><a href="http://justswim.nz/" target="_blank"
+                                        rel="external" title="Just Swim website - Opens in a new window.">Just Swim</a>
+                                </p>
 
-                                <p><a href="http://www.dunedin.art.museum/" target="_blank" rel="external"
+                                <p class="dcc-whitespace-nowrap"><a href="http://www.dunedin.art.museum/"
+                                        target="_blank" rel="external"
                                         title="Dunedin Public Art Gallery website - Opens in a new window.">Dunedin
                                         Public Art Gallery</a>
                                 </p>
 
-                                <p><a href="http://www.dunedinbotanicgarden.co.nz/" target="_blank" rel="external"
+                                <p class="dcc-whitespace-nowrap"><a href="http://www.dunedinbotanicgarden.co.nz/"
+                                        target="_blank" rel="external"
                                         title="Dunedin Botanic Garden website - Opens in a new window.">Dunedin Botanic
                                         Garden</a></p>
 
                             </div>
-                            <div class="small-4 medium-4 large-4 mb">
+                            <div class="dcc-relative">
 
-                                <p><a href="http://www.dunedinchinesegarden.com/" target="_blank" rel="external"
+                                <p class="dcc-whitespace-nowrap"><a href="http://www.dunedinchinesegarden.com/"
+                                        target="_blank" rel="external"
                                         title="Dunedin Chinese Garden website - Opens in a new window.">Dunedin Chinese
                                         Garden</a></p>
 
-                                <p><a href="http://www.dunedinlibraries.govt.nz/" target="_blank" rel="external"
+                                <p class="dcc-whitespace-nowrap"><a href="http://www.dunedinlibraries.govt.nz/"
+                                        target="_blank" rel="external"
                                         title="Dunedin Public Libraries website - Opens in a new window.">Dunedin Public
                                         Libraries</a></p>
 
-                                <p><a href="http://www.toituosm.com/" target="_blank" rel="external"
+                                <p class="dcc-whitespace-nowrap"><a href="http://www.toituosm.com/" target="_blank"
+                                        rel="external"
                                         title="Toitū Otago Settlers Museum website - Opens in a new window.">Toitū Otago
                                         Settlers Museum</a>
                                 </p>
 
-                                <p><a href="http://www.olveston.co.nz/" target="_blank" rel="external"
+                                <p class="dcc-whitespace-nowrap"><a href="http://www.olveston.co.nz/" target="_blank"
+                                        rel="external"
                                         title="Olveston Historic Home website - Opens in a new window.">Olveston
                                         Historic Home</a></p>
 
                             </div>
                         </div>
                     </div>
-                    <div class="medium-8 large-1 logos-column">
+                    <!-- Linlks -->
+                    <div class="dcc-relative dcc-flex dcc-items-center dcc-flex-col">
                         <a href="https://www.dunedinnz.com/" target="_blank" rel="external"
                             title="Dunedin NZ website - Opens in a new window." class="logo dunedin"
                             aria-label="Dunedin NZ"></a>
@@ -620,7 +639,7 @@
                     </div>
                 </div>
                 <!-- footer-columns end -->
-                <div class="row dcc-pb-4">
+                <div class="dcc-relative  dcc-pt-4">
                     <nav
                         class="column dcc-flex dcc-flex-wrap dcc-justify-start dcc-items-center dcc-gap-4 md:dcc-gap-6">
                         <a href="./my-account.html">My Account</a>
@@ -723,7 +742,7 @@
                         widths: [120, 10, 'auto'],
                     }
                 },
-                // defne new line
+                // define new line
                 { text: '\n' },
                 // instalement table 
                 {
@@ -741,14 +760,14 @@
                         widths: [70, 90, 110, 110, 70],
                     }
                 },
-                // defne new line
+                // define new line
                 { text: '\n' },
                 // define text
                 { text: 'A 10% penalty will be added to any unpaid portion of the current instalment if not paid by  the Tuesday following the due date.' },
-                // defne new line
+                // define new line
                 { text: '\n' },
                 { text: [{ text: 'Exceptions', bold: true }, { text: ' - a penalty will not added if there is a direct debit in place or one has been recently cancelled as part of the settlement process.' }] },
-                // defne new line
+                // define new line
                 { text: '\n' },
                 {
                     layout: 'generalLayout',
@@ -761,7 +780,7 @@
                         widths: [210, 10, 'auto'],
                     }
                 },
-                // defne new line
+                // define new line
                 { text: '\n' },
                 {
                     layout: 'generalLayout',
@@ -773,7 +792,7 @@
                         widths: [120, 10, 'auto'],
                     }
                 },
-                // defne new line
+                // define new line
                 { text: '\n' },
                 // define text
                 { text: 'There is no direct debit on this account. If the rates are paid by automatic payment, please ask the customer to cancel it.', bold: true },
@@ -794,10 +813,10 @@
             },
         };
         function generatePDF() {
-            var pdfGenerator = pdfMake.createPdf(docDefinition).open();
-            /*  pdfGenerator.getBlob(function (blob) {
+            var pdfGenerator = pdfMake.createPdf(docDefinition);
+              pdfGenerator.getBlob(function (blob) {
                   saveAs(blob, 'your_custom_filename.pdf'); // Using FileSaver.js for saving the file with a custom filename
-              });*/
+              });
         }
     </script>
 </body>
