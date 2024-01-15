@@ -3668,13 +3668,18 @@ input[type="submit"]:hover,
 .dcc-rates-lookup-dropdown-wrapper span {
    display: flex;
    align-items: center;
+   gap:0.5rem;
 }
 
 .dcc-rates-lookup-dropdown li:first-child {
     border-top-right-radius: 10px;
+}
+
+.dcc-rates-lookup-dropdown li.disabled {
     opacity: 0.5;
     user-select: none;
     cursor: no-drop;
+    pointer-events: none;
 }
 
 .dcc-rates-lookup-dropdown li:last-child {
