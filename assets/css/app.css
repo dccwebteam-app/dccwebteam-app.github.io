@@ -357,11 +357,11 @@ input[type="month"] {
     width: 100%;
 }
 
-textarea
-{
+textarea {
     padding: 0.75rem 0.875rem !important;
     padding-left: 2.5rem !important;
 }
+
 select::-webkit-input-placeholder,
 textarea::-webkit-input-placeholder,
 input[type="email"]::-webkit-input-placeholder,
@@ -800,7 +800,8 @@ input[type="month"]:focus {
 }
 
 .dcc-editicon:before {
-    content: url("data:image/svg+xml,%3Csvg width='24' height='24' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' id='edit-alt'%3E%3Cpath fill='%232F4757' d='M5,18H9.24a1,1,0,0,0,.71-.29l6.92-6.93h0L19.71,8a1,1,0,0,0,0-1.42L15.47,2.29a1,1,0,0,0-1.42,0L11.23,5.12h0L4.29,12.05a1,1,0,0,0-.29.71V17A1,1,0,0,0,5,18ZM14.76,4.41l2.83,2.83L16.17,8.66,13.34,5.83ZM6,13.17l5.93-5.93,2.83,2.83L8.83,16H6ZM21,20H3a1,1,0,0,0,0,2H21a1,1,0,0,0,0-2Z'%3E%3C/path%3E%3C/svg%3E");  z-index: 2;
+    content: url("data:image/svg+xml,%3Csvg width='24' height='24' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' id='edit-alt'%3E%3Cpath fill='%232F4757' d='M5,18H9.24a1,1,0,0,0,.71-.29l6.92-6.93h0L19.71,8a1,1,0,0,0,0-1.42L15.47,2.29a1,1,0,0,0-1.42,0L11.23,5.12h0L4.29,12.05a1,1,0,0,0-.29.71V17A1,1,0,0,0,5,18ZM14.76,4.41l2.83,2.83L16.17,8.66,13.34,5.83ZM6,13.17l5.93-5.93,2.83,2.83L8.83,16H6ZM21,20H3a1,1,0,0,0,0,2H21a1,1,0,0,0,0-2Z'%3E%3C/path%3E%3C/svg%3E");
+    z-index: 2;
     position: absolute;
     left: 2%;
     top: 30%;
@@ -815,7 +816,8 @@ input[type="month"]:focus {
 }
 
 .dcc-dateicon:before {
-    content: url("data:image/svg+xml,%3Csvg width='24' height='24' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' id='calender'%3E%3Cpath fill='%232F4757' d='M19,4H17V3a1,1,0,0,0-2,0V4H9V3A1,1,0,0,0,7,3V4H5A3,3,0,0,0,2,7V19a3,3,0,0,0,3,3H19a3,3,0,0,0,3-3V7A3,3,0,0,0,19,4Zm1,15a1,1,0,0,1-1,1H5a1,1,0,0,1-1-1V12H20Zm0-9H4V7A1,1,0,0,1,5,6H7V7A1,1,0,0,0,9,7V6h6V7a1,1,0,0,0,2,0V6h2a1,1,0,0,1,1,1Z'%3E%3C/path%3E%3C/svg%3E");  position: absolute;
+    content: url("data:image/svg+xml,%3Csvg width='24' height='24' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' id='calender'%3E%3Cpath fill='%232F4757' d='M19,4H17V3a1,1,0,0,0-2,0V4H9V3A1,1,0,0,0,7,3V4H5A3,3,0,0,0,2,7V19a3,3,0,0,0,3,3H19a3,3,0,0,0,3-3V7A3,3,0,0,0,19,4Zm1,15a1,1,0,0,1-1,1H5a1,1,0,0,1-1-1V12H20Zm0-9H4V7A1,1,0,0,1,5,6H7V7A1,1,0,0,0,9,7V6h6V7a1,1,0,0,0,2,0V6h2a1,1,0,0,1,1,1Z'%3E%3C/path%3E%3C/svg%3E");
+    position: absolute;
     left: 2%;
     top: 30%;
 }
@@ -1009,8 +1011,7 @@ a.dcc-signout:before {
     margin-right: 0.25rem;
 }
 
-.dcc-signout span
-{
+.dcc-signout span {
     white-space: nowrap;
 }
 
@@ -3534,6 +3535,7 @@ input[type="submit"]:hover,
 .dcc-instalment-overdue .sp-grid-bottom-border {
     border-bottom: 1px solid #721c24;
 }
+
 .dcc-instalment-overdue .dcc-instalment-number {
     background: #721c24;
 }
@@ -3622,18 +3624,73 @@ input[type="submit"]:hover,
 }
 
 
-.dcc-rates-lookup-dropdown {
+.dcc-rates-lookup-dropdown-wrapper {
     display: flex;
     align-items: center;
     justify-content: flex-start;
     gap: 0.25rem;
+    transition: all .3s linear;
+    padding: 0.875rem;
 }
 
-.dcc-rates-lookup-dropdown::after {
-    content: url("data:image/svg+xml,%3Csvg width='32' height='32' viewBox='0 0 34 34' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='17' cy='17' r='11.3333' transform='rotate(90 17 17)' stroke='%23234361' stroke-width='2' stroke-linejoin='round'/%3E%3Cpath d='M22.3126 14.5208C20.0996 16.7338 18.8589 17.9745 16.6459 20.1875L10.9792 14.5208' stroke='%23234361' stroke-width='2' stroke-linejoin='round'/%3E%3C/svg%3E ");
+.dcc-rates-lookup-dropdown-wrapper::after {
+    content: url("data:image/svg+xml,%3Csvg width='32' height='32' viewBox='0 0 34 34' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='17' cy='17' r='11.3333'  stroke='%23234361' stroke-width='2' stroke-linejoin='round'/%3E%3Cpath d='M22.3126 14.5208C20.0996 16.7338 18.8589 17.9745 16.6459 20.1875L10.9792 14.5208' stroke='%23234361' stroke-width='2' stroke-linejoin='round'/%3E%3C/svg%3E");
     display: inherit;
     margin-top: 10px;
     cursor: pointer;
+    transition: all .3s linear;
+}
+
+
+.dcc-rates-lookup-dropdown {
+    background: #E4E7EB;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    border-top-right-radius: 10px;
+    height: 0;
+    z-index: -2;
+    position: absolute;
+}
+
+.dcc-rates-lookup-dropdown li {
+    padding: 0.875rem 1rem;
+    cursor: pointer;
+    color: var(--dark-navy);
+    display: flex;
+    gap:0.5rem;
+    align-items: center;
+}
+
+.dcc-rates-lookup-dropdown li svg, .dcc-rates-lookup-dropdown-wrapper span svg {
+    margin-top: -4px;
+}
+
+.dcc-rates-lookup-dropdown-wrapper span {
+   display: flex;
+   align-items: center;
+}
+
+.dcc-rates-lookup-dropdown li:first-child {
+    border-top-right-radius: 10px;
+    opacity: 0.5;
+    user-select: none;
+    cursor: no-drop;
+}
+
+.dcc-rates-lookup-dropdown li:last-child {
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+.dcc-rates-lookup-dropdown li:hover {
+    padding: 0.875rem 1rem;
+    cursor: pointer;
+    background-color: #FFF;
+}
+
+.dcc-rates-lookup-dropdown-wrapper.active + .dcc-rates-lookup-dropdown {
+    height: auto;
+    z-index: 3;
 }
 
 .dcc-alert {
@@ -3722,15 +3779,16 @@ pre {
     min-height: auto !important;
     max-height: 600px;
 }
- code input, code textarea
- {
-white-space: nowrap !important;
- }
 
-.hljs-string
-{
+code input,
+code textarea {
+    white-space: nowrap !important;
+}
+
+.hljs-string {
     color: #27ae60 !important;
 }
+
 /* Style for code within block-level code */
 pre code {
     padding: 1em;
