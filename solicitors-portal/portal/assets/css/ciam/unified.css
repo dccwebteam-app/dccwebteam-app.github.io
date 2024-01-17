@@ -145,7 +145,7 @@ body {
     width: 240px;
     height: 60px;
     min-height: 60px;
-    background: url("//dccwebteam-app.github.io/assets/images/svg/logo-dunedin-city-council.svg") no-repeat center;
+    background: url("//dccwebteam-app.github.io/solicitors-portal/assets/images/svg/logo-dunedin-city-council.svg") no-repeat center;
 }
 
 section {
@@ -162,7 +162,7 @@ section {
 }
 
 section.dcc-background {
-    background-image: url("//dccwebteam-app.github.io/assets/images/dcc-home-background-pattern.jpg");
+    background-image: url("//dccwebteam-app.github.io/solicitors-portal/assets/images/dcc-home-background-pattern.jpg");
     background-repeat: no-repeat;
     background-size: cover;
     object-fit: cover;
