@@ -234,8 +234,9 @@
             <ul class="menu">
                 <li><a href="my-account.html">My Account</a></li>
                 <li><a href="information.html">Rating Enquiry</a></li>
-                <li><a href="https://dunedin.govt.nz/home/contact-us/?utm_source=solicitors_portal" target="_blank">Contact Us</a></li>
-                <li><a href="https://dunedin.govt.nz/?utm_source=solicitors_portal"  target="_blank">DCC Home</a></li>
+                <li><a href="https://dunedin.govt.nz/home/contact-us/?utm_source=solicitors_portal"
+                        target="_blank">Contact Us</a></li>
+                <li><a href="https://dunedin.govt.nz/?utm_source=solicitors_portal" target="_blank">DCC Home</a></li>
             </ul>
             <!-- Main menu close -->
             <footer>
@@ -286,7 +287,7 @@
 
                     <div class="dcc-relative dcc-mt-5">
                         <!-- Code Preview -->
-                        <pre style="max-height: 160px;">
+                        <pre style="max-height: 110px;overflow: hidden;">
     <code class="language-html">
         <div className="dcc-alert dcc-border-alertDangerBorder dcc-bg-alertDangerBackground dcc-text-alertDanger">
             &nbsp; &nbsp; This is an error message alert
@@ -304,7 +305,7 @@
                     <!-- SUCCESS ALERT -->
                     <div class="dcc-relative dcc-mt-5">
                         <!-- Code Preview -->
-                        <pre style="max-height: 155px;">
+                        <pre style="max-height: 100px;overflow: hidden;">
                             <code class="language-html">
                                 <div className="dcc-alert dcc-border-alertSuccessBorder dcc-bg-alertSuccessBackground dcc-text-alertSuccess">
                                     &nbsp; &nbsp;This is an success message alert
@@ -319,20 +320,20 @@
                     </div>
 
                     <!-- ALERT WITHOUT BORDER -->
-                    <div class="dcc-relative dcc-mt-3">
-                        <pre style="max-height: 120px;">
+                    <div class="dcc-relative dcc-mt-5">
+                        <pre style="max-height: 80px; overflow: hidden;">
                             <code class="language-html">
                                 <div className="dcc-alert-without-border dcc-text-errorRed">
                                     &nbsp; &nbsp; This is an error message alert
                                 </div>
                             </code>
                         </pre>
-                        <div class="dcc-alert-without-border dcc-text-errorRed">
+                        <div class="dcc-alert-without-border dcc-text-errorRed dcc--mt-3">
                             This is an error message alert
                         </div>
                     </div>
                     <div class="dcc-relative">
-                        <pre style="max-height: 120px;">
+                        <pre style="max-height: 80px;overflow: hidden;">
                             <code class="language-html">
                                 <div
                                 className="dcc-alert-without-border dcc-text-alertSuccess">
@@ -341,14 +342,14 @@
                             </code>
                         </pre>
 
-                        <div class="dcc-alert-without-border dcc-text-alertSuccess">
+                        <div class="dcc-alert-without-border dcc-text-alertSuccess dcc--mt-3">
                             This is an success message alert
                         </div>
                     </div>
 
                     <h2 class="dcc-pb-3 dcc-mt-12">Input types </h2>
                     <div class="dcc-relative">
-                        <pre style="max-height: 400px;overflow: auto;">
+                        <pre style="max-height: 350px;overflow: auto;">
                      <code class="language-html">
                         <div class="dcc-grid dcc-grid-cols-2 dcc-gap-3 dcc-mt-2">
                            <!-- Username/Name field --> 
@@ -528,7 +529,7 @@
                             </div>
                         </div>
 
-                        <pre style="max-height: 400px;overflow: auto;margin-top: 2rem !important;" class="dcc-mt-5">
+                        <pre style="max-height: 320px;overflow: auto;margin-top: 2rem !important;" class="dcc-mt-5">
     <code class="language-html">
        <div class="dcc-grid dcc-grid-cols-2 dcc-gap-3 dcc-mt-2">
              <!--Large text field -->
@@ -549,7 +550,7 @@
     </code>
 </pre>
 
-                        <div class="dcc-grid dcc-grid-cols-2 dcc-gap-3 dcc-mt-2">
+                        <div class="dcc-grid dcc-grid-cols-2 dcc-gap-3">
                             <!--Large text field -->
                             <div class="dcc-relative dcc-form-field dcc-col-span-2">
                                 <label id="id" for="for">Textarea field</label>
@@ -564,7 +565,7 @@
                             </div>
                         </div>
 
-                        <pre style="max-height: 400px;overflow: auto;margin-top: 2rem !important;" class="dcc-mt-5">
+                        <pre style="max-height: 320px;overflow: auto;margin-top: 2rem !important;" class="dcc-mt-5">
                                 <code class="language-html">
                                    <div class="dcc-grid dcc-grid-cols-2 dcc-gap-3 dcc-mt-2">
                                         <!--Date field -->
@@ -623,7 +624,7 @@
                             </div>
                         </div>
 
-                        <pre style="max-height: 400px;overflow: auto;margin-top: 2rem !important;" class="dcc-mt-5">
+                        <pre style="max-height: 320px;overflow: auto;margin-top: 2rem !important;" class="dcc-mt-5">
     <code class="language-html">
        <div class="dcc-grid dcc-grid-cols-2 dcc-gap-3 dcc-mt-2">
              <!--Datetime field -->
@@ -674,7 +675,8 @@
                             <div class="dcc-relative dcc-form-field">
                                 <label id="id" for="for">URL field</label>
                                 <div class="dcc-w-full dcc-relative dcc-urlicon dcc-pt-1">
-                                    <input type="url" aria-label="Enter your text" name="name" placeholder="e.g., dcc.govt.nz">
+                                    <input type="url" aria-label="Enter your text" name="name"
+                                        placeholder="e.g., dcc.govt.nz">
                                     <div aria-hidden="true" aria-live="polite" class="dcc-sr-only">
                                         <p>This input field is used for entering text.</p>
                                         <p>It is labeled as "Enter your text" and is required.</p>
@@ -682,8 +684,8 @@
                                 </div>
                             </div>
 
-                            </div>
-                            <pre style="max-height: 400px;overflow: auto;margin-top: 2rem !important;" class="dcc-mt-5">
+                        </div>
+                        <pre style="max-height: 400px;overflow: auto;margin-top: 2rem !important;" class="dcc-mt-5">
                                 <code class="language-html">
                                    <div class="dcc-grid dcc-grid-cols-2 dcc-gap-3 dcc-mt-2">
                                          <!-- Checkbox field -->
@@ -710,7 +712,7 @@
                                 </code>
                             </pre>
 
-                            <div class="dcc-grid dcc-grid-cols-2 dcc-gap-3 dcc-mt-2">
+                        <div class="dcc-grid dcc-grid-cols-2 dcc-gap-3 dcc-mt-2">
                             <!--Checkbox field -->
                             <div class="dcc-relative dcc-form-field dcc-col-span-2 dcc-form-field">
                                 <label id="id" for="for">Checkbox field</label>
@@ -731,9 +733,9 @@
                                     </div>
                                 </div>
                             </div>
-</div>
+                        </div>
 
-                            <pre style="max-height: 400px;overflow: auto;margin-top: 2rem !important;" class="dcc-mt-5">
+                        <pre style="max-height: 400px;overflow: auto;margin-top: 2rem !important;" class="dcc-mt-5">
                                 <code class="language-html">
                                    <div class="dcc-grid dcc-grid-cols-2 dcc-gap-3 dcc-mt-2">
                                          <!-- Radio field -->
@@ -760,7 +762,7 @@
                                 </code>
                             </pre>
 
-                            <div class="dcc-grid dcc-grid-cols-2 dcc-gap-3 dcc-mt-2">
+                        <div class="dcc-grid dcc-grid-cols-2 dcc-gap-3">
                             <!--Radio field -->
                             <div class="dcc-relative dcc-form-field dcc-col-span-2 dcc-form-field dcc-pt-2">
                                 <label id="id" for="for">Radio field</label>
@@ -779,14 +781,58 @@
                                             <input type="radio" aria-label="Enter your text" name="name">
                                             <label id="id" for="for" class="dcc-pl-8">Radio 3</label>
                                         </div>
-
                                     </div>
                                 </div>
                             </div>
-
-
-
                         </div>
+
+                        <pre style="max-height: 260px;overflow: hidden;margin-top: 2rem !important;" class="dcc-mt-5">
+                            <code class="language-html">
+                               <div class="dcc-grid dcc-grid-cols-2 dcc-gap-3 dcc-mt-2">
+                                &nbsp;<div class="dcc-flex dcc-flex-col dcc-basis-2/4">
+                                    &nbsp;&nbsp;<label class="dcc-font-bold dcc-text-lg">
+                                        &nbsp;&nbsp;&nbsp;<div class="dcc-rates-lookup-dropdown-wrapper">Select Dropdown</div>
+                                        &nbsp;&nbsp;&nbsp;<ul class="dcc-rates-lookup-dropdown">
+                                            &nbsp;&nbsp;&nbsp;&nbsp;<li class="dcc-rates-lookup-dropdown-option disabled" disabled>Disabled Option</li>
+                                            &nbsp;&nbsp;&nbsp;&nbsp;<li class="dcc-rates-lookup-dropdown-option">Option 1</li>
+                                            &nbsp;&nbsp;&nbsp;&nbsp;<li class="dcc-rates-lookup-dropdown-option">Option 2</li>
+                                            &nbsp;&nbsp;&nbsp;</ul>
+                                        &nbsp;&nbsp;</label>
+                                    &nbsp;</div>
+                            </div>
+                        </code>
+                    </pre>
+
+                        <div class="dcc-grid dcc-grid-cols-2 dcc-gap-3">
+                            <!-- Select-->
+                            <div class="dcc-flex dcc-flex-col dcc-basis-2/4">
+                                <label class="dcc-font-bold dcc-text-lg">
+                                    <div class="dcc-rates-lookup-dropdown-wrapper">Select Dropdown</div>
+                                    <ul class="dcc-rates-lookup-dropdown">
+                                        <li class="dcc-rates-lookup-dropdown-option disabled" disabled>Disabled Option
+                                        </li>
+                                        <li class="dcc-rates-lookup-dropdown-option">Option 1</li>
+                                        <li class="dcc-rates-lookup-dropdown-option">Option 2</li>
+                                    </ul>
+                                </label>
+                            </div>
+                        </div>
+
+                        <h2 class="dcc-mt-5">Buttons</h2>
+                        <pre style="max-height: 100px;overflow: hidden;">
+                            <code class="language-html">
+                                <div class="dcc-relative dcc-flex dcc-items-start dcc-gap-3 dcc-py-8">
+                                    &nbsp;<a class="action-button haze-action-button dcc-mb-0" href="#">Button style one</a>
+                                    &nbsp;<a class="action-button green-action-button dcc-mb-0" href="#">Button style 2</a>
+                                </div>
+                        </code>
+                    </pre>
+
+                        <div class="dcc-relative dcc-flex dcc-items-start dcc-gap-3 dcc-py-8 dcc--mt-">
+                            <a class="action-button haze-action-button dcc-mb-0" href="#">Button style one</a>
+                            <a class="action-button green-action-button dcc-mb-0" href="#">Button style 2</a>
+                        </div>
+
                     </div>
                 </section>
             </div>
@@ -881,9 +927,8 @@
                     </div>
                 </div>
                 <!-- footer-columns end -->
-                <div class="dcc-relative  dcc-pt-8 xl:dcc-pt-5">
-                    <nav
-                        class="dcc-flex dcc-flex-wrap dcc-justify-start dcc-items-center dcc-gap-4 md:dcc-gap-6">
+                <div class="dcc-relative dcc-pt-8 xl:dcc-pt-5">
+                    <nav class="dcc-flex dcc-flex-wrap dcc-justify-start dcc-items-center dcc-gap-4 md:dcc-gap-6">
                         <a href="./my-account.html">My Account</a>
                         <a href="./information.html">Rates Enquiry</a>
                         <a href="https://www.dunedin.govt.nz/home/contact-us" target="_blank">Contact Us</a>
@@ -916,7 +961,22 @@
         hljs.highlightAll();
         hljs.initLineNumbersOnLoad();
     </script>
-
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+        integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script>
+        $(document).on("click", function (e) {
+            if (e.target.className == "dcc-rates-lookup-dropdown-wrapper") {
+                $(e.target).toggleClass("active")
+            }
+            else if (e.target.className == "dcc-rates-lookup-dropdown-option") {
+                $(".dcc-rates-lookup-dropdown-wrapper").html($(e.target).text())
+                $(".dcc-rates-lookup-dropdown-wrapper").removeClass("active")
+            }
+            else {
+                $(".dcc-rates-lookup-dropdown-wrapper").removeClass("active")
+            }
+        })
+    </script>
 </body>
 
 </html>

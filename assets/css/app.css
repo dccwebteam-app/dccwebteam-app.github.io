@@ -3630,7 +3630,6 @@ input[type="submit"]:hover,
     justify-content: flex-start;
     gap: 0.25rem;
     transition: all .3s linear;
-    padding: 0.875rem;
 }
 
 .dcc-rates-lookup-dropdown-wrapper::after {
@@ -3768,7 +3767,7 @@ pre {
     line-height: 1.1em !important;
     margin: 0 !important;
     outline: 0 !important;
-    overflow: auto !important;
+    overflow: auto ;
     padding: 0 !important;
     position: relative !important;
     right: auto !important;
@@ -3820,6 +3819,7 @@ input[type="checkbox"],
 input[type="radio"] {
     width: 0;
     height: 0;
+    cursor: pointer;
 }
 
 input[type="checkbox"]:after,
