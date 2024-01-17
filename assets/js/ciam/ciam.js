@@ -1,7 +1,7 @@
 // Wait for the DOM to be loaded 
 var passwordStrength = 0;
 var passwordMatched = false;
-
+var wait_seconds = 5;
 (function () {
 
     // remove empty aria label
@@ -339,32 +339,189 @@ var passwordMatched = false;
     }
 
     // apply custom css
-    var signupEmailVerificationError = document.getElementById("SignupEmailVerificationControl_error_message")
-    var signupEmailVerificationSuccess = document.getElementById("SignupEmailVerificationControl_success_message")
     var emailVerificationError = document.getElementById("emailVerificationControl_error_message")
     var emailVerificationSuccess = document.getElementById("emailVerificationControl_success_message")
 
+    if ($("#attributeVerification").length > 0) {
+
+        var email_info_html = $("#email_info").html();
+        var email_success_html = $("#email_success").html();
+        var email_fail_retry = $("#email_fail_retry").html();
+        var email_fail_no_retry = $("#email_fail_no_retry").html();
+
+        var email_fail_throttled = $("#email_fail_throttled").html();
+        var email_fail_code_expired = $("#email_fail_code_expired").html();
+        var email_fail_server = $("#email_fail_server").html();
+        var email_incorrect_format = $("#email_incorrect_format").html();
+
+        setInterval(function () {
+
+
+            if (("#email_ver_wait").length > 0) {
+                $(".verificationInfoText").html("");
+                $(".verificationInfoText").removeClass("dcc-alert dcc-alert-success");
+                $(".verificationErrorText").html("");
+                $(".verificationErrorText").removeClass("dcc-alert dcc-alert-danger");
+                $(".verificationSuccessText").html("");
+                $(".verificationSuccessText").removeClass("dcc-alert dcc-alert-success");
+            }
+            // code sent
+            if ($("#email_info").length > 0) {
+                if (!($("#email_info").css("display") == "none")) {
+                    $("#email_info").addClass("dcc-alert dcc-alert-success");
+                    $("#email_info").html("<span>" + email_info_html + "</span>");
+
+                    $(".verificationErrorText").html("");
+                    $(".verificationErrorText").removeClass("dcc-alert dcc-alert-danger");
+                    $(".verificationSuccessText").html("");
+                    $(".verificationSuccessText").removeClass("dcc-alert dcc-alert-success");
+
+                } else {
+                    $("#email_info").removeClass("dcc-alert dcc-alert-success");
+                    $("#email_info").html("");
+                }
+
+
+
+            }
+
+            // email verified
+            if ($("#email_success").length > 0) {
+                if (!($("#email_success").css("display") == "none")) {
+                    $("#email_success").addClass("dcc-alert dcc-alert-success");
+                    $("#email_success").html("<span>" + email_success_html + "</span>");
+
+                    $(".verificationInfoText").html("");
+                    $(".verificationInfoText").removeClass("dcc-alert dcc-alert-success");
+                    $(".verificationErrorText").html("");
+                    $(".verificationErrorText").removeClass("dcc-alert dcc-alert-danger");
+
+                } else {
+                    $("#email_success").removeClass("dcc-alert dcc-alert-success");
+                    $("#email_success").html("");
+                }
+
+            }
+
+            // email_fail_retry
+            if ($("#email_fail_retry").length > 0) {
+                if (!($("#email_fail_retry").css("display") == "none")) {
+                    $("#email_fail_retry").addClass("dcc-alert dcc-alert-danger");
+                    $("#email_fail_retry").html("<span>" + email_fail_retry + "</span>");
+
+                    $(".verificationInfoText").html("");
+                    $(".verificationInfoText").removeClass("dcc-alert dcc-alert-success");
+                    $(".verificationSuccessText").html("");
+                    $(".verificationSuccessText").removeClass("dcc-alert dcc-alert-success");
+
+
+                } else {
+                    $("#email_fail_retry").removeClass("dcc-alert dcc-alert-danger");
+                    $("#email_fail_retry").html("");
+                }
+
+
+            }
+
+            // email_fail_no_retry
+            if ($("#email_fail_no_retry").length > 0) {
+                if (!($("#email_fail_no_retry").css("display") == "none")) {
+                    $("#email_fail_no_retry").addClass("dcc-alert dcc-alert-danger");
+                    $("#email_fail_no_retry").html("<span>" + email_fail_no_retry + "</span>");
+
+                    $(".verificationInfoText").html("");
+                    $(".verificationInfoText").removeClass("dcc-alert dcc-alert-success");
+                    $(".verificationSuccessText").html("");
+                    $(".verificationSuccessText").removeClass("dcc-alert dcc-alert-success");
+
+                } else {
+                    $("#email_fail_no_retry").removeClass("dcc-alert dcc-alert-danger");
+                    $("#email_fail_no_retry").html("");
+                }
+            }
+
+            // email_fail_throttled
+            if ($("#email_fail_throttled").length > 0) {
+                if (!($("#email_fail_throttled").css("display") == "none")) {
+                    $("#email_fail_throttled").addClass("dcc-alert dcc-alert-danger");
+                    $("#email_fail_throttled").html("<span>" + email_fail_throttled + "</span>");
+
+                    $(".verificationInfoText").html("");
+                    $(".verificationInfoText").removeClass("dcc-alert dcc-alert-success");
+                    $(".verificationSuccessText").html("");
+                    $(".verificationSuccessText").removeClass("dcc-alert dcc-alert-success");
+
+
+                } else {
+                    $("#email_fail_throttled").removeClass("dcc-alert dcc-alert-danger");
+                    $("#email_fail_throttled").html("");
+                }
+            }
+
+            // email_fail_code_expired
+            if ($("#email_fail_code_expired").length > 0) {
+                if (!($("#email_fail_code_expired").css("display") == "none")) {
+                    $("#email_fail_code_expired").addClass("dcc-alert dcc-alert-danger");
+                    $("#email_fail_code_expired").html("<span>" + email_fail_code_expired + "</span>");
+
+                    $(".verificationInfoText").html("");
+                    $(".verificationInfoText").removeClass("dcc-alert dcc-alert-success");
+                    $(".verificationSuccessText").html("");
+                    $(".verificationSuccessText").removeClass("dcc-alert dcc-alert-success");
+
+
+                } else {
+                    $("#email_fail_code_expired").removeClass("dcc-alert dcc-alert-danger");
+                    $("#email_fail_code_expired").html("");
+                }
+
+            }
+
+            // email_fail_server
+            if ($("#email_fail_server").length > 0) {
+                if (!($("#email_fail_server").css("display") == "none")) {
+                    $("#email_fail_server").addClass("dcc-alert dcc-alert-danger");
+                    $("#email_fail_server").html("<span>" + email_fail_server + "</span>");
+
+                    $(".verificationInfoText").html("");
+                    $(".verificationInfoText").removeClass("dcc-alert dcc-alert-success");
+                    $(".verificationSuccessText").html("");
+                    $(".verificationSuccessText").removeClass("dcc-alert dcc-alert-success");
+
+                } else {
+                    $("#email_fail_server").removeClass("dcc-alert dcc-alert-danger");
+                    $("#email_fail_server").html("");
+                }
+
+            }
+
+            // email_incorrect_format
+            if ($("#email_incorrect_format").length > 0) {
+                if (!($("#email_incorrect_format").css("display") == "none")) {
+                    $("#email_incorrect_format").addClass("dcc-alert dcc-alert-danger");
+                    $("#email_incorrect_format").html("<span>" + email_incorrect_format + "</span>");
+
+                    $(".verificationInfoText").html("");
+                    $(".verificationInfoText").removeClass("dcc-alert dcc-alert-success");
+                    $(".verificationSuccessText").html("");
+                    $(".verificationSuccessText").removeClass("dcc-alert dcc-alert-success");
+
+                } else {
+                    $("#email_incorrect_format").removeClass("dcc-alert dcc-alert-danger");
+                    $("#email_incorrect_format").html("");
+                }
+
+
+            }
+
+
+
+
+        }, 100);
+    }
+
+
     setInterval(function () {
-        if ($("#SignupEmailVerificationControl_error_message").length > 0) {
-            if (!($("#SignupEmailVerificationControl_error_message").css("display") == "none")) {
-                signupEmailVerificationError.parentElement.classList.add("dcc-alert", "dcc-alert-danger")
-                signupEmailVerificationError.innerHTML = "<span>" + signupEmailVerificationError.innerHTML + "</span>"
-            }
-            else {
-                signupEmailVerificationError.parentElement.classList.remove("dcc-alert", "dcc-alert-danger")
-                signupEmailVerificationError.innerHTML = ""
-            }
-        }
-        if ($("#SignupEmailVerificationControl_success_message").length > 0) {
-            if (!($("#SignupEmailVerificationControl_success_message").css("display") == "none")) {
-                signupEmailVerificationSuccess.classList.add("dcc-alert", "dcc-alert-success")
-                signupEmailVerificationSuccess.innerHTML = "<span>" + signupEmailVerificationSuccess.innerHTML + "</span>"
-            }
-            else {
-                signupEmailVerificationSuccess.classList.remove("dcc-alert", "dcc-alert-success")
-                signupEmailVerificationSuccess.innerHTML = ""
-            }
-        }
 
         if (emailVerificationError) {
             if (!($("#emailVerificationControl_error_message").css("display") == "none")) {
@@ -389,7 +546,7 @@ var passwordMatched = false;
             }
         }
 
-    }, 100);
+    }, 10000);
 
 
     /*   var createAccount = document.getElementById("continue");
@@ -538,4 +695,86 @@ var passwordMatched = false;
     })
 
 
+    // add button classes
+    $(".sendButton").addClass("green-action-button")
+    $(".verifyButton").addClass("green-action-button")
+    $(".editButton").addClass("haze-action-button")
+
+    $("#email_ver_but_send").css("margin-left", "auto")
+    $("#email_ver_but_send").css("margin-right", "auto")
+    $("#email_ver_but_send").css("max-width", "180px")
+    $(".buttons.verify").css("width", "100%")
+
+    var verification_code = "";
+    setInterval(function () {
+        if ($("#email_ver_input_label").css("display") != "none") {
+
+
+            // implement verification code style
+            var verification_code_html = ` <div class="verification-code-container">
+    <div class="verification-code-box"> <input type="text" maxlength="1" class="verification-code-input" /> </div>
+    <div class="verification-code-box"> <input type="text" maxlength="1" class="verification-code-input" /> </div>
+    <div class="verification-code-box"> <input type="text" maxlength="1" class="verification-code-input" /> </div>
+    <div class="verification-code-box"> <input type="text" maxlength="1" class="verification-code-input" /> </div>
+    <div class="verification-code-box"> <input type="text" maxlength="1" class="verification-code-input" /> </div>
+    <div class="verification-code-box"> <input type="text" maxlength="1" class="verification-code-input" /> </div>
+</div>`;
+
+            if ($(".verification-code-container").length === 0) {
+                $(verification_code_html).insertBefore('.buttons.verify');
+                $('.verification-code-input').on('input', function () {
+                    var $this = $(this);
+                    verification_code = verification_code + $this.val();
+                    $("#email_ver_input").val(verification_code)
+                    console.log(verification_code)
+                    // Delay the execution to allow the value to be updated after paste
+                    setTimeout(function () {
+                        if ($this.val().length === 1) {
+                            $this.closest('.verification-code-box').next().find('.verification-code-input').focus();
+                        }
+
+                        if ($this.val().length === 0) {
+                            $this.closest('.verification-code-box').prev().find('.verification-code-input').focus();
+                        }
+                    }, 0);
+                });
+                // apply new code threshold
+                newCodeWaitTime();
+            }
+        }
+        else {
+            $(".verification-code-container").remove();
+        }
+    }, 500)
+
+
+    // Move the elements above their parent
+    $('#email_ver_input_label').insertBefore('.buttons.verify');
+    $('.email_ver_input').insertBefore('.buttons.verify');
+    $('.email_ver_input').addClass('dcc-hidden');
+
+    // waiting UI
+    var email_ver_wait_html = `<div class="email_ver_wait"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" id="message"><path fill="#2F4757" d="M20.34,9.32l-14-7a3,3,0,0,0-4.08,3.9l2.4,5.37h0a1.06,1.06,0,0,1,0,.82l-2.4,5.37A3,3,0,0,0,5,22a3.14,3.14,0,0,0,1.35-.32l14-7a3,3,0,0,0,0-5.36Zm-.89,3.57-14,7a1,1,0,0,1-1.35-1.3l2.39-5.37A2,2,0,0,0,6.57,13h6.89a1,1,0,0,0,0-2H6.57a2,2,0,0,0-.08-.22L4.1,5.41a1,1,0,0,1,1.35-1.3l14,7a1,1,0,0,1,0,1.78Z"></path></svg>
+    <p>Sending Verifcation Code&nbsp;</p></div>`;
+    $("#email_ver_wait").html(email_ver_wait_html)
+
+    //lient side validation
+    signInName
+
+
 })();
+
+function newCodeWaitTime(setup = false) {
+        $("#email_ver_but_resend").prop('disabled', true);
+        var countdown = 15;
+        $('#email_ver_but_resend').text("Please wait for " + countdown + " seconds");
+        var countdownInterval = setInterval(function () {
+            countdown--;
+            $('#email_ver_but_resend').text("Please wait for " + countdown + " seconds");
+            if (countdown <= 0) {
+                $('#email_ver_but_resend').prop('disabled', false);
+                clearInterval(countdownInterval);
+                $('#email_ver_but_resend').text("Send new code");
+            }
+        }, 1000);
+}
