@@ -663,8 +663,8 @@
         // define custom fonts 
         pdfMake.fonts = {
             Din2014: {
-                normal: "https://dccwebteam-app.github.io/assets/fonts/din-2014/din-2014-regular.ttf",
-                bold: 'https://dccwebteam-app.github.io/assets/fonts/din-2014/din-2014-bold.ttf',
+                normal: "https://dccwebteam-app.github.io/solicitors-portal/portal/assets/fonts/din-2014/din-2014-regular.ttf",
+                bold: 'https://dccwebteam-app.github.io/solicitors-portal/portal/assets/fonts/din-2014/din-2014-bold.ttf',
             },
         };
 
@@ -812,11 +812,36 @@
                 font: 'Din2014'
             },
         };
+        /**
+         * Function to generate the PDF and to download it.
+         * @param none
+         * Required Library: File Save JS
+         */
         function generatePDF() {
             var pdfGenerator = pdfMake.createPdf(docDefinition);
               pdfGenerator.getBlob(function (blob) {
                   saveAs(blob, 'your_custom_filename.pdf'); // Using FileSaver.js for saving the file with a custom filename
               });
+
+              // optional feature to save the PDF onto the server
+              fetch('your_server_url', {
+                method: 'POST',
+                body: pdfBlob,
+                headers: {
+                    'Content-Type': 'application/pdf'
+                    // Add any other headers as needed
+                }
+            })
+            .then(response => {
+                if (response.ok) {
+                    console.log('File successfully sent to the server.');
+                } else {
+                    console.error('Failed to send the file to the server.');
+                }
+            })
+            .catch(error => {
+                console.error('Error:', error);
+            });
         }
     </script>
 </body>
