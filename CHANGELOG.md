@@ -21,6 +21,7 @@
 **PDF Generation:**
 
 - PDFMake library is now utilized for efficient PDF generation within the portal.
+- 
 **Footer Enhancement:**
 
 - The footer section has undergone a revision, now utilising Flexbox for improved layout and responsiveness.
