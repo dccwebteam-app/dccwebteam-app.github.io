@@ -16,11 +16,11 @@
 **CSS Framework:**
 
 - The Tailwind CSS library has been employed to handle the layout and styling of the new portal's content.
-- And general CSS is used for designs from the main site (navigation, header and footer)
+- General CSS is used for designs from the main site (navigation, header, and footer)
 
 **PDF Generation:**
 
-- PDFMake library is now utilized for efficient PDF generation within the portal.
+- The PDFMake library is now utilized for efficient PDF generation within the portal.
 
 **Footer Enhancement:**
 
