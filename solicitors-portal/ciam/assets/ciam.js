@@ -1,7 +1,7 @@
 // Wait for the DOM to be loaded 
 var passwordStrength = 0;
 var passwordMatched = false;
-var wait_seconds = 5;
+var passcode = "";
 (function () {
 
     // remove empty aria label
@@ -705,7 +705,7 @@ var wait_seconds = 5;
     $("#email_ver_but_send").css("max-width", "180px")
     $(".buttons.verify").css("width", "100%")
 
-    var verification_code = "";
+
     setInterval(function () {
         if ($("#email_ver_input_label").css("display") != "none") {
 
@@ -724,9 +724,7 @@ var wait_seconds = 5;
                 $(verification_code_html).insertBefore('.buttons.verify');
                 $('.verification-code-input').on('input', function () {
                     var $this = $(this);
-                    verification_code = verification_code + $this.val();
-                    $("#email_ver_input").val(verification_code)
-                    console.log(verification_code)
+
                     // Delay the execution to allow the value to be updated after paste
                     setTimeout(function () {
                         if ($this.val().length === 1) {
@@ -740,6 +738,17 @@ var wait_seconds = 5;
                 });
                 // apply new code threshold
                 newCodeWaitTime();
+            }
+
+            // get the passcode input
+            if ($(".verification-code-container").length > 0) {
+                var passcode_input = "";
+                $(".verification-code-input").each(function () {
+                    if ($(this).val().length > 0) {
+                        passcode_input = passcode_input + $(this).val();
+                        $('#email_ver_input').val(passcode_input)
+                    }
+                })
             }
         }
         else {
@@ -756,25 +765,36 @@ var wait_seconds = 5;
     // waiting UI
     var email_ver_wait_html = `<div class="email_ver_wait"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" id="message"><path fill="#2F4757" d="M20.34,9.32l-14-7a3,3,0,0,0-4.08,3.9l2.4,5.37h0a1.06,1.06,0,0,1,0,.82l-2.4,5.37A3,3,0,0,0,5,22a3.14,3.14,0,0,0,1.35-.32l14-7a3,3,0,0,0,0-5.36Zm-.89,3.57-14,7a1,1,0,0,1-1.35-1.3l2.39-5.37A2,2,0,0,0,6.57,13h6.89a1,1,0,0,0,0-2H6.57a2,2,0,0,0-.08-.22L4.1,5.41a1,1,0,0,1,1.35-1.3l14,7a1,1,0,0,1,0,1.78Z"></path></svg>
     <p>Sending Verifcation Code&nbsp;</p></div>`;
+    var email_ver_passcode_wait_html = `<div class="email_ver_wait"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" id="repeat"><path fill="#2F4757" d="M5.5,17.5H4V6.5h7.8L11,7.29a1,1,0,0,0,1.41,1.42l2.5-2.5a1,1,0,0,0,0-1.42l-2.5-2.5a1,1,0,0,0-1.41,0,1,1,0,0,0,0,1.42l.79.79H3a1,1,0,0,0-1,1v13a1,1,0,0,0,1,1H5.5a1,1,0,0,0,0-2ZM21,4.5H18.5a1,1,0,0,0,0,2H20v11H11.63l.79-.79a1,1,0,0,0,0-1.42,1,1,0,0,0-1.41,0l-2.5,2.5a1,1,0,0,0,0,1.42l2.5,2.5a1,1,0,0,0,1.41-1.42l-.79-.79H21a1,1,0,0,0,1-1V5.5A1,1,0,0,0,21,4.5Z"></path></svg>
+    <p>Verifing Code&nbsp;</p></div>`;
     $("#email_ver_wait").html(email_ver_wait_html)
 
-    //lient side validation
-    signInName
+    setInterval(() => {
+        if ($("#email_ver_but_verify").css("display") != "none") {
+            $("#email_ver_wait").html(email_ver_passcode_wait_html)
 
+        }
+    }, 100);
+
+    // add width class
+    $(".verificationInfoText").parent().addClass("dcc-w-full")
 
 })();
 
-function newCodeWaitTime(setup = false) {
-        $("#email_ver_but_resend").prop('disabled', true);
-        var countdown = 15;
+/**
+ * Function to disable the new code butto for 15 seconds
+ */
+function newCodeWaitTime() {
+    $("#email_ver_but_resend").prop('disabled', true);
+    var countdown = 15;
+    $('#email_ver_but_resend').text("Please wait for " + countdown + " seconds");
+    var countdownInterval = setInterval(function () {
+        countdown--;
         $('#email_ver_but_resend').text("Please wait for " + countdown + " seconds");
-        var countdownInterval = setInterval(function () {
-            countdown--;
-            $('#email_ver_but_resend').text("Please wait for " + countdown + " seconds");
-            if (countdown <= 0) {
-                $('#email_ver_but_resend').prop('disabled', false);
-                clearInterval(countdownInterval);
-                $('#email_ver_but_resend').text("Send new code");
-            }
-        }, 1000);
+        if (countdown <= 0) {
+            $('#email_ver_but_resend').prop('disabled', false);
+            clearInterval(countdownInterval);
+            $('#email_ver_but_resend').text("Send new code");
+        }
+    }, 1000);
 }
