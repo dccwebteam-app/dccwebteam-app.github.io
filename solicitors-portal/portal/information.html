@@ -698,7 +698,7 @@
         // define PDF contents  
         var docDefinition = {
             info: {
-                title: 'Rates Lookup Information',
+                title: 'Rating information as at 26/01/2024',
                 author: 'Dunedin City Council',
                 subject: 'Rates Lookup Information',
                 keywords: 'DCC, Solicitors Portal, Rates Lookup',
@@ -820,7 +820,11 @@
         function generatePDF() {
             var pdfGenerator = pdfMake.createPdf(docDefinition);
               pdfGenerator.getBlob(function (blob) {
-                  saveAs(blob, 'your_custom_filename.pdf'); // Using FileSaver.js for saving the file with a custom filename
+                // Address should be convereted to lowercase and spaces seperated by hypen.
+                // Address and date should be seperated by underscore.
+                $filename = '50-the-octagon-central-dunedin-dunedin-9016_26-01-2024.pdf'; 
+
+                  saveAs(blob, $filename); // Using FileSaver.js for saving the file with a custom filename
               });
 
               // optional feature to save the PDF onto the server
