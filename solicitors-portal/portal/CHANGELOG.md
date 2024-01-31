@@ -1,4 +1,8 @@
 # Release Notes for Solicitor's Portal
+
+## 1.0.1 (2024-01-31)
+- Updated the PDF title and filename [#2111138926](https://github.com/dccwebteam-app/dccwebteam-app.github.io/issues/1#issue-2111138926)
+
 ## 1.0.0 (2024-01-19)
 
 **Design Integration:**
