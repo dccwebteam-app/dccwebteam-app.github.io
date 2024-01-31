@@ -243,7 +243,7 @@ form ul li {
 }
 
 @media (max-width: 639.98px) {
-    .attrEntry label {
+    .attrEntry label:not(.verification-code) {
         display: block !important;
     }
 
@@ -361,7 +361,7 @@ input[type="text"],
 input[type="password"],
 input[type="email"],
 input[type="text"]:disabled,
-input[type="password"]:disabled ,
+input[type="password"]:disabled,
 input[type="email"]:disabled {
     -webkit-appearance: none;
     -moz-appearance: none;
@@ -600,9 +600,16 @@ form .intro,
     z-index: 2;
     position: absolute;
     left: 2%;
-    top: 55%;
+    top: 65%;
 }
 
+@media screen and (min-width:768px)
+{
+    .givenName:before,
+.surname:before {
+    top: 55%;
+}
+}
 input[type="checkbox"] {
     position: relative;
     cursor: pointer;
@@ -624,7 +631,41 @@ footer .footer-links {
     display: flex;
     align-items: center;
     justify-content: space-evenly;
-    gap: 1rem;
+    flex-direction: column;
+    margin: 1rem 0;
+}
+
+#attributeVerification .buttons button[type="button"],
+#attributeVerification .buttons button[type="submit"] {
+    margin: 0;
+}
+
+@media screen and (max-width:767.98px) {
+#email_ver_but_resend
+{
+    margin-top: 1rem !important;
+}
+}
+.CheckboxMultiSelect
+{
+    margin-bottom: 2.5rem;
+}
+
+@media screen and (min-width:768px) {
+    #attributeVerification .buttons {
+        flex-direction: row;
+        gap: 1rem;
+        margin: 0;
+    }
+
+    #attributeVerification .buttons button[type="button"],
+    #attributeVerification .buttons button[type="submit"] {
+        margin: 1rem 0;
+    }
+    .CheckboxMultiSelect
+{
+    margin-bottom: 0;
+}
 }
 
 .attrEntry label:not(#extension_termsOfUseConsentChoice_label):not(#emailVerificationControl_label) .userTip:after {
@@ -917,7 +958,7 @@ input[type="radio"]:checked:after {
 }
 
 .dcc-hidden {
-    display: none;
+    display: none !important;
 }
 
 .verification-code-container {
@@ -1010,7 +1051,37 @@ input[type="radio"]:checked:after {
     0% {
         fill: var(--dark-navy);
     }
+
     100% {
         fill: var(--primary);
+    }
+}
+
+.simplemodal-container,
+.simplemodal-overlay {
+    display: none !important;
+}
+
+.submit-btn-loading {
+    border: 2px solid #f3f3f3;
+    border-top: 2px solid var(--dark-navy);
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    display: inline-block;
+    vertical-align: middle;
+    animation: btnLoading 2s linear infinite;
+    -webkit-animation: btnLoading 2s linear infinite;
+    -moz-animation: btnLoading 2s linear infinite;
+    -o-animation: btnLoading 2s linear infinite;
+}
+
+@keyframes btnLoading {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
     }
 }

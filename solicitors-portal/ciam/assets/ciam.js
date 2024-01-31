@@ -2,6 +2,7 @@
 var passwordStrength = 0;
 var passwordMatched = false;
 var passcode = "";
+var email_success_shown = false;
 (function () {
 
     // remove empty aria label
@@ -67,11 +68,11 @@ var passcode = "";
     }
     var sendCodeElement = document.getElementsByClassName("sendCode")[0];
     if (sendCodeElement) {
-        sendCodeElement.className = "action-button gainsboro-action-button";
+        sendCodeElement.className = "action-button green-action-button";
     }
     var verifyCodeElement = document.getElementsByClassName("verifyCode")[0];
     if (verifyCodeElement) {
-        verifyCodeElement.className = "action-button gainsboro-action-button";
+        verifyCodeElement.className = "action-button green-action-button";
     }
     var sendNewCodeElement = document.getElementsByClassName("sendNewCode")[0];
     if (sendNewCodeElement) {
@@ -354,10 +355,15 @@ var passcode = "";
         var email_fail_server = $("#email_fail_server").html();
         var email_incorrect_format = $("#email_incorrect_format").html();
 
+        var password_mismatch = "";
+
         setInterval(function () {
 
+            if ($("#passwordEntryMismatch").html().length > 0) {
+                password_mismatch = $("#passwordEntryMismatch").html();
+            }
 
-            if (("#email_ver_wait").length > 0) {
+            if ($("#email_ver_wait").length > 0) {
                 $(".verificationInfoText").html("");
                 $(".verificationInfoText").removeClass("dcc-alert dcc-alert-success");
                 $(".verificationErrorText").html("");
@@ -387,7 +393,7 @@ var passcode = "";
 
             // email verified
             if ($("#email_success").length > 0) {
-                if (!($("#email_success").css("display") == "none")) {
+                if (!($("#email_success").css("display") == "none") && (!email_success_shown)) {
                     $("#email_success").addClass("dcc-alert dcc-alert-success");
                     $("#email_success").html("<span>" + email_success_html + "</span>");
 
@@ -395,6 +401,7 @@ var passcode = "";
                     $(".verificationInfoText").removeClass("dcc-alert dcc-alert-success");
                     $(".verificationErrorText").html("");
                     $(".verificationErrorText").removeClass("dcc-alert dcc-alert-danger");
+                 
 
                 } else {
                     $("#email_success").removeClass("dcc-alert dcc-alert-success");
@@ -515,6 +522,25 @@ var passcode = "";
             }
 
 
+            // remove success message 
+            $(".error.pageLevel").each(function(){
+                if(!($(this).css("display") == "none"))
+                {
+
+                    if(  $(this).text().length > 0)
+                    {
+                        $(this).html("<p>" + $(this).text() + "</p>");
+                    }
+                    $(".verificationInfoText").html("");
+                    $(".verificationInfoText").removeClass("dcc-alert dcc-alert-success");
+                    $(".verificationSuccessText").html("");
+                    $(".verificationSuccessText").removeClass("dcc-alert dcc-alert-success");
+                    $("#verifying_blurb").html("")
+
+                    email_success_shown = true;
+                }
+
+            })
 
 
         }, 100);
@@ -523,7 +549,7 @@ var passcode = "";
 
     setInterval(function () {
 
-        if (emailVerificationError) {
+        if ($("#emailVerificationControl_error_message").length > 0) {
             if (!($("#emailVerificationControl_error_message").css("display") == "none")) {
                 emailVerificationError.parentElement.classList.add("dcc-alert", "dcc-alert-danger")
                 emailVerificationError.innerHTML = "<span>" + emailVerificationError.innerHTML + "</span>"
@@ -535,7 +561,7 @@ var passcode = "";
         }
 
         // email verification from forgot password 
-        if (emailVerificationSuccess) {
+        if ($("#emailVerificationControl_success_message").length > 0) {
             if (!($("#emailVerificationControl_success_message").css("display") == "none")) {
                 emailVerificationSuccess.classList.add("dcc-alert", "dcc-alert-success")
                 emailVerificationSuccess.innerHTML = "<span>" + emailVerificationSuccess.innerHTML + "</span>"
@@ -546,53 +572,7 @@ var passcode = "";
             }
         }
 
-    }, 10000);
-
-
-    /*   var createAccount = document.getElementById("continue");
-       if (createAccount) {
-           createAccount.disabled = "true";
-       }
-       setInterval(function () {
-           // button styles 
-           var changeClaims = document.getElementById("SignupEmailVerificationControl_but_change_claims")
-           var emailVerificationChangeClaims = document.getElementById("emailVerificationControl_but_change_claims")
-           var newPassword = document.getElementById("newPassword")
-   
-           if (changeClaims) {
-               if ($("#SignupEmailVerificationControl_but_change_claims").css("display") == "block") {
-                   if (createAccount && ($("#newPassword").val() !== "") && ($("#newPassword").val() == $("#reenterPassword").val()) && ($("meter:eq(0)").val() == 100 && $("meter:eq(1)").val() == 100)) {
-                       $("#continue").attr("disabled", false);
-                   }
-                   else {
-                       $("#continue").attr("disabled", true);
-                   }
-               }
-           }
-   
-           else if (emailVerificationChangeClaims || newPassword) {
-               console.log("1")
-               if (($("#emailVerificationControl_but_change_claims").length > 0 && $("#emailVerificationControl_but_change_claims").css("display") == "block") || newPassword) {
-                   console.log("2")
-                   if (createAccount && !newPassword) {
-                       $("#continue").attr("disabled", false);
-                       console.log("3")
-                   }
-                   else if (createAccount && newPassword && ($("#newPassword").val() !== "") && ($("#newPassword").val() == $("#reenterPassword").val()) && ($("meter:eq(0)").val() == 100 && $("meter:eq(1)").val() == 100)) {
-                       $("#continue").attr("disabled", false);
-                       console.log("4")
-                       console.log($("#newPassword").val())
-                       console.log($("#reenterPassword").val())
-                   }
-                   else {
-                       $("#continue").attr("disabled", true);
-                       console.log("5")
-                   }
-               }
-           }
-   
-       }, 1000);
-   */
+    }, 100);
 
     // update T&c's text t oanchor and link it
     var termsOfUseConsentChoice = document.getElementById('extension_termsOfUseConsentChoice_label');
@@ -672,6 +652,7 @@ var passcode = "";
         var element = document.getElementById(target);
         if (element && define !== null) {
             element.setAttribute("minlength", 8)
+            element.setAttribute("maxlength", 50)
             element.setCustomValidity("Password must be 8 characters long")
         }
         else if (element && $("#" + target).val().length >= 8) {
@@ -695,20 +676,33 @@ var passcode = "";
     })
 
 
-    // add button classes
+    // register page add button classes
     $(".sendButton").addClass("green-action-button")
     $(".verifyButton").addClass("green-action-button")
     $(".editButton").addClass("haze-action-button")
 
+    // register page 
     $("#email_ver_but_send").css("margin-left", "auto")
     $("#email_ver_but_send").css("margin-right", "auto")
     $("#email_ver_but_send").css("max-width", "180px")
     $(".buttons.verify").css("width", "100%")
 
 
+    // forgot password page
+    $("#emailVerificationControl_but_send_code").css("margin-left", "auto")
+    $("#emailVerificationControl_but_send_code").css("margin-right", "auto")
+    $("#emailVerificationControl_but_send_code").css("max-width", "180px")
+    if($("#emailVerificationControl_but_send_code").length > 0 )
+    {
+        $(".buttons:eq(1)").css("width", "100%")
+        $("#continue").addClass("dcc-hidden")
+        $("#cancel").addClass("dcc-hidden")
+        $("#emailVerificationControl_but_change_claims").css("max-width", "180px")
+    }
+    
     setInterval(function () {
-        if ($("#email_ver_input_label").css("display") != "none") {
-
+        if ((($("#email_ver_input_label").css("display") != "none") && ($(".TextBox.VerificationCode").length === 0)) || 
+        (($("#email_ver_input_label").length === 0 ) && ($(".TextBox.VerificationCode").css("display") != "none"))) {
 
             // implement verification code style
             var verification_code_html = ` <div class="verification-code-container">
@@ -721,7 +715,16 @@ var passcode = "";
 </div>`;
 
             if ($(".verification-code-container").length === 0) {
-                $(verification_code_html).insertBefore('.buttons.verify');
+                if($("#email_ver_input").length > 0 )
+                {
+                    $(verification_code_html).insertBefore('.buttons.verify');
+                }
+                else if($("#verificationCode").length > 0)
+                {
+                    $('.attrEntry .verificationCode').append(verification_code_html);
+                    $("#verificationCode").addClass("dcc-hidden")
+                }
+                
                 $('.verification-code-input').on('input', function () {
                     var $this = $(this);
 
@@ -737,7 +740,17 @@ var passcode = "";
                     }, 0);
                 });
                 // apply new code threshold
-                newCodeWaitTime();
+
+                if($("#email_ver_input").length > 0 )
+                {
+                    newCodeWaitTime("#email_ver_but_resend");
+                }
+                else if($("#verificationCode").length > 0)
+                {
+                    newCodeWaitTime("#emailVerificationControl_but_send_new_code");
+                }
+
+                
             }
 
             // get the passcode input
@@ -746,7 +759,17 @@ var passcode = "";
                 $(".verification-code-input").each(function () {
                     if ($(this).val().length > 0) {
                         passcode_input = passcode_input + $(this).val();
-                        $('#email_ver_input').val(passcode_input)
+
+                        if($("#email_ver_input").length > 0 )
+                        {
+                            $('#email_ver_input').val(passcode_input)
+                        }
+                        else if($("#verificationCode").length > 0)
+                        {
+                            $('#verificationCode').val(passcode_input)
+                        }
+
+                       
                     }
                 })
             }
@@ -765,36 +788,122 @@ var passcode = "";
     // waiting UI
     var email_ver_wait_html = `<div class="email_ver_wait"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" id="message"><path fill="#2F4757" d="M20.34,9.32l-14-7a3,3,0,0,0-4.08,3.9l2.4,5.37h0a1.06,1.06,0,0,1,0,.82l-2.4,5.37A3,3,0,0,0,5,22a3.14,3.14,0,0,0,1.35-.32l14-7a3,3,0,0,0,0-5.36Zm-.89,3.57-14,7a1,1,0,0,1-1.35-1.3l2.39-5.37A2,2,0,0,0,6.57,13h6.89a1,1,0,0,0,0-2H6.57a2,2,0,0,0-.08-.22L4.1,5.41a1,1,0,0,1,1.35-1.3l14,7a1,1,0,0,1,0,1.78Z"></path></svg>
     <p>Sending Verifcation Code&nbsp;</p></div>`;
-    var email_ver_passcode_wait_html = `<div class="email_ver_wait"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" id="repeat"><path fill="#2F4757" d="M5.5,17.5H4V6.5h7.8L11,7.29a1,1,0,0,0,1.41,1.42l2.5-2.5a1,1,0,0,0,0-1.42l-2.5-2.5a1,1,0,0,0-1.41,0,1,1,0,0,0,0,1.42l.79.79H3a1,1,0,0,0-1,1v13a1,1,0,0,0,1,1H5.5a1,1,0,0,0,0-2ZM21,4.5H18.5a1,1,0,0,0,0,2H20v11H11.63l.79-.79a1,1,0,0,0,0-1.42,1,1,0,0,0-1.41,0l-2.5,2.5a1,1,0,0,0,0,1.42l2.5,2.5a1,1,0,0,0,1.41-1.42l-.79-.79H21a1,1,0,0,0,1-1V5.5A1,1,0,0,0,21,4.5Z"></path></svg>
-    <p>Verifing Code&nbsp;</p></div>`;
     $("#email_ver_wait").html(email_ver_wait_html)
-
-    setInterval(() => {
-        if ($("#email_ver_but_verify").css("display") != "none") {
-            $("#email_ver_wait").html(email_ver_passcode_wait_html)
-
-        }
-    }, 100);
 
     // add width class
     $(".verificationInfoText").parent().addClass("dcc-w-full")
+    $("#email_ver_but_edit").css("max-width", "150px")
+
+
+    $("#attributeList li:first-child").addClass('dcc-email-verification');
+    $("#continue").parent().addClass('dcc-hidden');
+
+    $("#attributeList li").each(function () {
+        if (!$(this).hasClass("dcc-email-verification")) {
+            $(this).addClass("dcc-hidden")
+        }
+    });
+
+    setInterval(function () {
+
+        if ($("#email_ver_but_edit").css("display") != "none") {
+            $("#attributeList li").each(function () {
+                if ($(this).hasClass("dcc-hidden")) {
+                    $(this).removeClass("dcc-hidden")
+                }
+            });
+            $("#continue").parent().removeClass('dcc-hidden');
+        }
+        else {
+            $("#continue").parent().addClass('dcc-hidden');
+
+            $("#attributeList li").each(function () {
+                if (!$(this).hasClass("dcc-email-verification")) {
+                    $(this).addClass("dcc-hidden")
+                    var input = $(this).find('input')
+                    if(typeof input !== "undefined")
+                    {
+                        $(input).val('')
+                    }
+                }
+            });
+            if($("#extension_termsOfUseConsentChoice_AgreeToTermsOfUseConsentYes").length > 0 )
+            {
+                $("meter").val(0)
+                //$('#extension_termsOfUseConsentChoice_AgreeToTermsOfUseConsentYes').prop('checked', false);
+            }
+           
+        }
+
+        // processing forms
+        if($("#simplemodal-overlay").length > 0)
+        {
+            if($("#continue").html() == "Continue")
+            {
+                $("#continue").html("<div class='submit-btn-loading'></div>")
+                $("#continue").attr("disabled", true)
+            }
+ 
+        }
+        else 
+        {
+            if($("#continue").html() != "Continue")
+            {
+                $("#continue").html("Continue")
+                $("#continue").attr("disabled", false)
+            }
+
+           
+        }
+
+        // show buttons 
+        if($("#verificationCode").length > 0)
+        {
+            if($("#emailVerificationControl_but_change_claims").css("display") != "none")
+            {
+                $("#continue").removeClass("dcc-hidden")
+                $("#cancel").removeClass("dcc-hidden")
+            }
+            else 
+            {
+                $("#continue").addClass("dcc-hidden")
+                $("#cancel").addClass("dcc-hidden")
+            }
+        }
+
+    }, 100)
+
+
+    // set the consent checkbox value based on user selection
+    $("#extension_termsOfUseConsentChoice_AgreeToTermsOfUseConsentYes").on("change", function(){
+        if($(this).is(":checked"))
+        {
+            $(this).val(true)
+        }
+        else 
+        {
+            $(this).val('')   
+        }
+    });
+
+    $("#email_ver_input_label").addClass("verification-code")
 
 })();
 
 /**
  * Function to disable the new code butto for 15 seconds
  */
-function newCodeWaitTime() {
-    $("#email_ver_but_resend").prop('disabled', true);
+function newCodeWaitTime(elem) {
+    $(elem).prop('disabled', true);
     var countdown = 15;
-    $('#email_ver_but_resend').text("Please wait for " + countdown + " seconds");
+    $(elem).text("Please wait for " + countdown + " seconds");
     var countdownInterval = setInterval(function () {
         countdown--;
-        $('#email_ver_but_resend').text("Please wait for " + countdown + " seconds");
+        $(elem).text("Please wait for " + countdown + " seconds");
         if (countdown <= 0) {
-            $('#email_ver_but_resend').prop('disabled', false);
+            $(elem).prop('disabled', false);
             clearInterval(countdownInterval);
-            $('#email_ver_but_resend').text("Send new code");
+            $(elem).text("Send new code");
         }
     }, 1000);
 }
