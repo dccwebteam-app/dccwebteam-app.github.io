@@ -11,7 +11,7 @@
 
 **JavaScript Implementation:**
 
- - JavaScript functionalities have been selectively implemented on specific pages for demonstration purposes.
+ - JavaScript functionalities have been selectively implemented on specific pages for demonstration purposes only. This will not apply to the Next.js application.
 
 **CSS Framework:**
 
@@ -20,7 +20,7 @@
 
 **PDF Generation:**
 
-- The PDFMake library is now utilized for efficient PDF generation within the portal.
+- The PDFMake library is now utilised for efficient PDF generation within the portal.
 
 **Footer Enhancement:**
 
