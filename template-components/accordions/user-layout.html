@@ -1,0 +1,33 @@
+%begin_asset_metadata_settingUseIntro^eq:yes%
+    %asset_contents%
+%end_%
+
+<div  class="accordion %asset_metadata_settingMt% %asset_metadata_settingMb% %asset_metadata_settingPt% %asset_metadata_settingPb%">
+
+<script runat="server">
+(function(){
+        var asset = %asset_data_metadata^empty:{}%;
+        var accordionData = JSON.parse(asset.accordionJson.value)
+       
+    for(i=0; i < asset.settingAmount.value; i++){
+        print('\
+            <div class="card" style="padding:1rem;margin:1rem;">\
+                <div class="card-header" style="cursor: pointer;" data-toggle="collapse" data-target="#content'+i+'-%asset_assetid%">\
+                  <h2 class="h6 m-0 p-0">'+ asset['heading'+accordionData[i].currentOrder].value +'</h2>\
+                </div>\
+                <div id="content'+i+'-%asset_assetid%" class="collapse">\
+                  <div class="card-body">'+ asset['content'+accordionData[i].currentOrder].value +'</div>\
+                </div>\
+            </div>\
+            <hr>\
+        ')
+        
+    }
+})();
+</script>
+<script>
+     var asset = %asset_data_metadata^empty:{}%;
+       var accordionData = JSON.parse(asset.accordionJson.value)
+       console.log(accordionData)
+</script>
+</div>

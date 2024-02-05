@@ -1,0 +1,268 @@
+<style type="text/css">
+    .dcc-card
+    {
+        position: relative;
+    }
+        .loading-accordions
+        {
+           opacity:0.5;
+           user-select:none;
+           cursor:none;
+        }
+        .card-header input
+        {
+            border:none !important;
+            background:transparent !important;
+            width: 100% !important;
+            font-weight:bold !important;
+            outline: none !important;
+            padding: 0 !imortant;
+            height: auto !important;
+        }
+        .app-builder-row-action {
+        display: grid;
+        grid-template-columns: repeat(1, minmax(0, 1fr));
+        gap: 0.5rem;
+        align-items:center;
+    }
+    .dcc-sort-accordion
+    {
+        cursor:move;
+    }
+    .dcc-sort-accordion:before
+    {
+        content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' width='24' height='24' id='direction'%3E%3Cpath fill='%23000000' d='M9.71,10.21,12,7.91l2.29,2.3a1,1,0,0,0,1.42,0,1,1,0,0,0,0-1.42l-3-3a1,1,0,0,0-1.42,0l-3,3a1,1,0,0,0,1.42,1.42Zm4.58,4.58L12,17.09l-2.29-2.3a1,1,0,0,0-1.42,1.42l3,3a1,1,0,0,0,1.42,0l3-3a1,1,0,0,0-1.42-1.42Z'%3E%3C/path%3E%3C/svg%3E");
+    }
+    
+    .dcc-remove-accordion:before
+    {
+       content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' width='18' height='18' id='trash-alt'%3E%3Cpath fill='%23000000' d='M10,18a1,1,0,0,0,1-1V11a1,1,0,0,0-2,0v6A1,1,0,0,0,10,18ZM20,6H16V5a3,3,0,0,0-3-3H11A3,3,0,0,0,8,5V6H4A1,1,0,0,0,4,8H5V19a3,3,0,0,0,3,3h8a3,3,0,0,0,3-3V8h1a1,1,0,0,0,0-2ZM10,5a1,1,0,0,1,1-1h2a1,1,0,0,1,1,1V6H10Zm7,14a1,1,0,0,1-1,1H8a1,1,0,0,1-1-1V8H17Zm-3-1a1,1,0,0,0,1-1V11a1,1,0,0,0-2,0v6A1,1,0,0,0,14,18Z'%3E%3C/path%3E%3C/svg%3E");
+    }
+    
+    .card-header
+    {
+        display:flex;
+        align-items:center;
+    }
+    </style>
+    <div class="bct-wrapper" id="bct-wrapper-%asset_assetid%" data-asset-id="%asset_assetid%">
+        
+        <div class="bct-metadata bct-metadata-sections" style="display: none;">
+            <div id="ees_editMetadata">
+                <h3>Accordion</h3>
+            </div>
+            %metadata-F_section_997518_values^replace:<div >:%
+        </div>
+    
+        <div class="mbs">
+            
+            <div data-mid="%globals_asset_assetid:997520%" data-type="class" class="%asset_metadata_settingUseIntro%">
+                <div class="bct-wysiwyg">
+                    %__custom-contents%
+                </div>
+            </div>
+      
+                <div data-mid="%globals_asset_assetid:997521%" data-type="class" class="%asset_metadata_settingMt%">
+                    <div data-mid="%globals_asset_assetid:997524%" data-type="class" class="%asset_metadata_settingMb%">
+                    
+                        <div data-mid="%globals_asset_assetid:997522%" data-type="class" class="%asset_metadata_settingPt%">
+                            <div data-mid="%globals_asset_assetid:997523%" data-type="class" class="%asset_metadata_settingPb%">
+                            
+                                <div data-mid="%globals_asset_assetid:997519%" data-type="class" data-prepend="bct-show-" class="bct-show-%asset_metadata_settingAmount%">
+                                    
+                                    <div class="accordion border-bottom dcc-sortable">
+                                    
+                                        <div class="card dcc-card" dcc-sort="1" dcc-current="1">
+                                           
+                                            <div class="card-header cursor-poiner collapsed" data-toggle="collapse" data-target="#content1-%asset_assetid%" aria-expanded="false">
+                                                <div class="app-builder-row-action">
+                                                    <i class="dcc-sort-accordion" title="Reorder accordion"></i>
+                                                </div>
+                                              <h2 class="h6 m-0" data-mid="%globals_asset_assetid:997526%">%metadata-F_997526%</h2>
+                                            </div>
+                                           
+                                            <div id="content1-%asset_assetid%" class="card-body bct-wysiwyg bct-wysiwyg-no-padding collapse">
+                                                %metadata-F_997532%
+                                            </div>
+                                            
+                                        </div>
+                                        
+                                    <div class="card dcc-card" data-show-gt="1 2 3 4" dcc-sort="2" dcc-current="2">
+                                            <div class="card-header cursor-poiner collapsed" data-toggle="collapse" data-target="#content2-%asset_assetid%" aria-expanded="false">
+                                            <div class="app-builder-row-action">
+                                                    <i class="dcc-sort-accordion" title="Reorder accordion"></i>
+                                                </div>
+                                              <h2 class="h6 m-0" data-mid="%globals_asset_assetid:997527%">%metadata-F_997527%</h2>
+                                            </div>
+                                            <div id="content2-%asset_assetid%" class="collapse" >
+                                              <div class="card-body bct-wysiwyg bct-wysiwyg-no-padding">
+                                                %metadata-F_997533%
+                                              </div>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="card dcc-card" data-show-gt="2 3 4" dcc-sort="3" dcc-current="3">
+                                            <div class="card-header cursor-poiner collapsed" data-toggle="collapse" data-target="#content3-%asset_assetid%" aria-expanded="false">
+                                                 <div class="app-builder-row-action">
+                                                    <i class="dcc-sort-accordion" title="Reorder accordion"></i>
+                                                </div>
+                                              <h2 class="h6 m-0" data-mid="%globals_asset_assetid:997528%">%metadata-F_997528%</h2>
+                                            </div>
+                                            <div id="content3-%asset_assetid%" class="collapse" >
+                                              <div class="card-body bct-wysiwyg bct-wysiwyg-no-padding">
+                                                %metadata-F_997534%
+                                              </div>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="card dcc-card" data-show-gt="3 4" dcc-sort="4" dcc-current="4">
+                                            <div class="card-header cursor-poiner collapsed" data-toggle="collapse" data-target="#content4-%asset_assetid%" aria-expanded="false">
+                                                 <div class="app-builder-row-action">
+                                                    <i class="dcc-sort-accordion" title="Reorder accordion"></i>
+                                                </div>
+                                              <h2 class="h6 m-0" data-mid="%globals_asset_assetid:997529%">%metadata-F_997529%</h2>
+                                            </div>
+                                            <div id="content4-%asset_assetid%" class="collapse" >
+                                              <div class="card-body bct-wysiwyg bct-wysiwyg-no-padding">
+                                                %metadata-F_997535%
+                                              </div>
+                                            </div>
+                                        </div>
+                                        
+                                       
+                                    
+                                    </div><!--.accordion-->
+                                  
+                                </div><!--.bct-show-if-->
+                            
+                            </div><!--pb-->
+                        </div><!--pt-->
+                    
+                    </div><!--mb-->
+                </div><!--mt-->
+    
+        </div><!--.mbs-->
+        <div class="accordion-json" hidden>
+         %metadata-F_999241%
+    </div>
+    </div><!--.bct-wrapper-->
+            
+    
+        </div><!--.mbs-->
+    </div><!--.bct-wrapper-->
+    
+    <script>
+    !function(){if(window.runBct)runBct();else{const t=document.createElement(`script`);
+    t.src=`https://cdn.jsdelivr.net/gh/squizlabs/bootstrap-content-templates/dist/bct-loader.js`,
+    document.head.appendChild(t)}}();
+    </script>
+     <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+      <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+      <script src="./?a=997956"></script>  
+      <script>
+    var accordionArray = [];
+    var assetData = %asset_data_metadata^empty:{}% ;
+    var settingAmount = parseInt(assetData["settingAmount"].value, 10);
+    var accordionArray1 = "";
+    console.log(assetData)
+    
+    $(document).ready(function() {
+        
+        // check whether the accordion was sorted, if so change the DO order
+        if(typeof assetData["accordionJson"] !== "undefined" && assetData["accordionJson"].value.length > 0) {
+        try {
+            accordionArray1 = JSON.parse(assetData["accordionJson"].value)
+            accordionArray1.sort(function(a, b) {
+                return a.sortOrder - b.sortOrder;
+            });
+    
+            // update the sort order and current order value
+            $(accordionArray1).each(function(i, e) {
+                $(".dcc-card[dcc-current='" + accordionArray1[i].currentOrder + "']").attr("dcc-sort", accordionArray1[i].sortOrder)
+                $(".dcc-card[dcc-current='" + accordionArray1[i].currentOrder + "']").attr("dcc-current", accordionArray1[i].currentOrder)
+                var elements = $('div[dcc-sort]');
+                // Sort elements based on data-sort attribute values
+                elements.sort(function(a, b) {
+                    var aValue = $(a).attr('dcc-sort');
+                    var bValue = $(b).attr('dcc-sort');
+                    return aValue - bValue;
+                });
+                elements.each(function() {
+                    $(this).appendTo($(this).parent());
+                });
+            });
+        } catch(e) {
+            console.log(e)
+        }
+    }
+    // initialise JQuery sort
+        initialiseSort();
+    })
+    
+    function initialiseSort() {
+        $(".dcc-sortable").sortable({
+            handle: '.dcc-sort-accordion',
+            update: function(event, ui) {
+                // update the sort order 
+                $(".dcc-card").each(function(i, e) {
+                    $(e).attr("dcc-sort", i + 1)
+                    var h2 = $(e).find("h2 input");
+                    var textarea = $(e).find("textarea");
+                    if(h2.length > 0 && textarea.length > 0) {
+                        var accordionObj = {};
+                        //accordionObj.heading = $(h2).val()
+                        //accordionObj.content = $(textarea).val()
+                        accordionObj.sortOrder = parseInt($(e).attr("dcc-sort"), 10)
+                        accordionObj.currentOrder = parseInt($(e).attr("dcc-current"), 10)
+                        accordionArray[$(e).attr("dcc-sort")] = accordionObj
+                    }
+                });
+                if(accordionArray.length > 0) {
+                    console.log(assetData)
+                    var options = new Array();
+                    options['key'] = '2045533098'; // JS file api token 
+                    var js_api = new Squiz_Matrix_API(options);
+                    js_api.getMetadata({
+                        "asset_id": "%asset_assetid%",
+                        "dataCallback": function(res) {
+                            js_api.setMetadata({
+                                "asset_id": "%asset_assetid%",
+                                "field_id": assetData["accordionJson"].fieldid,
+                                "field_val": JSON.stringify(accordionArray.slice(1)),
+                                "dataCallback": function(data) {
+                                    console.log(data)
+                                    acquireLock();
+                                }
+                            });
+                        }
+                    });
+                }
+            }
+        });
+    }
+    
+    function acquireLock() {
+        var options = new Array();
+        options['key'] = '2045533098'; // JS file api token 
+        var js_api_lock = new Squiz_Matrix_API(options);
+        js_api_lock.acquireLock({
+            "asset_id": "%asset_assetid%",
+            "screen_name": "metadata",
+            "dependants_only": 0,
+            "force_acquire": 1,
+            "dataCallback": function(data) {
+                console.log(data)
+            }
+        },
+        {
+            "asset_id": "%asset_assetid%",
+            "screen_name": "settings",
+            "dependants_only": 0,
+            "force_acquire": 1,
+            "dataCallback": function(data) {
+                console.log(data)
+            }
+        });
+    }
+      </script>
+      
