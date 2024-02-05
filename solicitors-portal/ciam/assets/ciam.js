@@ -5,6 +5,59 @@ var passcode = "";
 var email_success_shown = false;
 (function () {
 
+    // change error messages
+    setInterval(function () {
+        if (typeof CONTENT !== "undefined") {
+            console.log("herer")
+            if (("error_requiredFieldMissing" in CONTENT)) {
+                CONTENT['error_requiredFieldMissing'] = "Please complete all mandatory fields and try again."
+            }
+            if (("error_passwordEntryMismatch" in CONTENT)) {
+                CONTENT['error_passwordEntryMismatch'] = "Please make sure your passwords match."
+            }
+            if (("ver_intro_msg" in CONTENT)) {
+                CONTENT['ver_intro_msg'] = "Verify by clicking the Send button"
+            }
+            if (("ver_fail_retry" in CONTENT)) {
+                CONTENT['ver_fail_retry'] = "Invalid code. Please try again."
+            }
+            if (("ver_fail_server" in CONTENT)) {
+                CONTENT['ver_fail_server'] = "Trouble verifying your email. Please enter a valid email and try again."
+            }
+            if (("ver_fail_throttled" in CONTENT)) {
+                CONTENT['ver_fail_throttled'] = "Too many verification requests for this email. Please wait and try again."
+            }
+            if (("ver_but_edit" in CONTENT)) {
+                CONTENT['ver_but_edit'] = "Change Email"
+            }
+            if (("error_fieldIncorrect" in CONTENT)) {
+                CONTENT['error_fieldIncorrect'] = "Invalid entries in one or more fields. Please review and try again."
+            }
+            if (("alert_title" in CONTENT)) {
+                CONTENT['alert_title'] = "Invalid entries in one or more fields. Please review and try again."
+            }
+            if (("alert_message" in CONTENT)) {
+                CONTENT['alert_message'] = "Too many incorrect attempts. Please try again later."
+            }
+            if (("ver_fail_no_retry" in CONTENT)) {
+                CONTENT['ver_fail_no_retry'] = "Invalid code. Please try again."
+            }
+            if (("ver_fail_code_expired" in CONTENT)) {
+                CONTENT['ver_fail_code_expired'] = "The code has expired. Please request a new one."
+            }
+            if (("ver_info_msg" in CONTENT)) {
+                CONTENT['ver_info_msg'] = "Check your inbox for the verification code and enter it below."
+            }
+            if (("button_continue" in CONTENT)) {
+                CONTENT['button_continue'] = "Get Started"
+            }
+            if (("ver_success_msg" in CONTENT)) {
+                CONTENT['ver_success_msg'] = "Email verified. You#39;re all set to continue."
+            }
+
+        }
+    }, 2000)
+
     // remove empty aria label
     var errorItemLevel = document.querySelectorAll('.error');
     if (errorItemLevel.length > 0) {
@@ -401,7 +454,7 @@ var email_success_shown = false;
                     $(".verificationInfoText").removeClass("dcc-alert dcc-alert-success");
                     $(".verificationErrorText").html("");
                     $(".verificationErrorText").removeClass("dcc-alert dcc-alert-danger");
-                 
+
 
                 } else {
                     $("#email_success").removeClass("dcc-alert dcc-alert-success");
@@ -518,17 +571,13 @@ var email_success_shown = false;
                     $("#email_incorrect_format").html("");
                 }
 
-
             }
 
-
             // remove success message 
-            $(".error.pageLevel").each(function(){
-                if(!($(this).css("display") == "none"))
-                {
+            $(".error.pageLevel").each(function () {
+                if (!($(this).css("display") == "none")) {
 
-                    if(  $(this).text().length > 0)
-                    {
+                    if ($(this).text().length > 0) {
                         $(this).html("<p>" + $(this).text() + "</p>");
                     }
                     $(".verificationInfoText").html("");
@@ -692,17 +741,16 @@ var email_success_shown = false;
     $("#emailVerificationControl_but_send_code").css("margin-left", "auto")
     $("#emailVerificationControl_but_send_code").css("margin-right", "auto")
     $("#emailVerificationControl_but_send_code").css("max-width", "180px")
-    if($("#emailVerificationControl_but_send_code").length > 0 )
-    {
+    if ($("#emailVerificationControl_but_send_code").length > 0) {
         $(".buttons:eq(1)").css("width", "100%")
         $("#continue").addClass("dcc-hidden")
         $("#cancel").addClass("dcc-hidden")
         $("#emailVerificationControl_but_change_claims").css("max-width", "180px")
     }
-    
+
     setInterval(function () {
-        if ((($("#email_ver_input_label").css("display") != "none") && ($(".TextBox.VerificationCode").length === 0)) || 
-        (($("#email_ver_input_label").length === 0 ) && ($(".TextBox.VerificationCode").css("display") != "none"))) {
+        if ((($("#email_ver_input_label").css("display") != "none") && ($(".TextBox.VerificationCode").length === 0)) ||
+            (($("#email_ver_input_label").length === 0) && ($(".TextBox.VerificationCode").css("display") != "none"))) {
 
             // implement verification code style
             var verification_code_html = ` <div class="verification-code-container">
@@ -715,17 +763,16 @@ var email_success_shown = false;
 </div>`;
 
             if ($(".verification-code-container").length === 0) {
-                if($("#email_ver_input").length > 0 )
-                {
+                if ($("#email_ver_input").length > 0) {
                     $(verification_code_html).insertBefore('.buttons.verify');
                 }
-                else if($("#verificationCode").length > 0)
-                {
+                else if ($("#verificationCode").length > 0) {
                     $('.attrEntry .verificationCode').append(verification_code_html);
                     $("#verificationCode").addClass("dcc-hidden")
                 }
-                
+
                 $('.verification-code-input').on('input', function () {
+                    console.log($(this).val())
                     var $this = $(this);
 
                     // Delay the execution to allow the value to be updated after paste
@@ -738,19 +785,26 @@ var email_success_shown = false;
                             $this.closest('.verification-code-box').prev().find('.verification-code-input').focus();
                         }
                     }, 0);
+                }).on('keydown', function (e) {
+                    var $this = $(this);
+                    if (e.keyCode == 8) {
+                        setTimeout(function () {
+                            if ($this.val().length === 0) {
+                                $this.closest('.verification-code-box').prev().find('.verification-code-input').focus();
+                            }
+                        });
+                    }
                 });
                 // apply new code threshold
 
-                if($("#email_ver_input").length > 0 )
-                {
+                if ($("#email_ver_input").length > 0) {
                     newCodeWaitTime("#email_ver_but_resend");
                 }
-                else if($("#verificationCode").length > 0)
-                {
+                else if ($("#verificationCode").length > 0) {
                     newCodeWaitTime("#emailVerificationControl_but_send_new_code");
                 }
 
-                
+
             }
 
             // get the passcode input
@@ -760,16 +814,14 @@ var email_success_shown = false;
                     if ($(this).val().length > 0) {
                         passcode_input = passcode_input + $(this).val();
 
-                        if($("#email_ver_input").length > 0 )
-                        {
+                        if ($("#email_ver_input").length > 0) {
                             $('#email_ver_input').val(passcode_input)
                         }
-                        else if($("#verificationCode").length > 0)
-                        {
+                        else if ($("#verificationCode").length > 0) {
                             $('#verificationCode').val(passcode_input)
                         }
 
-                       
+
                     }
                 })
             }
@@ -821,51 +873,42 @@ var email_success_shown = false;
                 if (!$(this).hasClass("dcc-email-verification")) {
                     $(this).addClass("dcc-hidden")
                     var input = $(this).find('input')
-                    if(typeof input !== "undefined")
-                    {
+                    if (typeof input !== "undefined") {
                         $(input).val('')
                     }
                 }
             });
-            if($("#extension_termsOfUseConsentChoice_AgreeToTermsOfUseConsentYes").length > 0 )
-            {
+            if ($("#extension_termsOfUseConsentChoice_AgreeToTermsOfUseConsentYes").length > 0) {
                 $("meter").val(0)
-                //$('#extension_termsOfUseConsentChoice_AgreeToTermsOfUseConsentYes').prop('checked', false);
+                $('#extension_termsOfUseConsentChoice_AgreeToTermsOfUseConsentYes').prop('checked', false);
             }
-           
+
         }
 
         // processing forms
-        if($("#simplemodal-overlay").length > 0)
-        {
-            if($("#continue").html() == "Continue")
-            {
+        if ($("#simplemodal-overlay").length > 0) {
+            if ($("#continue").html() == "Continue") {
                 $("#continue").html("<div class='submit-btn-loading'></div>")
                 $("#continue").attr("disabled", true)
             }
- 
+
         }
-        else 
-        {
-            if($("#continue").html() != "Continue")
-            {
+        else {
+            if ($("#continue").html() != "Continue") {
                 $("#continue").html("Continue")
                 $("#continue").attr("disabled", false)
             }
 
-           
+
         }
 
         // show buttons 
-        if($("#verificationCode").length > 0)
-        {
-            if($("#emailVerificationControl_but_change_claims").css("display") != "none")
-            {
+        if ($("#verificationCode").length > 0) {
+            if ($("#emailVerificationControl_but_change_claims").css("display") != "none") {
                 $("#continue").removeClass("dcc-hidden")
                 $("#cancel").removeClass("dcc-hidden")
             }
-            else 
-            {
+            else {
                 $("#continue").addClass("dcc-hidden")
                 $("#cancel").addClass("dcc-hidden")
             }
@@ -875,14 +918,12 @@ var email_success_shown = false;
 
 
     // set the consent checkbox value based on user selection
-    $("#extension_termsOfUseConsentChoice_AgreeToTermsOfUseConsentYes").on("change", function(){
-        if($(this).is(":checked"))
-        {
+    $("#extension_termsOfUseConsentChoice_AgreeToTermsOfUseConsentYes").on("change", function () {
+        if ($(this).is(":checked")) {
             $(this).val(true)
         }
-        else 
-        {
-            $(this).val('')   
+        else {
+            $(this).val('')
         }
     });
 
