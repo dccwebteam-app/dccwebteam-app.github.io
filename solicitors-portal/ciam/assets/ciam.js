@@ -3,12 +3,16 @@ var passwordStrength = 0;
 var passwordMatched = false;
 var passcode = "";
 var email_success_shown = false;
+var inputTimeout;
+var codeBtnDisabled = false;
+var fieldIdsForValidation = [];
+var formFields = {};
+var formChanged = false;
 (function () {
 
     // change error messages
     setInterval(function () {
         if (typeof CONTENT !== "undefined") {
-            console.log("herer")
             if (("error_requiredFieldMissing" in CONTENT)) {
                 CONTENT['error_requiredFieldMissing'] = "Please complete all mandatory fields and try again."
             }
@@ -171,7 +175,7 @@ var email_success_shown = false;
         anchorLinks.forEach(function (link) {
             var attributeValue = link.getAttribute('data-help');
             if (attributeValue) {
-                var labelAbove = findLabelAbove(link);
+                var labelAbove = __findLabelAbove(link);
                 if (labelAbove) {
                     labelAbove.innerHTML += "<span>Hint: " + attributeValue + "</span>";
                 }
@@ -205,183 +209,9 @@ var email_success_shown = false;
         reenterPasswordField.insertAdjacentElement('afterend', reenterPasswordFieldMeter);
     }
     document.addEventListener("keyup", function (event) {
-        if (event.target && event.target.id == "newPassword") {
-            var password = event.target.value;
-            var hasNumber = /^(?=.*[0-9])/.test(password);
-            var hasUppercase = /^(?=.*[A-Z])/.test(password);
-            var hasPassword = /password/i.test(password);
-            var hasLength = /^(?=.{8,})/.test(password);
-            var hasIdenticalChars = /(.)\1\1/.test(password);
-            var meterValue = hasNumber + hasUppercase + hasLength;
-            meterValue = meterValue + hasPassword;
-            meterValue = meterValue + hasIdenticalChars;
-
-            // strike through matched criteria
-            var passwordCriteria = document.getElementsByClassName("criteria")[0];
-            // has number 
-
-            var findCriteria = $(passwordCriteria).find('li[dcc-criteria="one-digit"]');
-            if (findCriteria.length > 0) {
-                if (!hasNumber) {
-                    findCriteria.removeClass("criteria-matched")
-                }
-                else {
-                    findCriteria.addClass("criteria-matched")
-                }
-            }
-
-            // has uppercase
-            var findCriteria1 = $(passwordCriteria).find('li[dcc-criteria="one-uppercase"]');
-            if (findCriteria1.length > 0) {
-                if (!hasUppercase) {
-                    findCriteria1.removeClass("criteria-matched")
-                }
-                else {
-                    findCriteria1.addClass("criteria-matched")
-                }
-            }
-
-            // has password
-            var findCriteria2 = $(passwordCriteria).find('li[dcc-criteria="password"]');
-            if (findCriteria2.length > 0) {
-                if (!hasPassword) {
-                    findCriteria2.addClass("criteria-matched")
-                    meterValue = meterValue + 1;
-                }
-                else {
-                    findCriteria2.removeClass("criteria-matched")
-                    meterValue = meterValue - 1;
-                }
-            }
-
-            // length matched
-            var findCriteria3 = $(passwordCriteria).find('li[dcc-criteria="minimum-length"]');
-            if (findCriteria3.length > 0) {
-                if (!hasLength) {
-                    findCriteria3.removeClass("criteria-matched")
-                }
-                else {
-                    findCriteria3.addClass("criteria-matched")
-                }
-            }
-
-            // identical chars
-            var findCriteria4 = $(passwordCriteria).find('li[dcc-criteria="identical-chars"]');
-            if (findCriteria4.length > 0) {
-                if (!hasIdenticalChars) {
-                    findCriteria4.addClass("criteria-matched")
-                    meterValue = meterValue + 1;
-                }
-                else {
-                    findCriteria4.removeClass("criteria-matched")
-                    meterValue = meterValue - 1;
-                }
-            }
-
-            // set meter value
-            var meter = document.getElementsByTagName("meter")[0];
-            if (meter && meter.matches("meter")) {
-                meter.value = meterValue * 20;
-            }
-
-
-        }
+        __passwordStrength(event, "newPassword")
+        __passwordStrength(event, "reenterPassword", 1)
     });
-    document.addEventListener("keyup", function (event) {
-        if (event.target && event.target.id == "reenterPassword") {
-            var password = event.target.value;
-            var hasNumber = /^(?=.*[0-9])/.test(password);
-            var hasUppercase = /^(?=.*[A-Z])/.test(password);
-            var hasPassword = /password/i.test(password);
-            var hasLength = /^(?=.{8,})/.test(password);
-            var hasIdenticalChars = /(.)\1\1/.test(password);
-            var meterValue = hasNumber + hasUppercase + hasLength;
-            meterValue = meterValue + hasPassword;
-            meterValue = meterValue + hasIdenticalChars;
-
-            // strike through matched criteria
-            var passwordCriteria = document.getElementsByClassName("criteria")[1];
-            // has number 
-
-            var findCriteria = $(passwordCriteria).find('li[dcc-criteria="one-digit"]');
-            if (findCriteria.length > 0) {
-                if (!hasNumber) {
-                    findCriteria.removeClass("criteria-matched")
-                }
-                else {
-                    findCriteria.addClass("criteria-matched")
-                }
-            }
-
-            // has uppercase
-            var findCriteria1 = $(passwordCriteria).find('li[dcc-criteria="one-uppercase"]');
-            if (findCriteria1.length > 0) {
-                if (!hasUppercase) {
-                    findCriteria1.removeClass("criteria-matched")
-                }
-                else {
-                    findCriteria1.addClass("criteria-matched")
-                }
-            }
-
-            // has password
-            var findCriteria2 = $(passwordCriteria).find('li[dcc-criteria="password"]');
-            if (findCriteria2.length > 0) {
-                if (!hasPassword) {
-                    findCriteria2.addClass("criteria-matched")
-                    meterValue = meterValue + 1;
-                }
-                else {
-                    findCriteria2.removeClass("criteria-matched")
-                    meterValue = meterValue - 1;
-                }
-            }
-
-            // length matched
-            var findCriteria3 = $(passwordCriteria).find('li[dcc-criteria="minimum-length"]');
-            if (findCriteria3.length > 0) {
-                if (!hasLength) {
-                    findCriteria3.removeClass("criteria-matched")
-                }
-                else {
-                    findCriteria3.addClass("criteria-matched")
-                }
-            }
-
-            // identical chars
-            var findCriteria4 = $(passwordCriteria).find('li[dcc-criteria="identical-chars"]');
-            if (findCriteria4.length > 0) {
-                if (!hasIdenticalChars) {
-                    findCriteria4.addClass("criteria-matched")
-                    meterValue = meterValue + 1;
-                }
-                else {
-                    findCriteria4.removeClass("criteria-matched")
-                    meterValue = meterValue - 1;
-                }
-            }
-
-            // set meter value
-            var meter = document.getElementsByTagName("meter")[1];
-            if (meter && meter.matches("meter")) {
-                meter.value = meterValue * 20;
-
-            }
-
-
-        }
-    });
-    // Function to find the label above the given element and to append the hint attribute
-    function findLabelAbove(element) {
-        var previousSibling = element.previousElementSibling;
-        while (previousSibling) {
-            if (previousSibling.tagName === 'LABEL') {
-                return previousSibling;
-            }
-            previousSibling = previousSibling.previousElementSibling;
-        }
-        return null; // Return null if no label is found
-    }
 
     //diable form autocomplete
     var form = document.getElementById('attributeVerification');
@@ -416,7 +246,7 @@ var email_success_shown = false;
                 password_mismatch = $("#passwordEntryMismatch").html();
             }
 
-            if ($("#email_ver_wait").length > 0) {
+            if ($(".working").length > 0 && $("#localAccountForm").length == 0) {
                 $(".verificationInfoText").html("");
                 $(".verificationInfoText").removeClass("dcc-alert dcc-alert-success");
                 $(".verificationErrorText").html("");
@@ -466,6 +296,16 @@ var email_success_shown = false;
             // email_fail_retry
             if ($("#email_fail_retry").length > 0) {
                 if (!($("#email_fail_retry").css("display") == "none")) {
+
+                    // reset the input value
+                    if (!codeBtnDisabled) {
+                        $("#email_ver_input").val("")
+                        $("#email_ver_but_verify").prop("disabled", true)
+                        $("#emailVerificationControl_but_verify_code").prop("disabled", true);
+                        codeBtnDisabled = true
+                    }
+
+
                     $("#email_fail_retry").addClass("dcc-alert dcc-alert-danger");
                     $("#email_fail_retry").html("<span>" + email_fail_retry + "</span>");
 
@@ -486,6 +326,9 @@ var email_success_shown = false;
             // email_fail_no_retry
             if ($("#email_fail_no_retry").length > 0) {
                 if (!($("#email_fail_no_retry").css("display") == "none")) {
+
+
+
                     $("#email_fail_no_retry").addClass("dcc-alert dcc-alert-danger");
                     $("#email_fail_no_retry").html("<span>" + email_fail_no_retry + "</span>");
 
@@ -503,6 +346,9 @@ var email_success_shown = false;
             // email_fail_throttled
             if ($("#email_fail_throttled").length > 0) {
                 if (!($("#email_fail_throttled").css("display") == "none")) {
+
+
+
                     $("#email_fail_throttled").addClass("dcc-alert dcc-alert-danger");
                     $("#email_fail_throttled").html("<span>" + email_fail_throttled + "</span>");
 
@@ -521,6 +367,15 @@ var email_success_shown = false;
             // email_fail_code_expired
             if ($("#email_fail_code_expired").length > 0) {
                 if (!($("#email_fail_code_expired").css("display") == "none")) {
+
+                    // reset the input value
+                    if (!codeBtnDisabled) {
+                        $("#email_ver_input").val("")
+                        $("#email_ver_but_verify").prop("disabled", true)
+                        $("#emailVerificationControl_but_verify_code").prop("disabled", true);
+                        codeBtnDisabled = true
+                    }
+
                     $("#email_fail_code_expired").addClass("dcc-alert dcc-alert-danger");
                     $("#email_fail_code_expired").html("<span>" + email_fail_code_expired + "</span>");
 
@@ -540,6 +395,7 @@ var email_success_shown = false;
             // email_fail_server
             if ($("#email_fail_server").length > 0) {
                 if (!($("#email_fail_server").css("display") == "none")) {
+
                     $("#email_fail_server").addClass("dcc-alert dcc-alert-danger");
                     $("#email_fail_server").html("<span>" + email_fail_server + "</span>");
 
@@ -704,8 +560,11 @@ var email_success_shown = false;
             element.setAttribute("maxlength", 50)
             element.setCustomValidity("Password must be 8 characters long")
         }
-        else if (element && $("#" + target).val().length >= 8) {
+        else if (element && ($("#" + target).val().length >= 8) && ($("#" + target).val().length <= 50)) {
             element.setCustomValidity("")
+        }
+        else if (element && $("#" + target).val().length > 50) {
+            element.setCustomValidity("Password must not be more than 50 characters long")
         }
         else if (element && $("#" + target).val().length < 8) {
             element.setCustomValidity("Password must be 8 characters long")
@@ -715,6 +574,7 @@ var email_success_shown = false;
 
 
     $("input[type='password']").each(function () {
+        $(this).removeAttr("pattern")
         var elem = $(this).attr("id")
         setCustomPasswordValidation(elem, "yes")
     })
@@ -724,6 +584,8 @@ var email_success_shown = false;
         setCustomPasswordValidation(elem)
     })
 
+
+    $("#email").removeAttr("pattern")
 
     // register page add button classes
     $(".sendButton").addClass("green-action-button")
@@ -754,13 +616,14 @@ var email_success_shown = false;
 
             // implement verification code style
             var verification_code_html = ` <div class="verification-code-container">
-    <div class="verification-code-box"> <input type="text" maxlength="1" class="verification-code-input" /> </div>
-    <div class="verification-code-box"> <input type="text" maxlength="1" class="verification-code-input" /> </div>
-    <div class="verification-code-box"> <input type="text" maxlength="1" class="verification-code-input" /> </div>
-    <div class="verification-code-box"> <input type="text" maxlength="1" class="verification-code-input" /> </div>
-    <div class="verification-code-box"> <input type="text" maxlength="1" class="verification-code-input" /> </div>
-    <div class="verification-code-box"> <input type="text" maxlength="1" class="verification-code-input" /> </div>
+    <div class="verification-code-box"> <input type="text" maxlength="1" class="verification-code-input" title="Verification code"/> </div>
+    <div class="verification-code-box"> <input type="text" maxlength="1" class="verification-code-input" title="Verification code" /> </div>
+    <div class="verification-code-box"> <input type="text" maxlength="1" class="verification-code-input" title="Verification code" /> </div>
+    <div class="verification-code-box"> <input type="text" maxlength="1" class="verification-code-input" title="Verification code"/> </div>
+    <div class="verification-code-box"> <input type="text" maxlength="1" class="verification-code-input" title="Verification code"/> </div>
+    <div class="verification-code-box"> <input type="text" maxlength="1" class="verification-code-input" title="Verification code" /> </div>
 </div>`;
+
 
             if ($(".verification-code-container").length === 0) {
                 if ($("#email_ver_input").length > 0) {
@@ -772,11 +635,11 @@ var email_success_shown = false;
                 }
 
                 $('.verification-code-input').on('input', function () {
-                    console.log($(this).val())
+
                     var $this = $(this);
 
-                    // Delay the execution to allow the value to be updated after paste
-                    setTimeout(function () {
+                    clearTimeout(inputTimeout);
+                    inputTimeout = setTimeout(function () {
                         if ($this.val().length === 1) {
                             $this.closest('.verification-code-box').next().find('.verification-code-input').focus();
                         }
@@ -788,15 +651,15 @@ var email_success_shown = false;
                 }).on('keydown', function (e) {
                     var $this = $(this);
                     if (e.keyCode == 8) {
-                        setTimeout(function () {
+                        clearTimeout(inputTimeout);
+                        inputTimeout = setTimeout(function () {
                             if ($this.val().length === 0) {
                                 $this.closest('.verification-code-box').prev().find('.verification-code-input').focus();
                             }
-                        });
+                        }, 0);
                     }
                 });
                 // apply new code threshold
-
                 if ($("#email_ver_input").length > 0) {
                     newCodeWaitTime("#email_ver_but_resend");
                 }
@@ -804,7 +667,47 @@ var email_success_shown = false;
                     newCodeWaitTime("#emailVerificationControl_but_send_new_code");
                 }
 
+                // restrict verification code field
+                $(".verification-code-input").on("keypress", function (e) {
+                    if (e.keyCode >= 48 && e.keyCode <= 57) {
+                        return true;
+                    }
+                    return false;
+                })
 
+                // handle code paste 
+                $(".verification-code-input").on("paste", function (e) {
+                    // if the target is a text input
+                    if (e.target.type === "text") {
+
+                        e.stopPropagation();
+                        e.preventDefault();
+
+                        var pastedData = e.originalEvent.clipboardData;
+                        var data = pastedData.getData("text/plain");
+                        data = data.split('');
+                        [].forEach.call(document.querySelectorAll(".verification-code-input"), (node, index) => {
+                            if (typeof data[index] !== "undefined" && $.isNumeric(data[index])) {
+                                node.value = data[index];
+                            }
+                            else {
+                                node.value = ""
+                            }
+                        });
+                        return true;
+                    }
+
+                    return false;
+
+                });
+
+                // track form changes
+                $("input").each(function () {
+                    var fieldId = $(this).attr("id")
+                    if (typeof fieldId !== "undefined") {
+                        formFields[fieldId] = $(this).val()
+                    }
+                })
             }
 
             // get the passcode input
@@ -825,6 +728,22 @@ var email_success_shown = false;
                     }
                 })
             }
+
+            // check the code value and disable the button if needed
+            var value = $("#email_ver_input").val();
+            if ($("#verificationCode").length > 0) {
+                value = $("#verificationCode").val();
+            }
+            var regex = /^\d{6}$/;
+
+            if (!regex.test(value)) {
+                $("#email_ver_but_verify").prop("disabled", true);
+                $("#emailVerificationControl_but_verify_code").prop("disabled", true);
+                codeBtnDisabled = false;
+            } else {
+                $("#email_ver_but_verify").prop("disabled", false);
+                $("#emailVerificationControl_but_verify_code").prop("disabled", false);
+            }
         }
         else {
             $(".verification-code-container").remove();
@@ -840,7 +759,10 @@ var email_success_shown = false;
     // waiting UI
     var email_ver_wait_html = `<div class="email_ver_wait"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" id="message"><path fill="#2F4757" d="M20.34,9.32l-14-7a3,3,0,0,0-4.08,3.9l2.4,5.37h0a1.06,1.06,0,0,1,0,.82l-2.4,5.37A3,3,0,0,0,5,22a3.14,3.14,0,0,0,1.35-.32l14-7a3,3,0,0,0,0-5.36Zm-.89,3.57-14,7a1,1,0,0,1-1.35-1.3l2.39-5.37A2,2,0,0,0,6.57,13h6.89a1,1,0,0,0,0-2H6.57a2,2,0,0,0-.08-.22L4.1,5.41a1,1,0,0,1,1.35-1.3l14,7a1,1,0,0,1,0,1.78Z"></path></svg>
     <p>Sending Verifcation Code&nbsp;</p></div>`;
-    $("#email_ver_wait").html(email_ver_wait_html)
+    if ($("#localAccountForm").length == 0) {
+        $(".working").html(email_ver_wait_html)
+    }
+
 
     // add width class
     $(".verificationInfoText").parent().addClass("dcc-w-full")
@@ -890,6 +812,7 @@ var email_success_shown = false;
             if ($("#continue").html() == "Continue") {
                 $("#continue").html("<div class='submit-btn-loading'></div>")
                 $("#continue").attr("disabled", true)
+                $("#continue").attr("title", "Please wait...")
             }
 
         }
@@ -929,22 +852,307 @@ var email_success_shown = false;
 
     $("#email_ver_input_label").addClass("verification-code")
 
+
+    // disable verfication button until email address is entererd on registration page 
+    if ($("#email").val() == "") {
+        $("#email_ver_but_send").prop("disabled", true)
+    }
+    $("#email").on("input change keyup", function () {
+        var value = $(this).val();
+        var itemLevelError = $(this).parent().parent().find(".error");
+        var emailRegex = /^[A-Za-z0-9_.+-]+@([A-Za-z0-9-]+\.)+[A-Za-z]{2,}$/;
+
+        if (!emailRegex.test(value)) {
+            $("#email_ver_but_send").prop("disabled", true);
+            if (itemLevelError.length > 0) {
+                $(itemLevelError).html("Enter a valid email address");
+                $(itemLevelError).attr("aria-label", "");
+            }
+        } else {
+            $("#email_ver_but_send").prop("disabled", false);
+            if (itemLevelError.length > 0) {
+                $(itemLevelError).html("");
+                $(itemLevelError).removeAttr("aria-label");
+            }
+        }
+    });
+
+
+    // disable verfication button until email address is entererd on forgot password page 
+    __disableBtn("#emailAddress", "#emailVerificationControl_but_send_code", /^[A-Za-z0-9_.+-]+@([A-Za-z0-9-]+\.)+[A-Za-z]{2,}$/, "Enter a valid email address")
+
+    // disable button until user enters value
+    if ($("#email_ver_input").val() == "") {
+        $("#email_ver_but_verify").prop("disabled", true)
+        $("#emailVerificationControl_but_verify_code").prop("disabled", true);
+    }
+
+
+    // disable continue btn
+    setInterval(function () {
+        if ($("#email_ver_input").length > 0) {
+
+            fieldIdsForValidation = [];
+            fieldIdsForValidation.push("#newPassword")
+            fieldIdsForValidation.push("#reenterPassword")
+            fieldIdsForValidation.push("#givenName")
+            fieldIdsForValidation.push("#surname")
+            __validateForm(fieldIdsForValidation)
+        }
+        else if ($("#email_ver_input") && $("#newPassword").length > 0) {
+
+            fieldIdsForValidation = [];
+            fieldIdsForValidation.push("#newPassword")
+            fieldIdsForValidation.push("#reenterPassword")
+            __validateForm(fieldIdsForValidation)
+        }
+    }, 500)
+
+
+    // add required astrich
+    if ($(".attrEntry").length > 0) {
+        var spans = $(".attrEntry").find("label span")
+        $(spans).each(function (e) {
+            $(this).before("<span style='color:#DC3545;font-weight:600;margin:0;' title='Required field'>*</span>")
+        })
+    }
+    if ($(".entry-item").length > 0) {
+        var spans = $(".entry-item").find("label")
+        $(spans).each(function (e) {
+            $(this).append("<span style='color:#DC3545;font-weight:600;margin:0;' title='Required field'>*</span>")
+        })
+    }
+
+    // detect form changes 
+   /* setInterval(function () {
+        if($("#attributeVerification").length > 0)
+        {
+            formChanged = false;
+            $("input").each(function () {
+                var fieldId = $(this).attr("id");
+                if (fieldId in formFields && typeof fieldId !== "undefined" && !formChanged) {
+                    if (formFields[fieldId] != $(this).val()) {
+                        $(window).bind('beforeunload', function () {
+                            return 'Are you sure you want to leave?';
+                        });
+                    }
+                }
+            });
+        }
+  
+    }, 300);*/
+
+
+    // remove orphan Astrich on the fort password page 
+    if($("#emailVerificationControl_label").length > 0)
+    {
+        $("#emailVerificationControl_label").remove();
+    }
+
+
+    // append cancel confirm
+          var cancelBtn = document.getElementById("cancel");
+          if (cancelBtn) {
+              var content = document.querySelector('#confirm-signup-cancel').content;
+              $(cancelBtn).parent().append(document.importNode(content, true), cancelBtn);
+          }
+  
+    // cancel button changes 
+    $("#cancel").unbind("click").bind("click", function(){
+        $(".confirm-user-action-wrapper").show()
+    });
+
+    // continue signup
+    $("#continueSignup").bind("click", function(){
+        $(".confirm-user-action-wrapper").hide()
+    });
+
+
 })();
+
+
+// Function to find the label above the given element and to append the hint attribute
+function __findLabelAbove(element) {
+    var previousSibling = element.previousElementSibling;
+    while (previousSibling) {
+        if (previousSibling.tagName === 'LABEL') {
+            return previousSibling;
+        }
+        previousSibling = previousSibling.previousElementSibling;
+    }
+    return null; // Return null if no label is found
+}
 
 /**
  * Function to disable the new code butto for 15 seconds
  */
 function newCodeWaitTime(elem) {
-    $(elem).prop('disabled', true);
-    var countdown = 15;
-    $(elem).text("Please wait for " + countdown + " seconds");
-    var countdownInterval = setInterval(function () {
-        countdown--;
+    if (!$(elem).is(":disabled")) {
+        $(elem).prop('disabled', true);
+        var countdown = 15;
         $(elem).text("Please wait for " + countdown + " seconds");
-        if (countdown <= 0) {
-            $(elem).prop('disabled', false);
-            clearInterval(countdownInterval);
-            $(elem).text("Send new code");
+        var countdownInterval = setInterval(function () {
+            countdown--;
+            $(elem).text("Please wait for " + countdown + " seconds");
+            if (countdown <= 0) {
+                $(elem).prop('disabled', false);
+                clearInterval(countdownInterval);
+                $(elem).text("Send new code");
+            }
+        }, 1000);
+    }
+}
+
+
+function __disableBtn(target, elem, regex, error_msg) {
+    if ($(target).val() == "") {
+        $(elem).prop("disabled", true)
+    }
+    $(target).on("input change keyup", function () {
+        var value = $(this).val();
+        var itemLevelError = $(this).parent().parent().find(".error");
+
+
+        if (!regex.test(value)) {
+            $(elem).prop("disabled", true);
+            if (itemLevelError.length > 0) {
+                $(itemLevelError).html(error_msg);
+                $(itemLevelError).attr("aria-label", "");
+            }
+        } else {
+            $(elem).prop("disabled", false);
+            if (itemLevelError.length > 0) {
+                $(itemLevelError).html("");
+                $(itemLevelError).removeAttr("aria-label");
+            }
         }
-    }, 1000);
+    });
+}
+
+
+function __passwordStrength(event, target, criteria = 0) {
+    if (event.target && event.target.id == target) {
+        var password = event.target.value;
+        var hasNumber = /^(?=.*[0-9])/.test(password);
+        var hasUppercase = /^(?=.*[A-Z])/.test(password);
+        var hasPassword = /password/i.test(password);
+        var hasLength = /^(?=.{8,})/.test(password);
+        var hasIdenticalChars = /(.)\1\1/.test(password);
+        var meterValue = hasNumber + hasUppercase + hasLength;
+        meterValue = meterValue + hasPassword;
+        meterValue = meterValue + hasIdenticalChars;
+
+        // strike through matched criteria
+        var passwordCriteria = $("#" + target).parent().parent().find(".criteria");
+        // has number 
+
+        var findCriteria = $(passwordCriteria).find('li[dcc-criteria="one-digit"]');
+        if (findCriteria.length > 0) {
+            if (!hasNumber) {
+                findCriteria.removeClass("criteria-matched")
+            }
+            else {
+                findCriteria.addClass("criteria-matched")
+            }
+        }
+
+        // has uppercase
+        var findCriteria1 = $(passwordCriteria).find('li[dcc-criteria="one-uppercase"]');
+        if (findCriteria1.length > 0) {
+            if (!hasUppercase) {
+                findCriteria1.removeClass("criteria-matched")
+            }
+            else {
+                findCriteria1.addClass("criteria-matched")
+            }
+        }
+
+        // has password
+        var findCriteria2 = $(passwordCriteria).find('li[dcc-criteria="password"]');
+        if (findCriteria2.length > 0) {
+            if (!hasPassword) {
+                findCriteria2.addClass("criteria-matched")
+                meterValue = meterValue + 1;
+            }
+            else {
+                findCriteria2.removeClass("criteria-matched")
+                meterValue = meterValue - 1;
+            }
+        }
+
+        // length matched
+        var findCriteria3 = $(passwordCriteria).find('li[dcc-criteria="minimum-length"]');
+        if (findCriteria3.length > 0) {
+            if (!hasLength) {
+                findCriteria3.removeClass("criteria-matched")
+            }
+            else {
+                findCriteria3.addClass("criteria-matched")
+            }
+        }
+
+        // identical chars
+        var findCriteria4 = $(passwordCriteria).find('li[dcc-criteria="identical-chars"]');
+        if (findCriteria4.length > 0) {
+            if (!hasIdenticalChars) {
+                findCriteria4.addClass("criteria-matched")
+                meterValue = meterValue + 1;
+            }
+            else {
+                findCriteria4.removeClass("criteria-matched")
+                meterValue = meterValue - 1;
+            }
+        }
+
+        // set meter value
+        var meter = document.getElementsByTagName("meter")[criteria];
+        if (meter && meter.matches("meter")) {
+            meter.value = meterValue * 20;
+        }
+    }
+}
+
+function __validateForm(fields) {
+    var validBtn = false;
+    var passwordMatch = false;
+    var newPassword = $("#newPassword").val();
+    var confirmPassword = $("#reenterPassword").val()
+    $(fields).each(function (i, e) {
+        var val = $(fields[i]).val()
+        if (typeof val !== "undefined" && val.length > 0) {
+            validBtn = true
+        }
+        else if (!(typeof val !== "undefined" && val.length > 0)) {
+            validBtn = false
+        }
+    });
+
+    if (($("#email_ver_input").length > 0) && validBtn) {
+        console.log("here")
+        if ($("#extension_termsOfUseConsentChoice_AgreeToTermsOfUseConsentYes").is(":checked")) {
+            validBtn = true
+        }
+        else if (!($("#extension_termsOfUseConsentChoice_AgreeToTermsOfUseConsentYes").is(":checked"))) {
+            validBtn = false
+        }
+
+    }
+
+   /* if ($("#newPassword").length > 0 && (newPassword.length >= 8 && newPassword.length <= 50) && (($("meter:eq(0)").val() == 100) && ($("meter:eq(1)").val() == 100)) && (newPassword == confirmPassword)) {
+        passwordMatch = true
+    }
+    else if ($("#newPassword").length > 0 && !((newPassword.length >= 8 && newPassword.length <= 50) && (($("meter:eq(0)").val() == 100) && ($("meter:eq(1)").val() == 100)) && (newPassword == confirmPassword))) {
+        passwordMatch = false
+    }
+    */
+
+    if (validBtn) {
+        $("#continue").prop("disabled", false)
+        $("#continue").attr("title", "Complete Signup")
+    }
+    else if (!validBtn) {
+        $("#continue").prop("disabled", true)
+        $("#continue").attr("title", "Enter required fields to continue")
+    }
+
 }

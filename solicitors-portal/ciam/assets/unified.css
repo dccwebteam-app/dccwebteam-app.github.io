@@ -211,7 +211,7 @@ form ul li {
 .entry-item label,
 .attrEntry label,
 .error p,
-.error div {
+.error:not(.dcc-alert) div {
     margin-bottom: 0.35rem;
     width: inherit;
     display: flex;
@@ -221,7 +221,7 @@ form ul li {
 
 
 
-.error div {
+.error:not(.dcc-alert) div {
     margin-bottom: 0 !important;
 }
 
@@ -268,7 +268,7 @@ form ul li {
 .error.show:empty:before, */
 .entry-item .error p:before,
 .error.pageLevel p:before,
-.error div:before {
+.error:not(.dcc-alert) div:before {
     content: url("data:image/svg+xml,%3Csvg width='18' height='16' viewBox='0 0 18 16' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cg clip-path='url(%23clip0_469_4464)'%3E%3Cpath d='M17.7566 13.2096L10.6514 0.928236C10.4875 0.641131 10.2475 0.403161 9.95697 0.239676C9.66644 0.0761901 9.33628 -0.00668696 9.00167 -0.000126975C8.66769 -0.00337728 8.33885 0.0809004 8.04891 0.244052C7.75898 0.407203 7.5184 0.643348 7.35189 0.928236L0.246766 13.2096C0.0837231 13.4936 -0.00195312 13.8143 -0.00195312 14.1406C-0.00195312 14.4668 0.0837231 14.7875 0.246766 15.0715C0.408557 15.3559 0.645159 15.5921 0.931735 15.7555C1.21831 15.9188 1.54429 16.0032 1.87546 15.9999H16.1068C16.438 16.0032 16.7639 15.9188 17.0505 15.7555C17.3371 15.5921 17.5737 15.3559 17.7355 15.0715C17.9129 14.7932 18.0087 14.472 18.0125 14.1435C18.0162 13.8149 17.9276 13.4918 17.7566 13.2096ZM10.04 13.0747H8.15306V11.4462H10.04V13.0747ZM10.04 10.5179H8.15306V5.87605H10.04V10.5179Z' fill='%23DC3545'/%3E%3C/g%3E%3Cdefs%3E%3CclipPath id='clip0_469_4464'%3E%3Crect width='18' height='16' fill='white'/%3E%3C/clipPath%3E%3C/defs%3E%3C/svg%3E%0A") !important;
     display: inline;
     margin-right: 0.5rem;
@@ -433,6 +433,12 @@ button[type="button"],
     border: 1px solid var(--primary);
 }
 
+.danger-action-button {
+    color: var(--white);
+    background-color: var(--error);
+    border: 1px solid var(--white);
+}
+
 .green-action-button,
 .haze-action-button:hover,
 #cancel:hover,
@@ -452,6 +458,13 @@ button[type="submit"]:hover,
 .green-action-button:hover {
     background: var(--dark-navy);
     color: #fff;
+}
+
+
+.danger-action-button:hover {
+    color: var(--error);
+    background-color: var(--white);
+    border: 1px solid var(--error);
 }
 
 @media screen and (min-width: 640px) {
@@ -603,13 +616,14 @@ form .intro,
     top: 65%;
 }
 
-@media screen and (min-width:768px)
-{
+@media screen and (min-width:768px) {
+
     .givenName:before,
-.surname:before {
-    top: 55%;
+    .surname:before {
+        top: 55%;
+    }
 }
-}
+
 input[type="checkbox"] {
     position: relative;
     cursor: pointer;
@@ -633,6 +647,7 @@ footer .footer-links {
     justify-content: space-evenly;
     flex-direction: column;
     margin: 1rem 0;
+    position: relative;
 }
 
 #attributeVerification .buttons button[type="button"],
@@ -641,13 +656,12 @@ footer .footer-links {
 }
 
 @media screen and (max-width:767.98px) {
-#email_ver_but_resend
-{
-    margin-top: 1rem !important;
+    #email_ver_but_resend {
+        margin-top: 1rem !important;
+    }
 }
-}
-.CheckboxMultiSelect
-{
+
+.CheckboxMultiSelect {
     margin-bottom: 2.5rem;
 }
 
@@ -662,10 +676,10 @@ footer .footer-links {
     #attributeVerification .buttons button[type="submit"] {
         margin: 1rem 0;
     }
-    .CheckboxMultiSelect
-{
-    margin-bottom: 0;
-}
+
+    .CheckboxMultiSelect {
+        margin-bottom: 0;
+    }
 }
 
 .attrEntry label:not(#extension_termsOfUseConsentChoice_label):not(#emailVerificationControl_label) .userTip:after {
@@ -977,6 +991,10 @@ input[type="radio"]:checked:after {
     max-height: 44px;
     text-align: center;
     padding-left: 0.75rem !important;
+    border-radius: 0px !important;
+    background: transparent !important;
+    border-bottom: 1px solid var(--primary) !important;
+    box-shadow: none !important;
 }
 
 #email_ver_wait {
@@ -1009,6 +1027,46 @@ input[type="radio"]:checked:after {
     animation: animateDot 3s infinite linear;
 }
 
+.confirm-user-action-wrapper {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    border-radius: 10px;
+    z-index: 10;
+    text-align: center;
+    text-wrap: pretty;
+    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.5);
+    padding: 10px;
+    background-color: var(--white);
+    max-width: 300px;
+    display: none;
+}
+
+.confirm-user-action-container {
+    max-width: 300px;
+    padding: 0.75rem 1rem;
+    background-color:var(--white);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.confirm-user-action-container p{
+    margin-bottom: 1rem;
+}
+
+.confirm-user-action-container .confirm-user-action-btn {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.confirm-user-action-container .confirm-user-action-btn a,
+.confirm-user-action-container .confirm-user-action-btn button{
+    margin: 0 !important;
+}
 
 @keyframes animateDot {
     0% {
