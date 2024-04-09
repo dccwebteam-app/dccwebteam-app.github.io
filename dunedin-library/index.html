@@ -4,4 +4,22 @@
 	options['key'] = '4001594823'; // Key for options
 	var parent_asset_id = "1034101"; // Parent asset ID
 	var js_api = new Squiz_Matrix_API(options); // Matrix API object
+
+    js_api.createAsset({
+   "parent_id":566398,
+   "type_code":"comment",
+   "asset_name":"blog comment",
+   "link_type":"SQ_LINK_TYPE_1",
+   "link_value":"link value",
+   "sort_order":1,
+   "is_dependant":0,
+   "is_exclusive":0,
+   "extra_attributes":1,
+   "attributes":"comment=comment goes here&rating=5.0",
+   "dataCallback":function(data)
+   {
+    console.log(data)
+   }
+}) 
+
 </script>
