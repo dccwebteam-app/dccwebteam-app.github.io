@@ -8,6 +8,7 @@ var codeBtnDisabled = false;
 var fieldIdsForValidation = [];
 var formFields = {};
 var formChanged = false;
+var domainValidationError = false;
 (function () {
 
     // change error messages
@@ -58,7 +59,6 @@ var formChanged = false;
             if (("ver_success_msg" in CONTENT)) {
                 CONTENT['ver_success_msg'] = "Email verified. You#39;re all set to continue."
             }
-
         }
     }, 2000)
 
@@ -222,11 +222,13 @@ var formChanged = false;
         }
     }
 
-    // apply custom css
-    var emailVerificationError = document.getElementById("emailVerificationControl_error_message")
-    var emailVerificationSuccess = document.getElementById("emailVerificationControl_success_message")
+    $('input[type="password"]').attr("autocomplete", "sp-ciam-new-password")
 
-    if ($("#attributeVerification").length > 0) {
+    // apply custom css
+
+    // ge the URL.
+
+    if ($("#attributeVerification").length > 0 && $(".VerificationControl").length == 0) {
 
         var email_info_html = $("#email_info").html();
         var email_success_html = $("#email_success").html();
@@ -447,21 +449,45 @@ var formChanged = false;
 
             })
 
-
         }, 100);
     }
+    var findForm = window.location.search.indexOf("ForgotPasswordExchange");
+    /* if (findForm !== -1) {
+        setInterval(function () {
+            if (!($("#emailVerificationControl_error_message").css("display") == "none") && (($("#emailVerificationControl_success_message").css("display") == "none"))) {
+                $(".verificationInfoText").html("");
+                $("#emailVerificationControl_info_message").removeClass("dcc-alert dcc-alert-success");
+               $(".verificationSuccessText").html("");
+                $("#emailVerificationControl_success_message").removeClass("dcc-alert dcc-alert-success");
+            }
+            else if (!($("#emailVerificationControl_success_message").css("display") == "none") && (($("#emailVerificationControl_error_message").css("display") == "none"))) {
+                $(".verificationInfoText").html("");
+                $("#emailVerificationControl_info_message").removeClass("dcc-alert dcc-alert-success");
+                $(".verificationErrorText").html("");
+                $("#emailVerificationControl_success_message").removeClass("dcc-alert dcc-alert-danger");
+            }
+        }, 100);
 
+    }*/
+
+    var emailVerificationError = document.getElementById("emailVerificationControl_error_message")
+    var emailVerificationSuccess = document.getElementById("emailVerificationControl_success_message");
 
     setInterval(function () {
+
+        var emailVerificationErrorhtml = $("#emailVerificationControl_error_message").attr("aria-label");
+        var emailVerificationSuccessHtml = $("#emailVerificationControl_success_message").attr("aria-label");
 
         if ($("#emailVerificationControl_error_message").length > 0) {
             if (!($("#emailVerificationControl_error_message").css("display") == "none")) {
                 emailVerificationError.parentElement.classList.add("dcc-alert", "dcc-alert-danger")
-                emailVerificationError.innerHTML = "<span>" + emailVerificationError.innerHTML + "</span>"
+                emailVerificationError.innerHTML = "<span>" + emailVerificationErrorhtml + "</span>"
             }
             else {
-                emailVerificationError.parentElement.classList.remove("dcc-alert", "dcc-alert-danger")
-                emailVerificationError.innerHTML = ""
+                if (emailVerificationError) {
+                    emailVerificationError.parentElement.classList.remove("dcc-alert", "dcc-alert-danger")
+                    emailVerificationError.innerHTML = ""
+                }
             }
         }
 
@@ -469,11 +495,14 @@ var formChanged = false;
         if ($("#emailVerificationControl_success_message").length > 0) {
             if (!($("#emailVerificationControl_success_message").css("display") == "none")) {
                 emailVerificationSuccess.classList.add("dcc-alert", "dcc-alert-success")
-                emailVerificationSuccess.innerHTML = "<span>" + emailVerificationSuccess.innerHTML + "</span>"
+                emailVerificationSuccess.innerHTML = "<span>" + emailVerificationSuccessHtml + "</span>"
             }
             else {
-                emailVerificationSuccess.classList.remove("dcc-alert", "dcc-alert-success")
-                emailVerificationSuccess.innerHTML = ""
+                if (emailVerificationSuccess) {
+                    emailVerificationSuccess.classList.remove("dcc-alert", "dcc-alert-success")
+                    emailVerificationSuccess.innerHTML = ""
+                }
+
             }
         }
 
@@ -484,7 +513,7 @@ var formChanged = false;
     if (termsOfUseConsentChoice) {
         var content = termsOfUseConsentChoice.innerHTML;
         if (content.includes('Terms and Conditions')) {
-            var modifiedContent = content.replace(/(\Terms and Conditions\b)/gi, '<a href="https://www.dunedin.govt.nz/about-this-site/privacy-policy" title="Dunedin City Council Terms and Conditions" target="_blank">$1</span>');
+            var modifiedContent = content.replace(/(\Terms and Conditions\b)/gi, '<a href="https://www.portal.dunedin.govt.nz/solicitor/terms-and-conditions" title="Dunedin City Council Terms and Conditions" target="_blank">$1</span>');
             termsOfUseConsentChoice.innerHTML = modifiedContent;
         }
     }
@@ -525,7 +554,7 @@ var formChanged = false;
     })
 
     // append password reveal icons 
-    $(".newPassword, .reenterPassword").append("<i class='passwordReveal'></i>")
+    $(".newPassword, .reenterPassword").append("<i class='passwordReveal'></i>");
     $("#password").parent().append("<i class='passwordRevealLogin'></i>")
 
     $(".passwordReveal").on("click", function () {
@@ -588,26 +617,27 @@ var formChanged = false;
     $("#email").removeAttr("pattern")
 
     // register page add button classes
-    $(".sendButton").addClass("green-action-button")
-    $(".verifyButton").addClass("green-action-button")
-    $(".editButton").addClass("haze-action-button")
-
+    $(".sendButton").addClass("green-action-button");
+    $(".verifyButton").addClass("green-action-button");
+    $(".editButton").addClass("haze-action-button");
+    $("#email_ver_but_resend").removeClass("green-action-button");
+    $("#email_ver_but_resend").addClass("haze-action-button");
     // register page 
     $("#email_ver_but_send").css("margin-left", "auto")
     $("#email_ver_but_send").css("margin-right", "auto")
-    $("#email_ver_but_send").css("max-width", "180px")
+    $("#email_ver_but_send").css("width", "max-content")
     $(".buttons.verify").css("width", "100%")
 
 
     // forgot password page
     $("#emailVerificationControl_but_send_code").css("margin-left", "auto")
     $("#emailVerificationControl_but_send_code").css("margin-right", "auto")
-    $("#emailVerificationControl_but_send_code").css("max-width", "180px")
+    $("#emailVerificationControl_but_send_code").css("width", "max-content")
     if ($("#emailVerificationControl_but_send_code").length > 0) {
         $(".buttons:eq(1)").css("width", "100%")
         $("#continue").addClass("dcc-hidden")
         $("#cancel").addClass("dcc-hidden")
-        $("#emailVerificationControl_but_change_claims").css("max-width", "180px")
+        $("#emailVerificationControl_but_change_claims").css("width", "max-content")
     }
 
     setInterval(function () {
@@ -830,6 +860,8 @@ var formChanged = false;
             if ($("#emailVerificationControl_but_change_claims").css("display") != "none") {
                 $("#continue").removeClass("dcc-hidden")
                 $("#cancel").removeClass("dcc-hidden")
+                $("#continue").click();
+                $("#emailVerificationControl_but_change_claims").hide();
             }
             else {
                 $("#continue").addClass("dcc-hidden")
@@ -895,8 +927,6 @@ var formChanged = false;
             fieldIdsForValidation = [];
             fieldIdsForValidation.push("#newPassword")
             fieldIdsForValidation.push("#reenterPassword")
-            fieldIdsForValidation.push("#givenName")
-            fieldIdsForValidation.push("#surname")
             __validateForm(fieldIdsForValidation)
         }
         else if ($("#email_ver_input") && $("#newPassword").length > 0) {
@@ -913,8 +943,12 @@ var formChanged = false;
     if ($(".attrEntry").length > 0) {
         var spans = $(".attrEntry").find("label span")
         $(spans).each(function (e) {
+            console.log(e.id)
             $(this).before("<span style='color:#DC3545;font-weight:600;margin:0;' title='Required field'>*</span>")
-        })
+        });
+
+        $("#givenName_label span:eq(0)").remove();
+        $("#surname_label span:eq(0)").remove();
     }
     if ($(".entry-item").length > 0) {
         var spans = $(".entry-item").find("label")
@@ -924,49 +958,126 @@ var formChanged = false;
     }
 
     // detect form changes 
-   /* setInterval(function () {
-        if($("#attributeVerification").length > 0)
-        {
-            formChanged = false;
-            $("input").each(function () {
-                var fieldId = $(this).attr("id");
-                if (fieldId in formFields && typeof fieldId !== "undefined" && !formChanged) {
-                    if (formFields[fieldId] != $(this).val()) {
-                        $(window).bind('beforeunload', function () {
-                            return 'Are you sure you want to leave?';
-                        });
-                    }
-                }
-            });
-        }
-  
-    }, 300);*/
+    /* setInterval(function () {
+         if($("#attributeVerification").length > 0)
+         {
+             formChanged = false;
+             $("input").each(function () {
+                 var fieldId = $(this).attr("id");
+                 if (fieldId in formFields && typeof fieldId !== "undefined" && !formChanged) {
+                     if (formFields[fieldId] != $(this).val()) {
+                         $(window).bind('beforeunload', function () {
+                             return 'Are you sure you want to leave?';
+                         });
+                     }
+                 }
+             });
+         }
+   
+     }, 300);*/
 
 
     // remove orphan Astrich on the fort password page 
-    if($("#emailVerificationControl_label").length > 0)
-    {
+    if ($("#emailVerificationControl_label").length > 0) {
         $("#emailVerificationControl_label").remove();
     }
 
 
-    // append cancel confirm
-          var cancelBtn = document.getElementById("cancel");
-          if (cancelBtn) {
-              var content = document.querySelector('#confirm-signup-cancel').content;
-              $(cancelBtn).parent().append(document.importNode(content, true), cancelBtn);
-          }
-  
+    var cancelBtn = document.getElementById("cancel");
+    if (cancelBtn && $("#confirm-signup-cancel").length > 0) {
+        var content = document.querySelector('#confirm-signup-cancel').content;
+        $(cancelBtn).parent().append(document.importNode(content, true), cancelBtn);
+    }
+
     // cancel button changes 
-    $("#cancel").unbind("click").bind("click", function(){
+    $("#cancel").unbind("click").bind("click", function () {
         $(".confirm-user-action-wrapper").show()
     });
 
     // continue signup
-    $("#continueSignup").bind("click", function(){
+    $("#continueSignup").bind("click", function () {
         $(".confirm-user-action-wrapper").hide()
     });
 
+
+    // disable enter click
+    var form = document.getElementById("attributeVerification");
+    if (form) {
+        form.addEventListener("keydown", function (event) {
+            if (event.keyCode === 13) {
+                event.preventDefault();
+
+                // signup 
+                if (($("#email_ver_but_send").css("display") !== "none") && ($("#email_ver_but_send").prop("disabled") == false)) {
+                    $("#email_ver_but_send").click();
+                }
+                else if (($("#email_ver_but_verify").css("display") !== "none") && ($("#email_ver_but_verify").prop("disabled") == false)) {
+                    $("#email_ver_but_verify").click();
+                }
+                else if (($("#continue").css("display") !== "none") && ($("#continue").prop("disabled") == false)) {
+                    $("#continue").click();
+                }
+
+                // forgot password
+                if (($("#emailVerificationControl_but_send_code").css("display") !== "none") && ($("#emailVerificationControl_but_send_code").prop("disabled") == false)) {
+                    $("#emailVerificationControl_but_send_code").click();
+                }
+                else if (($("#emailVerificationControl_but_verify_code").css("display") !== "none") && ($("#emailVerificationControl_but_verify_code").prop("disabled") == false)) {
+                    $("#emailVerificationControl_but_verify_code").click();
+                }
+
+
+            }
+        });
+
+    }
+
+
+
+    // check for domain validation
+    setInterval(function () {
+
+        if ($("#claimVerificationServerError").length > 0) {
+            if (($("#claimVerificationServerError").html().length > 0) && !($("#claimVerificationServerError").html().includes("Incorrect pattern for: New Password"))) {
+                $("#attributeVerification").hide();
+
+                if (!domainValidationError) {
+                    var attributeVerification = document.getElementById("attributeVerification");
+                    if (attributeVerification && $("#domainVerification").length > 0) {
+                        var content = document.querySelector('#domainVerification').content;
+                        $(attributeVerification).parent().append(document.importNode(content, true), attributeVerification);
+                    }
+                    domainValidationError = true;
+                }
+            }
+        }
+    }, 300);
+
+
+
+  /*  setInterval(function () {
+        if (($("#localAccountForm").length > 0)) {
+           var nextHtml = $("#next").html();
+           console.log(nextHtml.indexOf("Sign"))
+            if (($(".working").html().length == 0) && (nextHtml.indexOf("Sign") !== -1)) {
+                $("#next").html("<div class='submit-btn-loading'></div>")
+                $("#next").attr("disabled", true)
+                $("#next").attr("title", "Please wait...")
+            }
+            else {
+                $("#next").html("Sign in")
+                $("#next").attr("disabled", false)
+                $("#next").attr("title", "Sign in")
+            }
+        }
+    }, 3000);*/
+
+    // swap button order
+    $("#email_ver_but_resend").insertBefore("#email_ver_but_verify");
+    $("#cancel").insertBefore("#continue");
+
+    // forgot password page swap button order 
+    $("#emailVerificationControl_but_send_new_code").insertBefore("#emailVerificationControl_but_verify_code");
 
 })();
 
@@ -1038,6 +1149,7 @@ function __passwordStrength(event, target, criteria = 0) {
         var hasPassword = /password/i.test(password);
         var hasLength = /^(?=.{8,})/.test(password);
         var hasIdenticalChars = /(.)\1\1/.test(password);
+        var hasWhitespace = /\s/.test(password);
         var meterValue = hasNumber + hasUppercase + hasLength;
         meterValue = meterValue + hasPassword;
         meterValue = meterValue + hasIdenticalChars;
@@ -1104,10 +1216,25 @@ function __passwordStrength(event, target, criteria = 0) {
             }
         }
 
+        // whitesapce
+        var findCriteria5 = $(passwordCriteria).find('li[dcc-criteria="whitespace"]');
+        if (findCriteria5.length > 0) {
+            if (!hasWhitespace) {
+                findCriteria5.addClass("criteria-matched")
+                meterValue = meterValue + 1;
+            }
+            else {
+                findCriteria5.removeClass("criteria-matched")
+                meterValue = meterValue - 1;
+            }
+        }
+
+
         // set meter value
+        var meterMultiplier = (100 / 6);
         var meter = document.getElementsByTagName("meter")[criteria];
         if (meter && meter.matches("meter")) {
-            meter.value = meterValue * 20;
+            meter.value = meterValue * meterMultiplier;
         }
     }
 }
@@ -1128,7 +1255,6 @@ function __validateForm(fields) {
     });
 
     if (($("#email_ver_input").length > 0) && validBtn) {
-        console.log("here")
         if ($("#extension_termsOfUseConsentChoice_AgreeToTermsOfUseConsentYes").is(":checked")) {
             validBtn = true
         }
@@ -1138,13 +1264,21 @@ function __validateForm(fields) {
 
     }
 
-   /* if ($("#newPassword").length > 0 && (newPassword.length >= 8 && newPassword.length <= 50) && (($("meter:eq(0)").val() == 100) && ($("meter:eq(1)").val() == 100)) && (newPassword == confirmPassword)) {
-        passwordMatch = true
+    if (($("#newPassword").length > 0) && ($("#newPassword").length > 0)) {
+        if (($("meter:eq(0)").val() == 100) && ($("meter:eq(1)").val() == 100)) { validBtn = true }
+        else {
+            validBtn = false;
+        }
     }
-    else if ($("#newPassword").length > 0 && !((newPassword.length >= 8 && newPassword.length <= 50) && (($("meter:eq(0)").val() == 100) && ($("meter:eq(1)").val() == 100)) && (newPassword == confirmPassword))) {
-        passwordMatch = false
-    }
-    */
+
+
+    /* if ($("#newPassword").length > 0 && (newPassword.length >= 8 && newPassword.length <= 50) && (($("meter:eq(0)").val() == 100) && ($("meter:eq(1)").val() == 100)) && (newPassword == confirmPassword)) {
+         passwordMatch = true
+     }
+     else if ($("#newPassword").length > 0 && !((newPassword.length >= 8 && newPassword.length <= 50) && (($("meter:eq(0)").val() == 100) && ($("meter:eq(1)").val() == 100)) && (newPassword == confirmPassword))) {
+         passwordMatch = false
+     }
+     */
 
     if (validBtn) {
         $("#continue").prop("disabled", false)
