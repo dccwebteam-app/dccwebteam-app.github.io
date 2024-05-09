@@ -810,29 +810,82 @@ var domainValidationError = false;
 
     setInterval(function () {
 
-        if ($("#email_ver_but_edit").css("display") != "none") {
-            $("#attributeList li").each(function () {
-                if ($(this).hasClass("dcc-hidden")) {
-                    $(this).removeClass("dcc-hidden")
+
+        // check whether signup form 
+
+        if (!$("#sp-signup").length > 0) {
+            if ($("#email_ver_but_edit").css("display") != "none") {
+                $("#attributeList li").each(function () {
+                    if ($(this).hasClass("dcc-hidden")) {
+                        $(this).removeClass("dcc-hidden")
+                    }
+                });
+                $("#continue").parent().removeClass('dcc-hidden');
+            }
+            else {
+                $("#continue").parent().addClass('dcc-hidden');
+
+                $("#attributeList li").each(function () {
+                    if (!$(this).hasClass("dcc-email-verification")) {
+                        $(this).addClass("dcc-hidden")
+                        var input = $(this).find('input')
+                        if (typeof input !== "undefined") {
+                            $(input).val('')
+                        }
+                    }
+                });
+                if ($("#extension_termsOfUseConsentChoice_AgreeToTermsOfUseConsentYes").length > 0) {
+                    $("meter").val(0)
+                    $('#extension_termsOfUseConsentChoice_AgreeToTermsOfUseConsentYes').prop('checked', false);
                 }
-            });
-            $("#continue").parent().removeClass('dcc-hidden');
+
+            }
         }
         else {
-            $("#continue").parent().addClass('dcc-hidden');
+            if ($("#email_ver_but_edit").css("display") != "none") {
+                if (!$("#extension_termsOfUseConsentChoice_AgreeToTermsOfUseConsentYes").is(":checked")) {
+                    $("#attributeList li").each(function (i, e) {
+                        if ((i == 1) || (i == 2)) {
+                            $(this).removeClass("dcc-hidden")
+                        }
+                        else {
+                            $(this).addClass("dcc-hidden")
+                        }
+                    });
 
-            $("#attributeList li").each(function () {
-                if (!$(this).hasClass("dcc-email-verification")) {
-                    $(this).addClass("dcc-hidden")
-                    var input = $(this).find('input')
-                    if (typeof input !== "undefined") {
-                        $(input).val('')
-                    }
+                    $(".buttons:eq(3)").hide()
                 }
-            });
-            if ($("#extension_termsOfUseConsentChoice_AgreeToTermsOfUseConsentYes").length > 0) {
-                $("meter").val(0)
-                $('#extension_termsOfUseConsentChoice_AgreeToTermsOfUseConsentYes').prop('checked', false);
+                else if ($("#extension_termsOfUseConsentChoice_AgreeToTermsOfUseConsentYes").is(":checked")) {
+                    $("#attributeList li").each(function (i, e) {
+                        if ($(this).hasClass("sp-tc-section")) {
+                            $(this).addClass("dcc-hidden")
+                        }
+                        else {
+                            $(this).removeClass("dcc-hidden")
+                        }
+                    });
+                    $(".buttons:eq(3)").show();
+                }
+
+                $("#continue").parent().removeClass('dcc-hidden');
+            }
+            else {
+                $("#continue").parent().addClass('dcc-hidden');
+
+                $("#attributeList li").each(function () {
+                    if (!$(this).hasClass("dcc-email-verification")) {
+                        $(this).addClass("dcc-hidden")
+                        var input = $(this).find('input')
+                        if (typeof input !== "undefined") {
+                            $(input).val('')
+                        }
+                    }
+                });
+                if ($("#extension_termsOfUseConsentChoice_AgreeToTermsOfUseConsentYes").length > 0) {
+                    $("meter").val(0)
+                    $('#extension_termsOfUseConsentChoice_AgreeToTermsOfUseConsentYes').prop('checked', false);
+                }
+
             }
 
         }
@@ -873,6 +926,11 @@ var domainValidationError = false;
 
 
     // set the consent checkbox value based on user selection
+    $(document).on("click", "#sp-agree-tc", function () {
+        $("#extension_termsOfUseConsentChoice_AgreeToTermsOfUseConsentYes").prop("checked", true)
+        $("#extension_termsOfUseConsentChoice_AgreeToTermsOfUseConsentYes").val(true)
+    });
+
     $("#extension_termsOfUseConsentChoice_AgreeToTermsOfUseConsentYes").on("change", function () {
         if ($(this).is(":checked")) {
             $(this).val(true)
@@ -1038,7 +1096,7 @@ var domainValidationError = false;
     setInterval(function () {
 
         if ($("#claimVerificationServerError").length > 0) {
-            if (($("#claimVerificationServerError").html().length > 0) && !($("#claimVerificationServerError").html().includes("Incorrect pattern for: New Password"))) {
+            if (($("#claimVerificationServerError").html().length > 0) && ($("#claimVerificationServerError").html().includes("Failed to validate the business"))) {
                 $("#attributeVerification").hide();
 
                 if (!domainValidationError) {
@@ -1053,24 +1111,31 @@ var domainValidationError = false;
         }
     }, 300);
 
+    var termsConditionSection = document.getElementById("termsConditionSection");
+    if (termsConditionSection && ($(".CheckboxMultiSelect").length > 0)) {
+        var termsConditionSectionContent = $('#termsConditionSection').html();
+        $(termsConditionSectionContent).insertBefore('.Password:eq(0)');
+        $('.CheckboxMultiSelect').insertAfter('.sp-tc-section');
+        $('.CheckboxMultiSelect').hide();
+    }
 
 
-  /*  setInterval(function () {
-        if (($("#localAccountForm").length > 0)) {
-           var nextHtml = $("#next").html();
-           console.log(nextHtml.indexOf("Sign"))
-            if (($(".working").html().length == 0) && (nextHtml.indexOf("Sign") !== -1)) {
-                $("#next").html("<div class='submit-btn-loading'></div>")
-                $("#next").attr("disabled", true)
-                $("#next").attr("title", "Please wait...")
-            }
-            else {
-                $("#next").html("Sign in")
-                $("#next").attr("disabled", false)
-                $("#next").attr("title", "Sign in")
-            }
-        }
-    }, 3000);*/
+    /*  setInterval(function () {
+          if (($("#localAccountForm").length > 0)) {
+             var nextHtml = $("#next").html();
+             console.log(nextHtml.indexOf("Sign"))
+              if (($(".working").html().length == 0) && (nextHtml.indexOf("Sign") !== -1)) {
+                  $("#next").html("<div class='submit-btn-loading'></div>")
+                  $("#next").attr("disabled", true)
+                  $("#next").attr("title", "Please wait...")
+              }
+              else {
+                  $("#next").html("Sign in")
+                  $("#next").attr("disabled", false)
+                  $("#next").attr("title", "Sign in")
+              }
+          }
+      }, 3000);*/
 
     // swap button order
     $("#email_ver_but_resend").insertBefore("#email_ver_but_verify");

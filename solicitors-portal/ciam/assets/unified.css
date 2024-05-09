@@ -436,7 +436,7 @@ button[type="button"],
 .danger-action-button {
     color: var(--white);
     background-color: var(--error);
-    border: 1px solid var(--white);
+    border: 1px solid var(--white) !important;
 }
 
 .green-action-button,
@@ -464,7 +464,7 @@ button[type="submit"]:hover,
 .danger-action-button:hover {
     color: var(--error);
     background-color: var(--white);
-    border: 1px solid var(--error);
+    border: 1px solid var(--error) !important;
 }
 
 @media screen and (min-width: 640px) {
@@ -529,7 +529,7 @@ form .intro,
 .emailAddress,
 .email,
 .email_ver_input,
-.readOnlyEmail{
+.readOnlyEmail {
     position: relative;
     background-repeat: no-repeat;
     background-position: 3% 50%;
@@ -679,9 +679,9 @@ footer .footer-links {
         margin: 1rem 0;
     }
 
-    .CheckboxMultiSelect {
+ /*   .CheckboxMultiSelect {
         margin-bottom: 0;
-    }
+    }*/
 }
 
 .attrEntry label:not(#extension_termsOfUseConsentChoice_label):not(#emailVerificationControl_label) .userTip:after {
@@ -1061,13 +1061,13 @@ input[type="radio"]:checked:after {
 .confirm-user-action-container .confirm-user-action-btn {
     width: 100%;
     display: flex;
-    flex-direction: column;
     gap: 0.75rem;
 }
 
 .confirm-user-action-container .confirm-user-action-btn a,
 .confirm-user-action-container .confirm-user-action-btn button {
     margin: 0 !important;
+    width: 100%;
 }
 
 @keyframes animateDot {
@@ -1141,12 +1141,15 @@ input[type="radio"]:checked:after {
     margin: 0 0 1.8em 2em;
 }
 
-.has-list-items ul>li {
+.has-list-items ul>li,
+.has-list-items .ul p {
     padding-left: 1.4285em;
     line-height: 1.7142em;
+    position: relative;
 }
 
-.has-list-items ul>li:before {
+.has-list-items ul>li:before,
+.has-list-items .ul p:before {
     background: url("https://www.dunedin.govt.nz/__data/assets/image/0019/1046701/Dcc_list_style.png") no-repeat left 0.745em;
     content: ' ';
     height: 20px;
@@ -1155,8 +1158,41 @@ input[type="radio"]:checked:after {
     width: 10px;
 }
 
+.sp-tc-section p.title {
+    font-weight: bold;
+    font-size: calc(1.75rem - 0.5rem);
+}
+
+.sp-tc-section p {
+    margin-bottom: 1rem;
+}
+
+.sp-tc-section .ul {
+    margin-left: 1em;
+}
+
 ::-ms-reveal {
     display: none;
+}
+
+.domain-verification-error h4
+{
+font-weight: 700;
+margin-bottom: .5em;
+text-align: center;
+line-height: 1.4em;
+font-size: 1.25em;
+}
+@media (min-width: 769px) {
+    .domain-verification-error h4 {
+        font-size: 1.3125em;
+    }
+}
+.domain-verification-error p
+{
+font-weight: normal;
+text-align: left;
+margin-bottom: 1em;
 }
 
 @keyframes btnLoading {
