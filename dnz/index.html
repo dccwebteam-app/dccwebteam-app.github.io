@@ -28,78 +28,357 @@
 
     </svg>
 
-    <header class="video_player">
-        <img src="./assets/images/1.jpg">
-        <div class="video_play_button">
-            <!-- Plat Button -->
-            <svg xmlns:xlink="http://www.w3.org/1999/xlink" fill="#FFFFFF" height="100px" width="100px"
-                class="centre-positioned">
-                <use xlink:href="#dnz-play" />
-            </svg>
+    <section class="video_player">
+        <div style="height:100%;">
+            <div style="height: 100%; width: 100%;" class="dnz-video-wrapper">
+                <video playsinline="playsinline" muted controlsList="nodownload"
+                    style="background: #000;display: block;width: 100%;height: 100%;object-fit: cover;max-height: unset !important;"
+                    dnz-video="https://dccwebteam-app.github.io/dnz/assets/vids/ITS_JUST_DUNEDIN_HERO_HD.mp4"
+                    poster="https://www.dunedinnz.com/__data/assets/image/0018/1021626/just-dunedin-hero-banner.webp">
+                    <source src="" type="video/mp4" preload="none">
+                </video>
+                <div class="playBtn">
+                    <svg xmlns:xlink="http://www.w3.org/1999/xlink" fill="#FFFFFF" height="100px" width="100px"
+                        class="playVideo" data-video="Hero Video">
+                        <use xlink:href="#dnz-play" />
+                    </svg>
+                </div>
+            </div>
         </div>
-    </header>
+    </section>
     <section class="dnz-bg-black">
         <div class="container">
-            <div class="dnz-video-container">
-                <div class="dnz-video-wrapper">
-                    <video id="fiHomeVideo" playsinline="playsinline" muted controlsList="nodownload"
-                        dnz-video="https://f-i.co.nz/assets/video/Home-page.mp4" poster="./assets/images/2.jpg">
-                        <source src="" type="video/mp4" preload="none">
-                    </video>
-
-                    <!-- Play Button -->
-                    <div class="playBtn">
-                        <svg xmlns:xlink="http://www.w3.org/1999/xlink" fill="#FFFFFF" height="100px" width="100px"
-                            class="playVideo">
-                            <use xlink:href="#dnz-play" />
-                        </svg>
-                    </div>
-
+            <div class="dnz-introduction">
+                <div class="dnz-dunedin">
+                   <img src="./?a=1021686" alt="It's just Dunedin" width="1614" height="782">
                 </div>
-                <div class="dnz-video-wrapper youTube">
-                    <img src="./assets/images/3.jpg">
-                    <div class="player"></div>
-
-                    <!-- Play Button -->
-                    <div class="playBtn">
-                        <svg xmlns:xlink="http://www.w3.org/1999/xlink" fill="#FFFFFF" height="100px" width="100px"
-                            class="playVideo">
-                            <use xlink:href="#dnz-play" />
-                        </svg>
-                    </div>
-
-                </div>
-
-                <div class="dnz-video-wrapper">
-                    <video id="fiHomeVideo" playsinline="playsinline" muted controlsList="nodownload"
-                        dnz-video="https://f-i.co.nz/assets/video/Home-page.mp4" poster="./assets/images/4.jpg">
-                        <source src="" type="video/mp4" preload="none">
-                    </video>
-
-                    <!-- Play Button -->
-                    <div class="playBtn">
-                        <svg xmlns:xlink="http://www.w3.org/1999/xlink" fill="#FFFFFF" height="100px" width="100px"
-                            class="playVideo">
-                            <use xlink:href="#dnz-play" />
-                        </svg>
-                    </div>
-
-                </div>
-                <div class="dnz-video-wrapper youTube">
-                    <img src="./assets/images/5.jpg">
-                    <div class="player"></div>
-
-                    <!-- Play Button -->
-                    <div class="playBtn">
-                        <svg xmlns:xlink="http://www.w3.org/1999/xlink" fill="#FFFFFF" height="100px" width="100px"
-                            class="playVideo">
-                            <use xlink:href="#dnz-play" />
-                        </svg>
-                    </div>
-
-                </div>
-
+                <h1>Where nature and culture converge in one spectacular and vibrant meeting place…but, hey, It&apos;s
+                    Just Dunedin</h1>
+                <p>Nowhere else in New Zealand can you find such a meeting place of nature and culture but, to us,
+                    experiencing awe-inspiring natural wonders, majestic wildlife, and active pursuits in one moment
+                    then world-class food & drink, stunning architecture, and vibrant creative culture the next is all
+                    par for the course. In fact, It&apos;s Just Dunedin.</p>
+                <p>Watch the videos below to see what we mean.</p>
             </div>
+
+            <!-- Desktop Layout -->
+                 <template id="desktopLayoutContent">
+                <div class="dnz-video-container">
+
+                    <!-- Video 1 -->
+                    <div class="dnz-video-column">
+                        <div class="dnz-video-wrapper">
+                            <video id="asd" playsinline="playsinline" muted controlsList="nodownload"
+                                dnz-video="https://dccwebteam-app.github.io/dnz/assets/vids/CONCRETE_JUNGLE_HD.mp4"
+                                poster="./?a=1021671" title="Concrete Jungle">
+                                <source src="" type="video/mp4" preload="none">
+                            </video>
+                            <div class="playBtn">
+                                <svg xmlns:xlink="http://www.w3.org/1999/xlink" fill="#FFFFFF" height="100px"
+                                    width="100px" class="playVideo" data-video="Concrete Jungle">
+                                    <use xlink:href="#dnz-play" />
+                                </svg>
+                            </div>
+                        </div>
+
+                        <div class="dnz-links">
+                            <p>Marvel at <a href="https://www.dunedinnz.com/insiders/orokonui-ecosanctuary/?utm_campaign=dnz-landing-page"
+                                    title="Nature" rel="index, follow">nature</a> and the <a
+                                    href="https://www.dunedinnz.com/insiders/arty-trails-10-places-to-check-out-dunedin-art?utm_campaign=dnz-landing-page" rel="index, follow"
+                                    title="Naturally Inspired">naturally inspired</a></p>
+                        </div>
+                    </div>
+
+                    <!-- Video 2-->
+                    <div class="dnz-video-column">
+                        <div class="dnz-video-wrapper">
+                            <video playsinline="playsinline" muted controlsList="nodownload"
+                                dnz-video="./?a=1325302"
+                                poster="./?a=1021672" title="Mussels">
+                                <source src="" type="video/mp4" preload="none">
+                            </video>
+                            <div class="playBtn">
+                                <svg xmlns:xlink="http://www.w3.org/1999/xlink" fill="#FFFFFF" height="100px"
+                                    width="100px" class="playVideo" data-video="Mussels">
+                                    <use xlink:href="#dnz-play" />
+                                </svg>
+                            </div>
+                        </div>
+
+                        <div class="dnz-links">
+                            <p><a href="https://www.dunedinnz.com/visit/see-and-do/outdoor-activities/biking-and-cycling?utm_campaign=dnz-landing-page"
+                                    title="Stretch">Stretch</a> your muscles, then slurp some <a
+                                    href="https://www.dunedinnz.com/visit/eat-and-drink/seafood?utm_campaign=dnz-landing-page"
+                                    title="Mussels">mussels</a></p>
+                        </div>
+                    </div>
+
+                    <!-- Video 3 -->
+                    <div class="dnz-video-column">
+                        <div class="dnz-video-wrapper">
+                            <video playsinline="playsinline" muted controlsList="nodownload"
+                                dnz-video="./?a=1325296"
+                                poster="./?a=1021673" title="Wonders Universe">
+                                <source src="" type="video/mp4" preload="none">
+                            </video>
+                            <div class="playBtn">
+                                <svg xmlns:xlink="http://www.w3.org/1999/xlink" fill="#FFFFFF" height="100px"
+                                    width="100px" class="playVideo" data-video="Wonders Universe">
+                                    <use xlink:href="#dnz-play" />
+                                </svg>
+                            </div>
+                        </div>
+
+                        <div class="dnz-links">
+                            <p>Discover mysteries of the cosmos <a
+                                    href="https://www.dunedinnz.com/visit/see-and-do/family-fun?utm_campaign=dnz-landing-page"
+                                    title="indoors">indoors</a> or <a
+                                    href="https://www.dunedinnz.com/insiders/9-winter-worthy-experiences-in-dunedin?utm_campaign=dnz-landing-page" title="out">out</a></p>
+                        </div>
+                    </div>
+
+                    <!-- Video 4 -->
+                    <div class="dnz-video-column">
+                        <div class="dnz-video-wrapper">
+                            <video playsinline="playsinline" muted controlsList="nodownload"
+                                dnz-video="./?a=1325298"
+                                poster="./?a=1021674" title="Sunrise Sealiion Mature">
+                                <source src="" type="video/mp4" preload="none">
+                            </video>
+                            <div class="playBtn">
+                                <svg xmlns:xlink="http://www.w3.org/1999/xlink" fill="#FFFFFF" height="100px"
+                                    width="100px" class="playVideo" data-video="Sunrise Sealiion Mature">
+                                    <use xlink:href="#dnz-play" />
+                                </svg>
+                            </div>
+                        </div>
+
+                        <div class="dnz-links">
+                            <p>Sunrise <a href="https://www.dunedinnz.com/visit/see-and-do/beaches?utm_campaign=dnz-landing-page"
+                                    title="Walks">walks</a> and <a
+                                    href="https://www.dunedinnz.com/visit/eat-and-drink/breweries-and-bars?utm_campaign=dnz-landing-page"
+                                    title="Nightcap">nightcap</a> talks</p>
+                        </div>
+                    </div>
+
+                    <!-- Video 5 -->
+                    <div class="dnz-video-column">
+                        <div class="dnz-video-wrapper">
+                            <video playsinline="playsinline" muted controlsList="nodownload"
+                                dnz-video="./?a=1325304"
+                                poster="./?a=1021675">
+                                <source src="" type="video/mp4" preload="none">
+                            </video>
+                            <div class="playBtn">
+                                <svg xmlns:xlink="http://www.w3.org/1999/xlink" fill="#FFFFFF" height="100px"
+                                    width="100px" class="playVideo" data-video="Historic Walkies">
+                                    <use xlink:href="#dnz-play" />
+                                </svg>
+                            </div>
+                        </div>
+
+                        <div class="dnz-links">
+                            <p>Sipping a Dunedin <a href="https://www.dunedinnz.com/visit/eat-and-drink"
+                                    title="Roast">roast</a> after an <a
+                                    href="https://www.dunedinnz.com/visit/spring/cultural-connection?utm_campaign=dnz-landing-page"
+                                    title="Adventure on the coast">adventure</a> on the coast.</p>
+                        </div>
+                    </div>
+
+                    <!-- Video 6 -->
+                    <div class="dnz-video-column">
+                        <div class="dnz-video-wrapper">
+                            <video playsinline="playsinline" muted controlsList="nodownload"
+                                dnz-video="./?a=1325305"
+                                poster="./?a=1021676">
+                                <source src="" type="video/mp4" preload="none">
+                            </video>
+                            <div class="playBtn">
+                                <svg xmlns:xlink="http://www.w3.org/1999/xlink" fill="#FFFFFF" height="100px"
+                                    width="100px" class="playVideo" data-video="Cliffs Cathedral">
+                                    <use xlink:href="#dnz-play" />
+                                </svg>
+                            </div>
+                        </div>
+
+                        <div class="dnz-links">
+                            <p><a href="https://www.dunedinnz.com/visit/see-and-do/natural-wonders?utm_campaign=dnz-landing-page" title="Wonders">Wonders</a>
+                                shaped by nature and a few <a
+                                    href="https://www.dunedinnz.com/visit/see-and-do/heritage?utm_campaign=dnz-landing-page"
+                                    title="Man-made">man-made</a> ones</p>
+                        </div>
+                    </div>
+
+                    <!-- Video 7 -->
+                    <div class="dnz-video-column">
+                        <div class="dnz-video-wrapper">
+                            <video playsinline="playsinline" muted controlsList="nodownload"
+                                dnz-video="./?a=1325303"
+                                poster="./?a=1021677">
+                                <source src="" type="video/mp4" preload="none">
+                            </video>
+                            <div class="playBtn">
+                                <svg xmlns:xlink="http://www.w3.org/1999/xlink" fill="#FFFFFF" height="100px"
+                                    width="100px" class="playVideo" data-video="Pinot Penguin">
+                                    <use xlink:href="#dnz-play" />
+                                </svg>
+                            </div>
+                        </div>
+
+                        <div class="dnz-links">
+                            <p>Bond over a <a href="https://www.dunedinnz.com/insiders/#food-and-drink?utm_campaign=dnz-landing-page"
+                                    title="Pint">pinot</a> or the world's smallest <a
+                                    href="https://www.dunedinnz.com/visit/see-and-do/wildlife?utm_campaign=dnz-landing-page"
+                                    title="Penguin">penguin</a></p>
+                        </div>
+                    </div>
+
+                    <!-- Video 8 -->
+                    <div class="dnz-video-column">
+                        <div class="dnz-video-wrapper">
+                            <video playsinline="playsinline" muted controlsList="nodownload"
+                                dnz-video="https://dccwebteam-app.github.io/dnz/assets/vids/SURF_CONCERT_HD.mp4"
+                                poster="./?a=1021679">
+                                <source src="" type="video/mp4" preload="none">
+                            </video>
+                            <div class="playBtn">
+                                <svg xmlns:xlink="http://www.w3.org/1999/xlink" fill="#FFFFFF" height="100px"
+                                    width="100px" class="playVideo" data-video="Surf Concert">
+                                    <use xlink:href="#dnz-play" />
+                                </svg>
+                            </div>
+                        </div>
+
+                        <div class="dnz-links">
+                            <p>Pumping <a href="https://www.dunedinnz.com/visit/see-and-do/outdoor-activities/surfing?utm_campaign=dnz-landing-page" title="Swells">swells</a> and thumping
+                                <a href="https://www.dunedinnz.com/visit/see-and-do/outdoor-activities?utm_campaign=dnz-landing-page"
+                                    title="Sounds">sounds</a>
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Video 9 -->
+                    <div class="dnz-video-column">
+                        <div class="dnz-video-wrapper">
+                            <video playsinline="playsinline" muted controlsList="nodownload"
+                                dnz-video="https://dccwebteam-app.github.io/dnz/assets/vids/SEND_IT_HD.mp4"
+                                poster="./?a=1021680">
+                                <source src="" type="video/mp4" preload="none">
+                            </video>
+                            <div class="playBtn">
+                                <svg xmlns:xlink="http://www.w3.org/1999/xlink" fill="#FFFFFF" height="100px"
+                                    width="100px" class="playVideo" data-video="Send it">
+                                    <use xlink:href="#dnz-play" />
+                                </svg>
+                            </div>
+                        </div>
+
+                        <div class="dnz-links">
+                            <p><a href="https://www.dunedinnz.com/study/top-10-experiences-for-dunedin-students?utm_campaign=dnz-landing-page"
+                                    title="Study">Study</a> in the morning, <a
+                                    href="https://www.dunedinnz.com/visit/see-and-do/outdoor-activities/biking-and-cycling?utm_campaign=dnz-landing-page"
+                                    title="Send It">send it</a> in the afternoon</p>
+                        </div>
+                    </div>
+
+                    <!-- Video 10 -->
+                    <div class="dnz-video-column">
+                        <div class="dnz-video-wrapper">
+                            <video playsinline="playsinline" muted controlsList="nodownload"
+                                dnz-video="./?a=1325301"
+                                poster="./?a=1021681">
+                                <source src="" type="video/mp4" preload="none">
+                            </video>
+                            <div class="playBtn">
+                                <svg xmlns:xlink="http://www.w3.org/1999/xlink" fill="#FFFFFF" height="100px"
+                                    width="100px" class="playVideo" data-video="Leave some room">
+                                    <use xlink:href="#dnz-play" />
+                                </svg>
+                            </div>
+                        </div>
+
+                        <div class="dnz-links">
+                            <p>Take in <a href="https://www.dunedinnz.com/visit/see-and-do/beaches?utm_campaign=dnz-landing-page"
+                                    title="Serenity">serenity</a> leave nothing on your <a
+                                    href="https://www.dunedinnz.com/insiders/#food-and-drink?utm_campaign=dnz-landing-page" title="Plate">plate</a>
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Video 11-->
+                    <div class="dnz-video-column">
+                        <div class="dnz-video-wrapper">
+                            <video playsinline="playsinline" muted controlsList="nodownload"
+                                dnz-video="./?a=1325295"
+                                poster="./?a=1021683">
+                                <source src="" type="video/mp4" preload="none">
+                            </video>
+                            <div class="playBtn">
+                                <svg xmlns:xlink="http://www.w3.org/1999/xlink" fill="#FFFFFF" height="100px"
+                                    width="100px" class="playVideo" data-video="Sunset Sealion young">
+                                    <use xlink:href="#dnz-play" />
+                                </svg>
+                            </div>
+                        </div>
+
+                        <div class="dnz-links">
+                            <p>Serene <a href="https://www.dunedinnz.com/visit/see-and-do/outdoor-activities/biking-and-cycling?utm_campaign=dnz-landing-page"
+                                    title="Moments">moments</a> or something a <a
+                                    href="https://www.dunedinnz.com/visit/eat-and-drink/breweries-and-bars?utm_campaign=dnz-landing-page"
+                                    title="Little Less quiet">little less quiet</a></p>
+                        </div>
+                    </div>
+
+                    <!-- Video 12-->
+                    <div class="dnz-video-column">
+                        <div class="dnz-video-wrapper">
+                            <video playsinline="playsinline" muted controlsList="nodownload"
+                                dnz-video="./?a=1325299"
+                                poster="./?a=1021684">
+                                <source src="" type="video/mp4" preload="none">
+                            </video>
+                            <div class="playBtn">
+                                <svg xmlns:xlink="http://www.w3.org/1999/xlink" fill="#FFFFFF" height="100px"
+                                    width="100px" class="playVideo" data-video="Smahsed them">
+                                    <use xlink:href="#dnz-play" />
+                                </svg>
+                            </div>
+                        </div>
+
+                        <div class="dnz-links">
+                            <p>Regal <a href="https://www.dunedinnz.com/visit/see-and-do/heritage?utm_campaign=dnz-landing-page"
+                                    title="Castles">castles</a> to rowdy <a
+                                    href="https://www.dunedinnz.com/visit/see-and-do/upcoming-events?utm_campaign=dnz-landing-page" title="Crowds">crowds</a>
+                            </p>
+                        </div>
+                    </div>
+                    <!-- Video 13-->
+                    <div class="dnz-video-column">
+                        <div class="dnz-video-wrapper">
+                            <video playsinline="playsinline" muted controlsList="nodownload"
+                                dnz-video="./?a=1325297"
+                                poster="./?a=1021685">
+                                <source src="" type="video/mp4" preload="none">
+                            </video>
+                            <div class="playBtn">
+                                <svg xmlns:xlink="http://www.w3.org/1999/xlink" fill="#FFFFFF" height="100px"
+                                    width="100px" class="playVideo" data-video="Socialable Creatures">
+                                    <use xlink:href="#dnz-play" />
+                                </svg>
+                            </div>
+                        </div>
+
+                        <div class="dnz-links">
+                            <p><a href="https://www.dunedinnz.com/visit/see-and-do/wildlife?utm_campaign=dnz-landing-page" title="Wild">Wild</a> fauna
+                                and wilder <a href="https://www.dunedinnz.com/insiders/otago-farmers-market?utm_campaign=dnz-landing-page"
+                                    title="Fare">fare</a></p>
+                        </div>
+                    </div>
+
+                </div>
+            </template>
+            <div id="desktopLayout"></div>
+            <div id="mobileLayout"></div>
         </div>
     </section>
     <script src="https://code.jquery.com/jquery-3.7.1.min.js" crossorigin="anonymous"></script>
