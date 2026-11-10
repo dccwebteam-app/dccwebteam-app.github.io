@@ -1,3 +1,0 @@
-New templates: event-detail.html, standard-content.html, visitor-information.html. These are design demonstrations: event schedules and operational details must be populated and verified from the CMS. Existing pages, header, mobile menu and JS preserved.
-
-Wall 01 update: smith-gallery-wall-1.html image moved to the right of the title, and introduction text follows below. Scoped styles appended to styles.css.
