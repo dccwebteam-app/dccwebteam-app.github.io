@@ -1636,7 +1636,7 @@ svg.anim-finished {
       background-color: var(--color-black);
     }
     footer &::after {
-      background-color: var(--color-footer);
+      background-color: var(--color-footer) !important;
     }
     &:hover::after {
       animation: link-underline-in 300ms ease forwards;
@@ -1757,7 +1757,7 @@ svg.anim-finished {
       background-color: var(--color-black);
     }
     footer &::after {
-      background-color: var(--color-footer);
+      background-color: var(--color-footer) !important;
     }
     &:hover::after {
       animation: link-underline-in 300ms ease forwards;
