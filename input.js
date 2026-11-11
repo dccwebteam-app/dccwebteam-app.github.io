@@ -9,18 +9,17 @@ document.addEventListener("DOMContentLoaded", () => {
         setTimeout(() => {
             splashContainer.classList.add('active');
         }, 300);
-        // Remove loading class after animation
-        setTimeout(() => {
-            splashContainer.parentElement.classList.add("remove");
-        }, 3000);
+   
 
         setTimeout(() => {
+             splashContainer.parentElement.classList.add("remove");
             document.body.classList.remove("splash-loading");
-        }, 2000);
+        },3000);
 
     }
 
-    navbar.parentElement.classList.add('pinned', window.scrollY > 50);
+ //   navbar.parentElement.classList.add('pinned', window.scrollY > 50);
+    console.log(window.scrollY)
     window.addEventListener('scroll', () => {
         navbar.parentElement.classList.toggle('pinned', window.scrollY > 50);
     }, { passive: true });
