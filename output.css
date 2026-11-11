@@ -1520,6 +1520,7 @@ svg.anim-finished {
     -moz-osx-font-smoothing: grayscale;
     font-size: 17px;
     font-display: swap;
+    position: relative;
     @media (width >= 1536px) {
       font-size: 19px;
     }
