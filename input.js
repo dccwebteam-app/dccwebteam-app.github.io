@@ -1,24 +1,42 @@
 const navbar = document.querySelector('header nav');
 const splashContainer = document.getElementById('splash_logo_shape');
+const rollingCounterElements = document.querySelectorAll("[data-carousel-counter]");
+
+// 🎞️ CAROUSEL ENGINE STATE VARIABLES
+let currentSlideIndex = 0;
+const track = document.querySelector('.carousel-track');
+const slides = document.querySelectorAll('.carousel-slide');
+
+// 🎛️ DRAG & TRACK POSITION STORAGE
+let isDragging = false;
+let startX = 0;
+let currentX = 0;
+const swipeThreshold = 50;
+
+
 
 document.addEventListener("DOMContentLoaded", () => {
 
+
+    if (rollingCounterElements && rollingCounterElements.length) {
+        createRollingCounter("[data-carousel-counter]", 1, "dcc-rolling-digit", "dcc-rolling-digit-track", 20);
+    }
 
     if (splashContainer) {
         // Start logo animation
         setTimeout(() => {
             splashContainer.classList.add('active');
         }, 300);
-   
+
 
         setTimeout(() => {
-             splashContainer.parentElement.classList.add("remove");
+            splashContainer.parentElement.classList.add("remove");
             document.body.classList.remove("splash-loading");
-        },3000);
+        }, 3000);
 
     }
 
- //   navbar.parentElement.classList.add('pinned', window.scrollY > 50);
+    //   navbar.parentElement.classList.add('pinned', window.scrollY > 50);
     console.log(window.scrollY)
     window.addEventListener('scroll', () => {
         navbar.parentElement.classList.toggle('pinned', window.scrollY > 50);
@@ -297,3 +315,32 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 });
+
+
+function changeSlide(direction) {
+    currentSlideIndex = (currentSlideIndex + direction + slides.length) % slides.length;
+    updateCarouselLayout();
+}
+
+function updateCarouselLayout() {
+    // Execute your custom rolling calculation algorithm layer
+    if (typeof createRollingCounter === "function") {
+        createRollingCounter("[data-carousel-counter]", (currentSlideIndex + 1), "dcc-rolling-digit", "dcc-rolling-digit-track", 20);
+    }
+    if (slides && slides.length) {
+        slides.forEach((slide, index) => {
+            if (index === currentSlideIndex) {
+                slide.classList.replace('opacity-0', 'opacity-100');
+                slide.classList.replace('z-0', 'z-10');
+            } else {
+                slide.classList.replace('opacity-100', 'opacity-0');
+                slide.classList.replace('z-10', 'z-0');
+            }
+        });
+    }
+}
+
+function goToSlide(slideIndex) {
+    currentSlideIndex = slideIndex;
+    updateCarouselLayout();
+}
