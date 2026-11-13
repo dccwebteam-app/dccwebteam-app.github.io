@@ -1,0 +1,477 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://use.typekit.net/amt5bsq.css">
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.2.0/css/line.css">
+    <link rel="stylesheet" href="./output.css">
+</head>
+
+<body class="splash-loading white-navbar bg-paper group/body">
+
+
+    <div class="splash-overlay bg-paper group">
+
+        <svg xmlns="http://www.w3.org/2000/svg" width="223" height="221.89999389648438" viewBox="0 0 223 221.9"
+            id="splash_logo_shape">
+            <path id="icon-logo_shape"
+                d="M141,120.9c9.5,6.1,14,14.8,13.4,25.9q-.45,15.15-13.2,24.3a47.249,47.249,0,0,1-28.1,9.2,67.769,67.769,0,0,1-46.3-17.6c-13.2-11.7-21.5-29-21.5-51.9,0-21,7.2-37.9,20.6-49.9s28.9-18.6,46.3-18.8c14.9-.3,42,1.1,61.8,32,11.3,17.6,9.1,37.1,9.1,37.1-1.8-5.7-6-10.6-12.2-17.2A58.726,58.726,0,0,0,148,79.3c-11.9-4.4-24.1-3.3-36.8,3.3v38.8c10.3-6.4,20.3-6.6,29.8-.5M191.9,33Q161,1.8,113.5,1.8c-31.8,0-58.3,10.7-79.7,32.1C12.4,55.2,1.7,81.1,1.7,111.3c0,30.3,10.7,56.2,32.1,77.9s47.9,32.5,79.7,32.5q47.1,0,78.2-32c20.7-21.3,31-47.5,31-78.4,0-31.4-10.2-57.5-30.8-78.3"
+                transform="translate(-0.7 -0.8)" fill="#fff" stroke="#fff" stroke-width="2" class="splash-anim-1">
+            </path>
+        </svg>
+    </div>
+
+
+    <!-- ==========================================
+         HEADER / DESKTOP NAVIGATION
+    =========================================== -->
+    <header class="group/navbar">
+        <nav aria-label="Main navigation"
+            class="2xl:shadow-[0_2px_16px_rgba(0,0,0,0.12)] group-[.white-navbar]/body:shadow-[0_2px_16px_rgba(0,0,0,0.12)] bg-black/30 2xl:bg-transparent group-[.white-navbar]/body:bg-white group-[.pinned]/navbar:bg-white text-white group-[.pinned]/navbar:text-black group-[.white-navbar]/body:text-black flex items-center justify-between gap-4 py-4 px-6 h-[100px] w-full fixed inset-0 z-[99] text-[15px] leading-[1.1] font-semibold whitespace-nowrap uppercase transition-all duration-300 ease-ease">
+            <!-- LEFT NAVIGATION -->
+            <ul
+                class="hidden 2xl:flex items-center justify-between gap-6 group/nav-items group/left-nav header__nav-items">
+                <!-- What's on -->
+                <li class="group/has-dropdown relative flex items-center justify-start gap-1"> <a
+                        href="./whats-on.html">What's on</a>
+                    <button type="button" class="flex items-center justify-center cursor-pointer"
+                        aria-label="Toggle What's on submenu" aria-expanded="false" aria-controls="desktop-whats-on"> <i
+                            class="uil uil-angle-down text-2xl" aria-hidden="true"></i> </button>
+                    <ul id="desktop-whats-on" class="header__dropdown-menu bg-white text-secondary absolute top-[calc(100%_+_0.5rem)] opacity-0 invisible -translate-y-2 group-hover/has-dropdown:opacity-100 group-hover/has-dropdown:visible group-hover/has-dropdown:translate-y-0 border-t-4 border-primary text-sm group/dropdown-menu min-w-[250px] transition-all duration-180 ease-ease  group-focus-within/has-dropdown:opacity-100
+    group-focus-within/has-dropdown:visible
+    group-focus-within/has-dropdown:translate-y-0
+    before:content-[''] before:absolute
+    before:-top-2 before:left-0
+    before:w-full before:h-2
+    before:bg-transparent">
+                        <li><a href="./exhibitions.html">Exhibitions</a></li>
+                        <li><a href="/whats-on/events/">Events</a></li>
+                        <li><a href="/whats-on/watch/">Watch</a></li>
+                    </ul>
+                </li>
+                <li class="relative flex items-center justify-start gap-1"> <a href="/plan-your-visit/">Plan your
+                        visit</a> </li>
+                <!-- About us -->
+                <li class="group/has-dropdown relative flex items-center justify-start gap-1"> <a
+                        href="/about-us/">About us</a>
+                    <button type="button" class="flex items-center justify-center cursor-pointer"
+                        aria-label="Toggle About us submenu" aria-expanded="false" aria-controls="desktop-about"> <i
+                            class="uil uil-angle-down text-2xl" aria-hidden="true"></i> </button>
+                    <ul id="desktop-about" class="header__dropdown-menu bg-white text-secondary absolute top-[calc(100%_+_0.5rem)] opacity-0 invisible -translate-y-2 group-hover/has-dropdown:opacity-100 group-hover/has-dropdown:visible group-hover/has-dropdown:translate-y-0 border-t-4 border-primary text-sm group/dropdown-menu min-w-[250px] transition-all duration-180 ease-ease  group-focus-within/has-dropdown:opacity-100
+    group-focus-within/has-dropdown:visible
+    group-focus-within/has-dropdown:translate-y-0
+    before:content-[''] before:absolute
+    before:-top-2 before:left-0
+    before:w-full before:h-2
+    before:bg-transparent">
+                        <li><a href="/about-us/">About Toitū</a></li>
+                        <li><a href="/about-us/history/">History</a></li>
+                        <li><a href="/about-us/cafe/">Café</a></li>
+                        <li><a href="/visit/">Location</a></li>
+                    </ul>
+                </li>
+                <!-- Learn -->
+                <li class="group/has-dropdown relative flex items-center justify-start gap-1"> <a
+                        href="/learn/">Learn</a>
+                    <button type="button" class="flex items-center justify-center cursor-pointer"
+                        aria-label="Toggle Learn submenu" aria-expanded="false" aria-controls="desktop-learn"> <i
+                            class="uil uil-angle-down text-2xl" aria-hidden="true"></i> </button>
+                    <ul id="desktop-learn" class="header__dropdown-menu bg-white text-secondary absolute top-[calc(100%_+_0.5rem)] opacity-0 invisible -translate-y-2 group-hover/has-dropdown:opacity-100 group-hover/has-dropdown:visible group-hover/has-dropdown:translate-y-0 border-t-4 border-primary text-sm group/dropdown-menu min-w-[250px] transition-all duration-180 ease-ease  group-focus-within/has-dropdown:opacity-100
+    group-focus-within/has-dropdown:visible
+    group-focus-within/has-dropdown:translate-y-0
+    before:content-[''] before:absolute
+    before:-top-2 before:left-0
+    before:w-full before:h-2
+    before:bg-transparent">
+                        <li><a href="/learn/research/">Research</a></li>
+                        <li><a href="/learn/education/">Education Experiences</a></li>
+                    </ul>
+                </li>
+            </ul>
+            <!-- ==========================================
+                 NAVBAR LOGO
+            =========================================== -->
+            <a href="./index.html" aria-label="Toitū Otago Settlers Museum home">
+                <!-- Keep your existing SVG logo here -->
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 2637.31 707.89" role="img"
+                    aria-labelledby="toitu-logo-title" class="w-[160px] 4xl:w-[190px] h-[100px]">
+                    <title id="toitu-logo-title">Toitū Otago Settlers Museum</title>
+                    <path
+                        class="transition-fill duration-300 ease-[ease] fill-white group-[.white-navbar]/body:fill-primary group-[.pinned]/navbar:fill-primary"
+                        d="M714.87,444.57c-4.42-13.67-14.4-25.35-29.29-40.95-14.91-15.58-33.25-27.29-55.07-35.1-28.47-10.4-57.91-7.81-88.36,7.8v92.61c25.13-15.59,49.13-16.09,71.97-1.47,22.83,14.62,33.57,35.26,32.27,61.88-.67,24.08-11.26,43.42-31.79,58.04-20.51,14.61-43.01,21.94-67.49,21.94-42.36,0-79.42-13.96-111.18-41.91-31.76-27.95-51.68-69.21-51.68-123.81,0-50.05,17.28-90.39,49.4-118.97,32.11-28.61,69.43-44.28,111.12-44.94,35.73-.65,100.9,2.7,148.3,76.32,27.05,42.06,21.81,88.56,21.81,88.56M548.11,183.19c-76.28,0-140.09,25.53-191.4,76.57-51.3,51.08-76.95,112.67-76.95,184.8s25.66,134.05,76.95,185.78c51.31,51.71,115.12,77.55,191.4,77.55s138.09-25.45,187.78-76.32c49.68-50.87,74.52-113.2,74.52-187.01s-24.68-137.16-74.03-186.85c-49.35-49.68-112.12-74.52-188.27-74.52">
+                    </path>
+                    <path
+                        class="transition-fill duration-300 ease-[ease] fill-white group-[.white-navbar]/body:fill-primary group-[.pinned]/navbar:fill-primary"
+                        d="M167.26,0H58.74v192.14H0v90.61h58.74v256.73c0,58.83,18.24,101.44,54.75,127.82,36.49,26.38,85.28,36.58,146.35,30.61v-98.56c-29.55,2.69-52.37-1.81-68.45-13.51-16.1-11.68-24.13-28.22-24.13-49.59v-253.5h92.59v-90.61h-92.59V0Z">
+                    </path>
+                    <rect
+                        class="transition-fill duration-300 ease-[ease] fill-white group-[.white-navbar]/body:fill-primary group-[.pinned]/navbar:fill-primary"
+                        x="848.25" y="0" width="110.5" height="121.47"></rect>
+                    <path
+                        class="transition-fill duration-300 ease-[ease] fill-white group-[.white-navbar]/body:fill-primary group-[.pinned]/navbar:fill-primary"
+                        d="M1678.37,191.16v407.21c-22.47,7.29-48.33,10.95-84.09,10.95s-72.49-11.79-100.59-35.37c-28.08-23.54-42.11-56.55-42.11-99.05V201.23c0-113.9-59.09-164.53-177.22-151.94v90.61c28.13-1.99,46.6,1.89,55.44,11.6,8.83,9.7,13.25,26.29,13.25,49.73v273.67c0,73.04,24.43,130.1,73.27,171.24,48.85,41.17,108.66,61.74,178.94,61.74,61.36,0,123.06-12.27,191.64-36.84V191.16h-108.52Z">
+                    </path>
+                    <path
+                        class="transition-fill duration-300 ease-[ease] fill-white group-[.white-navbar]/body:fill-primary group-[.pinned]/navbar:fill-primary"
+                        d="M1179.76,0h-108.51v192.14h-58.74v90.61h58.74v256.73c0,58.83,18.23,101.44,54.76,127.82,36.5,26.38,85.28,36.58,146.35,30.61v-98.56c-29.55,2.69-52.38-1.81-68.47-13.51-16.09-11.68-24.13-28.22-24.13-49.59v-253.5h92.6v-90.61h-92.6V0Z">
+                    </path>
+                    <rect
+                        class="transition-fill duration-300 ease-[ease] fill-white group-[.white-navbar]/body:fill-primary group-[.pinned]/navbar:fill-primary"
+                        x="849.25" y="190.16" width="108.51" height="506.76"></rect>
+                    <rect
+                        class="transition-fill duration-300 ease-[ease] fill-white group-[.white-navbar]/body:fill-primary group-[.pinned]/navbar:fill-primary"
+                        x="1502.41" y="2.23" width="138.46" height="74"></rect>
+                    <path
+                        class="transition-fill duration-300 ease-[ease] fill-white group-[.white-navbar]/body:fill-blue group-[.pinned]/navbar:fill-blue"
+                        d="M1852.61,673.55h23.94v-114.71l31.04,114.71h13.36l31.06-114.71v114.71h24.19v-128.89h-40.26l-21.62,79.87-21.41-79.87h-40.29v128.89ZM1992.9,627.73c0,9.72,1.36,17.45,4.05,23.21,2.7,5.75,6.07,10.47,10.12,14.18,2.92,2.66,6.59,4.78,10.96,6.41,8.26,3.03,17.14,4.56,26.7,4.56,16.58,0,29.14-4.24,37.75-12.72,8.59-8.48,12.88-20.59,12.88-36.32v-82.39h-25.5v78.68c0,6.81-1.17,12.41-3.51,16.84-2.31,4.45-5.42,7.65-9.29,9.62-3.88,1.96-8.33,2.95-13.33,2.95-7.81,0-13.97-2.46-18.53-7.33-4.56-4.9-6.82-12.24-6.82-22.09v-78.68h-25.45v83.07ZM2105.78,646.34c2.97,5.72,5.93,10.2,8.83,13.4,4.49,5,9.99,8.98,16.48,11.93,6.48,2.95,14.13,4.42,22.94,4.42,9.33,0,17.6-1.77,24.78-5.31,7.19-3.53,12.59-8.59,16.25-15.17,3.65-6.58,5.49-13.12,5.49-19.63,0-6.16-1.43-12.18-4.27-18.02-2.83-5.83-7.11-10.61-12.81-14.23-5.68-3.65-14.08-6.85-25.13-9.61-11.09-2.76-17.97-5.41-20.73-7.99-2.81-2.59-4.21-5.67-4.21-9.29,0-4.46,1.7-8.3,5.09-11.48,3.39-3.18,7.93-4.76,13.62-4.76,4.61,0,8.79,1.17,12.55,3.54,3.77,2.35,7.44,6.09,11.04,11.19l21.22-8.68c-2.7-4.58-5.38-8.22-8.1-10.86-4.13-3.99-9.21-7.28-15.18-9.81-5.99-2.57-12.81-3.84-20.43-3.84-13.44,0-23.98,3.57-31.68,10.68-7.69,7.1-11.54,16.06-11.54,26.9,0,10.12,3.86,18.59,11.54,25.44,6.18,5.46,16.42,10.08,30.75,13.82,10.5,2.8,17.27,5.71,20.29,8.76,3.01,3.03,4.48,6.53,4.48,10.51,0,4.57-1.88,8.5-5.64,11.86-3.78,3.34-9,5-15.76,5-5.61,0-10.49-1.29-14.6-3.87-4.15-2.58-8.33-7.17-12.6-13.74l-22.65,8.85ZM2213.9,673.55h86.42v-22.24h-61.08v-36.73h37.25v-19.12h-37.25v-28.37h61.08v-22.43h-86.42v128.89ZM2313.86,627.73c0,9.72,1.34,17.45,4.05,23.21,2.69,5.75,6.05,10.47,10.09,14.18,2.91,2.66,6.59,4.78,10.96,6.41,8.26,3.03,17.17,4.56,26.72,4.56,16.55,0,29.13-4.24,37.71-12.72,8.62-8.48,12.92-20.59,12.92-36.32v-82.39h-25.53v78.68c0,6.81-1.17,12.41-3.49,16.84-2.33,4.45-5.45,7.65-9.31,9.62-3.88,1.96-8.33,2.95-13.33,2.95-7.81,0-13.97-2.46-18.53-7.33-4.56-4.9-6.81-12.24-6.81-22.09v-78.68h-25.45v83.07ZM2433.1,673.55h23.94v-114.71l31.05,114.71h13.37l31.06-114.71v114.71h24.16v-128.89h-40.25l-21.62,79.87-21.43-79.87h-40.29v128.89Z">
+                    </path>
+                    <path
+                        class="transition-fill duration-300 ease-[ease] fill-white group-[.white-navbar]/body:fill-blue group-[.pinned]/navbar:fill-blue"
+                        d="M1846.2,470.81c2.98,5.74,5.93,10.23,8.87,13.4,4.46,5,9.97,8.98,16.46,11.94,6.49,2.95,14.15,4.41,22.95,4.41,9.31,0,17.57-1.76,24.76-5.31,7.19-3.51,12.61-8.58,16.25-15.15,3.66-6.58,5.48-13.11,5.48-19.62s-1.43-12.2-4.24-18.04c-2.86-5.85-7.11-10.6-12.81-14.25-5.7-3.64-14.08-6.82-25.15-9.61-11.06-2.73-17.97-5.41-20.71-7.98-2.82-2.59-4.23-5.68-4.23-9.29,0-4.47,1.72-8.32,5.12-11.48,3.38-3.18,7.91-4.76,13.59-4.76,4.6,0,8.79,1.18,12.55,3.54,3.76,2.35,7.44,6.09,11.02,11.19l21.25-8.68c-2.69-4.58-5.38-8.21-8.1-10.86-4.16-3.98-9.21-7.26-15.2-9.81-5.98-2.55-12.79-3.84-20.42-3.84-13.44,0-23.98,3.56-31.67,10.67-7.69,7.1-11.56,16.09-11.56,26.92,0,10.1,3.87,18.59,11.56,25.44,6.18,5.45,16.42,10.06,30.73,13.81,10.5,2.81,17.28,5.74,20.3,8.76,2.98,3.05,4.46,6.55,4.46,10.54,0,4.56-1.87,8.5-5.64,11.85-3.76,3.32-9.02,5.01-15.76,5.01-5.61,0-10.46-1.29-14.62-3.88-4.1-2.58-8.32-7.15-12.57-13.73l-22.68,8.83ZM1950.89,498.03h86.42v-22.22h-61.07v-36.75h37.24v-19.12h-37.24v-28.37h61.07v-22.42h-86.42v128.88ZM2042.42,391.31h36.14v106.72h25.28v-106.72h36.29v-22.15h-97.72v22.15ZM2146.74,391.31h36.16v106.72h25.27v-106.72h36.31v-22.15h-97.73v22.15ZM2256.4,498.03h78.43v-22.22h-53.25v-106.66h-25.19v128.88ZM2343.81,498.03h86.44v-22.22h-61.08v-36.75h37.23v-19.12h-37.23v-28.37h61.08v-22.42h-86.44v128.88ZM2441.5,498.03h25.44v-51.8h23.2l21.61,51.8h25.12l-23.17-56.51c8.87-3.6,15.1-7.91,18.71-12.94,3.58-5.02,5.38-11.37,5.38-19.08,0-8.35-2-15.79-5.99-22.24-3.97-6.45-9.54-11.08-16.73-13.91-7.14-2.79-20.07-4.2-38.76-4.2h-34.8v128.88ZM2487.23,391.63c8.46,0,14.55,1.61,18.38,4.76,3.8,3.17,5.72,7.15,5.72,11.93s-1.72,8.88-5.15,11.69c-5.22,4.21-11.53,6.33-18.96,6.33h-20.29v-34.71h20.29ZM2542.56,470.81c2.96,5.74,5.91,10.23,8.83,13.4,4.53,5,9.99,8.98,16.49,11.94,6.48,2.95,14.12,4.41,22.95,4.41,9.32,0,17.6-1.76,24.76-5.31,7.19-3.51,12.61-8.58,16.27-15.15,3.64-6.58,5.46-13.11,5.46-19.62s-1.4-12.2-4.26-18.04c-2.83-5.85-7.07-10.6-12.79-14.25-5.68-3.64-14.08-6.82-25.15-9.61-11.05-2.73-17.97-5.41-20.73-7.98-2.8-2.59-4.2-5.68-4.2-9.29,0-4.47,1.69-8.32,5.08-11.48,3.42-3.18,7.93-4.76,13.62-4.76,4.61,0,8.78,1.18,12.56,3.54,3.75,2.35,7.44,6.09,11.02,11.19l21.25-8.68c-2.72-4.58-5.41-8.21-8.1-10.86-4.16-3.98-9.24-7.26-15.21-9.81-5.99-2.55-12.81-3.84-20.41-3.84-13.44,0-23.99,3.56-31.68,10.67-7.7,7.1-11.54,16.09-11.54,26.92,0,10.1,3.84,18.59,11.54,25.44,6.16,5.45,16.42,10.06,30.73,13.81,10.51,2.81,17.28,5.74,20.3,8.76,2.96,3.05,4.47,6.55,4.47,10.54,0,4.56-1.88,8.5-5.66,11.85-3.75,3.32-9.02,5.01-15.73,5.01-5.63,0-10.5-1.29-14.65-3.88-4.12-2.58-8.32-7.15-12.57-13.73l-22.66,8.83Z">
+                    </path>
+                    <path
+                        class="transition-fill duration-300 ease-[ease] fill-white group-[.white-navbar]/body:fill-blue group-[.pinned]/navbar:fill-blue"
+                        d="M1879.52,195.09c-6.32,2.69-11.85,6.51-16.6,11.5-4.74,5.01-8.28,10.39-10.57,16.17-4.28,10.45-6.41,22.25-6.41,35.37,0,21.85,5.27,38.46,15.79,49.84,10.55,11.37,24.35,17.06,41.43,17.06s30.49-5.59,40.77-16.77c10.27-11.17,15.42-27.65,15.42-49.43,0-16.06-2.57-29.05-7.67-38.94-5.11-9.87-12.53-17.46-22.24-22.73-7.43-4.04-17.17-6.07-29.31-6.07-7.43,0-14.28,1.33-20.6,3.99M1922.78,221.42c6.91,7.12,10.36,19.46,10.36,36.98,0,15.68-2.84,26.95-8.5,33.84-5.68,6.88-12.79,10.31-21.32,10.31-8.99,0-16.36-3.46-22.13-10.35-5.74-6.92-8.63-18.27-8.63-34.06s2.84-27.56,8.52-34.54c5.66-6.96,12.85-10.45,21.58-10.45,8.07,0,14.78,2.76,20.11,8.26M1957.81,215.78h36.12v106.74h25.27v-106.74h36.32v-22.15h-97.71v22.15ZM2038.57,322.52h24.95l9.75-30.25h41.19l9.8,30.25h24.93l-41.96-128.89h-26.89l-41.77,128.89ZM2108.4,273.49h-29.33l14.77-44.98,14.56,44.98ZM2237.81,322.52h20.38v-65.89h-54.07v19.29h33.68c-.93,4.39-2.1,7.89-3.4,10.5-1.32,2.61-3.28,5.22-5.89,7.84-2.62,2.61-6.04,4.82-10.29,6.6-4.23,1.81-8.54,2.7-12.93,2.7-5.82,0-11.31-1.63-16.43-4.89-5.09-3.27-8.95-7.98-11.53-14.15-2.58-6.18-3.88-15.2-3.88-27.04,0-16.91,3.13-28.61,9.42-35.09,6.24-6.48,14.23-9.72,23.95-9.72,8.19,0,14.88,2.46,20.05,7.4,3.58,3.49,6.53,8.7,8.84,15.68l20.14-6.92c-1.98-7.23-4.38-12.92-7.25-17.02-4.42-6.4-10.28-11.46-17.56-15.15-7.27-3.71-15.68-5.56-25.26-5.56-10.43,0-20.26,2.39-29.43,7.17-9.18,4.76-16.4,12.2-21.7,22.28-5.26,10.08-7.91,23.43-7.91,40.05s2.51,28.55,7.54,37.78c5.02,9.25,11.52,15.99,19.42,20.26,7.91,4.27,16.21,6.41,24.85,6.41s16.33-1.95,23.69-5.82c5.27-2.7,10.47-6.84,15.57-12.46v15.76ZM2301.27,195.09c-6.34,2.69-11.86,6.51-16.61,11.5-4.75,5.01-8.26,10.39-10.57,16.17-4.27,10.45-6.4,22.25-6.4,35.37,0,21.85,5.24,38.46,15.79,49.84,10.54,11.37,24.34,17.06,41.4,17.06s30.5-5.59,40.77-16.77c10.28-11.17,15.43-27.65,15.43-49.43,0-16.06-2.57-29.05-7.67-38.94-5.11-9.87-12.52-17.46-22.22-22.73-7.43-4.04-17.2-6.07-29.31-6.07-7.43,0-14.3,1.33-20.6,3.99M2344.51,221.42c6.9,7.12,10.38,19.46,10.38,36.98,0,15.68-2.84,26.95-8.51,33.84-5.67,6.88-12.77,10.31-21.32,10.31-8.99,0-16.36-3.46-22.11-10.35-5.77-6.92-8.63-18.27-8.63-34.06s2.84-27.56,8.51-34.54c5.66-6.96,12.85-10.45,21.55-10.45,8.1,0,14.8,2.76,20.14,8.26">
+                    </path>
+                </svg>
+            </a>
+            <!-- ==========================================
+                 RIGHT NAVIGATION
+            =========================================== -->
+            <ul
+                class="hidden 2xl:flex items-center justify-between gap-6 group/nav-items group/right-nav header__nav-items">
+                <li class="relative flex items-center justify-start gap-1"> <a href="/collections/">Collections</a>
+                </li>
+                <li class="relative flex items-center justify-start gap-1"> <a href="/venue-hire/">Venue Hire</a> </li>
+                <li class="relative flex items-center justify-start gap-1"> <a
+                        href="/otago-settlers-association/">OSA</a> </li>
+                <li class="relative flex items-center justify-start gap-1">
+                    <a href="/search/" class="cta" aria-label="Search"> <i class="uil uil-search text-2xl"
+                            aria-hidden="true"></i> </a>
+                </li>
+                <li class="relative flex items-center justify-start gap-1">
+                    <a href="https://shop.shop" target="_blank" rel="noopener noreferrer"
+                        class="cta flex items-center gap-1 justify-start bg-primary hover:bg-secondary transition-all duration-300 ease-ease text-white py-2 px-6 rounded-[50px]">
+                        <i class="uil uil-shopping-bag text-2xl" aria-hidden="true"></i> <span
+                            class="leading-[1.5rem] mt-1">Shop</span> </a>
+                </li>
+            </ul>
+            <!-- ==========================================
+                 MOBILE NAVIGATION CONTROLS
+            =========================================== -->
+            <div class="flex 2xl:hidden items-center justify-end gap-5">
+                <!-- Search -->
+                <button type="button" aria-label="Search"> <i class="uil uil-search text-2xl" aria-hidden="true"></i>
+                </button>
+                <!-- Mobile menu toggle -->
+                <button id="menu_toggle" type="button"
+                    class="flex flex-col justify-center items-center gap-1.5 w-8 h-8 z-50 cursor-pointer bg-transparent group/mobile-menubar"
+                    aria-label="Open navigation menu" aria-expanded="false" aria-controls="mobile_menu"> <span
+                        class="w-8 h-0.5 bg-white group-hover/mobile-menubar:w-5 group-[.white-navbar]/body:bg-black group-[.pinned]/navbar:bg-black transition-all duration-200"></span>
+                    <span
+                        class="w-5 h-0.5 bg-white group-hover/mobile-menubar:w-8 group-[.white-navbar]/body:bg-black group-[.pinned]/navbar:bg-black transition-all duration-200"></span>
+                    <span
+                        class="w-8 h-0.5 bg-white group-hover/mobile-menubar:w-5 group-[.white-navbar]/body:bg-black group-[.pinned]/navbar:bg-black transition-all duration-200"></span>
+                </button>
+            </div>
+        </nav>
+    </header>
+    <!-- ==========================================
+         MOBILE MENU OVERLAY
+    =========================================== -->
+    <button id="menu_overlay" type="button"
+        class="fixed inset-0 z-[199] bg-black/50 opacity-0 invisible transition-all duration-300"
+        aria-label="Close navigation menu" tabindex="-1" hidden> </button>
+    <!-- ==========================================
+         MOBILE SIDEBAR
+    =========================================== -->
+    <aside id="mobile_menu"
+        class="fixed space-y-4 inset-y-0 right-0 w-screen md:w-full max-w-sm bg-white shadow-xl py-4 px-6 transition-transform duration-200 ease-linear translate-x-full z-[200] font-medium text-xl"
+        aria-label="Mobile navigation" aria-hidden="true" inert>
+        <!-- Mobile logo and close button -->
+        <div class="flex items-center justify-between border-b border-footer pb-6">
+            <a href="/" aria-label="Toitū Otago Settlers Museum home"> <img src="./images/mobile menu.svg"
+                    loading="lazy" decoding="async" width="160" height="auto" class="w-[160px]"
+                    alt="Toitū Otago Settlers Museum"> </a>
+            <button id="menu_close" type="button" class="flex items-center justify-center size-10 cursor-pointer"
+                aria-label="Close navigation menu"> <span class="relative flex size-7 items-center justify-center"
+                    aria-hidden="true">
+                    <span class="relative block size-7 sidebar__close-icon"></span> </span>
+            </button>
+        </div>
+        <!-- Mobile navigation links -->
+        <nav aria-label="Mobile navigation" class="relative flex flex-col items-start justify-between gap-0">
+            <!-- What's on -->
+            <details class="mobile-dropdown w-full relative border-b border-footer sidebar__accordion">
+                <summary
+                    class="will-load list-none flex items-center justify-between [&::-webkit-details-marker]:hidden py-5 cursor-pointer">
+                    <span class="flex-1 min-w-0">What's on</span> <span
+                        class="relative flex size-7 min-w-12 shrink-0 items-center justify-center" aria-hidden="true">
+
+                        <span class="relative block size-4 sidebar__accordion-icon"></span> </span>
+                </summary>
+                <ul class="bg-white text-secondary group/dropdown-menu sidebar__dropdown-menu">
+                    <li><a href="./exhibitions.html">Exhibitions</a></li>
+                    <li><a href="/whats-on/events/">Events</a></li>
+                    <li><a href="/whats-on/watch/">Watch</a></li>
+                </ul>
+            </details>
+            <!-- Plan your visit --><a href="/plan-your-visit/" class="w-full border-b border-footer py-5">
+
+                Plan your visit
+
+            </a>
+            <!-- About us -->
+            <details class="mobile-dropdown w-full relative border-b border-footer sidebar__accordion">
+                <summary
+                    class="will-load list-none flex items-center justify-between [&::-webkit-details-marker]:hidden py-5 cursor-pointer">
+                    <span class="flex-1 min-w-0">About us</span> <span
+                        class="relative flex size-7 min-w-12 shrink-0 items-center justify-center" aria-hidden="true">
+
+                        <span class="relative block size-4 sidebar__accordion-icon"></span> </span>
+                </summary>
+                <ul class="bg-white text-secondary group/dropdown-menu sidebar__dropdown-menu">
+                    <li><a href="/about-us/">About Toitū</a></li>
+                    <li><a href="/about-us/history/">History</a></li>
+                    <li><a href="/about-us/cafe/">Café</a></li>
+                    <li><a href="/visit/">Location</a></li>
+                </ul>
+            </details>
+            <!-- Collections --><a href="/collections/" class="w-full border-b border-footer py-5">
+
+                Collections
+
+            </a>
+            <!-- Learn -->
+            <details class="mobile-dropdown w-full relative border-b border-footer sidebar__accordion">
+                <summary
+                    class="will-load list-none flex items-center justify-between [&::-webkit-details-marker]:hidden py-5 cursor-pointer">
+                    <span class="flex-1 min-w-0">Learn</span> <span
+                        class="relative flex size-7 min-w-12 shrink-0 items-center justify-center" aria-hidden="true">
+
+                        <span class="relative block size-4 sidebar__accordion-icon"></span> </span>
+                </summary>
+                <ul class="bg-white text-secondary group/dropdown-menu sidebar__dropdown-menu">
+                    <li><a href="/learn/research/">Research</a></li>
+                    <li><a href="/learn/education/">Education experiences</a></li>
+                </ul>
+            </details>
+            <!-- Venue hire --><a href="/venue-hire/" class="w-full border-b border-footer py-5">
+
+                Venue Hire
+
+            </a>
+            <!-- Otago Settlers Association --><a href="/otago-settlers-association/" class="w-full py-5">
+
+                Otago Settlers Association
+
+            </a>
+            <!-- Shop -->
+            <a href="https://shop.shop" target="_blank" rel="noopener noreferrer"
+                class="mt-6 bg-primary hover:bg-black transition-all duration-300 ease-ease text-white py-4 px-6 w-full font-semibold">
+                <span class="w-full flex items-center gap-2 justify-start">
+
+                    <i class="uil uil-shopping-bag text-2xl" aria-hidden="true"></i>
+
+                    <span class="leading-[1.5rem] mt-0.5">Shop</span> </span>
+            </a>
+        </nav>
+    </aside>
+    <main id="main" class="mt-[100px]">
+        <section class="print:mt-0 print:pt-0 relative grid grid-cols-1 2xl:grid-cols-3 4xl:grid-cols-2">
+            <div class="2xl:col-span-2 4xl:col-span-1 relative py-12 section--padding-x">
+                <nav aria-label="Breadcrumbs" class="print:mt-0 print:pt-0 print:hidden">
+                    <ol class="flex items-center justify-start text-lg gap-3 flex-wrap">
+                        <li><a href="./index.html" class="underline">Home</a>
+                        </li>
+                        <li aria-hidden="true">/</li>
+                        <li class="whitespace-nowrap">Smith Gallery</li>
+                    </ol>
+                </nav>
+                <div class="relative max-w-3xl 2xl:max-w-6xl mt-6 xl:mt-12">
+
+                    <p class="eyebrow text-primary">Venue hire / our spaces</p>
+                    <h1>The Smith Gallery Portraits</h1>
+                    <p class="lead-text--1">The historic heart of Toitū, and the faces of Otago’s past.
+                    </p>
+
+                    <a class="cta group/anchor-down-link flex items-center gap-2 justify-start bg-primary hover:bg-black transition-all duration-300 ease-ease text-white py-4 px-6 w-max"
+                        href="mailto:toituosm@dcc.govt.nz">Enquire about this
+                        space <span aria-hidden="true"
+                            class="-mt-1 group-hover/anchor-down-link:translate-y-[4px] transition-all duration-300">↓</span></a>
+
+                </div>
+
+            </div>
+
+            <figure
+                class="relative m-0 w-full overflow-hidden bg-paper h-[360px] sm:h-[45vh] 2xl:h-[calc(100svh_-_100px)] h-tall:2xl:h-full h-tall:2xl:min-h-[75vh] aspect-16/9 sm:aspect-16/10 2xl:aspect-4/3">
+
+                <!-- Image loading placeholder -->
+                <div
+                    class="absolute inset-0 flex animate-pulse items-center justify-center bg-gradient-to-r from-gray-200 via-gray-100 to-gray-200 bg-[length:200%_100%] z-10">
+                    <i class="uil uil-image text-5xl text-gray-400" aria-hidden="true"></i>
+                </div>
+
+                <img src="https://www.toituosm.com/__data/assets/image/0012/476679/Smith_1.jpg" alt="Sunlit National Park Trail" loading="lazy"
+                    class="h-full w-full object-cover object-center opacity-0 transition-opacity duration-500 ease-out"
+                    onload="this.classList.remove('opacity-0'); this.previousElementSibling?.remove();">
+
+            </figure>
+
+        </section>
+
+        <section class="grid grid-cols-1 xl:grid-cols-2 gap-5 xl:gap-10 section--padding-x section--padding-y">
+            <div class="relative">
+                <p class="eyebrow text-primary">Since 1908</p>
+                <h2>A room filled with history</h2>
+            </div>
+            <div class="relative [&>p:last-child]:mb-0">
+                <p>When the Museum opened in March 1908, the Smith Gallery was its main display room. Within a decade,
+                    portraits covered the walls from floor to ceiling.
+                </p>
+                <p>
+                    The gallery is a memorial to Otago’s early settlers. Its collection brings together paintings and
+                    photographs of people who helped shape the region, displayed in chronological order of arrival.
+                </p>
+                <p>Alongside the portraits, the Museum records emigrant ships, marriages and places of settlement.
+                    Further portraits can be explored through the Research Centre.</p>
+            </div>
+        </section>
+
+        <section class="relative section--padding-x section--padding-y bg-white">
+
+            <p class="eyebrow text-primary">Explore the collection</p>
+            <h2>Browse by arrival period</h2>
+
+            <div
+                class="relative grid grid-cols-1 sm:grid-cols-2 2xl:grid-cols-4 border-y-1 items-center border-y-footer w-full mt-12">
+                <a href="./wall-1.html"
+                    class="relative py-12 px-6 xl:px-10 hover:bg-paper group space-y-8 2xl:border-r border-r-paper max-2xl:border-b max-2xl:border-b-paper">
+                    <p class="eyebrow text-[#777] text-xs">Wall 01</p>
+                    <p
+                        class="group-hover:text-primary flex items-center gap-1 justify-start md:w-max font-bold text-xl mb-0">
+                        Arrivals 1820s–40s</p>
+                    <span
+                        class="link--new-window float-right text-3xl group-hover:text-primary group-hover:translate-y-0.5 group-hover:-translate-y-0 pt-4 transition-all duration-300"></span>
+                </a>
+                <a href="#"
+                    class="relative py-12 px-6 xl:px-10 hover:bg-paper group space-y-8 2xl:border-r border-r-paper max-2xl:border-b max-2xl:border-b-paper">
+                    <p class="eyebrow text-[#777] text-xs">Wall 02</p>
+                    <p
+                        class="group-hover:text-primary flex items-center gap-1 justify-start md:w-max font-bold text-xl mb-0">
+                        Arrivals 1820s–40s</p>
+                    <span
+                        class="link--new-window float-right text-3xl group-hover:text-primary group-hover:translate-y-0.5 group-hover:-translate-y-0 pt-4 transition-all duration-300"></span>
+                </a>
+                <a href="#"
+                    class="relative py-12 px-6 xl:px-10 hover:bg-paper group space-y-8 2xl:border-r border-r-paper max-2xl:border-b max-2xl:border-b-paper">
+                    <p class="eyebrow text-[#777] text-xs">Wall 03</p>
+                    <p
+                        class="group-hover:text-primary flex items-center gap-1 justify-start md:w-max font-bold text-xl mb-0">
+                        Arrivals 1820s–40s</p>
+                    <span
+                        class="link--new-window float-right text-3xl group-hover:text-primary group-hover:translate-y-0.5 group-hover:-translate-y-0 pt-4 transition-all duration-300"></span>
+                </a>
+                <a href="#"
+                    class="relative py-12 px-6 xl:px-10 hover:bg-paper group space-y-8 max-2xl:border-b max-2xl:border-b-paper">
+                    <p class="eyebrow text-[#777] text-xs">Wall 04</p>
+                    <p
+                        class="group-hover:text-primary flex items-center gap-1 justify-start md:w-max font-bold text-xl mb-0">
+                        Arrivals 1820s–40s</p>
+                    <span
+                        class="link--new-window float-right text-3xl group-hover:text-primary group-hover:translate-y-0.5 group-hover:-translate-y-0 pt-4 transition-all duration-300"></span>
+                </a>
+            </div>
+        </section>
+
+        <section class="section--padding-x section--padding-y relative">
+            <div class="relative">
+                <p class="eyebrow text-primary">Beyond the gallery</p>
+                <h2>Looking for someone else?</h2>
+                <p class="lead-text lead-text--2">Thousands of other settler portraits are held by the Museum. The Research Centre can help you explore the wider collection.</p>
+                <a href="" class="float-right cta flex items-center gap-2 justify-start transition-all duration-300 ease-ease text-black hover:text-primary border-b-2 border-b-primary pb-1 w-max link--new-window">Explore research</a>
+            </div>
+        </section>
+    </main>
+    <footer class="relative m-0 bg-black section--padding-x pt-12 2xl:pt-24 text-white">
+        <div class="grid grid-cols-1 2xl:grid-cols-3 gap-x-0 md:gap-y-8 2xl:gap-y-6 justify-between items-start"> <img
+                src="./images/footer-logo.svg" width="" height="" loading="lazy" decoding="async" alt="Toitu OSM logo"
+                aria-label="Toitu OSM logo" class="mb-4 xl:mb-0 w-48 xl:w-72">
+            <div
+                class="relative grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-x-4 gap-y-6 lg:gap-x-6 3xl:gap-x-12 5xl:gap-x-24 2xl:col-span-2 footer__text">
+                <div class="flex flex-col items-start justify-start gap-3 xl:gap-6">
+                    <h4 class="font-semibold text-lg uppercase tracking-[1.5px] whitespace-nowrap font-bold">Visit</h4>
+                    <p><span class="whitespace-nowrap"><strong>Open 10am–5pm daily</strong></span>
+                        <br><span class="whitespace-nowrap">Closed Christmas Day</span>
+                        <br><span class="whitespace-nowrap">Admission free</span>
+                    </p>
+                    <p>31 Queens Garden
+                        <br>Dunedin 9016
+                        <br>New Zealand
+                    </p>
+                </div>
+                <div class="flex flex-col items-start justify-start gap-3 xl:gap-6 2xl:ml-4 5xl:ml-0">
+                    <h4 class="font-semibold text-lg uppercase tracking-[1.5px] whitespace-nowrap">Contact
+                    </h4>
+                    <p><a href="tel:+6434775052">03 477 5052</a>
+                        <br><a href="mailto:toituosm@dcc.govt.nz">toituosm@dcc.govt.nz</a>
+                    </p>
+                    <nav class="relative" aria-label="Foote Navigation - Contact">
+                        <ul>
+                            <li> <a href="home.html#visit">
+                                    Plan your visit
+                                </a> </li>
+                            <li><a href="venue-hire.html">Venue hire</a></li>
+                            <li><a href="https://shop.toituosm.com/">Museum shop</a></li>
+                        </ul>
+                    </nav>
+                </div>
+                <div class="flex flex-col items-start justify-start gap-3 xl:gap-6 2xl:ml-5 5xl:ml-0">
+                    <h4 class="font-semibold text-lg uppercase tracking-[1.5px] whitespace-nowrap">Explore
+                    </h4>
+                    <nav class="relative" aria-label="Footer Navigation - Explore">
+                        <ul>
+                            <li><a href="./whats-on.html">What's On</a></li>
+                            <li><a href="./exhibitions.html">Exhibitions</a></li>
+                            <li><a href="https://shop.toituosm.com/">Events</a></li>
+                            <li><a href="venue-hire.html">Watch</a></li>
+                            <li><a href="https://shop.toituosm.com/">Collections</a></li>
+                        </ul>
+                    </nav>
+                </div>
+                <div class="flex flex-col items-start justify-start gap-3 xl:gap-6">
+                    <h4 class="font-semibold text-lg uppercase tracking-[1.5px] whitespace-nowrap">Connect with us
+                    </h4>
+                    <nav class="relative" aria-label="Footer Navigation - Socials">
+                        <ul>
+                            <li><a href="home.html#visit" rel="noopener noreferrer">Facebook</a></li>
+                            <li><a href="venue-hire.html" rel="noopener noreferrer">Instagram</a></li>
+                            <li><a href="https://shop.toituosm.com/" rel="noopener noreferrer">Youtube</a></li>
+                            <li><a href="venue-hire.html" rel="noopener noreferrer">Tripadvisor</a></li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </div>
+        <hr class="h-[1px] w-full bg-footer/50 border-none mt-6 xl:mt-12" />
+        <div
+            class="relative flex flex-col md:flex-row items-start justify-between gap-3 md:gap-6 py-4 text-[#b9c0c4] footer__bottom">
+            <p class="text-sm mb-0">Toitū Otago Settlers Museum</p>
+            <nav>
+                <ul class="flex items-center justify-between gap-6">
+                    <li><a href="#" class="text-sm">Privacy</a></li>
+                    <li><a href="#" class="text-sm">Accessibility</a></li>
+                    <li><a href="#" class="text-sm">Contact us</a></li>
+                </ul>
+            </nav>
+        </div>
+    </footer>
+
+    <script src="https://www.dunedin.govt.nz/__data/assets/js_file/0007/1304809/dxp-helpers.js"></script>
+    <script src="./input.js"></script>
+</body>
+
+</html>
