@@ -16,7 +16,7 @@
     =========================================== -->
     <header class="group/navbar">
         <nav aria-label="Main navigation"
-            class="2xl:shadow-[0_2px_16px_rgba(0,0,0,0.12)] group-[.white-navbar]/body:shadow-[0_2px_16px_rgba(0,0,0,0.12)] bg-black/30 2xl:bg-transparent group-[.white-navbar]/body:bg-white group-[.pinned]/navbar:bg-white text-white group-[.pinned]/navbar:text-black group-[.white-navbar]/body:text-black flex items-center justify-between gap-4 py-4 px-6 h-[100px] w-full fixed inset-0 z-[99] text-[15px] leading-[1.1] font-semibold whitespace-nowrap uppercase transition-all duration-300 ease-ease">
+            class="group-[.white-navbar]/body:2xl:shadow-[0_2px_16px_rgba(0,0,0,0.12)] group-[.white-navbar]/body:shadow-[0_2px_16px_rgba(0,0,0,0.12)] bg-black/30 2xl:bg-transparent group-[.white-navbar]/body:bg-white group-[.pinned]/navbar:bg-white text-white group-[.pinned]/navbar:text-black group-[.white-navbar]/body:text-black flex items-center justify-between gap-4 py-4 px-6 h-[80px] sm:h-[100px] w-full fixed inset-0 z-[99] text-[15px] leading-[1.1] font-semibold whitespace-nowrap uppercase transition-all duration-300 ease-ease">
             <!-- LEFT NAVIGATION -->
             <ul
                 class="hidden 2xl:flex items-center justify-between gap-6 group/nav-items group/left-nav header__nav-items">
@@ -83,7 +83,8 @@
             <a href="./index.html" aria-label="Toitū Otago Settlers Museum home">
                 <!-- Keep your existing SVG logo here -->
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 2637.31 707.89" role="img"
-                    aria-labelledby="toitu-logo-title" class="w-[160px] 4xl:w-[190px] h-[100px]">
+                    aria-labelledby="toitu-logo-title"
+                    class="w-[140px] sm:w-[160px] 4xl:w-[190px] h-[60px] sm:h-[100px]">
                     <title id="toitu-logo-title">Toitū Otago Settlers Museum</title>
                     <path
                         class="transition-fill duration-300 ease-[ease] fill-white group-[.white-navbar]/body:fill-primary group-[.pinned]/navbar:fill-primary"
@@ -129,7 +130,27 @@
             =========================================== -->
             <ul
                 class="hidden 2xl:flex items-center justify-between gap-6 group/nav-items group/right-nav header__nav-items">
-                <li class="relative flex items-center justify-start gap-1"> <a href="/collections/">Collections</a>
+                <!-- Collections -->
+                <li class="group/has-dropdown relative flex items-center justify-start gap-1"> <a
+                        href="/learn/">Collections</a>
+                    <button type="button" class="flex items-center justify-center cursor-pointer"
+                        aria-label="Toggle Learn submenu" aria-expanded="false" aria-controls="desktop-collection"> <i
+                            class="uil uil-angle-down text-2xl" aria-hidden="true"></i> </button>
+                    <ul id="desktop-collection" class="header__dropdown-menu bg-white text-secondary absolute top-[calc(100%_+_0.5rem)] opacity-0 invisible -translate-y-2 group-hover/has-dropdown:opacity-100 group-hover/has-dropdown:visible group-hover/has-dropdown:translate-y-0 border-t-4 border-primary text-sm group/dropdown-menu min-w-[250px] transition-all duration-180 ease-ease  group-focus-within/has-dropdown:opacity-100
+    group-focus-within/has-dropdown:visible
+    group-focus-within/has-dropdown:translate-y-0
+    before:content-[''] before:absolute
+    before:-top-2 before:left-0
+    before:w-full before:h-2
+    before:bg-transparent">
+                        <li><a href="/learn/research/">Collections Online</a></li>
+                        <li><a href="/learn/research/">Donate</a></li>
+                        <li><a href="/learn/education/">Settler and Shipboard Diaries</a></li>
+                        <li><a href="/learn/education/">Conservation</a></li>
+                        <li><a href="/learn/education/">Behind the scenes</a></li>
+                        <li><a href="/learn/education/">Research</a></li>
+                        <li><a href="./smith-gallery.html">Portraits</a></li>
+                    </ul>
                 </li>
                 <li class="relative flex items-center justify-start gap-1"> <a href="/venue-hire/">Venue Hire</a> </li>
                 <li class="relative flex items-center justify-start gap-1"> <a
@@ -180,7 +201,7 @@
         <!-- Mobile logo and close button -->
         <div class="flex items-center justify-between border-b border-footer pb-6">
             <a href="/" aria-label="Toitū Otago Settlers Museum home"> <img src="./images/mobile menu.svg"
-                    loading="lazy" decoding="async" width="160" height="auto" class="w-[160px]"
+                    loading="lazy" decoding="async" width="" height="auto" class="w-[140px] sm:w-[160px]"
                     alt="Toitū Otago Settlers Museum"> </a>
             <button id="menu_close" type="button" class="flex items-center justify-center size-10 cursor-pointer"
                 aria-label="Close navigation menu"> <span class="relative flex size-7 items-center justify-center"
@@ -226,9 +247,26 @@
                     <li><a href="/visit/">Location</a></li>
                 </ul>
             </details>
-            <!-- Collections --><a href="/collections/" class="w-full border-b border-footer py-5">
 
-                Collections
+            <!-- Collections -->
+            <details class="mobile-dropdown w-full relative border-b border-footer sidebar__accordion">
+                <summary
+                    class="will-load list-none flex items-center justify-between [&::-webkit-details-marker]:hidden py-5 cursor-pointer">
+                    <span class="flex-1 min-w-0">Collections</span> <span
+                        class="relative flex size-7 min-w-12 shrink-0 items-center justify-center" aria-hidden="true">
+
+                        <span class="relative block size-4 sidebar__accordion-icon"></span> </span>
+                </summary>
+                <ul class="bg-white text-secondary group/dropdown-menu sidebar__dropdown-menu">
+                    <li><a href="/learn/research/">Collections Online</a></li>
+                    <li><a href="/learn/research/">Donate</a></li>
+                    <li><a href="/learn/education/">Settler and Shipboard Diaries</a></li>
+                    <li><a href="/learn/education/">Conservation</a></li>
+                    <li><a href="/learn/education/">Behind the scenes</a></li>
+                    <li><a href="/learn/education/">Research</a></li>
+                    <li><a href="./smith-gallery.html">Portraits</a></li>
+                </ul>
+            </details>
 
             </a>
             <!-- Learn -->
@@ -266,7 +304,8 @@
             </a>
         </nav>
     </aside>
-    <main id="main" class="mt-[100px]">
+
+    <main id="main" class="mt-[80px] sm:mt-[100px]">
         <section class="print:mt-0 print:pt-0 relative grid grid-cols-1 2xl:grid-cols-3 4xl:grid-cols-2">
             <div class="2xl:col-span-2 4xl:col-span-1 relative py-12 section--padding-x">
                 <nav aria-label="Breadcrumbs" class="print:mt-0 print:pt-0 print:hidden">
@@ -320,326 +359,455 @@
 
         <section class="relative section--padding-x section--padding-y bg-white">
 
-            <p class="eyebrow text-primary">Portrait directory</p>
-            <div class="relative flex flex-col md:flex-row items-center justify-between gap-4">
-                <div class="relative">
-                    <h2>People on this wall</h2>
-                    <div class="inline-flex items-center text-base text-[#666666]">58 portraits and portrait groups
-                    </div>
-                </div>
-                <div class="relative">
-                    <label for="visitors" class="block mb-2 text-base">Find a portrait</label>
-                    <input type="text" id="visitors"
-                        class="bg-white border border-footer text-lg focus:outline-none focus:border-black w-full py-3 px-2 sm:px-5 w-auto sm:w-sm"
-                        placeholder="Enter a keyword..." required />
-                </div>
-            </div>
-
-            <div
-                class="relative grid grid-cols-1 md:grid-cols-2 2xl:grid-cols-3 gap-0 border-t-1 items-center justify-start border-t-footer w-full mt-12 [&>div]:border-b [&>div]:border-b-footer [&>a]:border-b [&>A]:border-b-footer">
-
-                <div class="relative flex items-center gap-4 justify-start py-5 px-2">
-                    <span
-                        class="w-[64] max-w-[64px] h-[72px] max-h-[72px] basis-[64px] text-xl bg-paper font-bold text-blue text-center leading-[72px]"
-                        aria-hidden="true">J</span>
-                    <p class="mb-0 max-w-xs">James Adam</p>
-                </div>
-
-         
-          <a href="#" class="w-full relative flex items-center gap-4 justify-start py-5 hover:bg-paper px-3">
-
-                    <figure
-                        class="w-[64] max-w-[64px] h-[72px] max-h-[72px] basis-[64px] text-xl bg-paper font-bold text-blue text-center relative">
-                        <div
-                            class="absolute inset-0 flex animate-pulse items-center justify-center bg-gradient-to-r from-gray-200 via-gray-100 to-gray-200 bg-[length:200%_100%] z-10">
-                            <i class="uil uil-image text-xl text-gray-400" aria-hidden="true"></i>
-                        </div>
-
-                        <img src="https://www.toituosm.com/__data/assets/image/0008/485900/1E05-Hill,-John-mat-project.jpg"
-                            alt="Sunlit National Park Trail" loading="lazy"
-                            class="aspect-[64/72] h-full w-full object-cover object-center opacity-0 transition-opacity duration-500 ease-out"
-                            onload="this.classList.remove('opacity-0'); this.previousElementSibling?.remove();">
-
-
-                    </figure>
-                    <p class="mb-0 max-w-xs">James Adam</p>
-                    <span class="link--new-window ml-auto text-primary font-bold">&nbsp;</span>
-                </a>
-
-                
-          <a href="#" class="w-full relative flex items-center gap-4 justify-start py-5 hover:bg-paper px-3">
-
-                    <figure
-                        class="w-[64] max-w-[64px] h-[72px] max-h-[72px] basis-[64px] text-xl bg-paper font-bold text-blue text-center relative">
-                        <div
-                            class="absolute inset-0 flex animate-pulse items-center justify-center bg-gradient-to-r from-gray-200 via-gray-100 to-gray-200 bg-[length:200%_100%] z-10">
-                            <i class="uil uil-image text-xl text-gray-400" aria-hidden="true"></i>
-                        </div>
-
-                        <img src="https://www.toituosm.com/__data/assets/image/0008/485900/1E05-Hill,-John-mat-project.jpg"
-                            alt="Sunlit National Park Trail" loading="lazy"
-                            class="aspect-[64/72] h-full w-full object-cover object-center opacity-0 transition-opacity duration-500 ease-out"
-                            onload="this.classList.remove('opacity-0'); this.previousElementSibling?.remove();">
-
-
-                    </figure>
-                    <p class="mb-0 max-w-xs">James Adam</p>
-                    <span class="link--new-window ml-auto text-primary font-bold">&nbsp;</span>
-                </a>
-                
-
-                <a href="#" class="w-full relative flex items-center gap-4 justify-start py-5 hover:bg-paper px-3">
-
-                    <figure
-                        class="w-[64] max-w-[64px] h-[72px] max-h-[72px] basis-[64px] text-xl bg-paper font-bold text-blue text-center relative">
-                        <div
-                            class="absolute inset-0 flex animate-pulse items-center justify-center bg-gradient-to-r from-gray-200 via-gray-100 to-gray-200 bg-[length:200%_100%] z-10">
-                            <i class="uil uil-image text-xl text-gray-400" aria-hidden="true"></i>
-                        </div>
-
-                        <img src="https://www.toituosm.com/__data/assets/image/0008/485900/1E05-Hill,-John-mat-project.jpg"
-                            alt="Sunlit National Park Trail" loading="lazy"
-                            class="aspect-[64/72] h-full w-full object-cover object-center opacity-0 transition-opacity duration-500 ease-out"
-                            onload="this.classList.remove('opacity-0'); this.previousElementSibling?.remove();">
-
-
-                    </figure>
-                    <p class="mb-0 max-w-xs">Mrs Edward Bland Atkinson (née Amelia Headland)</p>
-                    <span class="link--new-window ml-auto text-primary font-bold">&nbsp;</span>
-                </a>
-
-
-                <a href="#" class="w-full relative flex items-center gap-4 justify-start py-5 hover:bg-paper px-3">
-
-                    <figure
-                        class="w-[64] max-w-[64px] h-[72px] max-h-[72px] basis-[64px] text-xl bg-paper font-bold text-blue text-center relative">
-                        <div
-                            class="absolute inset-0 flex animate-pulse items-center justify-center bg-gradient-to-r from-gray-200 via-gray-100 to-gray-200 bg-[length:200%_100%] z-10">
-                            <i class="uil uil-image text-xl text-gray-400" aria-hidden="true"></i>
-                        </div>
-
-                        <img src="https://www.toituosm.com/__data/assets/image/0008/485900/1E05-Hill,-John-mat-project.jpg"
-                            alt="Sunlit National Park Trail" loading="lazy"
-                            class="aspect-[64/72] h-full w-full object-cover object-center opacity-0 transition-opacity duration-500 ease-out"
-                            onload="this.classList.remove('opacity-0'); this.previousElementSibling?.remove();">
-
-
-                    </figure>
-                    <p class="mb-0 max-w-xs">John Hill</p>
-                    <span class="link--new-window ml-auto text-primary font-bold">&nbsp;</span>
-                </a>
-
-                <a href="#" class="w-full relative flex items-center gap-4 justify-start py-5 hover:bg-paper px-3">
-
-                    <figure
-                        class="w-[64] max-w-[64px] h-[72px] max-h-[72px] basis-[64px] text-xl bg-paper font-bold text-blue text-center relative">
-                        <div
-                            class="absolute inset-0 flex animate-pulse items-center justify-center bg-gradient-to-r from-gray-200 via-gray-100 to-gray-200 bg-[length:200%_100%] z-10">
-                            <i class="uil uil-image text-xl text-gray-400" aria-hidden="true"></i>
-                        </div>
-
-                        <img src="https://www.toituosm.com/__data/assets/image/0008/485900/1E05-Hill,-John-mat-project.jpg"
-                            alt="Sunlit National Park Trail" loading="lazy"
-                            class="aspect-[64/72] h-full w-full object-cover object-center opacity-0 transition-opacity duration-500 ease-out"
-                            onload="this.classList.remove('opacity-0'); this.previousElementSibling?.remove();">
-
-
-                    </figure>
-                    <p class="mb-0 max-w-xs">John Hill</p>
-                    <span class="link--new-window ml-auto text-primary font-bold">&nbsp;</span>
-                </a>
-
-                <a href="#" class="w-full relative flex items-center gap-4 justify-start py-5 hover:bg-paper px-3">
-
-                    <figure
-                        class="w-[64] max-w-[64px] h-[72px] max-h-[72px] basis-[64px] text-xl bg-paper font-bold text-blue text-center relative">
-                        <div
-                            class="absolute inset-0 flex animate-pulse items-center justify-center bg-gradient-to-r from-gray-200 via-gray-100 to-gray-200 bg-[length:200%_100%] z-10">
-                            <i class="uil uil-image text-xl text-gray-400" aria-hidden="true"></i>
-                        </div>
-
-                        <img src="https://www.toituosm.com/__data/assets/image/0008/485900/1E05-Hill,-John-mat-project.jpg"
-                            alt="Sunlit National Park Trail" loading="lazy"
-                            class="aspect-[64/72] h-full w-full object-cover object-center opacity-0 transition-opacity duration-500 ease-out"
-                            onload="this.classList.remove('opacity-0'); this.previousElementSibling?.remove();">
-
-
-                    </figure>
-                    <p class="mb-0 max-w-xs">John Hill</p>
-                    <span class="link--new-window ml-auto text-primary font-bold">&nbsp;</span>
-                </a>
-
-                <a href="#" class="w-full relative flex items-center gap-4 justify-start py-5 hover:bg-paper px-3">
-
-                    <figure
-                        class="w-[64] max-w-[64px] h-[72px] max-h-[72px] basis-[64px] text-xl bg-paper font-bold text-blue text-center relative">
-                        <div
-                            class="absolute inset-0 flex animate-pulse items-center justify-center bg-gradient-to-r from-gray-200 via-gray-100 to-gray-200 bg-[length:200%_100%] z-10">
-                            <i class="uil uil-image text-xl text-gray-400" aria-hidden="true"></i>
-                        </div>
-
-                        <img src="https://www.toituosm.com/__data/assets/image/0008/485900/1E05-Hill,-John-mat-project.jpg"
-                            alt="Sunlit National Park Trail" loading="lazy"
-                            class="aspect-[64/72] h-full w-full object-cover object-center opacity-0 transition-opacity duration-500 ease-out"
-                            onload="this.classList.remove('opacity-0'); this.previousElementSibling?.remove();">
-
-
-                    </figure>
-                    <p class="mb-0 max-w-xs">John Hill</p>
-                    <span class="link--new-window ml-auto text-primary font-bold">&nbsp;</span>
-                </a>
-                <a href="#" class="w-full relative flex items-center gap-4 justify-start py-5 hover:bg-paper px-3">
-
-                    <figure
-                        class="w-[64] max-w-[64px] h-[72px] max-h-[72px] basis-[64px] text-xl bg-paper font-bold text-blue text-center relative">
-                        <div
-                            class="absolute inset-0 flex animate-pulse items-center justify-center bg-gradient-to-r from-gray-200 via-gray-100 to-gray-200 bg-[length:200%_100%] z-10">
-                            <i class="uil uil-image text-xl text-gray-400" aria-hidden="true"></i>
-                        </div>
-
-                        <img src="https://www.toituosm.com/__data/assets/image/0004/485905/1F13-MacGibbon,-John-Mr-and-Mrs-mat-project.jpg"
-                            alt="Sunlit National Park Trail" loading="lazy"
-                            class="aspect-[64/72] h-full w-full object-cover object-center opacity-0 transition-opacity duration-500 ease-out"
-                            onload="this.classList.remove('opacity-0'); this.previousElementSibling?.remove();">
-
-
-                    </figure>
-                    <p class="mb-0 max-w-xs">John and Jane MacGibbon (née McConachy)</p>
-                    <span class="link--new-window ml-auto text-primary font-bold">&nbsp;</span>
-                </a>
-
-
-                <a href="#" class="w-full relative flex items-center gap-4 justify-start py-5 hover:bg-paper px-3">
-
-                    <figure
-                        class="w-[64] max-w-[64px] h-[72px] max-h-[72px] basis-[64px] text-xl bg-paper font-bold text-blue text-center relative">
-                        <div
-                            class="absolute inset-0 flex animate-pulse items-center justify-center bg-gradient-to-r from-gray-200 via-gray-100 to-gray-200 bg-[length:200%_100%] z-10">
-                            <i class="uil uil-image text-xl text-gray-400" aria-hidden="true"></i>
-                        </div>
-
-                        <img src="https://www.toituosm.com/__data/assets/image/0008/485900/1E05-Hill,-John-mat-project.jpg"
-                            alt="Sunlit National Park Trail" loading="lazy"
-                            class="aspect-[64/72] h-full w-full object-cover object-center opacity-0 transition-opacity duration-500 ease-out"
-                            onload="this.classList.remove('opacity-0'); this.previousElementSibling?.remove();">
-
-
-                    </figure>
-                    <p class="mb-0 max-w-xs">John Hill</p>
-                    <span class="link--new-window ml-auto text-primary font-bold">&nbsp;</span>
-                </a>
-
-
-
-                <a href="#" class="w-full relative flex items-center gap-4 justify-start py-5 hover:bg-paper px-4">
-
-                    <figure
-                        class="w-[64] max-w-[64px] h-[72px] max-h-[72px] basis-[64px] text-xl bg-paper font-bold text-blue text-center relative">
-                        <div
-                            class="absolute inset-0 flex animate-pulse items-center justify-center bg-gradient-to-r from-gray-200 via-gray-100 to-gray-200 bg-[length:200%_100%] z-10">
-                            <i class="uil uil-image text-xl text-gray-400" aria-hidden="true"></i>
-                        </div>
-
-                        <img src="https://www.toituosm.com/__data/assets/image/0003/485814/1A07-1_Rev-Thomas-Burns.jpg"
-                            alt="Sunlit National Park Trail" loading="lazy"
-                            class="aspect-[64/72] h-full w-full object-cover object-center opacity-0 transition-opacity duration-500 ease-out"
-                            onload="this.classList.remove('opacity-0'); this.previousElementSibling?.remove();">
-
-
-                    </figure>
-                    <p class="mb-0 max-w-xs">Reverend Thomas Burns</p>
-                    <span class="link--new-window ml-auto text-primary font-bold">&nbsp;</span>
-                </a>
-
-
-
-                <a href="#" class="w-full relative flex items-center gap-4 justify-start py-5 hover:bg-paper px-4">
-
-                    <figure
-                        class="w-[64] max-w-[64px] h-[72px] max-h-[72px] basis-[64px] text-xl bg-paper font-bold text-blue text-center relative">
-                        <div
-                            class="absolute inset-0 flex animate-pulse items-center justify-center bg-gradient-to-r from-gray-200 via-gray-100 to-gray-200 bg-[length:200%_100%] z-10">
-                            <i class="uil uil-image text-xl text-gray-400" aria-hidden="true"></i>
-                        </div>
-
-                        <img src="https://www.toituosm.com/__data/assets/image/0003/485814/1A07-1_Rev-Thomas-Burns.jpg"
-                            alt="Sunlit National Park Trail" loading="lazy"
-                            class="aspect-[64/72] h-full w-full object-cover object-center opacity-0 transition-opacity duration-500 ease-out"
-                            onload="this.classList.remove('opacity-0'); this.previousElementSibling?.remove();">
-
-
-                    </figure>
-                    <p class="mb-0 max-w-xs">Mrs Mary Woolsey (née Coleman)</p>
-                    <span class="link--new-window ml-auto text-primary font-bold">&nbsp;</span>
-                </a>
-
-                <a href="#" class="w-full relative flex items-center gap-4 justify-start py-5 hover:bg-paper px-4">
-
-                    <figure
-                        class="w-[64] max-w-[64px] h-[72px] max-h-[72px] basis-[64px] text-xl bg-paper font-bold text-blue text-center relative">
-                        <div
-                            class="absolute inset-0 flex animate-pulse items-center justify-center bg-gradient-to-r from-gray-200 via-gray-100 to-gray-200 bg-[length:200%_100%] z-10">
-                            <i class="uil uil-image text-xl text-gray-400" aria-hidden="true"></i>
-                        </div>
-
-                        <img src="https://www.toituosm.com/__data/assets/image/0003/485814/1A07-1_Rev-Thomas-Burns.jpg"
-                            alt="Sunlit National Park Trail" loading="lazy"
-                            class="aspect-[64/72] h-full w-full object-cover object-center opacity-0 transition-opacity duration-500 ease-out"
-                            onload="this.classList.remove('opacity-0'); this.previousElementSibling?.remove();">
-
-
-                    </figure>
-                    <p class="mb-0 max-w-xs">Reverend James and Hannah Watkin (née Entwisle)</p>
-                    <span class="link--new-window ml-auto text-primary font-bold">&nbsp;</span>
-                </a>
-
-
-            </div>
-        </section>
-
-        <section class="relative section--padding-x section--padding-y bg-white">
-
             <p class="eyebrow text-primary">Continue exploring</p>
             <h2>Other arrival periods</h2>
 
             <div
                 class="relative grid grid-cols-1 sm:grid-cols-2 2xl:grid-cols-4 border-y-1 items-center border-y-footer w-full mt-12">
-                <a href="#"
-                    class="relative py-12 px-6 xl:px-10 bg-paper active hover:bg-paper group space-y-8 2xl:border-r border-r-paper max-2xl:border-b max-2xl:border-b-paper">
-                    <p class="eyebrow text-[#777] text-xs">Wall 04</p>
+                <button type="button" aria-pressed="true" data-portrait-wall="wall_01"
+                    class="disabled:opacity-50 disabled:pointer-events-none portrait-filter focus-visible:outline-2 focus-visible:outline-primary cursor-pointer relative py-12 px-6 xl:px-10 bg-paper active hover:bg-paper group space-y-8 2xl:border-r border-r-paper max-2xl:border-b max-2xl:border-b-paper text-left">
+                    <p class="eyebrow text-[#777] text-xs">Wall 01</p>
                     <p
-                        class="group-[.active]:text-primary group-hover:text-primary flex items-center gap-1 justify-start md:w-max font-bold text-xl mb-0">
+                        class="group-[.active]:text-primary group-hover:text-primary flex items-center gap-1 justify-start md:w-max font-bold text-xl 3xl:text-2xl 4xl:text-3xl mb-0">
                         Arrivals 1820s–40s</p>
-                    <span
+                    <span aria-hidden="true"
                         class="link--new-window float-right text-3xl group-[.active]:text-primary group-hover:text-primary group-hover:translate-y-0.5 group-hover:-translate-y-0 pt-4 transition-all duration-300"></span>
-                </a>
-                <a href="#"
-                    class="relative py-12 px-6 xl:px-10 hover:bg-paper group space-y-8 2xl:border-r border-r-paper max-2xl:border-b max-2xl:border-b-paper">
+                </button>
+                <button type="button" aria-pressed="false" data-portrait-wall="wall_02"
+                    class="disabled:opacity-50 disabled:pointer-events-none portrait-filter focus-visible:outline-2 focus-visible:outline-primary cursor-pointer relative py-12 px-6 xl:px-10 hover:bg-paper group space-y-8 2xl:border-r border-r-paper max-2xl:border-b max-2xl:border-b-paper text-left">
+                    <p class="eyebrow text-[#777] text-xs">Wall 02</p>
+                    <p
+                        class="group-hover:text-primary flex items-center gap-1 justify-start md:w-max font-bold text-xl 3xl:text-2xl 4xl:text-3xl mb-0">
+                        Arrivals 1820s–40s</p>
+                    <span aria-hidden="true"
+                        class="link--new-window float-right text-3xl group-hover:text-primary group-hover:translate-y-0.5 group-hover:-translate-y-0 pt-4 transition-all duration-300"></span>
+                </button>
+                <button type="button" aria-pressed="false" data-portrait-wall="wall_03"
+                    class="disabled:opacity-50 disabled:pointer-events-none portrait-filter focus-visible:outline-2 focus-visible:outline-primary cursor-pointer relative py-12 px-6 xl:px-10 hover:bg-paper group space-y-8 2xl:border-r border-r-paper max-2xl:border-b max-2xl:border-b-paper text-left">
+                    <p class="eyebrow text-[#777] text-xs">Wall 03</p>
+                    <p
+                        class="group-hover:text-primary flex items-center gap-1 justify-start md:w-max font-bold text-xl 3xl:text-2xl 4xl:text-3xl mb-0">
+                        Arrivals 1820s–40s</p>
+                    <span aria-hidden="true"
+                        class="link--new-window float-right text-3xl group-hover:text-primary group-hover:translate-y-0.5 group-hover:-translate-y-0 pt-4 transition-all duration-300"></span>
+                </button>
+                <button type="button" aria-pressed="false" data-portrait-wall="wall_04"
+                    class="disabled:opacity-50 disabled:pointer-events-none portrait-filter focus-visible:outline-2 focus-visible:outline-primary cursor-pointer relative py-12 px-6 xl:px-10 hover:bg-paper group space-y-8 max-2xl:border-b max-2xl:border-b-paper text-left">
                     <p class="eyebrow text-[#777] text-xs">Wall 04</p>
                     <p
-                        class="group-hover:text-primary flex items-center gap-1 justify-start md:w-max font-bold text-xl mb-0">
+                        class="group-hover:text-primary flex items-center gap-1 justify-start md:w-max font-bold text-xl 3xl:text-2xl 4xl:text-3xl mb-0">
                         Arrivals 1820s–40s</p>
-                    <span
+                    <span aria-hidden="true"
                         class="link--new-window float-right text-3xl group-hover:text-primary group-hover:translate-y-0.5 group-hover:-translate-y-0 pt-4 transition-all duration-300"></span>
-                </a>
-                <a href="#"
-                    class="relative py-12 px-6 xl:px-10 hover:bg-paper group space-y-8 2xl:border-r border-r-paper max-2xl:border-b max-2xl:border-b-paper">
-                    <p class="eyebrow text-[#777] text-xs">Wall 04</p>
-                    <p
-                        class="group-hover:text-primary flex items-center gap-1 justify-start md:w-max font-bold text-xl mb-0">
-                        Arrivals 1820s–40s</p>
-                    <span
-                        class="link--new-window float-right text-3xl group-hover:text-primary group-hover:translate-y-0.5 group-hover:-translate-y-0 pt-4 transition-all duration-300"></span>
-                </a>
-                <a href="#"
-                    class="relative py-12 px-6 xl:px-10 hover:bg-paper group space-y-8 max-2xl:border-b max-2xl:border-b-paper">
-                    <p class="eyebrow text-[#777] text-xs">Wall 04</p>
-                    <p
-                        class="group-hover:text-primary flex items-center gap-1 justify-start md:w-max font-bold text-xl mb-0">
-                        Arrivals 1820s–40s</p>
-                    <span
-                        class="link--new-window float-right text-3xl group-hover:text-primary group-hover:translate-y-0.5 group-hover:-translate-y-0 pt-4 transition-all duration-300"></span>
-                </a>
+                </button>
+            </div>
+        </section>
+
+
+        <section class="relative section--padding-x  pb-12 xl:pb-24 bg-white">
+
+            <div class="relative flex flex-col md:flex-row items-start justify-between gap-4">
+                <div class="relative">
+                    <p class="eyebrow text-primary">Portrait directory</p>
+                    <h2>People on this wall</h2>
+                    <div class="inline-flex items-center text-base text-[#666666] leading-[25.5px]">
+                        <div class="flex items-center gap-0 mt-0.75">
+                            <div class="w-[19.6px] h-[21px] text-base flex items-center justify-center tabular-nums number-rolling-animation"
+                                data-value="0" data-portrait-counter
+                                style="--rolling-counter-digit-width: 19.6px; --rolling-counter-digit-size: 21px;">
+                            </div>
+                        </div>&nbsp;portraits and portrait groups
+                    </div>
+                </div>
+                <div class="relative max-md:w-full">
+                    <label for="portrait_query" class="block mb-2 text-base">Find a portrait</label>
+                    <input type="search" id="portrait_query" name="portrait_query" onkeyup="return fetchPortraits();"
+                        onsearch="return fetchPortraits();"
+                        class="disabled:opacity-50 disabled:pointer-events-none disabled:cursor-loading bg-white border border-footer text-lg focus:outline-none focus:border-black w-full py-3 px-2 sm:px-5 w-auto sm:w-sm"
+                        placeholder="Enter a keyword..." />
+                </div>
+            </div>
+
+            <div class="relative grid grid-cols-1 md:grid-cols-2 2xl:grid-cols-3 gap-0 border-t-1 items-center justify-start border-t-footer w-full mt-12 [&>div]:border-b [&>div]:border-b-footer [&>a]:border-b [&>A]:border-b-footer group/wall-wrapper is-loading"
+                id="wall_portraits">
+
+                <div class="relative group/wall-item">
+                    <div
+                        class="absolute inset-0 z-50 flex items-center justify-center gap-4 py-5 px-2 group-[:not(.is-loading)]/wall-wrapper:opacity-0 group-[.is-loading]/wall-wrapper:opacity-100">
+                        <span
+                            class="w-[64px] max-w-[64px] h-[72px] max-h-[72px] basis-[64px] shrink-0 bg-gradient-to-r from-gray-200 via-gray-100 to-gray-200 bg-[length:200%_100%] animate-pulse rounded-md"
+                            aria-hidden="true"></span>
+
+                        <div class="w-full max-w-md max-h-[72px] space-y-2">
+                            <span
+                                class="block w-full h-4 bg-gradient-to-r from-gray-200 via-gray-100 to-gray-200 bg-[length:200%_100%] animate-pulse rounded-md"></span>
+                            <span
+                                class="block w-3/5 h-4 bg-gradient-to-r from-gray-200 via-gray-100 to-gray-200 bg-[length:200%_100%] animate-pulse rounded-md"></span>
+                        </div>
+                    </div>
+
+
+                    <div
+                        class="relative flex items-center gap-4 justify-start py-5 px-2 group-[.is-loading]/wall-wrapper:opacity-0">
+                        <span
+                            class="w-[64] max-w-[64px] h-[72px] max-h-[72px] basis-[64px] text-xl bg-paper font-bold text-blue text-center leading-[72px]"
+                            aria-hidden="true">J</span>
+                        <p class="mb-0 max-w-xs"></p>
+                    </div>
+
+                </div>
+                <div class="relative group/wall-item">
+                    <div
+                        class="absolute inset-0 z-50 flex items-center justify-center gap-4 py-5 px-2 group-[:not(.is-loading)]/wall-wrapper:opacity-0 group-[.is-loading]/wall-wrapper:opacity-100">
+                        <span
+                            class="w-[64px] max-w-[64px] h-[72px] max-h-[72px] basis-[64px] shrink-0 bg-gradient-to-r from-gray-200 via-gray-100 to-gray-200 bg-[length:200%_100%] animate-pulse rounded-md"
+                            aria-hidden="true"></span>
+
+                        <div class="w-full max-w-md max-h-[72px] space-y-2">
+                            <span
+                                class="block w-full h-4 bg-gradient-to-r from-gray-200 via-gray-100 to-gray-200 bg-[length:200%_100%] animate-pulse rounded-md"></span>
+                            <span
+                                class="block w-3/5 h-4 bg-gradient-to-r from-gray-200 via-gray-100 to-gray-200 bg-[length:200%_100%] animate-pulse rounded-md"></span>
+                        </div>
+                    </div>
+
+
+                    <div
+                        class="relative flex items-center gap-4 justify-start py-5 px-2 group-[.is-loading]/wall-wrapper:opacity-0">
+                        <span
+                            class="w-[64] max-w-[64px] h-[72px] max-h-[72px] basis-[64px] text-xl bg-paper font-bold text-blue text-center leading-[72px]"
+                            aria-hidden="true">J</span>
+                        <p class="mb-0 max-w-xs"></p>
+                    </div>
+
+                </div>
+
+                <div class="relative group/wall-item">
+                    <div
+                        class="absolute inset-0 z-50 flex items-center justify-center gap-4 py-5 px-2 group-[:not(.is-loading)]/wall-wrapper:opacity-0 group-[.is-loading]/wall-wrapper:opacity-100">
+                        <span
+                            class="w-[64px] max-w-[64px] h-[72px] max-h-[72px] basis-[64px] shrink-0 bg-gradient-to-r from-gray-200 via-gray-100 to-gray-200 bg-[length:200%_100%] animate-pulse rounded-md"
+                            aria-hidden="true"></span>
+
+                        <div class="w-full max-w-md max-h-[72px] space-y-2">
+                            <span
+                                class="block w-full h-4 bg-gradient-to-r from-gray-200 via-gray-100 to-gray-200 bg-[length:200%_100%] animate-pulse rounded-md"></span>
+                            <span
+                                class="block w-3/5 h-4 bg-gradient-to-r from-gray-200 via-gray-100 to-gray-200 bg-[length:200%_100%] animate-pulse rounded-md"></span>
+                        </div>
+                    </div>
+                    <a href="#"
+                        class="w-full relative flex items-center gap-4 justify-start py-5 hover:bg-paper px-3 group-[.is-loading]/wall-wrapper:opacity-0">
+
+                        <figure
+                            class="w-[64] max-w-[64px] h-[72px] max-h-[72px] basis-[64px] text-xl bg-paper font-bold text-blue text-center relative">
+                            <div
+                                class="absolute inset-0 flex animate-pulse items-center justify-center bg-gradient-to-r from-gray-200 via-gray-100 to-gray-200 bg-[length:200%_100%] z-10">
+                                <i class="uil uil-image text-xl text-gray-400" aria-hidden="true"></i>
+                            </div>
+
+                            <img src="https://www.toituosm.com/__data/assets/image/0008/485900/1E05-Hill,-John-mat-project.jpg"
+                                alt="Sunlit National Park Trail" loading="lazy"
+                                class="aspect-[64/72] h-full w-full object-cover object-center opacity-0 transition-opacity duration-500 ease-out"
+                                onload="this.classList.remove('opacity-0'); this.previousElementSibling?.remove();">
+
+
+                        </figure>
+                        <p class="mb-0 max-w-xs"></p>
+                        <span class="link--new-window ml-auto text-primary font-bold">&nbsp;</span>
+                    </a>
+                </div>
+                <div class="relative group/wall-item">
+                    <div
+                        class="absolute inset-0 z-50 flex items-center justify-center gap-4 py-5 px-2 group-[:not(.is-loading)]/wall-wrapper:opacity-0 group-[.is-loading]/wall-wrapper:opacity-100">
+                        <span
+                            class="w-[64px] max-w-[64px] h-[72px] max-h-[72px] basis-[64px] shrink-0 bg-gradient-to-r from-gray-200 via-gray-100 to-gray-200 bg-[length:200%_100%] animate-pulse rounded-md"
+                            aria-hidden="true"></span>
+
+                        <div class="w-full max-w-md max-h-[72px] space-y-2">
+                            <span
+                                class="block w-full h-4 bg-gradient-to-r from-gray-200 via-gray-100 to-gray-200 bg-[length:200%_100%] animate-pulse rounded-md"></span>
+                            <span
+                                class="block w-3/5 h-4 bg-gradient-to-r from-gray-200 via-gray-100 to-gray-200 bg-[length:200%_100%] animate-pulse rounded-md"></span>
+                        </div>
+                    </div>
+
+
+                    <div
+                        class="relative flex items-center gap-4 justify-start py-5 px-2 group-[.is-loading]/wall-wrapper:opacity-0">
+                        <span
+                            class="w-[64] max-w-[64px] h-[72px] max-h-[72px] basis-[64px] text-xl bg-paper font-bold text-blue text-center leading-[72px]"
+                            aria-hidden="true">J</span>
+                        <p class="mb-0 max-w-xs"></p>
+                    </div>
+
+                </div>
+
+                <div class="relative group/wall-item">
+                    <div
+                        class="absolute inset-0 z-50 flex items-center justify-center gap-4 py-5 px-2 group-[:not(.is-loading)]/wall-wrapper:opacity-0 group-[.is-loading]/wall-wrapper:opacity-100">
+                        <span
+                            class="w-[64px] max-w-[64px] h-[72px] max-h-[72px] basis-[64px] shrink-0 bg-gradient-to-r from-gray-200 via-gray-100 to-gray-200 bg-[length:200%_100%] animate-pulse rounded-md"
+                            aria-hidden="true"></span>
+
+                        <div class="w-full max-w-md max-h-[72px] space-y-2">
+                            <span
+                                class="block w-full h-4 bg-gradient-to-r from-gray-200 via-gray-100 to-gray-200 bg-[length:200%_100%] animate-pulse rounded-md"></span>
+                            <span
+                                class="block w-3/5 h-4 bg-gradient-to-r from-gray-200 via-gray-100 to-gray-200 bg-[length:200%_100%] animate-pulse rounded-md"></span>
+                        </div>
+                    </div>
+
+
+                    <div
+                        class="relative flex items-center gap-4 justify-start py-5 px-2 group-[.is-loading]/wall-wrapper:opacity-0">
+                        <span
+                            class="w-[64] max-w-[64px] h-[72px] max-h-[72px] basis-[64px] text-xl bg-paper font-bold text-blue text-center leading-[72px]"
+                            aria-hidden="true">J</span>
+                        <p class="mb-0 max-w-xs"></p>
+                    </div>
+
+                </div>
+
+                <div class="relative group/wall-item">
+                    <div
+                        class="absolute inset-0 z-50 flex items-center justify-center gap-4 py-5 px-2 group-[:not(.is-loading)]/wall-wrapper:opacity-0 group-[.is-loading]/wall-wrapper:opacity-100">
+                        <span
+                            class="w-[64px] max-w-[64px] h-[72px] max-h-[72px] basis-[64px] shrink-0 bg-gradient-to-r from-gray-200 via-gray-100 to-gray-200 bg-[length:200%_100%] animate-pulse rounded-md"
+                            aria-hidden="true"></span>
+
+                        <div class="w-full max-w-md max-h-[72px] space-y-2">
+                            <span
+                                class="block w-full h-4 bg-gradient-to-r from-gray-200 via-gray-100 to-gray-200 bg-[length:200%_100%] animate-pulse rounded-md"></span>
+                            <span
+                                class="block w-3/5 h-4 bg-gradient-to-r from-gray-200 via-gray-100 to-gray-200 bg-[length:200%_100%] animate-pulse rounded-md"></span>
+                        </div>
+                    </div>
+
+
+                    <div
+                        class="relative flex items-center gap-4 justify-start py-5 px-2 group-[.is-loading]/wall-wrapper:opacity-0">
+                        <span
+                            class="w-[64] max-w-[64px] h-[72px] max-h-[72px] basis-[64px] text-xl bg-paper font-bold text-blue text-center leading-[72px]"
+                            aria-hidden="true">J</span>
+                        <p class="mb-0 max-w-xs"></p>
+                    </div>
+
+                </div>
+
+                <div class="relative group/wall-item">
+                    <div
+                        class="absolute inset-0 z-50 flex items-center justify-center gap-4 py-5 px-2 group-[:not(.is-loading)]/wall-wrapper:opacity-0 group-[.is-loading]/wall-wrapper:opacity-100">
+                        <span
+                            class="w-[64px] max-w-[64px] h-[72px] max-h-[72px] basis-[64px] shrink-0 bg-gradient-to-r from-gray-200 via-gray-100 to-gray-200 bg-[length:200%_100%] animate-pulse rounded-md"
+                            aria-hidden="true"></span>
+
+                        <div class="w-full max-w-md max-h-[72px] space-y-2">
+                            <span
+                                class="block w-full h-4 bg-gradient-to-r from-gray-200 via-gray-100 to-gray-200 bg-[length:200%_100%] animate-pulse rounded-md"></span>
+                            <span
+                                class="block w-3/5 h-4 bg-gradient-to-r from-gray-200 via-gray-100 to-gray-200 bg-[length:200%_100%] animate-pulse rounded-md"></span>
+                        </div>
+                    </div>
+
+
+                    <div
+                        class="relative flex items-center gap-4 justify-start py-5 px-2 group-[.is-loading]/wall-wrapper:opacity-0">
+                        <span
+                            class="w-[64] max-w-[64px] h-[72px] max-h-[72px] basis-[64px] text-xl bg-paper font-bold text-blue text-center leading-[72px]"
+                            aria-hidden="true">J</span>
+                        <p class="mb-0 max-w-xs"></p>
+                    </div>
+
+                </div>
+
+                <div class="relative group/wall-item">
+                    <div
+                        class="absolute inset-0 z-50 flex items-center justify-center gap-4 py-5 px-2 group-[:not(.is-loading)]/wall-wrapper:opacity-0 group-[.is-loading]/wall-wrapper:opacity-100">
+                        <span
+                            class="w-[64px] max-w-[64px] h-[72px] max-h-[72px] basis-[64px] shrink-0 bg-gradient-to-r from-gray-200 via-gray-100 to-gray-200 bg-[length:200%_100%] animate-pulse rounded-md"
+                            aria-hidden="true"></span>
+
+                        <div class="w-full max-w-md max-h-[72px] space-y-2">
+                            <span
+                                class="block w-full h-4 bg-gradient-to-r from-gray-200 via-gray-100 to-gray-200 bg-[length:200%_100%] animate-pulse rounded-md"></span>
+                            <span
+                                class="block w-3/5 h-4 bg-gradient-to-r from-gray-200 via-gray-100 to-gray-200 bg-[length:200%_100%] animate-pulse rounded-md"></span>
+                        </div>
+                    </div>
+
+
+                    <div
+                        class="relative flex items-center gap-4 justify-start py-5 px-2 group-[.is-loading]/wall-wrapper:opacity-0">
+                        <span
+                            class="w-[64] max-w-[64px] h-[72px] max-h-[72px] basis-[64px] text-xl bg-paper font-bold text-blue text-center leading-[72px]"
+                            aria-hidden="true">J</span>
+                        <p class="mb-0 max-w-xs"></p>
+                    </div>
+
+                </div>
+
+                <div class="relative group/wall-item">
+                    <div
+                        class="absolute inset-0 z-50 flex items-center justify-center gap-4 py-5 px-2 group-[:not(.is-loading)]/wall-wrapper:opacity-0 group-[.is-loading]/wall-wrapper:opacity-100">
+                        <span
+                            class="w-[64px] max-w-[64px] h-[72px] max-h-[72px] basis-[64px] shrink-0 bg-gradient-to-r from-gray-200 via-gray-100 to-gray-200 bg-[length:200%_100%] animate-pulse rounded-md"
+                            aria-hidden="true"></span>
+
+                        <div class="w-full max-w-md max-h-[72px] space-y-2">
+                            <span
+                                class="block w-full h-4 bg-gradient-to-r from-gray-200 via-gray-100 to-gray-200 bg-[length:200%_100%] animate-pulse rounded-md"></span>
+                            <span
+                                class="block w-3/5 h-4 bg-gradient-to-r from-gray-200 via-gray-100 to-gray-200 bg-[length:200%_100%] animate-pulse rounded-md"></span>
+                        </div>
+                    </div>
+
+
+                    <div
+                        class="relative flex items-center gap-4 justify-start py-5 px-2 group-[.is-loading]/wall-wrapper:opacity-0">
+                        <span
+                            class="w-[64] max-w-[64px] h-[72px] max-h-[72px] basis-[64px] text-xl bg-paper font-bold text-blue text-center leading-[72px]"
+                            aria-hidden="true">J</span>
+                        <p class="mb-0 max-w-xs"></p>
+                    </div>
+
+                </div>
+
+
+
+                <div class="relative group/wall-item">
+                    <div
+                        class="absolute inset-0 z-50 flex items-center justify-center gap-4 py-5 px-2 group-[:not(.is-loading)]/wall-wrapper:opacity-0 group-[.is-loading]/wall-wrapper:opacity-100">
+                        <span
+                            class="w-[64px] max-w-[64px] h-[72px] max-h-[72px] basis-[64px] shrink-0 bg-gradient-to-r from-gray-200 via-gray-100 to-gray-200 bg-[length:200%_100%] animate-pulse rounded-md"
+                            aria-hidden="true"></span>
+
+                        <div class="w-full max-w-md max-h-[72px] space-y-2">
+                            <span
+                                class="block w-full h-4 bg-gradient-to-r from-gray-200 via-gray-100 to-gray-200 bg-[length:200%_100%] animate-pulse rounded-md"></span>
+                            <span
+                                class="block w-3/5 h-4 bg-gradient-to-r from-gray-200 via-gray-100 to-gray-200 bg-[length:200%_100%] animate-pulse rounded-md"></span>
+                        </div>
+                    </div>
+
+
+                    <div
+                        class="relative flex items-center gap-4 justify-start py-5 px-2 group-[.is-loading]/wall-wrapper:opacity-0">
+                        <span
+                            class="w-[64] max-w-[64px] h-[72px] max-h-[72px] basis-[64px] text-xl bg-paper font-bold text-blue text-center leading-[72px]"
+                            aria-hidden="true">J</span>
+                        <p class="mb-0 max-w-xs"></p>
+                    </div>
+
+                </div>
+
+                <div class="relative group/wall-item">
+                    <div
+                        class="absolute inset-0 z-50 flex items-center justify-center gap-4 py-5 px-2 group-[:not(.is-loading)]/wall-wrapper:opacity-0 group-[.is-loading]/wall-wrapper:opacity-100">
+                        <span
+                            class="w-[64px] max-w-[64px] h-[72px] max-h-[72px] basis-[64px] shrink-0 bg-gradient-to-r from-gray-200 via-gray-100 to-gray-200 bg-[length:200%_100%] animate-pulse rounded-md"
+                            aria-hidden="true"></span>
+
+                        <div class="w-full max-w-md max-h-[72px] space-y-2">
+                            <span
+                                class="block w-full h-4 bg-gradient-to-r from-gray-200 via-gray-100 to-gray-200 bg-[length:200%_100%] animate-pulse rounded-md"></span>
+                            <span
+                                class="block w-3/5 h-4 bg-gradient-to-r from-gray-200 via-gray-100 to-gray-200 bg-[length:200%_100%] animate-pulse rounded-md"></span>
+                        </div>
+                    </div>
+
+
+                    <div
+                        class="relative flex items-center gap-4 justify-start py-5 px-2 group-[.is-loading]/wall-wrapper:opacity-0">
+                        <span
+                            class="w-[64] max-w-[64px] h-[72px] max-h-[72px] basis-[64px] text-xl bg-paper font-bold text-blue text-center leading-[72px]"
+                            aria-hidden="true">J</span>
+                        <p class="mb-0 max-w-xs"></p>
+                    </div>
+
+                </div>
+
+                <div class="relative group/wall-item">
+                    <div
+                        class="absolute inset-0 z-50 flex items-center justify-center gap-4 py-5 px-2 group-[:not(.is-loading)]/wall-wrapper:opacity-0 group-[.is-loading]/wall-wrapper:opacity-100">
+                        <span
+                            class="w-[64px] max-w-[64px] h-[72px] max-h-[72px] basis-[64px] shrink-0 bg-gradient-to-r from-gray-200 via-gray-100 to-gray-200 bg-[length:200%_100%] animate-pulse rounded-md"
+                            aria-hidden="true"></span>
+
+                        <div class="w-full max-w-md max-h-[72px] space-y-2">
+                            <span
+                                class="block w-full h-4 bg-gradient-to-r from-gray-200 via-gray-100 to-gray-200 bg-[length:200%_100%] animate-pulse rounded-md"></span>
+                            <span
+                                class="block w-3/5 h-4 bg-gradient-to-r from-gray-200 via-gray-100 to-gray-200 bg-[length:200%_100%] animate-pulse rounded-md"></span>
+                        </div>
+                    </div>
+
+
+                    <div
+                        class="relative flex items-center gap-4 justify-start py-5 px-2 group-[.is-loading]/wall-wrapper:opacity-0">
+                        <span
+                            class="w-[64] max-w-[64px] h-[72px] max-h-[72px] basis-[64px] text-xl bg-paper font-bold text-blue text-center leading-[72px]"
+                            aria-hidden="true">J</span>
+                        <p class="mb-0 max-w-xs"></p>
+                    </div>
+
+                </div>
+
+
+                <div class="relative group/wall-item">
+                    <div
+                        class="absolute inset-0 z-50 flex items-center justify-center gap-4 py-5 px-2 group-[:not(.is-loading)]/wall-wrapper:opacity-0 group-[.is-loading]/wall-wrapper:opacity-100">
+                        <span
+                            class="w-[64px] max-w-[64px] h-[72px] max-h-[72px] basis-[64px] shrink-0 bg-gradient-to-r from-gray-200 via-gray-100 to-gray-200 bg-[length:200%_100%] animate-pulse rounded-md"
+                            aria-hidden="true"></span>
+
+                        <div class="w-full max-w-md max-h-[72px] space-y-2">
+                            <span
+                                class="block w-full h-4 bg-gradient-to-r from-gray-200 via-gray-100 to-gray-200 bg-[length:200%_100%] animate-pulse rounded-md"></span>
+                            <span
+                                class="block w-3/5 h-4 bg-gradient-to-r from-gray-200 via-gray-100 to-gray-200 bg-[length:200%_100%] animate-pulse rounded-md"></span>
+                        </div>
+                    </div>
+
+
+                    <div
+                        class="relative flex items-center gap-4 justify-start py-5 px-2 group-[.is-loading]/wall-wrapper:opacity-0">
+                        <span
+                            class="w-[64] max-w-[64px] h-[72px] max-h-[72px] basis-[64px] text-xl bg-paper font-bold text-blue text-center leading-[72px]"
+                            aria-hidden="true">J</span>
+                        <p class="mb-0 max-w-xs"></p>
+                    </div>
+
+                </div>
+
+
+                <div class="relative group/wall-item">
+                    <div
+                        class="absolute inset-0 z-50 flex items-center justify-center gap-4 py-5 px-2 group-[:not(.is-loading)]/wall-wrapper:opacity-0 group-[.is-loading]/wall-wrapper:opacity-100">
+                        <span
+                            class="w-[64px] max-w-[64px] h-[72px] max-h-[72px] basis-[64px] shrink-0 bg-gradient-to-r from-gray-200 via-gray-100 to-gray-200 bg-[length:200%_100%] animate-pulse rounded-md"
+                            aria-hidden="true"></span>
+
+                        <div class="w-full max-w-md max-h-[72px] space-y-2">
+                            <span
+                                class="block w-full h-4 bg-gradient-to-r from-gray-200 via-gray-100 to-gray-200 bg-[length:200%_100%] animate-pulse rounded-md"></span>
+                            <span
+                                class="block w-3/5 h-4 bg-gradient-to-r from-gray-200 via-gray-100 to-gray-200 bg-[length:200%_100%] animate-pulse rounded-md"></span>
+                        </div>
+                    </div>
+
+
+                    <div
+                        class="relative flex items-center gap-4 justify-start py-5 px-2 group-[.is-loading]/wall-wrapper:opacity-0">
+                        <span
+                            class="w-[64] max-w-[64px] h-[72px] max-h-[72px] basis-[64px] text-xl bg-paper font-bold text-blue text-center leading-[72px]"
+                            aria-hidden="true">J</span>
+                        <p class="mb-0 max-w-xs"></p>
+                    </div>
+
+                </div>
+
+
             </div>
         </section>
 

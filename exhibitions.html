@@ -22,12 +22,13 @@
 		</svg>
 	</div>
 
-    <!-- ==========================================
+
+        <!-- ==========================================
          HEADER / DESKTOP NAVIGATION
     =========================================== -->
     <header class="group/navbar">
         <nav aria-label="Main navigation"
-            class="2xl:shadow-[0_2px_16px_rgba(0,0,0,0.12)] group-[.white-navbar]/body:shadow-[0_2px_16px_rgba(0,0,0,0.12)] bg-black/30 2xl:bg-transparent group-[.white-navbar]/body:bg-white group-[.pinned]/navbar:bg-white text-white group-[.pinned]/navbar:text-black group-[.white-navbar]/body:text-black flex items-center justify-between gap-4 py-4 px-6 h-[100px] w-full fixed inset-0 z-[99] text-[15px] leading-[1.1] font-semibold whitespace-nowrap uppercase transition-all duration-300 ease-ease">
+            class="group-[.white-navbar]/body:2xl:shadow-[0_2px_16px_rgba(0,0,0,0.12)] group-[.white-navbar]/body:shadow-[0_2px_16px_rgba(0,0,0,0.12)] bg-black/30 2xl:bg-transparent group-[.white-navbar]/body:bg-white group-[.pinned]/navbar:bg-white text-white group-[.pinned]/navbar:text-black group-[.white-navbar]/body:text-black flex items-center justify-between gap-4 py-4 px-6 h-[80px] sm:h-[100px] w-full fixed inset-0 z-[99] text-[15px] leading-[1.1] font-semibold whitespace-nowrap uppercase transition-all duration-300 ease-ease">
             <!-- LEFT NAVIGATION -->
             <ul
                 class="hidden 2xl:flex items-center justify-between gap-6 group/nav-items group/left-nav header__nav-items">
@@ -94,7 +95,8 @@
             <a href="./index.html" aria-label="Toitū Otago Settlers Museum home">
                 <!-- Keep your existing SVG logo here -->
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 2637.31 707.89" role="img"
-                    aria-labelledby="toitu-logo-title" class="w-[160px] 4xl:w-[190px] h-[100px]">
+                    aria-labelledby="toitu-logo-title"
+                    class="w-[140px] sm:w-[160px] 4xl:w-[190px] h-[60px] sm:h-[100px]">
                     <title id="toitu-logo-title">Toitū Otago Settlers Museum</title>
                     <path
                         class="transition-fill duration-300 ease-[ease] fill-white group-[.white-navbar]/body:fill-primary group-[.pinned]/navbar:fill-primary"
@@ -140,7 +142,27 @@
             =========================================== -->
             <ul
                 class="hidden 2xl:flex items-center justify-between gap-6 group/nav-items group/right-nav header__nav-items">
-                <li class="relative flex items-center justify-start gap-1"> <a href="/collections/">Collections</a>
+                <!-- Collections -->
+                <li class="group/has-dropdown relative flex items-center justify-start gap-1"> <a
+                        href="/learn/">Collections</a>
+                    <button type="button" class="flex items-center justify-center cursor-pointer"
+                        aria-label="Toggle Learn submenu" aria-expanded="false" aria-controls="desktop-collection"> <i
+                            class="uil uil-angle-down text-2xl" aria-hidden="true"></i> </button>
+                    <ul id="desktop-collection" class="header__dropdown-menu bg-white text-secondary absolute top-[calc(100%_+_0.5rem)] opacity-0 invisible -translate-y-2 group-hover/has-dropdown:opacity-100 group-hover/has-dropdown:visible group-hover/has-dropdown:translate-y-0 border-t-4 border-primary text-sm group/dropdown-menu min-w-[250px] transition-all duration-180 ease-ease  group-focus-within/has-dropdown:opacity-100
+    group-focus-within/has-dropdown:visible
+    group-focus-within/has-dropdown:translate-y-0
+    before:content-[''] before:absolute
+    before:-top-2 before:left-0
+    before:w-full before:h-2
+    before:bg-transparent">
+                        <li><a href="/learn/research/">Collections Online</a></li>
+                        <li><a href="/learn/research/">Donate</a></li>
+                        <li><a href="/learn/education/">Settler and Shipboard Diaries</a></li>
+                        <li><a href="/learn/education/">Conservation</a></li>
+                        <li><a href="/learn/education/">Behind the scenes</a></li>
+                        <li><a href="/learn/education/">Research</a></li>
+                        <li><a href="./smith-gallery.html">Portraits</a></li>
+                    </ul>
                 </li>
                 <li class="relative flex items-center justify-start gap-1"> <a href="/venue-hire/">Venue Hire</a> </li>
                 <li class="relative flex items-center justify-start gap-1"> <a
@@ -191,7 +213,7 @@
         <!-- Mobile logo and close button -->
         <div class="flex items-center justify-between border-b border-footer pb-6">
             <a href="/" aria-label="Toitū Otago Settlers Museum home"> <img src="./images/mobile menu.svg"
-                    loading="lazy" decoding="async" width="160" height="auto" class="w-[160px]"
+                    loading="lazy" decoding="async" width="" height="auto" class="w-[140px] sm:w-[160px]"
                     alt="Toitū Otago Settlers Museum"> </a>
             <button id="menu_close" type="button" class="flex items-center justify-center size-10 cursor-pointer"
                 aria-label="Close navigation menu"> <span class="relative flex size-7 items-center justify-center"
@@ -237,9 +259,26 @@
                     <li><a href="/visit/">Location</a></li>
                 </ul>
             </details>
-            <!-- Collections --><a href="/collections/" class="w-full border-b border-footer py-5">
 
-                Collections
+            <!-- Collections -->
+            <details class="mobile-dropdown w-full relative border-b border-footer sidebar__accordion">
+                <summary
+                    class="will-load list-none flex items-center justify-between [&::-webkit-details-marker]:hidden py-5 cursor-pointer">
+                    <span class="flex-1 min-w-0">Collections</span> <span
+                        class="relative flex size-7 min-w-12 shrink-0 items-center justify-center" aria-hidden="true">
+
+                        <span class="relative block size-4 sidebar__accordion-icon"></span> </span>
+                </summary>
+                <ul class="bg-white text-secondary group/dropdown-menu sidebar__dropdown-menu">
+                    <li><a href="/learn/research/">Collections Online</a></li>
+                    <li><a href="/learn/research/">Donate</a></li>
+                    <li><a href="/learn/education/">Settler and Shipboard Diaries</a></li>
+                    <li><a href="/learn/education/">Conservation</a></li>
+                    <li><a href="/learn/education/">Behind the scenes</a></li>
+                    <li><a href="/learn/education/">Research</a></li>
+                    <li><a href="./smith-gallery.html">Portraits</a></li>
+                </ul>
+            </details>
 
             </a>
             <!-- Learn -->
@@ -277,7 +316,9 @@
             </a>
         </nav>
     </aside>
-    <main id="main" class="mt-[100px]">
+
+
+    <main id="main" class="mt-[80px] sm:mt-[100px]">
         <section class="group overflow-hidden py-6 xl:py-12 print:mt-0 print:pt-0 relative section--padding-x">
             <div class="py-8 xl:py-16">
                 <nav aria-label="Breadcrumbs" class="print:container-fluid print:mt-0 print:pt-0 print:hidden">
