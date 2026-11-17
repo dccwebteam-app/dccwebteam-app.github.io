@@ -317,171 +317,174 @@
 		</nav>
 	</aside>
 
-	<section class="group relative overflow-hidden bg-primary h-[100svh]">
-		<!-- image overlay -->
-		<div
-			class="w-screen h-[100svh] absolute top-0 z-[96] bg-linear-[90deg,rgba(0,0,0,.75)_0%,rgba(0,0,0,.35)_55%,rgba(0,0,0,.06)_100%]">
-		</div>
-
-		<div
-			class="w-max absolute bottom-4 left-1/2 uppercase text-xs text-white z-[97] flex items-center flex-col justify-center gap-2">
-			<span class="inline-block animate-bounce text-2xl">↓</span>
-
-			<span>Scroll to explore</span>
-		</div>
-
-		<img src="./images/main-hero.webp" alt="Toitu landing image" fetchpriority="high" width="" height=""
-			class="w-full h-[inherit] z-40 object-cover">
-
-		<div class="absolute md:ml-12 w-full h-auto max-w-2xl top-1/2 -translate-y-1/2 z-[98] text-white px-4">
-			<p class="eyebrow">
-				TOITŪ OTAGO SETTLERS MUSEUM
-			</p>
-			<h1 class="text-[clamp(56px,_8vw,_110px)]">Our stories.<br>Our place.</h1>
-			<p class="lead-text lead-text--1">Discover the people, places and histories that have shaped Otago.</p>
-			<a href="#main"
-				class="cta flex items-center gap-1 justify-start transition-all duration-300 ease-ease text-white pt-4 pb-2 w-max border-b-2 border-b-white link--new-window"
-				href="mailto:toituosm@dcc.govt.nz">Explore the museum</a>
-		</div>
-
-
-	</section>
-
-	<!-- Whats On section -->
-	<section class="group/whatsOn relative bg-black section--padding-x section--padding-y text-white">
-		<p class="eyebrow">Discover</p>
-		<div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-0 sm:gap-4">
-			<h2>What's On</h2> <a href="whats-on.html" class="link--right-arrow">View everything</a>
-		</div>
-		<div class="relative grid grid-cols-1 xl:grid-cols-3 gap-6 pt-8 xl:pt-12">
-			<!-- Item 1-->
-			<div class="bg-[#202020] transition-transform duration-500 ease-out hover:-translate-y-[5px] w-full">
-				<div class="w-full aspect-16/9 flex-shrink-0 h-[390px] snap-start relative print:w-full">
-					<div
-						class="absolute inset-0 bg-gradient-to-r from-gray-200 via-gray-100 to-gray-200 bg-[length:200%_100%] animate-pulse flex items-center justify-center">
-						<i class="uil uil-image text-gray-400 text-5xl"></i>
-					</div> <img src="https://lipsum.app/id/5/1280x854"
-						class="w-full h-full object-cover object-center opacity-0 transition-opacity duration-500 ease-out"
-						loading="lazy" alt="Sunlit National Park Trail"
-						onload="this.classList.remove('opacity-0'); this.previousElementSibling?.remove();">
-				</div>
-				<div class="relative p-6 sm:p-8 flex flex-col items-start justify-start gap-6">
-					<p class="eyebrow">Exhibitions</p>
-					<h3>Explore our exhibitions</h3>
-					<p class="mb-0">Discover permanent galleries and changing exhibitions across Toitū.</p>
-
-				</div>
-			</div>
-			<!-- Item 2-->
-			<div class="bg-[#202020] transition-transform duration-500 ease-out hover:-translate-y-[5px] w-full">
-				<div class="w-full aspect-16/9 flex-shrink-0 h-[390px] snap-start relative print:w-full">
-					<div
-						class="absolute inset-0 bg-gradient-to-r from-gray-200 via-gray-100 to-gray-200 bg-[length:200%_100%] animate-pulse flex items-center justify-center">
-						<i class="uil uil-image text-gray-400 text-5xl"></i>
-					</div> <img src="https://lipsum.app/id/6/1280x854"
-						class="w-full h-full object-cover object-center opacity-0 transition-opacity duration-500 ease-out"
-						loading="lazy" alt="Sunlit National Park Trail"
-						onload="this.classList.remove('opacity-0'); this.previousElementSibling?.remove();">
-				</div>
-				<div class="relative p-6 sm:p-8 flex flex-col items-start justify-start gap-6">
-					<p class="eyebrow">Exhibitions</p>
-					<h3>Explore our exhibitions</h3>
-					<p class="mb-0">Discover permanent galleries and changing exhibitions across Toitū.</p>
-
-				</div>
-			</div>
-			<!-- Item 3-->
-			<div class="bg-[#202020] transition-transform duration-500 ease-out hover:-translate-y-[5px] w-full">
-				<div class="w-full aspect-16/9 flex-shrink-0 h-[390px] snap-start relative print:w-full">
-					<div
-						class="absolute inset-0 bg-gradient-to-r from-gray-200 via-gray-100 to-gray-200 bg-[length:200%_100%] animate-pulse flex items-center justify-center">
-						<i class="uil uil-image text-gray-400 text-5xl"></i>
-					</div> <img src="https://lipsum.app/id/7/1280x854"
-						class="w-full h-full object-cover object-center opacity-0 transition-opacity duration-500 ease-out"
-						loading="lazy" alt="Sunlit National Park Trail"
-						onload="this.classList.remove('opacity-0'); this.previousElementSibling?.remove();">
-				</div>
-				<div class="relative p-6 sm:p-8 flex flex-col items-start justify-start gap-6">
-					<p class="eyebrow">Exhibitions</p>
-					<h3>Explore our exhibitions</h3>
-					<p class="mb-0">Discover permanent galleries and changing exhibitions across Toitū.</p>
-
-				</div>
-			</div>
-		</div>
-	</section>
-	<!-- Split section -->
-	<section class="split-section split-section--50-50  split-section--image-left">
-		<!-- Content -->
-		<div class="split-section__content">
-			<p class="split-section__eyebrow">Explore</p>
-			<h2>Collections</h2>
-			<p> Discover the people, places and objects that tell the story of Otago. </p> <a href="whats-on.html"
-				class="link--right-arrow">
-				Explore the collections
-			</a>
-		</div>
-		<!-- Image -->
-		<div class="split-section__image-wrapper">
+	<main id="main">
+		<section class="group relative overflow-hidden bg-primary h-[100svh]">
+			<!-- image overlay -->
 			<div
-				class="absolute inset-0 bg-gradient-to-r from-gray-200 via-gray-100 to-gray-200 bg-[length:200%_100%] animate-pulse flex items-center justify-center">
-				<i class="uil uil-image text-gray-400 text-5xl"></i>
-			</div> <img src="https://lipsum.app/id/7/1280x854"
-				class="split-section__image opacity-0 transition-all duration-500 ease-out" loading="lazy"
-				alt="Sunlit National Park Trail"
-				onload="this.classList.remove('opacity-0'); this.previousElementSibling?.remove();">
-		</div>
-	</section>
-	<section class="split-section-intro">
-		<div class="split-section__content">
-			<p class="split-section__eyebrow">Our museum</p>
-			<h2>Plan your visit</h2>
-		</div>
-		<div class="split-section__content">
-			<p class="lead-text lead-text--2"> Open 10am–5pm daily. Admission is free. Find directions, accessibility
-				information and everything you need for your visit. </p> <a href="#"
-				class="xl:my-4 px-5 py-4 bg-primary text-white rounded-[50px] font-bold uppercase text-sm tracking-[.07rem] hover:bg-black duration-200 ease-linear transition-all">Plan
-				your visit</a>
-		</div>
-	</section>
-	<section class="split-section split-section--50-50 split-section--image-right">
-		<!-- Content -->
-		<div class="split-section__content">
-			<p class="split-section__eyebrow">Our museum</p>
-			<h2>About Toitū</h2>
-			<p> Toitū is a social history museum dedicated to the stories of the people whose character, culture,
-				technology, art, fashion and transport shaped Dunedin and Otago. </p> <a href="whats-on.html"
-				class="link--right-arrow">
-				About Toitū
+				class="w-screen h-[100svh] absolute top-0 z-[96] bg-linear-[90deg,rgba(0,0,0,.75)_0%,rgba(0,0,0,.35)_55%,rgba(0,0,0,.06)_100%]">
+			</div>
+
+			<a href="#whats_on"
+				class="w-max absolute bottom-4 left-1/2 uppercase text-xs text-white z-[97] flex items-center flex-col justify-center gap-2">
+				<span class="inline-block animate-bounce text-2xl">↓</span>
+
+				<span>Scroll to explore</span>
 			</a>
-		</div>
-		<!-- Image -->
-		<div class="split-section__image-wrapper">
-			<div
-				class="absolute inset-0 bg-gradient-to-r from-gray-200 via-gray-100 to-gray-200 bg-[length:200%_100%] animate-pulse flex items-center justify-center">
-				<i class="uil uil-image text-gray-400 text-5xl"></i>
-			</div> <img src="https://lipsum.app/id/5/1280x854"
-				class="split-section__image opacity-0 transition-all duration-500 ease-out" loading="lazy"
-				alt="Sunlit National Park Trail"
-				onload="this.classList.remove('opacity-0'); this.previousElementSibling?.remove();">
-		</div>
-	</section>
-	<section class="split-section-intro band">
-		<div class="split-section__content">
-			<p class="split-section__eyebrow">learn</p>
-			<h2 class="font-normal">Research, education and experiences.</h2> <a href="whats-on.html"
-				class="link--right-arrow">
-				Explore learning
-			</a>
-		</div>
-		<div class="split-section__content alt">
-			<p class="split-section__eyebrow">venue hire</p>
-			<h2 class="font-normal">Unique spaces in the heart of Dunedin.</h2> <a href="whats-on.html"
-				class="link--right-arrow">
-				Explore venue hire
-			</a>
-		</div>
-	</section>
+
+			<img src="./images/main-hero.webp" alt="Toitu landing image" fetchpriority="high" width="" height=""
+				class="w-full h-[inherit] z-40 object-cover">
+
+			<div class="absolute md:ml-12 w-full h-auto max-w-2xl top-1/2 -translate-y-1/2 z-[98] text-white px-4">
+				<p class="eyebrow">
+					TOITŪ OTAGO SETTLERS MUSEUM
+				</p>
+				<h1 class="text-[clamp(56px,_8vw,_110px)]">Our stories.<br>Our place.</h1>
+				<p class="lead-text lead-text--1">Discover the people, places and histories that have shaped Otago.</p>
+				<a href="#main"
+					class="cta flex items-center gap-1 justify-start transition-all duration-300 ease-ease text-white pt-4 pb-2 w-max border-b-2 border-b-white link--new-window"
+					href="mailto:toituosm@dcc.govt.nz">Explore the museum</a>
+			</div>
+
+
+		</section>
+
+		<!-- Whats On section -->
+		<section class="group/whatsOn relative bg-black section--padding-x section--padding-y text-white" id="whats_on">
+			<p class="eyebrow">Discover</p>
+			<div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-0 sm:gap-4">
+				<h2>What's On</h2> <a href="whats-on.html" class="link--right-arrow">View everything</a>
+			</div>
+			<div class="relative grid grid-cols-1 xl:grid-cols-3 gap-6 pt-8 xl:pt-12">
+				<!-- Item 1-->
+				<div class="bg-[#202020] transition-transform duration-500 ease-out hover:-translate-y-[5px] w-full">
+					<div class="w-full aspect-16/9 flex-shrink-0 h-[390px] snap-start relative print:w-full">
+						<div
+							class="absolute inset-0 bg-gradient-to-r from-gray-200 via-gray-100 to-gray-200 bg-[length:200%_100%] animate-pulse flex items-center justify-center">
+							<i class="uil uil-image text-gray-400 text-5xl"></i>
+						</div> <img src="https://lipsum.app/id/5/1280x854"
+							class="w-full h-full object-cover object-center opacity-0 transition-opacity duration-500 ease-out"
+							loading="lazy" alt="Sunlit National Park Trail"
+							onload="this.classList.remove('opacity-0'); this.previousElementSibling?.remove();">
+					</div>
+					<div class="relative p-6 sm:p-8 flex flex-col items-start justify-start gap-6">
+						<p class="eyebrow">Exhibitions</p>
+						<h3>Explore our exhibitions</h3>
+						<p class="mb-0">Discover permanent galleries and changing exhibitions across Toitū.</p>
+
+					</div>
+				</div>
+				<!-- Item 2-->
+				<div class="bg-[#202020] transition-transform duration-500 ease-out hover:-translate-y-[5px] w-full">
+					<div class="w-full aspect-16/9 flex-shrink-0 h-[390px] snap-start relative print:w-full">
+						<div
+							class="absolute inset-0 bg-gradient-to-r from-gray-200 via-gray-100 to-gray-200 bg-[length:200%_100%] animate-pulse flex items-center justify-center">
+							<i class="uil uil-image text-gray-400 text-5xl"></i>
+						</div> <img src="https://lipsum.app/id/6/1280x854"
+							class="w-full h-full object-cover object-center opacity-0 transition-opacity duration-500 ease-out"
+							loading="lazy" alt="Sunlit National Park Trail"
+							onload="this.classList.remove('opacity-0'); this.previousElementSibling?.remove();">
+					</div>
+					<div class="relative p-6 sm:p-8 flex flex-col items-start justify-start gap-6">
+						<p class="eyebrow">Exhibitions</p>
+						<h3>Explore our exhibitions</h3>
+						<p class="mb-0">Discover permanent galleries and changing exhibitions across Toitū.</p>
+
+					</div>
+				</div>
+				<!-- Item 3-->
+				<div class="bg-[#202020] transition-transform duration-500 ease-out hover:-translate-y-[5px] w-full">
+					<div class="w-full aspect-16/9 flex-shrink-0 h-[390px] snap-start relative print:w-full">
+						<div
+							class="absolute inset-0 bg-gradient-to-r from-gray-200 via-gray-100 to-gray-200 bg-[length:200%_100%] animate-pulse flex items-center justify-center">
+							<i class="uil uil-image text-gray-400 text-5xl"></i>
+						</div> <img src="https://lipsum.app/id/7/1280x854"
+							class="w-full h-full object-cover object-center opacity-0 transition-opacity duration-500 ease-out"
+							loading="lazy" alt="Sunlit National Park Trail"
+							onload="this.classList.remove('opacity-0'); this.previousElementSibling?.remove();">
+					</div>
+					<div class="relative p-6 sm:p-8 flex flex-col items-start justify-start gap-6">
+						<p class="eyebrow">Exhibitions</p>
+						<h3>Explore our exhibitions</h3>
+						<p class="mb-0">Discover permanent galleries and changing exhibitions across Toitū.</p>
+
+					</div>
+				</div>
+			</div>
+		</section>
+		<!-- Split section -->
+		<section class="split-section split-section--50-50  split-section--image-left">
+			<!-- Content -->
+			<div class="split-section__content">
+				<p class="split-section__eyebrow">Explore</p>
+				<h2>Collections</h2>
+				<p> Discover the people, places and objects that tell the story of Otago. </p> <a href="whats-on.html"
+					class="link--right-arrow">
+					Explore the collections
+				</a>
+			</div>
+			<!-- Image -->
+			<div class="split-section__image-wrapper">
+				<div
+					class="absolute inset-0 bg-gradient-to-r from-gray-200 via-gray-100 to-gray-200 bg-[length:200%_100%] animate-pulse flex items-center justify-center">
+					<i class="uil uil-image text-gray-400 text-5xl"></i>
+				</div> <img src="https://lipsum.app/id/7/1280x854"
+					class="split-section__image opacity-0 transition-all duration-500 ease-out" loading="lazy"
+					alt="Sunlit National Park Trail"
+					onload="this.classList.remove('opacity-0'); this.previousElementSibling?.remove();">
+			</div>
+		</section>
+		<section class="split-section-intro">
+			<div class="split-section__content">
+				<p class="split-section__eyebrow">Our museum</p>
+				<h2>Plan your visit</h2>
+			</div>
+			<div class="split-section__content">
+				<p class="lead-text lead-text--2"> Open 10am–5pm daily. Admission is free. Find directions,
+					accessibility
+					information and everything you need for your visit. </p> <a href="#"
+					class="xl:my-4 px-5 py-4 bg-primary text-white rounded-[50px] font-bold uppercase text-sm tracking-[.07rem] hover:bg-black duration-200 ease-linear transition-all">Plan
+					your visit</a>
+			</div>
+		</section>
+		<section class="split-section split-section--50-50 split-section--image-right">
+			<!-- Content -->
+			<div class="split-section__content">
+				<p class="split-section__eyebrow">Our museum</p>
+				<h2>About Toitū</h2>
+				<p> Toitū is a social history museum dedicated to the stories of the people whose character, culture,
+					technology, art, fashion and transport shaped Dunedin and Otago. </p> <a href="whats-on.html"
+					class="link--right-arrow">
+					About Toitū
+				</a>
+			</div>
+			<!-- Image -->
+			<div class="split-section__image-wrapper">
+				<div
+					class="absolute inset-0 bg-gradient-to-r from-gray-200 via-gray-100 to-gray-200 bg-[length:200%_100%] animate-pulse flex items-center justify-center">
+					<i class="uil uil-image text-gray-400 text-5xl"></i>
+				</div> <img src="https://lipsum.app/id/5/1280x854"
+					class="split-section__image opacity-0 transition-all duration-500 ease-out" loading="lazy"
+					alt="Sunlit National Park Trail"
+					onload="this.classList.remove('opacity-0'); this.previousElementSibling?.remove();">
+			</div>
+		</section>
+		<section class="split-section-intro band">
+			<div class="split-section__content">
+				<p class="split-section__eyebrow">learn</p>
+				<h2 class="font-normal">Research, education and experiences.</h2> <a href="whats-on.html"
+					class="link--right-arrow">
+					Explore learning
+				</a>
+			</div>
+			<div class="split-section__content alt">
+				<p class="split-section__eyebrow">venue hire</p>
+				<h2 class="font-normal">Unique spaces in the heart of Dunedin.</h2> <a href="whats-on.html"
+					class="link--right-arrow">
+					Explore venue hire
+				</a>
+			</div>
+		</section>
+	</main>
 	<footer class="relative m-0 bg-black section--padding-x pt-12 2xl:pt-24 text-white">
 		<div class="grid grid-cols-1 2xl:grid-cols-3 gap-x-0 md:gap-y-8 2xl:gap-y-6 justify-between items-start"> <img
 				src="./images/footer-logo.svg" width="" height="" loading="lazy" decoding="async" alt="Toitu OSM logo"
