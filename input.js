@@ -410,7 +410,7 @@ async function fetchPortraits(category = undefined) {
                                 class="block w-3/5 h-4 bg-gradient-to-r from-gray-200 via-gray-100 to-gray-200 bg-[length:200%_100%] animate-pulse rounded-md"></span>
                         </div>
                     </div>
-                    <a href="${portrait?.url ?? '#'}"
+                    <a href="./thomas-burns.html"
                         class="w-full relative flex items-center gap-4 justify-start py-5 hover:bg-paper px-3 group-[.is-loading]/wall-wrapper:opacity-0">
 
                         <figure
