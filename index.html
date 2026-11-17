@@ -95,7 +95,8 @@
 			<a href="./index.html" aria-label="Toitū Otago Settlers Museum home">
 				<!-- Keep your existing SVG logo here -->
 				<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 2637.31 707.89" role="img"
-					aria-labelledby="toitu-logo-title" class="w-[140px] sm:w-[160px] 4xl:w-[190px] h-[60px] sm:h-[100px]">
+					aria-labelledby="toitu-logo-title"
+					class="w-[140px] sm:w-[160px] 4xl:w-[190px] h-[60px] sm:h-[100px]">
 					<title id="toitu-logo-title">Toitū Otago Settlers Museum</title>
 					<path
 						class="transition-fill duration-300 ease-[ease] fill-white group-[.white-navbar]/body:fill-primary group-[.pinned]/navbar:fill-primary"
@@ -317,8 +318,19 @@
 	</aside>
 
 	<section class="group relative overflow-hidden bg-primary h-[100svh]">
-		<div class="w-screen h-[100svh] absolute top-0 z-[97] bg-[linear-gradient(rgba(0,0,0,0.25),rgba(0,0,0,0.12))]">
-		</div><img src="./images/main-hero.webp" alt="Toitu landing image" fetchpriority="high" width="" height=""
+		<!-- image overlay -->
+		<div
+			class="w-screen h-[100svh] absolute top-0 z-[96] bg-linear-[90deg,rgba(0,0,0,.75)_0%,rgba(0,0,0,.35)_55%,rgba(0,0,0,.06)_100%]">
+		</div>
+
+		<div
+			class="w-max absolute bottom-4 left-1/2 uppercase text-xs text-white z-[97] flex items-center flex-col justify-center gap-2">
+			<span class="inline-block animate-bounce text-2xl">↓</span>
+
+			<span>Scroll to explore</span>
+		</div>
+
+		<img src="./images/main-hero.webp" alt="Toitu landing image" fetchpriority="high" width="" height=""
 			class="w-full h-[inherit] z-40 object-cover">
 
 		<div class="absolute md:ml-12 w-full h-auto max-w-2xl top-1/2 -translate-y-1/2 z-[98] text-white px-4">
