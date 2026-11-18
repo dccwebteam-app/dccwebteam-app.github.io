@@ -306,29 +306,26 @@
     </aside>
 
     <main id="main" class="mt-[80px] sm:mt-[100px]">
-        <section
-            class="print:mt-0 print:pt-0 relative grid grid-cols-1 xl:grid-cols-2 4xl:grid-cols-5 section--padding-x pb-12 xl:pb-24">
-            <div class="4xl:col-span-3 relative py-12">
-                <nav aria-label="Breadcrumbs" class="print:mt-0 print:pt-0 print:hidden">
-                    <ol class="flex items-center justify-start text-lg gap-3 flex-wrap">
-                        <li><a href="./index.html" class="underline">Home</a>
-                        </li>
-                        <li aria-hidden="true">/</li>
-                        <li><a href="./smith-gallery.html" class="underline whitespace-nowrap">Smith Gallery</a>
-                        <li aria-hidden="true">/</li>
-                        <li><a href="./wall-1.html" class="underline whitespace-nowrap">Arrivals 1820s - 40s</a>
-                        <li aria-hidden="true">/</li>
-                        <li class="whitespace-nowrap">Reverend Thomas Burns</li>
-                    </ol>
-                </nav>
-                <article class="relative max-w-3xl 2xl:max-w-4xl mt-6 xl:mt-12">
+        <section class="print:mt-0 print:pt-0 relative section--padding-x section--padding-y">
 
+            <nav aria-label="Breadcrumbs" class="print:mt-0 print:pt-0 print:hidden">
+                <ol class="flex items-center justify-start text-lg gap-3 flex-wrap">
+                    <li><a href="./index.html" class="underline">Home</a>
+                    </li>
+                    <li aria-hidden="true">/</li>
+                    <li><a href="./smith-gallery.html" class="underline whitespace-nowrap">Smith Gallery</a>
+                    <li aria-hidden="true">/</li>
+                    <li><a href="./wall-1.html" class="underline whitespace-nowrap">Arrivals 1820s - 40s</a>
+                    <li aria-hidden="true">/</li>
+                    <li class="whitespace-nowrap">Reverend Thomas Burns</li>
+                </ol>
+            </nav>
+            <article class="relative mt-6 xl:mt-12 grid grid-cols-1 xl:grid-cols-2 4xl:grid-cols-5 ">
+                <div class="4xl:col-span-3 relative max-w-3xl 2xl:max-w-5xl">
                     <p class="eyebrow text-primary">Portrait</p>
                     <h1>Reverend Thomas Burns</h1>
                     <p class="lead-text lead-text--1">1796 – 1871 · Presbyterian minister and early Otago settler
                     </p>
-
-
 
                     <figure
                         class="2xl:col-span-2 relative overflow-hidden bg-paper w-full sm:w-3/5 xl:w-4/5 xl:mx-auto h-auto max-h-[75vh] aspect-[1689/2143] xl:sticky xl:top-[100px] xl:hidden">
@@ -365,42 +362,59 @@
                     </div>
 
 
-                    <div class="relative mt-12">
-                        <div class="flex justify-between gap-1 items-center py-4 [&>p]:mb-0 border-y border-y-footer">
-                            <p class="text-[11px] text-blue uppercase text-blue tracking-[0.045rem]">Born</p>
-                            <p class="text-base">1796 · Mauchline, Ayrshire</p>
-                        </div>
 
-                        <div class="flex justify-between gap-1 items-center py-4 [&>p]:mb-0 border-b border-b-footer">
-                            <p class="text-[11px] text-blue uppercase text-blue tracking-[0.045rem]">Arrived in
-                                Otago</p>
-                            <p class="text-base">1848 settlement era</p>
-                        </div>
+                    <div
+                        class="relative mt-12 grid w-full grid-cols-1 sm:w-max sm:grid-cols-[200px_1px_auto]">
 
-                        <div class="flex justify-between gap-1 items-center py-4 [&>p]:mb-0 border-b border-b-footer">
-                            <p class="text-[11px] text-blue uppercase text-blue tracking-[0.045rem]">Died</p>
-                            <p class="text-base">1871 · Dunedin</p>
-                        </div>
+                        <!-- Row 1 -->
+                        <p class="mb-0 border-t border-footer pb-0 pt-3 sm:pb-3 sm:px-3 text-base uppercase tracking-[0.045rem] text-black">
+                            Born
+                        </p>
+                        <div class="hidden bg-footer sm:block"></div>
+                        <p class="mb-0 sm:border-t sm:border-footer pt-0 sm:pt-3 pb-3 sm:px-3 text-lg font-bold">
+                            1796 - Mauchline, Ayrshire
+                        </p>
+
+                        <!-- Row 2 -->
+                        <p class="mb-0 border-t border-footer pb-0 pt-3 sm:pb-3 sm:px-3 text-base uppercase tracking-[0.045rem] text-black">
+                            Arrived in Otago
+                        </p>
+                        <div class="hidden bg-footer sm:block"></div>
+                        <p class="mb-0 sm:border-t sm:border-footer pt-0 sm:pt-3 pb-3 sm:px-3 text-lg font-bold">
+                            1848 settlement era
+                        </p>
+
+                        <!-- Row 3 -->
+                        <p class="mb-0 sm:border-b sm:border-b-footer border-t border-footer pb-0 pt-3 sm:pb-3 sm:px-3 text-base uppercase tracking-[0.045rem] text-black">
+                            Died
+                        </p>
+                        <div class="hidden bg-footer sm:block"></div>
+                        <p class="mb-0 border-b border-b-footer sm:border-t sm:border-footer pt-0 sm:pt-3 pb-3 sm:px-3 text-lg font-bold">
+                            1871 - Dunedin
+                        </p>
 
                     </div>
 
-                </article>
-            </div>
 
-            <figure
-                class="4xl:col-span-2 relative overflow-hidden bg-paper w-full sm:w-3/5 xl:w-4/5 xl:mx-auto h-auto max-h-[75vh] aspect-[1689/2143] xl:sticky xl:top-[100px] hidden xl:block">
-
-                <div
-                    class="absolute inset-0 flex animate-pulse items-center justify-center bg-gradient-to-r from-gray-200 via-gray-100 to-gray-200 bg-[length:200%_100%] z-10">
-                    <i class="uil uil-image text-5xl text-gray-400" aria-hidden="true"></i>
                 </div>
+                <figure
+                    class="4xl:col-span-2 relative overflow-hidden bg-paper w-full sm:w-3/5 xl:w-4/5 xl:mx-auto h-auto max-h-[75vh] aspect-[1689/2143] xl:sticky xl:top-[100px] hidden xl:block">
 
-                <img src="https://www.toituosm.com/__data/assets/image/0003/485814/1A07-1_Rev-Thomas-Burns.jpg"
-                    alt="Sunlit National Park Trail" loading="lazy"
-                    class="h-full w-full object-contain object-center opacity-0 transition-opacity duration-500 ease-out aspect-[inherit]"
-                    onload="this.classList.remove('opacity-0'); this.previousElementSibling?.remove();">
+                    <div
+                        class="absolute inset-0 flex animate-pulse items-center justify-center bg-gradient-to-r from-gray-200 via-gray-100 to-gray-200 bg-[length:200%_100%] z-10">
+                        <i class="uil uil-image text-5xl text-gray-400" aria-hidden="true"></i>
+                    </div>
 
-            </figure>
+                    <img src="https://www.toituosm.com/__data/assets/image/0003/485814/1A07-1_Rev-Thomas-Burns.jpg"
+                        alt="Sunlit National Park Trail" loading="lazy"
+                        class="h-full w-full object-contain object-center opacity-0 transition-opacity duration-500 ease-out aspect-[inherit]"
+                        onload="this.classList.remove('opacity-0'); this.previousElementSibling?.remove();">
+
+                </figure>
+
+
+            </article>
+
 
         </section>
 
