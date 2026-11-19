@@ -172,7 +172,7 @@
                             aria-hidden="true"></i> </a>
                 </li>
                 <li class="relative flex items-center justify-start gap-1">
-                    <a href="https://shop.shop" target="_blank" rel="noopener noreferrer"
+                    <a href="https://shop.toituosm.com/" target="_blank" rel="noopener noreferrer"
                         class="cta flex items-center gap-1 justify-start bg-primary hover:bg-secondary transition-all duration-300 ease-ease text-white py-2 px-6 rounded-[50px]">
                         <i class="uil uil-shopping-bag text-2xl" aria-hidden="true"></i> <span
                             class="leading-[1.5rem] mt-1">Shop</span> </a>
@@ -306,7 +306,7 @@
 
             </a>
             <!-- Shop -->
-            <a href="https://shop.shop" target="_blank" rel="noopener noreferrer"
+            <a href="https://shop.toituosm.com/" target="_blank" rel="noopener noreferrer"
                 class="mt-6 bg-primary hover:bg-black transition-all duration-300 ease-ease text-white py-4 px-6 w-full font-semibold">
                 <span class="w-full flex items-center gap-2 justify-start">
 
@@ -320,12 +320,29 @@
     <main id="main" class="mt-[80px] sm:mt-[100px]">
         <section class="print:mt-0 print:pt-0 relative grid grid-cols-1 2xl:grid-cols-3 4xl:grid-cols-2">
             <div class="2xl:col-span-2 4xl:col-span-1 relative py-12 section--padding-x">
-                <nav aria-label="Breadcrumbs" class="print:mt-0 print:pt-0 print:hidden">
+                <nav aria-label="Breadcrumbs" class="print:hidden">
                     <ol class="flex items-center justify-start text-lg gap-3 flex-wrap">
-                        <li><a href="./index.html" class="underline">Home</a>
+                        <li><a href="./index.html"
+                                class="hover:text-primary transition-colors duration-200 underline">Home</a>
                         </li>
                         <li aria-hidden="true">/</li>
-                        <li class="whitespace-nowrap">Smith Gallery</li>
+                        <li id="breadcrumb_collapsed" class="max-md:hidden">
+                            <ol class="flex items-center justify-start gap-3 flex-wrap">
+                                <li>
+                                    <a href="./collections.html"
+                                        class="hover:text-primary transition-colors duration-200 underline whitespace-nowrap">
+                                        Collections
+                                    </a>
+                                </li>
+                            </ol>
+                        </li>
+                        <li class="md:hidden"><button type="button" id="breadcrumb_toggle" class="cursor-pointer"
+                                aria-label="Show all breadcrumbs" aria-expanded="false"
+                                aria-controls="breadcrumb_collapsed">
+                                ...
+                            </button></li>
+                        <li aria-hidden="true">/</li>
+                        <li class="whitespace-nowrap">The Smith Gallery Portraits</li>
                     </ol>
                 </nav>
                 <div class="relative max-w-3xl 2xl:max-w-6xl mt-6 xl:mt-12">
@@ -434,7 +451,7 @@
                     Research Centre can help you explore the wider collection.</p>
             </div>
             <div class="flex flex-col gap-1 items-center">
-               
+
                 <a href=""
                     class="float-right cta flex items-center gap-2 justify-start transition-all duration-300 ease-ease text-black hover:text-primary border-b-2 border-b-primary pb-1 w-max link--new-window">Explore
                     research</a>

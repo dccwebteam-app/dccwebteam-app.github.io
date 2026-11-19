@@ -23,12 +23,12 @@
         </svg>
     </div>
 
-        <!-- ==========================================
+    <!-- ==========================================
          HEADER / DESKTOP NAVIGATION
     =========================================== -->
     <header class="group/navbar">
         <nav aria-label="Main navigation"
-            class="group-[.white-navbar]/body:2xl:shadow-[0_2px_16px_rgba(0,0,0,0.12)] group-[.white-navbar]/body:shadow-[0_2px_16px_rgba(0,0,0,0.12)] bg-black/30 2xl:bg-transparent group-[.white-navbar]/body:bg-white group-[.pinned]/navbar:bg-white text-white group-[.pinned]/navbar:text-black group-[.white-navbar]/body:text-black flex items-center justify-between gap-4 py-4 px-6 h-[80px] sm:h-[100px] w-full fixed inset-0 z-[99] text-[15px] leading-[1.1] font-semibold whitespace-nowrap uppercase transition-all duration-300 ease-ease">
+            class="print:hidden group-[.white-navbar]/body:2xl:shadow-[0_2px_16px_rgba(0,0,0,0.12)] group-[.white-navbar]/body:shadow-[0_2px_16px_rgba(0,0,0,0.12)] bg-black/30 2xl:bg-transparent group-[.white-navbar]/body:bg-white group-[.pinned]/navbar:bg-white text-white group-[.pinned]/navbar:text-black group-[.white-navbar]/body:text-black flex items-center justify-between gap-4 py-4 px-6 h-[80px] sm:h-[100px] w-full fixed inset-0 z-[99] text-[15px] leading-[1.1] font-semibold whitespace-nowrap uppercase transition-all duration-300 ease-ease">
             <!-- LEFT NAVIGATION -->
             <ul
                 class="hidden 2xl:flex items-center justify-between gap-6 group/nav-items group/left-nav header__nav-items">
@@ -172,7 +172,7 @@
                             aria-hidden="true"></i> </a>
                 </li>
                 <li class="relative flex items-center justify-start gap-1">
-                    <a href="https://shop.shop" target="_blank" rel="noopener noreferrer"
+                    <a href="https://shop.toituosm.com/" target="_blank" rel="noopener noreferrer"
                         class="cta flex items-center gap-1 justify-start bg-primary hover:bg-secondary transition-all duration-300 ease-ease text-white py-2 px-6 rounded-[50px]">
                         <i class="uil uil-shopping-bag text-2xl" aria-hidden="true"></i> <span
                             class="leading-[1.5rem] mt-1">Shop</span> </a>
@@ -202,13 +202,13 @@
          MOBILE MENU OVERLAY
     =========================================== -->
     <button id="menu_overlay" type="button"
-        class="fixed inset-0 z-[199] bg-black/50 opacity-0 invisible transition-all duration-300"
+        class="fixed inset-0 z-[199] bg-black/50 opacity-0 invisible transition-all duration-300 print:hidden"
         aria-label="Close navigation menu" tabindex="-1" hidden> </button>
     <!-- ==========================================
          MOBILE SIDEBAR
     =========================================== -->
     <aside id="mobile_menu"
-        class="fixed space-y-4 inset-y-0 right-0 w-screen md:w-full max-w-sm bg-white shadow-xl py-4 px-6 transition-transform duration-200 ease-linear translate-x-full z-[200] font-medium text-xl"
+        class="print:hidden fixed space-y-4 inset-y-0 right-0 w-screen md:w-full max-w-sm bg-white shadow-xl py-4 px-6 transition-transform duration-200 ease-linear translate-x-full z-[200] font-medium text-xl"
         aria-label="Mobile navigation" aria-hidden="true" inert>
         <!-- Mobile logo and close button -->
         <div class="flex items-center justify-between border-b border-footer pb-6">
@@ -306,7 +306,7 @@
 
             </a>
             <!-- Shop -->
-            <a href="https://shop.shop" target="_blank" rel="noopener noreferrer"
+            <a href="https://shop.toituosm.com/" target="_blank" rel="noopener noreferrer"
                 class="mt-6 bg-primary hover:bg-black transition-all duration-300 ease-ease text-white py-4 px-6 w-full font-semibold">
                 <span class="w-full flex items-center gap-2 justify-start">
 
@@ -317,10 +317,11 @@
         </nav>
     </aside>
 
-    
-    <main id="main" class="relative mt-[80px] sm:mt-[100px]">
 
-        <svg xmlns="http://www.w3.org/2000/svg" class="hidden xl:block absolute right-1 top-0 w-sm md:w-md 3xl:w-lg z-1 pointer-events-none select-none"
+    <main id="main" class="relative mt-[80px] sm:mt-[100px] print:mt-0 print:pt-0">
+
+        <svg xmlns="http://www.w3.org/2000/svg"
+            class="hidden xl:block absolute right-1 top-0 w-sm md:w-md 3xl:w-lg z-1 pointer-events-none select-none"
             viewBox="0 0 223 221.9">
             <path
                 d="M141,120.9c9.5,6.1,14,14.8,13.4,25.9q-.45,15.15-13.2,24.3a47.249,47.249,0,0,1-28.1,9.2,67.769,67.769,0,0,1-46.3-17.6c-13.2-11.7-21.5-29-21.5-51.9,0-21,7.2-37.9,20.6-49.9s28.9-18.6,46.3-18.8c14.9-.3,42,1.1,61.8,32,11.3,17.6,9.1,37.1,9.1,37.1-1.8-5.7-6-10.6-12.2-17.2A58.726,58.726,0,0,0,148,79.3c-11.9-4.4-24.1-3.3-36.8,3.3v38.8c10.3-6.4,20.3-6.6,29.8-.5M191.9,33Q161,1.8,113.5,1.8c-31.8,0-58.3,10.7-79.7,32.1C12.4,55.2,1.7,81.1,1.7,111.3c0,30.3,10.7,56.2,32.1,77.9s47.9,32.5,79.7,32.5q47.1,0,78.2-32c20.7-21.3,31-47.5,31-78.4,0-31.4-10.2-57.5-30.8-78.3"
@@ -329,19 +330,39 @@
         </svg>
 
         <section class="group overflow-hidden py-6 xl:py-12 print:mt-0 print:pt-0 relative">
-            <div class="relative pt-8 z-[98] container">
-                <nav aria-label="Breadcrumbs" class="print:container-fluid print:mt-0 print:pt-0 print:hidden">
+            <div class="relative pt-8 z-[98] container print:w-full print:max-w-none print:px-0">
+                <nav aria-label="Breadcrumbs" class="print:hidden">
                     <ol class="flex items-center justify-start text-lg gap-3 flex-wrap">
-                        <li><a href="./index.html" class="underline">Home</a>
+                        <li><a href="./index.html" class="hover:text-primary transition-colors duration-200 underline">Home</a>
                         </li>
                         <li aria-hidden="true">/</li>
-                        <li><a href="./whats-on.html" class="underline whitespace-nowrap">What's On</a>
-                        <li aria-hidden="true">/</li>
-                        <li><a href="./exhibitions.html" class="underline whitespace-nowrap">Exhibitions</a>
+                        <li id="breadcrumb_collapsed" class="max-md:hidden">
+                            <ol class="flex items-center justify-start gap-3 flex-wrap">
+                                <li>
+                                    <a href="./whats-on.html"
+                                        class="hover:text-primary transition-colors duration-200 underline whitespace-nowrap">
+                                        What's on
+                                    </a>
+                                </li>
+                                <li aria-hidden="true">/</li>
+                                <li>
+                                    <a href="./exhibitions.html"
+                                        class="hover:text-primary transition-colors duration-200 underline whitespace-nowrap">
+                                        Exhibitions
+                                    </a>
+                                </li>
+                            </ol>
+                        </li>
+                        <li class="md:hidden"><button type="button" id="breadcrumb_toggle" class="cursor-pointer"
+                                aria-label="Show all breadcrumbs" aria-expanded="false"
+                                aria-controls="breadcrumb_collapsed">
+                                ...
+                            </button></li>
                         <li aria-hidden="true">/</li>
                         <li class="whitespace-nowrap">Eden in Dunedin</li>
                     </ol>
                 </nav>
+
                 <div class="relative max-w-3xl 2xl:max-w-6xl mt-6 xl:mt-12">
                     <p class="eyebrow text-primary text-lg">Exhibition</p>
                     <h1>Eden in Dunedin</h1>
@@ -354,11 +375,11 @@
 
         <!-- Exhibition section -->
         <section
-            class="group/exhibition relative bg-transparent text-black pt-5 pb-14 xl:pb-28 text-black content px-[clamp(24px,3.5vw,64px)] max-w-[1760px] mx-auto"
+            class="group/exhibition relative bg-transparent text-black pt-5 pb-14 xl:pb-28 text-black content px-[clamp(24px,3.5vw,64px)] max-w-[1760px] mx-auto print:m-0 print:px-0"
             id="exhibition_content">
 
             <!-- layout filter -->
-            <div class="flex items-center justify-end gap-3 pb-6 text-xs z-10 relative"
+            <div class="hidden 2xl:flex items-center justify-end gap-3 pb-6 text-xs z-10 relative print:hidden"
                 aria-label="Exhibition layout options">
 
                 <span id="exhibition-view-label">View</span>
@@ -390,10 +411,9 @@
                 class="relative grid grid-cols-1 2xl:group-[.split]/exhibition:grid-cols-2 items-start justify-start gap-8 2xl:gap-16 ">
 
                 <figure class="relative m-0 w-full overflow-hidden bg-paper
-    group-[:not(.split)]/exhibition:h-[50vw]
-    group-[:not(.split)]/exhibition:max-h-[854px]
-    md:group-[:not(.split)]/exhibition:min-h-[520px]
-    group-[.split]/exhibition:aspect-16/12
+    2xl:group-[:not(.split)]/exhibition:h-[680px]
+    2xl:group-[.split]/exhibition:aspect-16/12
+    max-2xl:aspect-16/12
     2xl:group-[.split]/exhibition:sticky
     2xl:group-[.split]/exhibition:top-[105px]">
 
@@ -410,13 +430,14 @@
                         onload="this.classList.remove('opacity-0'); this.previousElementSibling?.remove();">
 
                     <button id="toggle_caption"
-                        class="absolute right-[22px] bottom-[22px] w-12 h-12 flex items-center p-0 rounded-[50px] bg-primary text-white shadow-xs cursor-pointer z-[98] hover:scale-106 transition-all duration-300 ease-in"
+                        class="print:hidden absolute right-[22px] bottom-[22px] w-12 h-12 flex items-center p-0 rounded-[50px] bg-primary text-white shadow-xs cursor-pointer z-[98] hover:scale-106 transition-all duration-300 ease-in"
                         type="button" aria-label="View image caption" aria-expanded="false">
                         <i class="uil uil-info-circle text-white text-2xl w-16"></i>
                     </button>
 
                     <template id="caption_template">
-                        <div class="exhibition__image__caption shadow-xl px-4 sm:px-6 py-6 bg-white text-[15px] text-black z-[98] overflow-x-hidden overflow-y-hidden w-[calc(100vw_-_50px)] sm:w-auto sm:max-w-sm fixed max-sm:left-1/2 max-sm:top-1/2 max-sm:-translate-x-1/2 max-sm:-translate-y-1/2"
+                        <figcaption
+                            class="exhibition__image__caption shadow-xl px-4 md:px-6 py-6 bg-white text-[15px] text-black z-[98] overflow-x-hidden md:overflow-y-hidden w-full h-max md:w-auto md:max-w-sm absolute max-md:bottom-0 md:right-[22px] md:bottom-20"
                             role="tooltip">
                             <div class="flex justify-between gap-3 items-center w-full">
                                 <p class="text-primary text-xl mb-0">Caption</p>
@@ -432,9 +453,8 @@
 
                             <p class="mb-2"><strong>Model</strong> Ngahuia Williams</p>
                             <p class="mb-0"><strong>Photographer</strong> Derek Henderson</p>
-                        </div>
+                        </figcaption>
                     </template>
-
                 </figure>
 
                 <div

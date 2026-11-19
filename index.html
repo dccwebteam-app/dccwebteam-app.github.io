@@ -26,9 +26,9 @@
 	<!-- ==========================================
          HEADER / DESKTOP NAVIGATION
     =========================================== -->
-	<header class="group/navbar">
+	<header class="group/navbar fixed top-0 left-0 z-[99] w-full h-[80px] sm:h-[100px]">
 		<nav aria-label="Main navigation"
-			class="group-[.white-navbar]/body:2xl:shadow-[0_2px_16px_rgba(0,0,0,0.12)] group-[.white-navbar]/body:shadow-[0_2px_16px_rgba(0,0,0,0.12)] bg-black/30 2xl:bg-transparent group-[.white-navbar]/body:bg-white group-[.pinned]/navbar:bg-white text-white group-[.pinned]/navbar:text-black group-[.white-navbar]/body:text-black flex items-center justify-between gap-4 py-4 px-6 h-[80px] sm:h-[100px] w-full fixed inset-0 z-[99] text-[15px] leading-[1.1] font-semibold whitespace-nowrap uppercase transition-all duration-300 ease-ease">
+			class="print:hidden h-full group-[.white-navbar]/body:2xl:shadow-[0_2px_16px_rgba(0,0,0,0.12)] group-[.white-navbar]/body:shadow-[0_2px_16px_rgba(0,0,0,0.12)] bg-black/30 2xl:bg-transparent w-full group-[.white-navbar]/body:bg-white group-[.pinned]/navbar:bg-white text-white group-[.pinned]/navbar:text-black group-[.white-navbar]/body:text-black flex items-center justify-between gap-4 py-4 px-6 w-full text-[15px] leading-[1.1] font-semibold whitespace-nowrap uppercase transition-all duration-300 ease-ease">
 			<!-- LEFT NAVIGATION -->
 			<ul
 				class="hidden 2xl:flex items-center justify-between gap-6 group/nav-items group/left-nav header__nav-items">
@@ -172,7 +172,7 @@
 							aria-hidden="true"></i> </a>
 				</li>
 				<li class="relative flex items-center justify-start gap-1">
-					<a href="https://shop.shop" target="_blank" rel="noopener noreferrer"
+					<a href="https://shop.toituosm.com/" target="_blank" rel="noopener noreferrer"
 						class="cta flex items-center gap-1 justify-start bg-primary hover:bg-secondary transition-all duration-300 ease-ease text-white py-2 px-6 rounded-[50px]">
 						<i class="uil uil-shopping-bag text-2xl" aria-hidden="true"></i> <span
 							class="leading-[1.5rem] mt-1">Shop</span> </a>
@@ -208,113 +208,121 @@
          MOBILE SIDEBAR
     =========================================== -->
 	<aside id="mobile_menu"
-		class="fixed space-y-4 inset-y-0 right-0 w-screen md:w-full max-w-sm bg-white shadow-xl py-4 px-6 transition-transform duration-200 ease-linear translate-x-full z-[200] font-medium text-xl"
-		aria-label="Mobile navigation" aria-hidden="true" inert>
-		<!-- Mobile logo and close button -->
-		<div class="flex items-center justify-between border-b border-footer pb-6">
-			<a href="/" aria-label="Toitū Otago Settlers Museum home"> <img src="./images/mobile menu.svg"
-					loading="lazy" decoding="async" width="" height="auto" class="w-[140px] sm:w-[160px]"
-					alt="Toitū Otago Settlers Museum"> </a>
-			<button id="menu_close" type="button" class="flex items-center justify-center size-10 cursor-pointer"
-				aria-label="Close navigation menu"> <span class="relative flex size-7 items-center justify-center"
-					aria-hidden="true">
-					<span class="relative block size-7 sidebar__close-icon"></span> </span>
-			</button>
+		class="fixed inset-y-0 right-0 w-screen md:w-full max-w-xs bg-white shadow-xl transition-transform duration-200 ease-linear translate-x-full z-[200] font-medium text-xl overflow-auto"
+		aria-label="Mobile navigation" aria-hidden="true">
+		<div class="py-4 px-6">
+			<!-- Mobile logo and close button -->
+			<div class="flex items-center justify-between border-b border-footer pt-3 pb-4 sm:pb-8">
+				<a href="/" aria-label="Toitū Otago Settlers Museum home"> <img src="./images/mobile menu.svg"
+						loading="lazy" decoding="async" width="" height=""
+						class="w-[140px] sm:w-[160px] 4xl:w-[190px]"
+						alt="Toitū Otago Settlers Museum"> </a>
+				<button id="menu_close" type="button" class="flex items-center justify-center size-10 cursor-pointer"
+					aria-label="Close navigation menu"> <span class="relative flex size-7 items-center justify-center"
+						aria-hidden="true">
+						<span class="relative block size-7 sidebar__close-icon"></span> </span>
+				</button>
+			</div>
+			<!-- Mobile navigation links -->
+			<nav aria-label="Mobile navigation" class="relative flex flex-col items-start justify-between gap-0">
+				<!-- What's on -->
+				<details class="mobile-dropdown w-full relative border-b border-footer sidebar__accordion">
+					<summary
+						class="will-load list-none flex items-center justify-between [&::-webkit-details-marker]:hidden py-5 cursor-pointer">
+						<span class="flex-1 min-w-0">What's on</span> <span
+							class="relative flex size-7 min-w-12 shrink-0 items-center justify-center"
+							aria-hidden="true">
+
+							<span class="relative block size-4 sidebar__accordion-icon"></span> </span>
+					</summary>
+					<ul class="bg-white text-secondary group/dropdown-menu sidebar__dropdown-menu">
+						<li><a href="./exhibitions.html">Exhibitions</a></li>
+						<li><a href="/whats-on/events/">Events</a></li>
+						<li><a href="/whats-on/watch/">Watch</a></li>
+					</ul>
+				</details>
+				<!-- Plan your visit --><a href="/plan-your-visit/" class="w-full border-b border-footer py-5">
+
+					Plan your visit
+
+				</a>
+				<!-- About us -->
+				<details class="mobile-dropdown w-full relative border-b border-footer sidebar__accordion">
+					<summary
+						class="will-load list-none flex items-center justify-between [&::-webkit-details-marker]:hidden py-5 cursor-pointer">
+						<span class="flex-1 min-w-0">About us</span> <span
+							class="relative flex size-7 min-w-12 shrink-0 items-center justify-center"
+							aria-hidden="true">
+
+							<span class="relative block size-4 sidebar__accordion-icon"></span> </span>
+					</summary>
+					<ul class="bg-white text-secondary group/dropdown-menu sidebar__dropdown-menu">
+						<li><a href="/about-us/">About Toitū</a></li>
+						<li><a href="/about-us/history/">History</a></li>
+						<li><a href="/about-us/cafe/">Café</a></li>
+						<li><a href="/visit/">Location</a></li>
+					</ul>
+				</details>
+
+				<!-- Collections -->
+				<details class="mobile-dropdown w-full relative border-b border-footer sidebar__accordion">
+					<summary
+						class="will-load list-none flex items-center justify-between [&::-webkit-details-marker]:hidden py-5 cursor-pointer">
+						<span class="flex-1 min-w-0">Collections</span> <span
+							class="relative flex size-7 min-w-12 shrink-0 items-center justify-center"
+							aria-hidden="true">
+
+							<span class="relative block size-4 sidebar__accordion-icon"></span> </span>
+					</summary>
+					<ul class="bg-white text-secondary group/dropdown-menu sidebar__dropdown-menu">
+						<li><a href="/learn/research/">Collections Online</a></li>
+						<li><a href="/learn/research/">Donate</a></li>
+						<li><a href="/learn/education/">Settler and Shipboard Diaries</a></li>
+						<li><a href="/learn/education/">Conservation</a></li>
+						<li><a href="/learn/education/">Behind the scenes</a></li>
+						<li><a href="/learn/education/">Research</a></li>
+						<li><a href="./smith-gallery.html">Portraits</a></li>
+					</ul>
+				</details>
+
+				</a>
+				<!-- Learn -->
+				<details class="mobile-dropdown w-full relative border-b border-footer sidebar__accordion">
+					<summary
+						class="will-load list-none flex items-center justify-between [&::-webkit-details-marker]:hidden py-5 cursor-pointer">
+						<span class="flex-1 min-w-0">Learn</span> <span
+							class="relative flex size-7 min-w-12 shrink-0 items-center justify-center"
+							aria-hidden="true">
+
+							<span class="relative block size-4 sidebar__accordion-icon"></span> </span>
+					</summary>
+					<ul class="bg-white text-secondary group/dropdown-menu sidebar__dropdown-menu">
+						<li><a href="/learn/research/">Research</a></li>
+						<li><a href="/learn/education/">Education experiences</a></li>
+					</ul>
+				</details>
+				<!-- Venue hire --><a href="/venue-hire/" class="w-full border-b border-footer py-5">
+
+					Venue Hire
+
+				</a>
+				<!-- Otago Settlers Association -->
+				 <a href="/otago-settlers-association/" class="w-full py-5">
+
+					Otago Settlers Association
+
+				</a>
+				<!-- Shop -->
+				<a href="https://shop.toituosm.com/" target="_blank" rel="noopener noreferrer"
+					class="h-short:mt-5 cta flex items-center gap-2 justify-start bg-primary hover:bg-black transition-all duration-300 ease-ease text-white py-4 px-6 w-full rounded-[50px]">
+					<span class="w-full flex items-center gap-2 justify-start">
+
+						<i class="uil uil-shopping-bag text-2xl" aria-hidden="true"></i>
+
+						<span class="leading-[1.5rem] mt-0.5">Shop</span> </span>
+				</a>
+			</nav>
 		</div>
-		<!-- Mobile navigation links -->
-		<nav aria-label="Mobile navigation" class="relative flex flex-col items-start justify-between gap-0">
-			<!-- What's on -->
-			<details class="mobile-dropdown w-full relative border-b border-footer sidebar__accordion">
-				<summary
-					class="will-load list-none flex items-center justify-between [&::-webkit-details-marker]:hidden py-5 cursor-pointer">
-					<span class="flex-1 min-w-0">What's on</span> <span
-						class="relative flex size-7 min-w-12 shrink-0 items-center justify-center" aria-hidden="true">
-
-						<span class="relative block size-4 sidebar__accordion-icon"></span> </span>
-				</summary>
-				<ul class="bg-white text-secondary group/dropdown-menu sidebar__dropdown-menu">
-					<li><a href="./exhibitions.html">Exhibitions</a></li>
-					<li><a href="/whats-on/events/">Events</a></li>
-					<li><a href="/whats-on/watch/">Watch</a></li>
-				</ul>
-			</details>
-			<!-- Plan your visit --><a href="/plan-your-visit/" class="w-full border-b border-footer py-5">
-
-				Plan your visit
-
-			</a>
-			<!-- About us -->
-			<details class="mobile-dropdown w-full relative border-b border-footer sidebar__accordion">
-				<summary
-					class="will-load list-none flex items-center justify-between [&::-webkit-details-marker]:hidden py-5 cursor-pointer">
-					<span class="flex-1 min-w-0">About us</span> <span
-						class="relative flex size-7 min-w-12 shrink-0 items-center justify-center" aria-hidden="true">
-
-						<span class="relative block size-4 sidebar__accordion-icon"></span> </span>
-				</summary>
-				<ul class="bg-white text-secondary group/dropdown-menu sidebar__dropdown-menu">
-					<li><a href="/about-us/">About Toitū</a></li>
-					<li><a href="/about-us/history/">History</a></li>
-					<li><a href="/about-us/cafe/">Café</a></li>
-					<li><a href="/visit/">Location</a></li>
-				</ul>
-			</details>
-
-			<!-- Collections -->
-			<details class="mobile-dropdown w-full relative border-b border-footer sidebar__accordion">
-				<summary
-					class="will-load list-none flex items-center justify-between [&::-webkit-details-marker]:hidden py-5 cursor-pointer">
-					<span class="flex-1 min-w-0">Collections</span> <span
-						class="relative flex size-7 min-w-12 shrink-0 items-center justify-center" aria-hidden="true">
-
-						<span class="relative block size-4 sidebar__accordion-icon"></span> </span>
-				</summary>
-				<ul class="bg-white text-secondary group/dropdown-menu sidebar__dropdown-menu">
-					<li><a href="/learn/research/">Collections Online</a></li>
-					<li><a href="/learn/research/">Donate</a></li>
-					<li><a href="/learn/education/">Settler and Shipboard Diaries</a></li>
-					<li><a href="/learn/education/">Conservation</a></li>
-					<li><a href="/learn/education/">Behind the scenes</a></li>
-					<li><a href="/learn/education/">Research</a></li>
-					<li><a href="./smith-gallery.html">Portraits</a></li>
-				</ul>
-			</details>
-
-			</a>
-			<!-- Learn -->
-			<details class="mobile-dropdown w-full relative border-b border-footer sidebar__accordion">
-				<summary
-					class="will-load list-none flex items-center justify-between [&::-webkit-details-marker]:hidden py-5 cursor-pointer">
-					<span class="flex-1 min-w-0">Learn</span> <span
-						class="relative flex size-7 min-w-12 shrink-0 items-center justify-center" aria-hidden="true">
-
-						<span class="relative block size-4 sidebar__accordion-icon"></span> </span>
-				</summary>
-				<ul class="bg-white text-secondary group/dropdown-menu sidebar__dropdown-menu">
-					<li><a href="/learn/research/">Research</a></li>
-					<li><a href="/learn/education/">Education experiences</a></li>
-				</ul>
-			</details>
-			<!-- Venue hire --><a href="/venue-hire/" class="w-full border-b border-footer py-5">
-
-				Venue Hire
-
-			</a>
-			<!-- Otago Settlers Association --><a href="/otago-settlers-association/" class="w-full py-5">
-
-				Otago Settlers Association
-
-			</a>
-			<!-- Shop -->
-			<a href="https://shop.shop" target="_blank" rel="noopener noreferrer"
-				class="mt-6 bg-primary hover:bg-black transition-all duration-300 ease-ease text-white py-4 px-6 w-full font-semibold">
-				<span class="w-full flex items-center gap-2 justify-start">
-
-					<i class="uil uil-shopping-bag text-2xl" aria-hidden="true"></i>
-
-					<span class="leading-[1.5rem] mt-0.5">Shop</span> </span>
-			</a>
-		</nav>
 	</aside>
 
 	<main id="main">
@@ -325,7 +333,7 @@
 			</div>
 
 			<a href="#whats_on"
-				class="w-max absolute bottom-4 left-1/2 uppercase text-xs text-white z-[97] flex items-center flex-col justify-center gap-2">
+				class="w-max absolute bottom-4 left-1/2 -translate-x-1/2 uppercase text-xs text-white z-[97] flex flex-col items-center justify-center gap-2 text-center">
 				<span class="inline-block animate-bounce text-2xl">↓</span>
 
 				<span>Scroll to explore</span>
@@ -334,11 +342,11 @@
 			<img src="./images/main-hero.webp" alt="Toitu landing image" fetchpriority="high" width="" height=""
 				class="w-full h-[inherit] z-40 object-cover">
 
-			<div class="absolute md:ml-12 w-full h-auto max-w-2xl top-1/2 -translate-y-1/2 z-[98] text-white px-4">
+			<div class="absolute w-full h-auto max-w-3xl top-[calc(50%_-_80px)] -translate-y-[calc(50%_-_80px)] sm:top-[calc(50%_-_100px)] sm:-translate-y-[calc(50%_-_100px)] z-[98] text-white section--padding-x">
 				<p class="eyebrow">
 					TOITŪ OTAGO SETTLERS MUSEUM
 				</p>
-				<h1 class="text-[clamp(56px,_8vw,_110px)]">Our stories.<br>Our place.</h1>
+				<h1 class="text-[clamp(56px,_8vw,_110px)]">Our stories<br>Our place</h1>
 				<p class="lead-text lead-text--1">Discover the people, places and histories that have shaped Otago.</p>
 				<a href="#main"
 					class="cta flex items-center gap-1 justify-start transition-all duration-300 ease-ease text-white pt-4 pb-2 w-max border-b-2 border-b-white link--new-window"
@@ -352,7 +360,7 @@
 		<section class="group/whatsOn relative bg-black section--padding-x section--padding-y text-white" id="whats_on">
 			<p class="eyebrow">Discover</p>
 			<div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-0 sm:gap-4">
-				<h2>What's On</h2> <a href="whats-on.html" class="link--right-arrow">View everything</a>
+				<h2>What's On</h2> <a href="whats-on.html" class="cta flex items-center gap-2 justify-start transition-all duration-300 ease-ease text-white border-b-2 border-b-primary pb-1 w-max link--right-arrow">View everything</a>
 			</div>
 			<div class="relative grid grid-cols-1 xl:grid-cols-3 gap-6 pt-8 xl:pt-12">
 				<!-- Item 1-->

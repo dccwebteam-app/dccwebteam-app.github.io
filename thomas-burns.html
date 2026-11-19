@@ -160,7 +160,7 @@
                             aria-hidden="true"></i> </a>
                 </li>
                 <li class="relative flex items-center justify-start gap-1">
-                    <a href="https://shop.shop" target="_blank" rel="noopener noreferrer"
+                    <a href="https://shop.toituosm.com/" target="_blank" rel="noopener noreferrer"
                         class="cta flex items-center gap-1 justify-start bg-primary hover:bg-secondary transition-all duration-300 ease-ease text-white py-2 px-6 rounded-[50px]">
                         <i class="uil uil-shopping-bag text-2xl" aria-hidden="true"></i> <span
                             class="leading-[1.5rem] mt-1">Shop</span> </a>
@@ -294,7 +294,7 @@
 
             </a>
             <!-- Shop -->
-            <a href="https://shop.shop" target="_blank" rel="noopener noreferrer"
+            <a href="https://shop.toituosm.com/" target="_blank" rel="noopener noreferrer"
                 class="mt-6 bg-primary hover:bg-black transition-all duration-300 ease-ease text-white py-4 px-6 w-full font-semibold">
                 <span class="w-full flex items-center gap-2 justify-start">
 
@@ -309,26 +309,134 @@
         <section class="print:mt-0 print:pt-0 relative section--padding-x section--padding-y">
 
             <nav aria-label="Breadcrumbs" class="print:mt-0 print:pt-0 print:hidden">
-                <ol class="flex items-center justify-start text-lg gap-3 flex-wrap">
-                    <li><a href="./index.html" class="underline">Home</a>
-                    </li>
-                    <li aria-hidden="true">/</li>
-                    <li><a href="./smith-gallery.html" class="underline whitespace-nowrap">Smith Gallery</a>
-                    <li aria-hidden="true">/</li>
-                    <li><a href="./wall-1.html" class="underline whitespace-nowrap">Arrivals 1820s - 40s</a>
-                    <li aria-hidden="true">/</li>
-                    <li class="whitespace-nowrap">Reverend Thomas Burns</li>
-                </ol>
-            </nav>
-            <article class="relative mt-6 xl:mt-12 grid grid-cols-1 xl:grid-cols-2 4xl:grid-cols-5 ">
-                <div class="4xl:col-span-3 relative max-w-3xl 2xl:max-w-5xl">
-                    <p class="eyebrow text-primary">Portrait</p>
-                    <h1>Reverend Thomas Burns</h1>
-                    <p class="lead-text lead-text--1">1796 – 1871 · Presbyterian minister and early Otago settler
-                    </p>
+                <nav aria-label="Breadcrumbs" class="print:hidden">
+                    <ol class="flex items-center justify-start text-lg gap-3 flex-wrap">
+                        <li><a href="./index.html"
+                                class="hover:text-primary transition-colors duration-200 underline">Home</a>
+                        </li>
+                        <li aria-hidden="true">/</li>
+                        <li id="breadcrumb_collapsed" class="max-md:hidden">
+                            <ol class="flex items-center justify-start gap-3 flex-wrap">
+                                <li>
+                                    <a href="./collections.html"
+                                        class="hover:text-primary transition-colors duration-200 underline whitespace-nowrap">
+                                        Collections
+                                    </a>
+                                </li>
+                                <li aria-hidden="true">/</li>
+                                <li>
+                                    <a href="./smith-gallery.html"
+                                        class="hover:text-primary transition-colors duration-200 underline whitespace-nowrap">
+                                        Portraits
+                                    </a>
+                                </li>
+                                <li aria-hidden="true">/</li>
+                                <li>
+                                    <a href="./wall-1.html"
+                                        class="hover:text-primary transition-colors duration-200 underline whitespace-nowrap">
+                                        Arrivals 1820s – 40s
+                                    </a>
+                                </li>
+                            </ol>
+                        </li>
+                        <li class="md:hidden"><button type="button" id="breadcrumb_toggle" class="cursor-pointer"
+                                aria-label="Show all breadcrumbs" aria-expanded="false"
+                                aria-controls="breadcrumb_collapsed">
+                                ...
+                            </button></li>
+                        <li aria-hidden="true">/</li>
+                        <li class="whitespace-nowrap">Reverend Thomas Burns</li>
+                    </ol>
+                </nav>
+                <article class="relative mt-6 xl:mt-12 grid grid-cols-1 xl:grid-cols-2 4xl:grid-cols-5 ">
+                    <div class="4xl:col-span-3 relative max-w-3xl 2xl:max-w-5xl">
+                        <p class="eyebrow text-primary">Portrait</p>
+                        <h1>Reverend Thomas Burns</h1>
+                        <p class="lead-text lead-text--1">1796 – 1871 · Presbyterian minister and early Otago settler
+                        </p>
 
+                        <figure
+                            class="2xl:col-span-2 relative overflow-hidden bg-paper w-full sm:w-3/5 xl:w-4/5 xl:mx-auto h-auto max-h-[75vh] aspect-[1689/2143] xl:sticky xl:top-[100px] xl:hidden">
+
+                            <div
+                                class="absolute inset-0 flex animate-pulse items-center justify-center bg-gradient-to-r from-gray-200 via-gray-100 to-gray-200 bg-[length:200%_100%] z-10">
+                                <i class="uil uil-image text-5xl text-gray-400" aria-hidden="true"></i>
+                            </div>
+
+                            <img src="https://www.toituosm.com/__data/assets/image/0003/485814/1A07-1_Rev-Thomas-Burns.jpg"
+                                alt="Sunlit National Park Trail" loading="lazy"
+                                class="h-full w-full object-contain object-center opacity-0 transition-opacity duration-500 ease-out aspect-[inherit]"
+                                onload="this.classList.remove('opacity-0'); this.previousElementSibling?.remove();">
+
+                        </figure>
+
+                        <div class="[&>p:last-child]:mb-0 mt-12">
+                            <p class="eyebrow text-primary">Story</p>
+                            <h2>A founding figure of Otago</h2>
+                            <p>Thomas Burns was born in Mauchline, Ayrshire, in 1796. A nephew of the poet Robert Burns,
+                                he
+                                grew up with an interest in farming but trained for the Presbyterian ministry at the
+                                University of Edinburgh.</p>
+                            <p>Ordained in 1822, he became minister of Ballantrae and later Monkton. In 1830 he married
+                                Clementina Grant. He was among those who signed the Deed of Demission in 1843,
+                                establishing
+                                the Free Church of Scotland.</p>
+                            <p>Burns became a leading figure in the planned Scottish Presbyterian settlement at Otago.
+                                In
+                                1847 he sailed from Greenock with the first party of settlers aboard the Philip Laing.
+                            </p>
+                            <p>As the settlement’s spiritual leader, Burns travelled widely to visit households
+                                throughout
+                                his parish. His detailed records of these visits provide an important account of the
+                                people
+                                living in early Otago.</p>
+                            <p>He also supported farming and education in the new settlement and became the inaugural
+                                chancellor of New Zealand’s first university. Burns died in Dunedin in 1871, while the
+                                new
+                                First Church was being built.</p>
+                        </div>
+
+
+
+                        <div class="relative mt-12 grid w-full grid-cols-1 sm:w-max sm:grid-cols-[200px_1px_auto]">
+
+                            <!-- Row 1 -->
+                            <p
+                                class="mb-0 border-t border-footer pb-0 pt-3 sm:pb-3 sm:px-3 text-base uppercase tracking-[0.045rem] text-black">
+                                Born
+                            </p>
+                            <div class="hidden bg-footer sm:block"></div>
+                            <p class="mb-0 sm:border-t sm:border-footer pt-0 sm:pt-3 pb-3 sm:px-3 text-lg font-bold">
+                                1796 - Mauchline, Ayrshire
+                            </p>
+
+                            <!-- Row 2 -->
+                            <p
+                                class="mb-0 border-t border-footer pb-0 pt-3 sm:pb-3 sm:px-3 text-base uppercase tracking-[0.045rem] text-black">
+                                Arrived in Otago
+                            </p>
+                            <div class="hidden bg-footer sm:block"></div>
+                            <p class="mb-0 sm:border-t sm:border-footer pt-0 sm:pt-3 pb-3 sm:px-3 text-lg font-bold">
+                                1848 settlement era
+                            </p>
+
+                            <!-- Row 3 -->
+                            <p
+                                class="mb-0 sm:border-b sm:border-b-footer border-t border-footer pb-0 pt-3 sm:pb-3 sm:px-3 text-base uppercase tracking-[0.045rem] text-black">
+                                Died
+                            </p>
+                            <div class="hidden bg-footer sm:block"></div>
+                            <p
+                                class="mb-0 border-b border-b-footer sm:border-t sm:border-footer pt-0 sm:pt-3 pb-3 sm:px-3 text-lg font-bold">
+                                1871 - Dunedin
+                            </p>
+
+                        </div>
+
+
+                    </div>
                     <figure
-                        class="2xl:col-span-2 relative overflow-hidden bg-paper w-full sm:w-3/5 xl:w-4/5 xl:mx-auto h-auto max-h-[75vh] aspect-[1689/2143] xl:sticky xl:top-[100px] xl:hidden">
+                        class="4xl:col-span-2 relative overflow-hidden bg-paper w-full sm:w-3/5 xl:w-4/5 3xl:w-full xl:mx-auto h-auto max-h-[75vh] aspect-[1689/2143] xl:sticky xl:top-[100px] hidden xl:block">
 
                         <div
                             class="absolute inset-0 flex animate-pulse items-center justify-center bg-gradient-to-r from-gray-200 via-gray-100 to-gray-200 bg-[length:200%_100%] z-10">
@@ -342,78 +450,8 @@
 
                     </figure>
 
-                    <div class="[&>p:last-child]:mb-0 mt-12">
-                        <p class="eyebrow text-primary">Story</p>
-                        <h2>A founding figure of Otago</h2>
-                        <p>Thomas Burns was born in Mauchline, Ayrshire, in 1796. A nephew of the poet Robert Burns, he
-                            grew up with an interest in farming but trained for the Presbyterian ministry at the
-                            University of Edinburgh.</p>
-                        <p>Ordained in 1822, he became minister of Ballantrae and later Monkton. In 1830 he married
-                            Clementina Grant. He was among those who signed the Deed of Demission in 1843, establishing
-                            the Free Church of Scotland.</p>
-                        <p>Burns became a leading figure in the planned Scottish Presbyterian settlement at Otago. In
-                            1847 he sailed from Greenock with the first party of settlers aboard the Philip Laing.</p>
-                        <p>As the settlement’s spiritual leader, Burns travelled widely to visit households throughout
-                            his parish. His detailed records of these visits provide an important account of the people
-                            living in early Otago.</p>
-                        <p>He also supported farming and education in the new settlement and became the inaugural
-                            chancellor of New Zealand’s first university. Burns died in Dunedin in 1871, while the new
-                            First Church was being built.</p>
-                    </div>
 
-
-
-                    <div
-                        class="relative mt-12 grid w-full grid-cols-1 sm:w-max sm:grid-cols-[200px_1px_auto]">
-
-                        <!-- Row 1 -->
-                        <p class="mb-0 border-t border-footer pb-0 pt-3 sm:pb-3 sm:px-3 text-base uppercase tracking-[0.045rem] text-black">
-                            Born
-                        </p>
-                        <div class="hidden bg-footer sm:block"></div>
-                        <p class="mb-0 sm:border-t sm:border-footer pt-0 sm:pt-3 pb-3 sm:px-3 text-lg font-bold">
-                            1796 - Mauchline, Ayrshire
-                        </p>
-
-                        <!-- Row 2 -->
-                        <p class="mb-0 border-t border-footer pb-0 pt-3 sm:pb-3 sm:px-3 text-base uppercase tracking-[0.045rem] text-black">
-                            Arrived in Otago
-                        </p>
-                        <div class="hidden bg-footer sm:block"></div>
-                        <p class="mb-0 sm:border-t sm:border-footer pt-0 sm:pt-3 pb-3 sm:px-3 text-lg font-bold">
-                            1848 settlement era
-                        </p>
-
-                        <!-- Row 3 -->
-                        <p class="mb-0 sm:border-b sm:border-b-footer border-t border-footer pb-0 pt-3 sm:pb-3 sm:px-3 text-base uppercase tracking-[0.045rem] text-black">
-                            Died
-                        </p>
-                        <div class="hidden bg-footer sm:block"></div>
-                        <p class="mb-0 border-b border-b-footer sm:border-t sm:border-footer pt-0 sm:pt-3 pb-3 sm:px-3 text-lg font-bold">
-                            1871 - Dunedin
-                        </p>
-
-                    </div>
-
-
-                </div>
-                <figure
-                    class="4xl:col-span-2 relative overflow-hidden bg-paper w-full sm:w-3/5 xl:w-4/5 xl:mx-auto h-auto max-h-[75vh] aspect-[1689/2143] xl:sticky xl:top-[100px] hidden xl:block">
-
-                    <div
-                        class="absolute inset-0 flex animate-pulse items-center justify-center bg-gradient-to-r from-gray-200 via-gray-100 to-gray-200 bg-[length:200%_100%] z-10">
-                        <i class="uil uil-image text-5xl text-gray-400" aria-hidden="true"></i>
-                    </div>
-
-                    <img src="https://www.toituosm.com/__data/assets/image/0003/485814/1A07-1_Rev-Thomas-Burns.jpg"
-                        alt="Sunlit National Park Trail" loading="lazy"
-                        class="h-full w-full object-contain object-center opacity-0 transition-opacity duration-500 ease-out aspect-[inherit]"
-                        onload="this.classList.remove('opacity-0'); this.previousElementSibling?.remove();">
-
-                </figure>
-
-
-            </article>
+                </article>
 
 
         </section>
@@ -432,7 +470,7 @@
                     class="float-right cta flex items-center gap-2 justify-start transition-all duration-300 ease-ease text-black hover:text-primary border-b-2 border-b-primary pb-1 w-max link--left-arrow">Arrivals
                     1820s - 40</a>
 
-                <a href="#"
+                <a href="./smith-gallery.html"
                     class="float-right cta flex items-center gap-2 justify-start transition-all duration-300 ease-ease text-black hover:text-primary border-b-2 border-b-primary pb-1 w-max link--new-window">All
                     Smith Gallery portraits</a>
             </div>

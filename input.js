@@ -26,6 +26,9 @@ const mobileMenu = document.getElementById('mobile_menu');
 const menuOverlay = document.getElementById('menu_overlay');
 const mobileDropdowns = mobileMenu.querySelectorAll('.mobile-dropdown');
 const desktopDropdowns = document.querySelectorAll('header .group\\/has-dropdown');
+//Breadcrumbs
+const breadcrumbToggle = document.getElementById('breadcrumb_toggle');
+const breadcrumbMiddle = document.getElementById('breadcrumb_collapsed');
 document.addEventListener("DOMContentLoaded", () => {
     if (rollingCounterElements && rollingCounterElements.length) {
         createRollingCounter("[data-carousel-counter]", 1, "dcc-rolling-digit", "dcc-rolling-digit-track", 20);
@@ -222,7 +225,7 @@ document.addEventListener("DOMContentLoaded", () => {
             const clone = template.content.cloneNode(true);
             activeTooltip = clone.querySelector('.exhibition__image__caption');
             // 2. Append to body
-            document.body.appendChild(activeTooltip);
+            toggleCaption.after(activeTooltip);
             toggleCaption.setAttribute('aria-expanded', 'true');
             // 3. Wire up the close button inside the cloned node
             const closeBtn = activeTooltip.querySelector('#exhibition__image__caption--close');
@@ -232,15 +235,9 @@ document.addEventListener("DOMContentLoaded", () => {
                     removeTooltip();
                 });
             }
-            // 4. Calculate fixed position for the current screen size
-            positionTooltip();
         });
     }
-    // Reposition dynamically on resize or scroll
-    window.addEventListener('resize', positionTooltip);
-    window.addEventListener('scroll', positionTooltip, {
-        passive: true
-    });
+
     // Close when clicking outside or pressing Escape
     document.addEventListener('click', (e) => {
         if (activeTooltip && !activeTooltip.contains(e.target)) {
@@ -280,6 +277,22 @@ document.addEventListener("DOMContentLoaded", () => {
 
     if (rollingPortraitElements && portraitSearch) {
         fetchPortraits();
+    }
+
+    // Breadcrumbs
+    if (breadcrumbToggle && breadcrumbMiddle) {
+        breadcrumbToggle.addEventListener('click', () => {
+            const expanded = breadcrumbToggle.getAttribute('aria-expanded') === 'true';
+
+            breadcrumbToggle.setAttribute('aria-expanded', String(!expanded));
+            breadcrumbToggle.setAttribute(
+                'aria-label',
+                expanded ? 'Show all breadcrumbs' : 'Collapse breadcrumbs'
+            );
+
+            breadcrumbMiddle.classList.toggle('max-md:hidden', expanded);
+            breadcrumbToggle.parentElement.remove();
+        });
     }
 });
 
