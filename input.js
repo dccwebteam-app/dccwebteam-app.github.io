@@ -24,8 +24,9 @@ const menuToggle = document.getElementById('menu_toggle');
 const menuClose = document.getElementById('menu_close');
 const mobileMenu = document.getElementById('mobile_menu');
 const menuOverlay = document.getElementById('menu_overlay');
-const mobileDropdowns = mobileMenu.querySelectorAll('.mobile-dropdown');
+const mobileDropdowns = mobileMenu?.querySelectorAll('.mobile-dropdown') ?? [];
 const desktopDropdowns = document.querySelectorAll('header .group\\/has-dropdown');
+let portraitRequestId = 0;
 //Breadcrumbs
 const breadcrumbToggle = document.getElementById('breadcrumb_toggle');
 const breadcrumbMiddle = document.getElementById('breadcrumb_collapsed');
@@ -39,16 +40,16 @@ document.addEventListener("DOMContentLoaded", () => {
             splashContainer.classList.add('active');
         }, 300);
         setTimeout(() => {
-            splashContainer.parentElement.classList.add("remove");
+            splashContainer.parentElement.remove();
             document.body.classList.remove("splash-loading");
         }, 3000);
     }
     //   navbar.parentElement.classList.add('pinned', window.scrollY > 50);
-    window.addEventListener('scroll', () => {
-        navbar.parentElement.classList.toggle('pinned', window.scrollY > 50);
-    }, {
-        passive: true
-    });
+    if (navbar?.parentElement) {
+        window.addEventListener('scroll', () => {
+            navbar.parentElement.classList.toggle('pinned', window.scrollY > 50);
+        }, { passive: true });
+    }
     // Close other dropdowns when one is opened
     document.querySelectorAll('aside details').forEach((detail) => {
         detail.addEventListener('toggle', () => {
@@ -89,14 +90,12 @@ document.addEventListener("DOMContentLoaded", () => {
             closeDesktopDropdowns();
         }
     });
-    // ==========================================
-    // MOBILE MENU ELEMENTS
-    // ==========================================
-    if (!menuToggle || !mobileMenu || !menuOverlay) return;
+
     // ==========================================
     // OPEN MOBILE MENU
     // ==========================================
     const openMobileMenu = () => {
+        
         mobileMenu.classList.remove('translate-x-full');
         mobileMenu.setAttribute('aria-hidden', 'false');
         mobileMenu.inert = false;
@@ -214,7 +213,7 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     });
     //Exhibitions
-    if (toggleCaption) {
+    if (toggleCaption && template) {
         toggleCaption.addEventListener('click', (e) => {
             e.stopPropagation();
             if (activeTooltip) {
@@ -290,45 +289,25 @@ document.addEventListener("DOMContentLoaded", () => {
                 expanded ? 'Show all breadcrumbs' : 'Collapse breadcrumbs'
             );
 
-            breadcrumbMiddle.classList.toggle('max-md:hidden', expanded);
             breadcrumbToggle.parentElement.remove();
         });
     }
 });
 
-function positionTooltip() {
-    if (!activeTooltip) return;
-    const btnRect = toggleCaption.getBoundingClientRect();
-    const tooltipRect = activeTooltip.getBoundingClientRect();
-    const gap = 12;
-    const screenPadding = 16;
-    // Place above button by default, or flip below if near the top edge
-    let top = btnRect.top - tooltipRect.height - gap;
-    if (top < screenPadding) {
-        top = btnRect.bottom + gap;
-    }
-    // Align right edge with button, keeping within viewport margins
-    let left = btnRect.right - tooltipRect.width;
-    if (left < screenPadding) {
-        left = screenPadding;
-    }
-    if (left + tooltipRect.width > window.innerWidth - screenPadding) {
-        left = window.innerWidth - tooltipRect.width - screenPadding;
-    }
-    activeTooltip.style.top = `${top}px`;
-    activeTooltip.style.left = `${left}px`;
-}
-
 function removeTooltip() {
     if (activeTooltip) {
         activeTooltip.remove();
         activeTooltip = null;
-        toggleCaption.setAttribute('aria-expanded', 'false');
+        toggleCaption?.setAttribute('aria-expanded', 'false');
     }
 }
 
 function changeSlide(direction) {
-    currentSlideIndex = (currentSlideIndex + direction + slides.length) % slides.length;
+    if (!slides.length) return;
+
+    currentSlideIndex =
+        (currentSlideIndex + direction + slides.length) % slides.length;
+
     updateCarouselLayout();
 }
 
@@ -351,12 +330,18 @@ function updateCarouselLayout() {
 }
 
 function goToSlide(slideIndex) {
+    if (!Number.isInteger(slideIndex) || slideIndex < 0 || slideIndex >= slides.length) {
+        return;
+    }
+
     currentSlideIndex = slideIndex;
     updateCarouselLayout();
 }
 async function getUrlData(url = 'https://example.com') {
     try {
-        const response = await fetch(url);
+        const response = await fetch(url, {
+            signal: AbortSignal.timeout(10000)
+        });
         if (!response.ok) {
             throw new Error(`HTTP error! status: ${response.status}`);
         }
@@ -364,16 +349,19 @@ async function getUrlData(url = 'https://example.com') {
         return data;
     } catch (error) {
         console.error('Fetch failed:', error);
-        return error;
+        throw error;
     }
 }
 async function fetchPortraits(category = undefined) {
     const wallWrapper = document.querySelector(".group\\/wall-wrapper");
+    const requestId = ++portraitRequestId;
+    const searchValue = portraitSearch?.value?.trim() ?? '';
     try {
 
-        if (portraitSearch.value.length && portraitSearch.value.length < 3) {
+        if (searchValue.length > 0 && searchValue.length < 3) {
             return;
         }
+
         if (rollingPortraitElements && rollingPortraitElements.length) {
             createRollingCounter("[data-portrait-counter]", rollingPortraitCount, "dcc-rolling-digit", "dcc-rolling-digit-track", 21);
         }
@@ -382,10 +370,9 @@ async function fetchPortraits(category = undefined) {
             b.setAttribute("disabled", true)
         });
         if (category) {
-            portraitSearch.setAttribute("disabled", true);
+            portraitSearch?.setAttribute("disabled", true);
         }
-        // Pause execution for 1 second
-        await new Promise(resolve => setTimeout(resolve, 1000));
+
         const initialSearchUrl = "https://dcc-web.matrix.squiz.cloud/toitu/_designs/design-nesters/portrait-search?search_page_1326319_submit_button=Submit&current_result_page=1&mode=results";
         let cleanUrl = initialSearchUrl;
         if (portraitSearch.value.length > 2) {
@@ -397,6 +384,9 @@ async function fetchPortraits(category = undefined) {
         }
         cleanUrl += `&category_wall=${category}`;
         const res = await getUrlData(cleanUrl);
+
+        if (requestId !== portraitRequestId) return;
+
         if (!res.assets) {
             throw new Error("Error in getting data, please try again");
         }
@@ -434,7 +424,7 @@ async function fetchPortraits(category = undefined) {
                             </div>
 
                             <img src="${imgSrc}"
-                                alt="S${imgAlt}" loading="lazy" decoding="async"
+                                alt="${imgAlt}" loading="lazy" decoding="async"
                                 class="aspect-[64/72] h-[inherit] w-[imherit] max-w-[64px] object-cover object-center opacity-0 transition-opacity duration-500 ease-out"
                                 onload="this.classList.remove('opacity-0'); this.previousElementSibling?.remove();">
 
@@ -466,6 +456,9 @@ async function fetchPortraits(category = undefined) {
 
         }
     } catch (e) {
+        if (requestId === portraitRequestId) {
+            console.error(e);
+        }
         console.error(e);
     } finally {
 
@@ -482,12 +475,11 @@ async function fetchPortraits(category = undefined) {
             createRollingCounter("[data-portrait-counter]", rollingPortraitCount, "dcc-rolling-digit", "dcc-rolling-digit-track", 21);
         }
 
-        setTimeout(() => {
-            wallWrapper?.classList.remove("is-loading");
-            portraitFilters.forEach((b) => {
-                b.removeAttribute("disabled")
-            });
-            portraitSearch.removeAttribute("disabled")
-        }, 1000);
+        wallWrapper?.classList.remove("is-loading");
+        portraitFilters.forEach((b) => {
+            b.removeAttribute("disabled")
+        });
+        portraitSearch?.removeAttribute("disabled")
+
     }
 }

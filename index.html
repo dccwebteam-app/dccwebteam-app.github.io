@@ -26,9 +26,18 @@
 	<!-- ==========================================
          HEADER / DESKTOP NAVIGATION
     =========================================== -->
-	<header class="group/navbar fixed top-0 left-0 z-[99] w-full h-[80px] sm:h-[100px]">
-		<nav aria-label="Main navigation"
-			class="print:hidden h-full group-[.white-navbar]/body:2xl:shadow-[0_2px_16px_rgba(0,0,0,0.12)] group-[.white-navbar]/body:shadow-[0_2px_16px_rgba(0,0,0,0.12)] bg-black/30 2xl:bg-transparent w-full group-[.white-navbar]/body:bg-white group-[.pinned]/navbar:bg-white text-white group-[.pinned]/navbar:text-black group-[.white-navbar]/body:text-black flex items-center justify-between gap-4 py-4 px-6 w-full text-[15px] leading-[1.1] font-semibold whitespace-nowrap uppercase transition-all duration-300 ease-ease">
+	<header class="group/navbar ">
+		<nav aria-label="Main navigation" class="print:hidden fixed top-0 inset-x-0 z-[99] h-[80px] sm:h-[100px] w-full
+        group-[.white-navbar]/body:2xl:shadow-[0_2px_16px_rgba(0,0,0,0.12)]
+        group-[.white-navbar]/body:shadow-[0_2px_16px_rgba(0,0,0,0.12)]
+        bg-black/30 2xl:bg-transparent
+        group-[.white-navbar]/body:bg-white
+        group-[.pinned]/navbar:bg-white
+        text-white group-[.pinned]/navbar:text-black
+        group-[.white-navbar]/body:text-black
+        flex items-center justify-between gap-4 py-4 px-6
+        text-[15px] leading-[1.1] font-semibold whitespace-nowrap uppercase
+        transition-colors duration-300 ease-ease">
 			<!-- LEFT NAVIGATION -->
 			<ul
 				class="hidden 2xl:flex items-center justify-between gap-6 group/nav-items group/left-nav header__nav-items">
@@ -214,8 +223,7 @@
 			<!-- Mobile logo and close button -->
 			<div class="flex items-center justify-between border-b border-footer pt-3 pb-4 sm:pb-8">
 				<a href="/" aria-label="Toitū Otago Settlers Museum home"> <img src="./images/mobile menu.svg"
-						loading="lazy" decoding="async" width="" height=""
-						class="w-[140px] sm:w-[160px] 4xl:w-[190px]"
+						loading="lazy" decoding="async" width="" height="" class="w-[140px] sm:w-[160px] 4xl:w-[190px]"
 						alt="Toitū Otago Settlers Museum"> </a>
 				<button id="menu_close" type="button" class="flex items-center justify-center size-10 cursor-pointer"
 					aria-label="Close navigation menu"> <span class="relative flex size-7 items-center justify-center"
@@ -307,7 +315,7 @@
 
 				</a>
 				<!-- Otago Settlers Association -->
-				 <a href="/otago-settlers-association/" class="w-full py-5">
+				<a href="/otago-settlers-association/" class="w-full py-5">
 
 					Otago Settlers Association
 
@@ -342,7 +350,8 @@
 			<img src="./images/main-hero.webp" alt="Toitu landing image" fetchpriority="high" width="" height=""
 				class="w-full h-[inherit] z-40 object-cover">
 
-			<div class="absolute w-full h-auto max-w-3xl top-[calc(50%_-_80px)] -translate-y-[calc(50%_-_80px)] sm:top-[calc(50%_-_100px)] sm:-translate-y-[calc(50%_-_100px)] z-[98] text-white section--padding-x">
+			<div
+				class="absolute w-full h-auto max-w-3xl top-[calc(50%_-_80px)] -translate-y-[calc(50%_-_80px)] sm:top-[calc(50%_-_100px)] sm:-translate-y-[calc(50%_-_100px)] z-[98] text-white section--padding-x">
 				<p class="eyebrow">
 					TOITŪ OTAGO SETTLERS MUSEUM
 				</p>
@@ -360,7 +369,9 @@
 		<section class="group/whatsOn relative bg-black section--padding-x section--padding-y text-white" id="whats_on">
 			<p class="eyebrow">Discover</p>
 			<div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-0 sm:gap-4">
-				<h2>What's On</h2> <a href="whats-on.html" class="cta flex items-center gap-2 justify-start transition-all duration-300 ease-ease text-white border-b-2 border-b-primary pb-1 w-max link--right-arrow">View everything</a>
+				<h2>What's On</h2> <a href="whats-on.html"
+					class="cta flex items-center gap-2 justify-start transition-all duration-300 ease-ease text-white border-b-2 border-b-primary pb-1 w-max link--right-arrow">View
+					everything</a>
 			</div>
 			<div class="relative grid grid-cols-1 xl:grid-cols-3 gap-6 pt-8 xl:pt-12">
 				<!-- Item 1-->
