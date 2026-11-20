@@ -2171,6 +2171,12 @@
     .\33 xl\:w-lg {
       width: var(--container-lg);
     }
+    .\33 xl\:flex-row {
+      flex-direction: row;
+    }
+    .\33 xl\:gap-4 {
+      gap: calc(var(--spacing) * 4);
+    }
     .\33 xl\:gap-x-12 {
       column-gap: calc(var(--spacing) * 12);
     }
